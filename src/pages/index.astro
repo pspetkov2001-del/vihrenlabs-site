@@ -101,15 +101,10 @@ const lines = [
 
       <!-- CTAs -->
       <div class="fade-up fade-up-delay-3 flex flex-col sm:flex-row gap-4">
-        <a
-          href="https://gumroad.com/vihrenlabs"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="glow-btn inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
-        >
-          Browse the shop
-          <span>&rarr;</span>
-        </a>
+        <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base cursor-default select-none">
+          <span class="w-2 h-2 rounded-full bg-[#E67E22] animate-pulse flex-shrink-0"></span>
+          First products launching June 2026
+        </div>
         <a
           href="/about"
           class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-8 py-4 rounded-full text-base transition-colors"
@@ -165,14 +160,9 @@ const lines = [
           <span class="text-white/30">Not a methodology.<br /></span>
           The operating detail.
         </h2>
-        <a
-          href="https://gumroad.com/vihrenlabs"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="inline-flex items-center gap-2 text-[#E67E22] font-medium text-sm hover:gap-4 transition-all"
-        >
-          Browse all products <span>&rarr;</span>
-        </a>
+        <span class="font-mono text-xs text-[#E67E22]/60 border border-[#E67E22]/20 px-4 py-2 rounded-full">
+          Launching June 2026
+        </span>
       </div>
 
       <div class="space-y-4">
@@ -199,30 +189,20 @@ const lines = [
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Product lines</p>
           <h2 class="font-black text-4xl sm:text-5xl leading-tight">Five expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
         </div>
-        <a
-          href="https://gumroad.com/vihrenlabs"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="text-sm font-medium text-white/40 hover:text-[#E67E22] border border-white/10 hover:border-[#E67E22]/30 px-5 py-2.5 rounded-full transition-all"
-        >
-          View all &rarr;
-        </a>
+        <span class="font-mono text-xs text-white/25 border border-white/8 px-5 py-2.5 rounded-full">
+          Launching June 2026
+        </span>
       </div>
 
       <div class="space-y-3">
         {lines.map((line, i) => (
-          <a
-            href="https://gumroad.com/vihrenlabs"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="group flex items-start gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] card-hover block"
-          >
+          <div class="flex items-start gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02]">
             <div class="flex-shrink-0 pt-1">
-              <span class="line-number text-white/15 group-hover:text-[#E67E22] transition-colors">{line.num}</span>
+              <span class="line-number text-white/15">{line.num}</span>
             </div>
             <div class="flex-1 min-w-0">
               <div class="flex items-start justify-between gap-4 flex-wrap">
-                <h3 class="font-bold text-lg text-white/80 group-hover:text-white transition-colors">{line.name}</h3>
+                <h3 class="font-bold text-lg text-white/80">{line.name}</h3>
                 <div class="flex flex-wrap gap-2 flex-shrink-0">
                   {line.tags.map(tag => (
                     <span class="font-mono text-[10px] text-white/20 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{tag}</span>
@@ -231,10 +211,10 @@ const lines = [
               </div>
               <p class="text-white/40 text-sm leading-relaxed mt-2">{line.sub}</p>
             </div>
-            <div class="flex-shrink-0 self-center text-white/15 group-hover:text-[#E67E22] group-hover:translate-x-1 transition-all hidden sm:block">
-              &rarr;
+            <div class="flex-shrink-0 self-center hidden sm:block">
+              <span class="font-mono text-[10px] text-white/20 border border-white/8 px-2 py-1 rounded tracking-wider uppercase">Jun 2026</span>
             </div>
-          </a>
+          </div>
         ))}
       </div>
     </div>
@@ -259,12 +239,10 @@ const lines = [
             7 principles for running enterprise IT without the consulting-industry fluff. The foundation everything else is built on.
           </p>
           <a
-            href="https://gumroad.com/vihrenlabs"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#newsletter"
             class="inline-flex items-center gap-3 bg-white text-[#080E14] font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors text-base"
           >
-            Download free &rarr;
+            Get notified when it drops &rarr;
           </a>
         </div>
       </div>
@@ -272,7 +250,7 @@ const lines = [
   </section>
 
   <!-- ═══ NEWSLETTER ════════════════════════════════════════════════════ -->
-  <section class="py-28 px-6 border-t border-white/5 bg-[#0A1520]">
+  <section id="newsletter" class="py-28 px-6 border-t border-white/5 bg-[#0A1520]">
     <div class="max-w-2xl mx-auto text-center">
       <p class="font-mono text-orange text-xs tracking-[0.2em] uppercase mb-6">Operator field notes</p>
       <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-4 text-grey-light">
