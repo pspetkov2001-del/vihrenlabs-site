@@ -6,11 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "generate:og": "node scripts/generate-og.mjs"
+    "generate:og": "node scripts/generate-og.mjs",
+    "newsletter:send": "node scripts/send-newsletter.mjs",
+    "newsletter:dry": "DRY_RUN=1 node scripts/send-newsletter.mjs"
   },
   "dependencies": {
     "@astrojs/tailwind": "^5.1.0",
     "astro": "^4.16.0",
+    "resend": "^6.12.3",
     "tailwindcss": "^3.4.0"
   },
   "devDependencies": {

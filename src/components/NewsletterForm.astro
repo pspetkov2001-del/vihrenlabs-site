@@ -1,28 +1,32 @@
 ---
 /**
- * Beehiiv newsletter form.
+ * Self-managed newsletter form → POST /api/subscribe (Vercel serverless).
  *
- * To activate:
- * 1. Create a free account at beehiiv.com (free up to 2,500 subscribers)
- * 2. Settings → Publication → scroll to "Publication ID" — copy it (starts with "pub_")
- * 3. Add to Vercel: Settings → Environment Variables → PUBLIC_BEEHIIV_PUB_ID=pub_xxxxxxxx
- * 4. Redeploy. Done.
+ * To activate end-to-end:
+ *  1. Create a free Resend account at resend.com
+ *  2. Settings → API Keys → create one, copy it
+ *  3. Resend → Audiences → create "Vihren Labs" audience, copy the ID
+ *  4. Verify your sending domain (resend.com → Domains → vihrenlabs.com)
+ *     While verifying, leave RESEND_FROM_EMAIL unset to use the test address.
+ *  5. In Vercel → Settings → Environment Variables add:
+ *       RESEND_API_KEY      = re_xxxxxxxxxxxx
+ *       RESEND_AUDIENCE_ID  = aud_xxxxxxxxxxxx
+ *       RESEND_FROM_EMAIL   = newsletter@vihrenlabs.com   (after domain verified)
+ *  6. Redeploy. Done.
  *
- * Without the env var, the form renders but submissions go nowhere (safe placeholder).
+ * Without env vars the form still renders and submissions return 200
+ * (silently no-ops) — so the UX is never broken.
  */
-const pubId = import.meta.env.PUBLIC_BEEHIIV_PUB_ID ?? '';
-const isLive = pubId.length > 0;
 ---
 
 <form
-  action={isLive ? `https://app.beehiiv.com/subscribe` : '#'}
-  method="post"
+  id="nl-form"
   class="w-full max-w-md mx-auto"
+  novalidate
 >
-  {isLive && <input type="hidden" name="publication_id" value={pubId} />}
-
   <div class="flex flex-col sm:flex-row gap-3">
     <input
+      id="nl-email"
       type="email"
       name="email"
       placeholder="your@email.com"
@@ -31,20 +35,63 @@ const isLive = pubId.length > 0;
       class="flex-1 bg-white/5 border border-white/10 focus:border-[#E67E22] text-white placeholder-white/30 px-5 py-3.5 rounded-full text-sm outline-none transition-colors"
     />
     <button
+      id="nl-btn"
       type="submit"
-      class="bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors whitespace-nowrap"
+      class="bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
     >
       Subscribe &rarr;
     </button>
   </div>
 
-  <p class="text-white/25 text-xs mt-4 text-center">
+  <p id="nl-status" class="text-xs mt-4 text-center h-4" aria-live="polite"></p>
+
+  <p class="text-white/25 text-xs mt-1 text-center">
     One essay a week. No spam. Unsubscribe any time.
   </p>
-
-  {!isLive && (
-    <p class="text-[#E67E22]/40 text-xs mt-2 text-center font-mono">
-      Set PUBLIC_BEEHIIV_PUB_ID in Vercel env vars to activate
-    </p>
-  )}
 </form>
+
+<script>
+  const form   = document.getElementById('nl-form')   as HTMLFormElement;
+  const emailEl = document.getElementById('nl-email') as HTMLInputElement;
+  const btn    = document.getElementById('nl-btn')    as HTMLButtonElement;
+  const status = document.getElementById('nl-status') as HTMLParagraphElement;
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const email = emailEl.value.trim();
+    if (!email) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Subscribing…';
+    status.textContent = '';
+    status.className = 'text-xs mt-4 text-center h-4';
+
+    try {
+      const res = await fetch('/api/subscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email }),
+      });
+
+      const data = await res.json().catch(() => ({}));
+
+      if (res.ok) {
+        status.textContent = "You're in. First essay coming soon.";
+        status.className = 'text-[#E67E22] text-xs mt-4 text-center h-4';
+        emailEl.value = '';
+        btn.textContent = 'Subscribed ✓';
+        // keep button disabled — success state
+      } else {
+        status.textContent = data.error ?? 'Something went wrong. Try again.';
+        status.className = 'text-red-400 text-xs mt-4 text-center h-4';
+        btn.disabled = false;
+        btn.textContent = 'Subscribe →';
+      }
+    } catch {
+      status.textContent = 'Network error. Check your connection and try again.';
+      status.className = 'text-red-400 text-xs mt-4 text-center h-4';
+      btn.disabled = false;
+      btn.textContent = 'Subscribe →';
+    }
+  });
+</script>
