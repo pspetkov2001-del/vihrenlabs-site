@@ -5,11 +5,15 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "generate:og": "node scripts/generate-og.mjs"
   },
   "dependencies": {
-    "astro": "^4.16.0",
     "@astrojs/tailwind": "^5.1.0",
+    "astro": "^4.16.0",
     "tailwindcss": "^3.4.0"
+  },
+  "devDependencies": {
+    "sharp": "^0.34.5"
   }
 }

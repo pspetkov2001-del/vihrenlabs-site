@@ -1,48 +1,54 @@
 ---
 /**
- * NewsletterForm.astro — ConvertKit-embedded newsletter signup form.
+ * ConvertKit newsletter form.
  *
- * SETUP (T-052 Fix 4 — founder action required):
- *   1. Sign up at https://convertkit.com (free tier)
- *   2. Create a form named "Vihren Labs — Operator field notes"
- *   3. Dashboard → Forms → Embed → "HTML form" tab
- *   4. Replace REPLACE_FORM_ID and REPLACE_FORM_UID with your values
+ * To activate:
+ * 1. Create a free account at convertkit.com
+ * 2. Create a form → Embed → choose "Inline"
+ * 3. In the embed code, find data-uid="XXXX" — that is your FORM_UID
+ * 4. Add to Vercel: Settings → Environment Variables → PUBLIC_CONVERTKIT_UID=XXXX
+ * 5. Redeploy. Done.
  *
- * Until the IDs are filled in, the form renders but submissions 404.
- * Replace the two REPLACE_* strings and push — nothing else to change.
+ * Without the env var, the form renders but submissions go nowhere (safe placeholder).
  */
-
-const FORM_ID  = "REPLACE_FORM_ID";   // e.g. "1234567"
-const FORM_UID = "REPLACE_FORM_UID";  // e.g. "a1b2c3d4e5"
+const uid = import.meta.env.PUBLIC_CONVERTKIT_UID ?? '';
+const actionUrl = uid
+  ? `https://app.convertkit.com/forms/${uid}/subscriptions`
+  : '#';
+const isLive = uid.length > 0;
 ---
 
 <form
-  action={`https://app.convertkit.com/forms/${FORM_ID}/subscriptions`}
+  action={actionUrl}
   method="post"
-  data-sv-form={FORM_ID}
-  data-uid={FORM_UID}
-  data-format="inline"
-  data-version="5"
-  class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto"
+  class="w-full max-w-md mx-auto"
 >
-  <input
-    type="email"
-    name="email_address"
-    required
-    placeholder="you@company.com"
-    class="flex-1 px-4 py-3 rounded-lg bg-navy-light/40 border border-orange/30 text-grey-light placeholder:text-white/25 font-mono text-sm focus:outline-none focus:border-orange transition-colors"
-  />
-  <button
-    type="submit"
-    class="px-6 py-3 rounded-lg bg-orange hover:bg-orange-dark text-white font-mono text-sm font-semibold transition-colors whitespace-nowrap"
-  >
-    Get field notes &rarr;
-  </button>
+  <div class="flex flex-col sm:flex-row gap-3">
+    <input
+      type="email"
+      name="email_address"
+      placeholder="your@email.com"
+      required
+      autocomplete="email"
+      class="flex-1 bg-white/5 border border-white/10 focus:border-[#E67E22] text-white placeholder-white/30 px-5 py-3.5 rounded-full text-sm outline-none transition-colors"
+    />
+    <button
+      type="submit"
+      class="bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors whitespace-nowrap"
+    >
+      Subscribe &rarr;
+    </button>
+  </div>
+
+  <input type="hidden" name="utf8" value="✓" />
+
+  <p class="text-white/25 text-xs mt-4 text-center">
+    One essay a week. No spam. Unsubscribe any time.
+  </p>
+
+  {!isLive && (
+    <p class="text-[#E67E22]/40 text-xs mt-2 text-center font-mono">
+      Set PUBLIC_CONVERTKIT_UID in Vercel env vars to activate
+    </p>
+  )}
 </form>
-
-<p class="text-xs text-white/25 font-mono text-center mt-4">
-  ~1 essay per week. No spam. Unsubscribe any time.
-</p>
-
-<!-- ConvertKit embed script — loads async, no render-blocking -->
-<script src="https://f.convertkit.com/ckjs/ck.5.js" defer></script>
