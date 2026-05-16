@@ -1,32 +1,30 @@
 ---
 /**
- * ConvertKit newsletter form.
+ * Beehiiv newsletter form.
  *
  * To activate:
- * 1. Create a free account at convertkit.com
- * 2. Create a form → Embed → choose "Inline"
- * 3. In the embed code, find data-uid="XXXX" — that is your FORM_UID
- * 4. Add to Vercel: Settings → Environment Variables → PUBLIC_CONVERTKIT_UID=XXXX
- * 5. Redeploy. Done.
+ * 1. Create a free account at beehiiv.com (free up to 2,500 subscribers)
+ * 2. Settings → Publication → scroll to "Publication ID" — copy it (starts with "pub_")
+ * 3. Add to Vercel: Settings → Environment Variables → PUBLIC_BEEHIIV_PUB_ID=pub_xxxxxxxx
+ * 4. Redeploy. Done.
  *
  * Without the env var, the form renders but submissions go nowhere (safe placeholder).
  */
-const uid = import.meta.env.PUBLIC_CONVERTKIT_UID ?? '';
-const actionUrl = uid
-  ? `https://app.convertkit.com/forms/${uid}/subscriptions`
-  : '#';
-const isLive = uid.length > 0;
+const pubId = import.meta.env.PUBLIC_BEEHIIV_PUB_ID ?? '';
+const isLive = pubId.length > 0;
 ---
 
 <form
-  action={actionUrl}
+  action={isLive ? `https://app.beehiiv.com/subscribe` : '#'}
   method="post"
   class="w-full max-w-md mx-auto"
 >
+  {isLive && <input type="hidden" name="publication_id" value={pubId} />}
+
   <div class="flex flex-col sm:flex-row gap-3">
     <input
       type="email"
-      name="email_address"
+      name="email"
       placeholder="your@email.com"
       required
       autocomplete="email"
@@ -40,15 +38,13 @@ const isLive = uid.length > 0;
     </button>
   </div>
 
-  <input type="hidden" name="utf8" value="✓" />
-
   <p class="text-white/25 text-xs mt-4 text-center">
     One essay a week. No spam. Unsubscribe any time.
   </p>
 
   {!isLive && (
     <p class="text-[#E67E22]/40 text-xs mt-2 text-center font-mono">
-      Set PUBLIC_CONVERTKIT_UID in Vercel env vars to activate
+      Set PUBLIC_BEEHIIV_PUB_ID in Vercel env vars to activate
     </p>
   )}
 </form>

@@ -167,13 +167,13 @@ const lines = [
 
       <div class="space-y-4">
         {[
-          { icon: '⚡', text: 'Real T-codes, real article numbers, real cutover-night failure modes — not abstractions.' },
-          { icon: '🎯', text: 'Built for people who make decisions, not consultants who document them.' },
-          { icon: '🔒', text: 'No fluff. No "step one: understand your stakeholders."' },
-          { icon: '📐', text: 'Open on a Monday morning. Usable by Friday.' },
+          { num: '01', text: 'Real T-codes, real article numbers, real cutover-night failure modes — not abstractions.' },
+          { num: '02', text: 'Built for people who make decisions, not consultants who document them.' },
+          { num: '03', text: 'No fluff. No "step one: understand your stakeholders."' },
+          { num: '04', text: 'Open on a Monday morning. Usable by Friday.' },
         ].map(item => (
-          <div class="flex items-start gap-4 p-5 rounded-xl border border-white/5 bg-white/[0.02] card-hover">
-            <span class="text-xl flex-shrink-0">{item.icon}</span>
+          <div class="flex items-start gap-5 p-5 rounded-xl border border-white/5 bg-white/[0.02] card-hover">
+            <span class="font-mono text-xs text-[#E67E22]/50 flex-shrink-0 pt-0.5 tracking-widest">{item.num}</span>
             <p class="text-white/60 text-sm leading-relaxed">{item.text}</p>
           </div>
         ))}
