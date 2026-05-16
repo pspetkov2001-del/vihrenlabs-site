@@ -1,0 +1,284 @@
+---
+import Base from '../layouts/Base.astro';
+
+const ticker = [
+  '15 years in enterprise IT',
+  'SAP ECC & S/4HANA',
+  'EU AI Act & DORA',
+  'PRINCE2 Practitioner',
+  'Six Sigma',
+  'SSC 300→700 FTEs',
+  'Master Data GPO',
+  'Fortune-100 IT distribution',
+  'EMEA vendor reporting',
+  'AI-driven catalog platform',
+];
+
+const lines = [
+  {
+    num: '01',
+    name: 'Procurement & Vendor Management',
+    sub: 'IT vendor TCO, renewal calendars, negotiation playbooks — from the side of the table that knows what distributors don\'t tell you.',
+    tags: ['Excel workbook', 'Ebook', 'Bundle'],
+  },
+  {
+    num: '02',
+    name: 'Regulatory & Compliance',
+    sub: 'EU AI Act, DORA Article 28, compliance registers with real article citations — not consultant summaries.',
+    tags: ['Excel register', 'Starter pack', 'Full tier'],
+  },
+  {
+    num: '03',
+    name: 'SAP / ERP Operations',
+    sub: 'S/4HANA cutover management, hypercare runbooks, migration readiness — what actually breaks at 3 AM and how to prevent it.',
+    tags: ['Excel workbook', 'Playbook ebook', 'Bundle'],
+  },
+  {
+    num: '04',
+    name: 'Master Data & Catalog',
+    sub: 'MDM maturity diagnostics, SKU enrichment scorecards, AI-readiness audits — for the person accountable for the data, not the consultant reviewing it.',
+    tags: ['Maturity assessment', 'Scorecard', 'Ebook'],
+  },
+  {
+    num: '05',
+    name: 'Transformation & Shared Services',
+    sub: 'Transition management workbooks, SSC standup packs, GPO operating models — drawn from transitions that involved real headcount, real deadlines, and real consequences.',
+    tags: ['Workbook', 'Templates', 'Course'],
+  },
+];
+---
+
+<Base
+  title="Vihren Labs"
+  description="Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator — SAP, MDM, regulatory compliance, shared services."
+>
+  <!-- Noise overlay -->
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="relative min-h-[90vh] flex flex-col justify-center px-6 overflow-hidden">
+
+    <!-- Radial glow background -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full"
+           style="background: radial-gradient(ellipse at center, rgba(30,61,89,0.6) 0%, rgba(8,14,20,0) 70%);">
+      </div>
+      <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-20"
+           style="background: radial-gradient(ellipse at center, rgba(230,126,34,0.4) 0%, transparent 70%);">
+      </div>
+    </div>
+
+    <!-- Grid lines -->
+    <div class="absolute inset-0 pointer-events-none opacity-[0.03]"
+         style="background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px); background-size: 80px 80px;"
+         aria-hidden="true">
+    </div>
+
+    <div class="relative max-w-6xl mx-auto w-full py-20">
+      <!-- Eyebrow -->
+      <div class="fade-up fade-up-delay-1 flex items-center gap-3 mb-8">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Vihren Labs</span>
+      </div>
+
+      <!-- Main headline -->
+      <h1 class="fade-up fade-up-delay-2 font-black text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight mb-8 max-w-4xl">
+        Built by someone<br />
+        <span class="text-white/30">who's sat on</span><br />
+        <span style="color: #E67E22;">both sides.</span>
+      </h1>
+
+      <!-- Sub -->
+      <p class="fade-up fade-up-delay-3 text-white/50 text-lg sm:text-xl leading-relaxed max-w-xl mb-12">
+        Operator-grade templates for procurement, SAP migrations, EU regulatory compliance, master data, and shared services transformation.
+      </p>
+
+      <!-- CTAs -->
+      <div class="fade-up fade-up-delay-3 flex flex-col sm:flex-row gap-4">
+        <a
+          href="https://gumroad.com/vihrenlabs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="glow-btn inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-8 py-4 rounded-full text-base transition-colors"
+        >
+          Browse the shop
+          <span>&rarr;</span>
+        </a>
+        <a
+          href="/about"
+          class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-8 py-4 rounded-full text-base transition-colors"
+        >
+          About Vihren Labs
+        </a>
+      </div>
+
+      <!-- Stats row -->
+      <div class="mt-20 pt-10 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-8">
+        {[
+          { n: '15+', label: 'Years in enterprise IT' },
+          { n: '5', label: 'Product lines' },
+          { n: 'SAP', label: 'ECC & S/4HANA' },
+          { n: 'EU', label: 'AI Act & DORA' },
+        ].map(s => (
+          <div>
+            <div class="font-black text-3xl text-[#E67E22]">{s.n}</div>
+            <div class="text-white/40 text-sm mt-1">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ TICKER ════════════════════════════════════════════════════════ -->
+  <div class="border-y border-white/5 py-4 overflow-hidden bg-[#0F1E2E]" aria-hidden="true">
+    <div class="flex whitespace-nowrap">
+      <div class="marquee-track flex items-center gap-10">
+        {[...ticker, ...ticker].map(item => (
+          <span class="font-mono text-xs text-white/30 uppercase tracking-[0.15em] flex items-center gap-10">
+            {item}
+            <span class="text-[#E67E22] opacity-50">&middot;</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══ OPERATOR VOICE ════════════════════════════════════════════════ -->
+  <section class="py-28 px-6">
+    <div class="max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-6">What this is</p>
+        <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-8">
+          Not a framework.<br />
+          <span class="text-white/30">Not a methodology.<br /></span>
+          The operating detail.
+        </h2>
+        <a
+          href="https://gumroad.com/vihrenlabs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 text-[#E67E22] font-medium text-sm hover:gap-4 transition-all"
+        >
+          Browse all products <span>&rarr;</span>
+        </a>
+      </div>
+
+      <div class="space-y-4">
+        {[
+          { icon: '⚡', text: 'Real T-codes, real article numbers, real cutover-night failure modes — not abstractions.' },
+          { icon: '🎯', text: 'Built for people who make decisions, not consultants who document them.' },
+          { icon: '🔒', text: 'No fluff. No "step one: understand your stakeholders."' },
+          { icon: '📐', text: 'Open on a Monday morning. Usable by Friday.' },
+        ].map(item => (
+          <div class="flex items-start gap-4 p-5 rounded-xl border border-white/5 bg-white/[0.02] card-hover">
+            <span class="text-xl flex-shrink-0">{item.icon}</span>
+            <p class="text-white/60 text-sm leading-relaxed">{item.text}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRODUCT LINES ═════════════════════════════════════════════════ -->
+  <section class="py-28 px-6 bg-[#0A1520]">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-16 flex-wrap gap-4">
+        <div>
+          <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Product lines</p>
+          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Five expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
+        </div>
+        <a
+          href="https://gumroad.com/vihrenlabs"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-sm font-medium text-white/40 hover:text-[#E67E22] border border-white/10 hover:border-[#E67E22]/30 px-5 py-2.5 rounded-full transition-all"
+        >
+          View all &rarr;
+        </a>
+      </div>
+
+      <div class="space-y-3">
+        {lines.map((line, i) => (
+          <a
+            href="https://gumroad.com/vihrenlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="group flex items-start gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] card-hover block"
+          >
+            <div class="flex-shrink-0 pt-1">
+              <span class="line-number text-white/15 group-hover:text-[#E67E22] transition-colors">{line.num}</span>
+            </div>
+            <div class="flex-1 min-w-0">
+              <div class="flex items-start justify-between gap-4 flex-wrap">
+                <h3 class="font-bold text-lg text-white/80 group-hover:text-white transition-colors">{line.name}</h3>
+                <div class="flex flex-wrap gap-2 flex-shrink-0">
+                  {line.tags.map(tag => (
+                    <span class="font-mono text-[10px] text-white/20 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{tag}</span>
+                  ))}
+                </div>
+              </div>
+              <p class="text-white/40 text-sm leading-relaxed mt-2">{line.sub}</p>
+            </div>
+            <div class="flex-shrink-0 self-center text-white/15 group-hover:text-[#E67E22] group-hover:translate-x-1 transition-all hidden sm:block">
+              &rarr;
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FREE LEAD MAGNET ══════════════════════════════════════════════ -->
+  <section class="py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="relative rounded-3xl overflow-hidden border border-white/8 p-10 sm:p-16"
+           style="background: linear-gradient(135deg, rgba(30,61,89,0.4) 0%, rgba(8,14,20,0.9) 60%);">
+        <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
+             style="background: radial-gradient(ellipse at top right, #E67E22, transparent 70%);"
+             aria-hidden="true"></div>
+        <div class="relative max-w-xl">
+          <div class="inline-flex items-center gap-2 bg-[#E67E22]/10 border border-[#E67E22]/20 rounded-full px-4 py-1.5 mb-8">
+            <span class="text-[#E67E22] font-mono text-xs tracking-widest uppercase">Free</span>
+          </div>
+          <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-6">
+            The Vihren Labs<br />Operator Standard
+          </h2>
+          <p class="text-white/50 text-lg leading-relaxed mb-10">
+            7 principles for running enterprise IT without the consulting-industry fluff. The foundation everything else is built on.
+          </p>
+          <a
+            href="https://gumroad.com/vihrenlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-3 bg-white text-[#080E14] font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors text-base"
+          >
+            Download free &rarr;
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ NEWSLETTER ════════════════════════════════════════════════════ -->
+  <section class="py-28 px-6 border-t border-white/5">
+    <div class="max-w-2xl mx-auto text-center">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-6">Field notes</p>
+      <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-4">
+        Monthly. No filler.
+      </h2>
+      <p class="text-white/40 text-lg mb-10">
+        One case study, one framework, one thing I'd do differently. No marketing sequences. No upsells.
+      </p>
+      <div class="bg-white/[0.03] border border-white/8 rounded-2xl p-8">
+        <p class="text-white/25 text-sm font-mono mb-3">
+          <!-- Swap in ConvertKit embed after T-024g -->
+        </p>
+        <p class="text-white/30 text-sm">
+          Newsletter landing shortly — follow on
+          <a href="https://www.linkedin.com/in/petko-petkov-8b606382" class="text-[#E67E22] hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          in the meantime.
+        </p>
+      </div>
+    </div>
+  </section>
+</Base>

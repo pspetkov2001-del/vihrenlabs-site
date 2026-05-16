@@ -1,0 +1,120 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = 'Vihren Labs',
+  description = 'Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator.',
+} = Astro.props;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site);
+const pageTitle = title === 'Vihren Labs' ? title : `${title} · Vihren Labs`;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Vihren Labs" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  </head>
+  <body class="bg-[#080E14] text-white font-sans antialiased overflow-x-hidden">
+    <Nav />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --navy: #1E3D59;
+    --navy-deep: #080E14;
+    --navy-mid: #0F1E2E;
+    --orange: #E67E22;
+    --orange-glow: rgba(230, 126, 34, 0.15);
+  }
+
+  ::selection {
+    background: var(--orange);
+    color: #fff;
+  }
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+
+  .marquee-track {
+    animation: marquee 28s linear infinite;
+    will-change: transform;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fade-up {
+    animation: fadeUp 0.7s ease forwards;
+  }
+
+  .fade-up-delay-1 { animation-delay: 0.1s; opacity: 0; }
+  .fade-up-delay-2 { animation-delay: 0.25s; opacity: 0; }
+  .fade-up-delay-3 { animation-delay: 0.4s; opacity: 0; }
+
+  @keyframes glow-pulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(230, 126, 34, 0.3); }
+    50%       { box-shadow: 0 0 40px rgba(230, 126, 34, 0.6); }
+  }
+
+  .glow-btn {
+    animation: glow-pulse 3s ease-in-out infinite;
+  }
+
+  .noise-overlay {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+    background-size: 256px 256px;
+  }
+
+  .card-hover {
+    transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  }
+
+  .card-hover:hover {
+    border-color: var(--orange) !important;
+    box-shadow: 0 0 30px rgba(230, 126, 34, 0.12);
+    transform: translateY(-2px);
+  }
+
+  .line-number {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+</style>

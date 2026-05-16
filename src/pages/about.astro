@@ -1,0 +1,184 @@
+---
+import Base from '../layouts/Base.astro';
+
+const clusters = [
+  {
+    period: '2011 – 2016',
+    tag: 'Transformation operator',
+    color: '#2980B9',
+    items: [
+      'IBM Global Process Services — Operations Manager CRM, 35-FTE team, Madrid',
+      'Sharp Electronics Spain → IBM Kraków — Transition Manager, 30 FTEs',
+      'Sofia SSC 300 → 700 FTEs across 12 legal entities',
+      'Finance AP/EP global process standardisation, SOX-aligned controls',
+    ],
+  },
+  {
+    period: '2017 – 2023',
+    tag: 'Vendor-side honest broker',
+    color: '#E67E22',
+    items: [
+      'EMEA vendor reporting — HP, Apple, Lenovo, Cisco, Microsoft, Samsung, Fujitsu, Dell',
+      'Vendor content quality, distribution economics, procurement patterns from inside',
+      'Saw what buyers never see: the margin structure, the content gaps, the renewal mechanics',
+    ],
+  },
+  {
+    period: '2023 – present',
+    tag: 'AI-era data operator',
+    color: '#27AE60',
+    items: [
+      'Global Process Owner, Product Master Data at a Fortune-100 IT distributor',
+      'Building an AI-driven catalog management platform — vendor ingestion, SKU enrichment, taxonomy governance',
+      'Agile delivery leadership, engineering partnership, cross-functional business ownership',
+    ],
+  },
+];
+
+const credentials = [
+  'PRINCE2 Practitioner',
+  'Six Sigma',
+  '15 years in enterprise IT',
+  'Bulgarian · English · Spanish',
+  'Sofia, Bulgaria',
+  'Vihren Labs EOOD',
+];
+---
+
+<Base
+  title="About"
+  description="Petko Petkov — the operator behind Vihren Labs. 15 years in enterprise IT distribution, SAP, MDM, and shared services transformation."
+>
+  <div class="noise-overlay" aria-hidden="true"></div>
+
+  <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="relative py-28 px-6 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-10"
+           style="background: radial-gradient(ellipse at top right, rgba(30,61,89,0.8), transparent 70%);">
+      </div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto grid lg:grid-cols-2 gap-16 items-center">
+      <div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-8">The operator behind Vihren Labs</p>
+        <h1 class="font-black text-6xl sm:text-7xl leading-[0.9] tracking-tight mb-6">
+          Petko<br />Petkov
+        </h1>
+        <p class="text-white/40 text-lg leading-relaxed max-w-md mb-10">
+          Sr. Manager Digital & Business Transformation. Fifteen years inside global IT distribution — the vendor side, the buyer side, and the transformation side.
+        </p>
+        <div class="flex flex-wrap gap-2">
+          {credentials.map(c => (
+            <span class="font-mono text-xs text-white/30 border border-white/8 px-3 py-1.5 rounded-full">
+              {c}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <!-- Avatar -->
+      <div class="flex justify-center lg:justify-end">
+        <div class="relative">
+          <div class="w-56 h-56 sm:w-72 sm:h-72 rounded-3xl flex items-center justify-center"
+               style="background: linear-gradient(135deg, #1E3D59, #0F1E2E); border: 1px solid rgba(255,255,255,0.08);">
+            <span class="font-black text-7xl sm:text-9xl text-[#E67E22] font-mono">PP</span>
+          </div>
+          <div class="absolute -bottom-4 -right-4 bg-[#E67E22] text-white font-mono text-xs px-4 py-2 rounded-xl">
+            Sofia, BG
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ THE RARE POSITION ═════════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-[#0A1520] border-y border-white/5">
+    <div class="max-w-4xl mx-auto text-center">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-8">Why this matters</p>
+      <blockquote class="font-black text-3xl sm:text-4xl lg:text-5xl leading-tight text-white/90">
+        "Most enterprise-IT content is written by consultants who manage projects or vendors who sell products. Vihren Labs is written from the third seat."
+      </blockquote>
+      <p class="text-white/40 text-lg mt-8 max-w-2xl mx-auto">
+        The operator who has sat on both the vendor-distribution side AND the buyer side of every deal — and watched what actually breaks at 4 AM on cutover weekend.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ THREE-CLUSTER TIMELINE ════════════════════════════════════════ -->
+  <section class="py-28 px-6">
+    <div class="max-w-6xl mx-auto">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Career arc</p>
+      <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-16">
+        Three clusters.<br />
+        <span class="text-white/30">One through line.</span>
+      </h2>
+
+      <div class="space-y-6">
+        {clusters.map((c) => (
+          <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-8 sm:p-10 card-hover">
+            <div class="flex items-start gap-6 flex-wrap sm:flex-nowrap">
+              <div class="flex-shrink-0">
+                <div class="font-mono text-xs uppercase tracking-widest mb-2" style={`color: ${c.color}`}>
+                  {c.period}
+                </div>
+                <div class="h-0.5 w-12" style={`background: ${c.color}`}></div>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h3 class="font-bold text-xl text-white mb-5">{c.tag}</h3>
+                <ul class="space-y-3">
+                  {c.items.map(item => (
+                    <li class="flex items-start gap-3 text-white/50 text-sm leading-relaxed">
+                      <span class="flex-shrink-0 mt-1.5 w-1 h-1 rounded-full" style={`background: ${c.color}`}></span>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ WHAT VIHREN LABS IS NOT ═══════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-[#0A1520] border-y border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-10">Guardrails</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[
+          { label: 'Not a consulting firm', sub: 'No engagements. No project work. Templates only.' },
+          { label: 'Not a vendor pitch', sub: 'Nothing sold here is a platform or upsell.' },
+          { label: 'Not a think-tank', sub: 'Every claim is grounded in hands-on execution.' },
+          { label: 'Not a content machine', sub: 'One newsletter. One LinkedIn. That\'s it.' },
+        ].map(item => (
+          <div class="p-6 rounded-xl border border-white/5 bg-white/[0.015]">
+            <div class="text-[#E67E22] font-mono text-xs mb-3">&#8722;</div>
+            <h3 class="font-semibold text-white/80 text-sm mb-2">{item.label}</h3>
+            <p class="text-white/35 text-xs leading-relaxed">{item.sub}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA ════════════════════════════════════════════════════════════ -->
+  <section class="py-28 px-6 text-center">
+    <div class="max-w-xl mx-auto">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-6">Ready to work</p>
+      <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-6">
+        See what fifteen<br />years looks like<br />
+        <span class="text-white/30">in a spreadsheet.</span>
+      </h2>
+      <a
+        href="https://gumroad.com/vihrenlabs"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="glow-btn inline-flex items-center gap-3 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-bold px-10 py-5 rounded-full text-base transition-colors"
+      >
+        Browse Vihren Labs shop &rarr;
+      </a>
+    </div>
+  </section>
+</Base>
