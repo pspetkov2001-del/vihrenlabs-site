@@ -1,5 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
+import NewsletterForm from '../components/NewsletterForm.astro';
 
 const ticker = [
   '15 years in enterprise IT',
@@ -81,6 +82,11 @@ const lines = [
         <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Vihren Labs</span>
       </div>
 
+      <!-- Value prop eyebrow — tells cold visitors what this IS before the headline -->
+      <p class="fade-up fade-up-delay-2 font-mono text-orange text-sm tracking-[0.18em] uppercase mb-4">
+        5 product lines · Procurement · Regulatory · SAP · MDM · Transformation
+      </p>
+
       <!-- Main headline -->
       <h1 class="fade-up fade-up-delay-2 font-black text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight mb-8 max-w-4xl">
         Built by someone<br />
@@ -110,6 +116,12 @@ const lines = [
         >
           About Vihren Labs
         </a>
+      </div>
+
+      <!-- Author byline pill — authority signal above the fold -->
+      <div class="mt-8 inline-flex items-center gap-3 px-4 py-2 bg-navy-light/40 border border-orange/20 rounded-full font-mono text-xs text-grey-light">
+        <span class="w-2 h-2 rounded-full bg-orange flex-shrink-0"></span>
+        Built by Petko Petkov · 15 years vendor-side (Fortune-100 IT distributor)
       </div>
 
       <!-- Stats row -->
@@ -260,25 +272,17 @@ const lines = [
   </section>
 
   <!-- ═══ NEWSLETTER ════════════════════════════════════════════════════ -->
-  <section class="py-28 px-6 border-t border-white/5">
+  <section class="py-28 px-6 border-t border-white/5 bg-[#0A1520]">
     <div class="max-w-2xl mx-auto text-center">
-      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-6">Field notes</p>
-      <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-4">
-        Monthly. No filler.
+      <p class="font-mono text-orange text-xs tracking-[0.2em] uppercase mb-6">Operator field notes</p>
+      <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-4 text-grey-light">
+        Real lessons from real cutover nights.
       </h2>
-      <p class="text-white/40 text-lg mb-10">
-        One case study, one framework, one thing I'd do differently. No marketing sequences. No upsells.
+      <p class="text-white/40 text-lg mb-10 max-w-lg mx-auto">
+        One essay a week from inside enterprise IT — SAP migrations, vendor procurement, EU regulatory.
+        Concrete, vendor-side-honest, no buzzwords.
       </p>
-      <div class="bg-white/[0.03] border border-white/8 rounded-2xl p-8">
-        <p class="text-white/25 text-sm font-mono mb-3">
-          <!-- Swap in ConvertKit embed after T-024g -->
-        </p>
-        <p class="text-white/30 text-sm">
-          Newsletter landing shortly — follow on
-          <a href="https://www.linkedin.com/in/petko-petkov-8b606382" class="text-[#E67E22] hover:underline" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-          in the meantime.
-        </p>
-      </div>
+      <NewsletterForm />
     </div>
   </section>
 </Base>
