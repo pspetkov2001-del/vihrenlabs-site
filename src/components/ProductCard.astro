@@ -1,0 +1,93 @@
+---
+/**
+ * ProductCard — polished digital product card for vihrenlabs.com shop.
+ *
+ * Adapted from 21st.dev "Inflected Card" + "Amazing Card" demos via Magic MCP,
+ * 2026-05-18. Stripped to fit Vihren Labs' editorial dark-amber aesthetic.
+ *
+ * Usage:
+ *   <ProductCard
+ *     title="Compliance Workbook"
+ *     description="EU AI Act + COPPA gap-finder for ed-tech founders"
+ *     price="$49"
+ *     compareAt="$99"
+ *     badge="Aug 2 deadline"
+ *     href="https://vihrenlabs.gumroad.com/l/compliance-workbook"
+ *     image="/products/compliance-workbook-cover.png"
+ *   />
+ *
+ * Props:
+ *   title      — required, product name
+ *   description — required, 1-2 sentence pitch
+ *   price      — required, e.g. "$49"
+ *   compareAt  — optional, struck-through price
+ *   badge      — optional pill ("New", "Aug 2 deadline", "Bestseller")
+ *   href       — required, link to Gumroad/checkout
+ *   image      — optional cover image (place in public/products/)
+ *   ctaLabel   — optional, defaults to "Get it →"
+ */
+interface Props {
+  title: string;
+  description: string;
+  price: string;
+  compareAt?: string;
+  badge?: string;
+  href: string;
+  image?: string;
+  ctaLabel?: string;
+}
+
+const {
+  title,
+  description,
+  price,
+  compareAt,
+  badge,
+  href,
+  image,
+  ctaLabel = "Get it →",
+} = Astro.props;
+---
+
+<a
+  href={href}
+  class="product-card group block rounded-2xl border border-neutral-800 bg-neutral-950 p-6 transition-all hover:border-amber-500/40 hover:bg-neutral-900 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/5"
+>
+  {image && (
+    <div class="mb-5 aspect-[16/9] overflow-hidden rounded-lg bg-neutral-900 border border-neutral-800">
+      <img
+        src={image}
+        alt={title}
+        loading="lazy"
+        class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+      />
+    </div>
+  )}
+
+  {badge && (
+    <div class="mb-3 inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+      {badge}
+    </div>
+  )}
+
+  <h3 class="text-xl font-bold text-white mb-2 leading-tight">{title}</h3>
+  <p class="text-sm text-neutral-400 leading-relaxed mb-5">{description}</p>
+
+  <div class="flex items-end justify-between gap-3">
+    <div class="flex items-baseline gap-2">
+      <span class="text-2xl font-bold text-white tabular-nums">{price}</span>
+      {compareAt && (
+        <span class="text-sm text-neutral-500 line-through tabular-nums">{compareAt}</span>
+      )}
+    </div>
+    <span class="text-sm font-semibold text-amber-400 transition-transform group-hover:translate-x-1">
+      {ctaLabel}
+    </span>
+  </div>
+</a>
+
+<style>
+  .product-card {
+    text-decoration: none;
+  }
+</style>
