@@ -47,6 +47,67 @@ const lines = [
     tags: ['Workbook', 'Templates', 'Course'],
   },
 ];
+
+// Live products — verified on Gumroad 2026-05-22. Titles/prices per
+// Spreadsheet OS Collection/GUMROAD-LISTING-ACTION-PACK.md.
+const products = [
+  {
+    tag: 'Excel workbook',
+    name: 'IT Vendor & SaaS Procurement TCO',
+    sub: 'Vendor registry, 3-year TCO model, 12-month renewal pipeline, RFP scoring — from the distributor side of the table.',
+    price: '$49', team: '$99',
+    url: 'https://vihrenlabs.gumroad.com/l/eujpqc',
+  },
+  {
+    tag: 'Ebook',
+    name: 'Vendor-Side IT Procurement — The Playbook',
+    sub: '8 chapters on how IT distributors and vendors actually price, discount and renew — and how to negotiate against it.',
+    price: '$29', team: '$79',
+    url: 'https://vihrenlabs.gumroad.com/l/ovyxjl',
+  },
+  {
+    tag: 'Starter pack',
+    name: 'EU AI Act SME Compliance Starter',
+    sub: 'Article 50 transparency tracker, high-risk register, deployer readiness assessment. Enforcement: 2 Aug 2026.',
+    price: '€149', team: '€249',
+    url: 'https://vihrenlabs.gumroad.com/l/rqems',
+  },
+  {
+    tag: 'Excel workbook',
+    name: 'SAP S/4HANA Migration Cutover Excel',
+    sub: '52-check readiness matrix, 46-step cutover run sheet, hypercare runbook. What breaks at 3 AM.',
+    price: '$99', team: '$249',
+    url: 'https://vihrenlabs.gumroad.com/l/fsslk',
+  },
+  {
+    tag: 'Playbook ebook',
+    name: "SAP S/4HANA Migration Playbook",
+    sub: "The operator's guide beneath the workbook — phase gates, failure modes, the cutover-week methodology.",
+    price: '$39', team: '$99',
+    url: 'https://vihrenlabs.gumroad.com/l/bsxhb',
+  },
+  {
+    tag: 'Excel workbook',
+    name: 'Master Data Quality Audit Workbook',
+    sub: '75 named SAP MDM quality checks, field-level scoring, defect log and remediation tracker.',
+    price: '$79', team: '$149',
+    url: 'https://vihrenlabs.gumroad.com/l/znhthm',
+  },
+  {
+    tag: 'Assessment',
+    name: 'MDM Maturity Assessment',
+    sub: '78 anchored questions across 5 domains — a scored, banded read on master-data maturity.',
+    price: '$79', team: '$149',
+    url: 'https://vihrenlabs.gumroad.com/l/nwbvrn',
+  },
+  {
+    tag: 'Playbook',
+    name: 'MDG Operating Model Playbook',
+    sub: 'Data owner + steward roles, RACI and governance-forum design — how to stand up an SAP MDG operating model.',
+    price: '$49', team: '$79',
+    url: 'https://vihrenlabs.gumroad.com/l/qwlgi',
+  },
+];
 ---
 
 <Base
@@ -101,10 +162,15 @@ const lines = [
 
       <!-- CTAs -->
       <div class="fade-up fade-up-delay-3 flex flex-col sm:flex-row gap-4">
-        <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base cursor-default select-none">
+        <a
+          href="https://vihrenlabs.gumroad.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base hover:bg-[#E67E22]/30 transition-colors"
+        >
           <span class="w-2 h-2 rounded-full bg-[#E67E22] animate-pulse flex-shrink-0"></span>
-          First products launching June 2026
-        </div>
+          9 products live now on Gumroad
+        </a>
         <a
           href="/about"
           class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-8 py-4 rounded-full text-base transition-colors"
@@ -161,7 +227,7 @@ const lines = [
           The operating detail.
         </h2>
         <span class="font-mono text-xs text-[#E67E22]/60 border border-[#E67E22]/20 px-4 py-2 rounded-full">
-          Launching June 2026
+          Live now on Gumroad
         </span>
       </div>
 
@@ -190,7 +256,7 @@ const lines = [
           <h2 class="font-black text-4xl sm:text-5xl leading-tight">Five expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
         </div>
         <span class="font-mono text-xs text-white/25 border border-white/8 px-5 py-2.5 rounded-full">
-          Launching June 2026
+          Live now on Gumroad
         </span>
       </div>
 
@@ -210,9 +276,6 @@ const lines = [
                 </div>
               </div>
               <p class="text-white/40 text-sm leading-relaxed mt-2">{line.sub}</p>
-            </div>
-            <div class="flex-shrink-0 self-center hidden sm:block">
-              <span class="font-mono text-[10px] text-white/20 border border-white/8 px-2 py-1 rounded tracking-wider uppercase">Jun 2026</span>
             </div>
           </div>
         ))}
@@ -250,48 +313,20 @@ const lines = [
           </div>
         </a>
 
-        <!-- T-020 Procurement -->
-        <a href="https://vihrenlabs.gumroad.com" target="_blank" rel="noopener noreferrer"
-           class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">Excel workbook</span>
-          </div>
-          <h3 class="font-bold text-base text-white/80 leading-snug mb-2">IT Vendor & SaaS Procurement TCO + Renewal Calendar</h3>
-          <p class="text-white/35 text-sm leading-relaxed flex-1">TCO model, 12-month renewal tracker, vendor scorecard — from the distributor side of the table.</p>
-          <div class="flex items-center justify-between mt-6">
-            <span class="font-black text-xl text-white/90">$49<span class="text-white/30 text-sm font-normal"> / $99</span></span>
-            <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
-          </div>
-        </a>
-
-        <!-- T-019 EU AI Act -->
-        <a href="https://vihrenlabs.gumroad.com" target="_blank" rel="noopener noreferrer"
-           class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">Starter pack</span>
-            <span class="font-mono text-[10px] text-[#E67E22]/70 border border-[#E67E22]/20 px-2 py-0.5 rounded tracking-wider uppercase">Aug 2026</span>
-          </div>
-          <h3 class="font-bold text-base text-white/80 leading-snug mb-2">EU AI Act SME Compliance Starter — Article 50 + High-Risk Register</h3>
-          <p class="text-white/35 text-sm leading-relaxed flex-1">Transparency register, readiness checklist, and deployer assessment. Enforcement: 2 Aug 2026.</p>
-          <div class="flex items-center justify-between mt-6">
-            <span class="font-black text-xl text-white/90">€149<span class="text-white/30 text-sm font-normal"> / €249</span></span>
-            <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
-          </div>
-        </a>
-
-        <!-- T-023 SAP -->
-        <a href="https://vihrenlabs.gumroad.com" target="_blank" rel="noopener noreferrer"
-           class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">Excel workbook</span>
-          </div>
-          <h3 class="font-bold text-base text-white/80 leading-snug mb-2">SAP S/4HANA Migration Readiness + Cutover Workbook</h3>
-          <p class="text-white/35 text-sm leading-relaxed flex-1">85-item readiness checklist, cutover plan tracker, hypercare runbook. What breaks at 3 AM.</p>
-          <div class="flex items-center justify-between mt-6">
-            <span class="font-black text-xl text-white/90">$99<span class="text-white/30 text-sm font-normal"> / $249</span></span>
-            <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
-          </div>
-        </a>
+        {products.map(p => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+             class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+            </div>
+            <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
+            <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-black text-xl text-white/90">{p.price}<span class="text-white/30 text-sm font-normal"> / {p.team}</span></span>
+              <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+            </div>
+          </a>
+        ))}
 
       </div>
     </div>
