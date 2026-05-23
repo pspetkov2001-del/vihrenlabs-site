@@ -1,0 +1,145 @@
+---
+import Base from '../layouts/Base.astro';
+
+const lastUpdated = '2026-05-23';
+---
+
+<Base
+  title="Privacy Policy"
+  description="How Vihren Labs LTD handles your personal information — newsletter signups, contact emails, and analytics."
+>
+  <section class="max-w-3xl mx-auto px-6 py-20 text-white/85">
+    <header class="mb-12">
+      <p class="line-number text-orange uppercase">/privacy</p>
+      <h1 class="text-4xl sm:text-5xl font-bold text-white mt-2">Privacy Policy</h1>
+      <p class="text-white/50 mt-3">Last updated: {lastUpdated}</p>
+    </header>
+
+    <div class="prose-content space-y-6 text-[15px] leading-relaxed">
+      <p>
+        Vihren Labs LTD ("Vihren Labs", "we", "us") is the controller for any personal
+        information collected through <a href="https://vihrenlabs.com" class="text-orange hover:underline">vihrenlabs.com</a>.
+        This page explains what we collect, why, who we share it with, how long we keep it,
+        and the rights you have under the GDPR.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">1. Who we are</h2>
+      <p>
+        Vihren Labs LTD is a Bulgarian limited company (EOOD) registered in Sofia,
+        Bulgaria. Contact: <a href="mailto:hello@vihrenlabs.com" class="text-orange hover:underline">hello@vihrenlabs.com</a>.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">2. What we collect, and why</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          <strong>Newsletter signups (email address only).</strong> Stored in our
+          newsletter provider (Beehiiv, or Resend Audiences as a backup). Used to send
+          the operator-brand newsletter and occasional product announcements. You can
+          unsubscribe with one click from any email — that's GDPR Article 7(3) revocation.
+        </li>
+        <li>
+          <strong>Direct emails to us.</strong> When you email
+          <a href="mailto:hello@vihrenlabs.com" class="text-orange hover:underline">hello@vihrenlabs.com</a>,
+          we keep your message and email address to reply. We don't add you to the
+          newsletter from this unless you ask.
+        </li>
+        <li>
+          <strong>Basic analytics.</strong> Vercel (our hosting provider) records aggregate,
+          IP-anonymised pageview counts to keep the site up. We don't run Google Analytics,
+          Meta Pixel, or other third-party trackers. If Pinterest claims this site, Pinterest
+          may record click-through events to its own platform per Pinterest's privacy terms.
+        </li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">3. Third parties we share data with</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>
+          <strong>Beehiiv</strong> (newsletter delivery) — your email address only.
+          <a href="https://www.beehiiv.com/privacy" class="text-orange hover:underline">Beehiiv privacy policy</a>.
+        </li>
+        <li>
+          <strong>Resend</strong> (transactional email + audience storage) — your email address only.
+          <a href="https://resend.com/legal/privacy-policy" class="text-orange hover:underline">Resend privacy policy</a>.
+        </li>
+        <li>
+          <strong>Vercel</strong> (hosting + minimal aggregate analytics).
+          <a href="https://vercel.com/legal/privacy-policy" class="text-orange hover:underline">Vercel privacy policy</a>.
+        </li>
+        <li>
+          <strong>Pinterest</strong> (when the site is claimed by our Pinterest business account, Pinterest tracks
+          referral traffic).
+          <a href="https://policy.pinterest.com/en/privacy-policy" class="text-orange hover:underline">Pinterest privacy policy</a>.
+        </li>
+        <li>
+          <strong>Gumroad</strong> (when you buy a product through our shop links, Gumroad — not us — is
+          the data controller for that transaction).
+          <a href="https://gumroad.com/privacy" class="text-orange hover:underline">Gumroad privacy policy</a>.
+        </li>
+        <li>
+          <strong>Etsy</strong> (when you buy a product through our Etsy shop links, Etsy — not us — is
+          the data controller).
+          <a href="https://www.etsy.com/legal/privacy/" class="text-orange hover:underline">Etsy privacy policy</a>.
+        </li>
+      </ul>
+      <p>
+        We do not sell, rent, or trade personal data. We do not use it for advertising profiles or AI training.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">4. How long we keep things</h2>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Newsletter email addresses: until you unsubscribe, then deleted within 30 days.</li>
+        <li>Direct emails to us: as long as needed to handle the conversation + 12 months for support history.</li>
+        <li>Analytics: aggregated only; no per-visitor record beyond 30 days.</li>
+      </ul>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">5. Your GDPR rights</h2>
+      <p>
+        Under the EU General Data Protection Regulation, you can ask us to:
+      </p>
+      <ul class="list-disc pl-6 space-y-2">
+        <li>Confirm whether we hold data about you, and give you a copy (Article 15).</li>
+        <li>Correct anything inaccurate (Article 16).</li>
+        <li>Delete your data (Article 17). The "unsubscribe" link in every newsletter does this for the email list.</li>
+        <li>Restrict or object to processing (Articles 18 + 21).</li>
+        <li>Receive your data in a portable format (Article 20).</li>
+      </ul>
+      <p>
+        Email <a href="mailto:hello@vihrenlabs.com" class="text-orange hover:underline">hello@vihrenlabs.com</a> for
+        any of the above and we'll respond within 30 days. You can also complain to the Bulgarian
+        data-protection regulator (<a href="https://www.cpdp.bg/en/" class="text-orange hover:underline">CPDP</a>) if
+        you're not satisfied with how we've handled a request.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">6. Cookies</h2>
+      <p>
+        This site sets no marketing or analytics cookies of its own. Embedded third-party services
+        (Beehiiv signup form, Pinterest pin embeds if added later) may set cookies governed by their
+        own privacy policies linked above.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">7. Children</h2>
+      <p>
+        vihrenlabs.com is not directed at children under 16. We don't knowingly collect data from anyone
+        in that age group. If you believe we have, email us and we'll delete it.
+      </p>
+
+      <h2 class="text-2xl font-semibold text-white pt-4">8. Changes to this policy</h2>
+      <p>
+        We may update this page when we add new tools or change how we use data. Material changes
+        will be announced in the newsletter. The "Last updated" date at the top reflects the most
+        recent revision.
+      </p>
+
+      <p class="pt-8 text-white/50 text-sm border-t border-white/10 mt-12">
+        This policy is plain-English and intentionally short. If a clause needs more detail for a
+        compliance question (DPO appointment, sub-processor list, etc.), email us and we'll
+        respond in writing.
+      </p>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .prose-content a { word-break: break-word; }
+  .prose-content h2 { letter-spacing: -0.01em; }
+</style>
