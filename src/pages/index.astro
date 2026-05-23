@@ -37,7 +37,7 @@ const lines = [
   {
     num: '04',
     name: 'Master Data & Catalog',
-    sub: 'MDM maturity diagnostics, SKU enrichment scorecards, AI-readiness audits — for the person accountable for the data, not the consultant reviewing it.',
+    sub: 'Master Data Management maturity diagnostics, SKU enrichment scorecards, AI-readiness audits — for the person accountable for the data, not the consultant reviewing it.',
     tags: ['Maturity assessment', 'Scorecard', 'Ebook'],
   },
   {
@@ -45,6 +45,12 @@ const lines = [
     name: 'Transformation & Shared Services',
     sub: 'Transition management workbooks, SSC standup packs, GPO operating models — drawn from transitions that involved real headcount, real deadlines, and real consequences.',
     tags: ['Workbook', 'Templates', 'Course'],
+  },
+  {
+    num: '06',
+    name: 'Digital Transformation',
+    sub: 'Operating-model roadmaps, ERP modernisation strategy, process automation, AI adoption, change management, delivery and cloud migration — the strategy-and-delivery layer above the execution toolkits.',
+    tags: ['Excel toolkits', 'Playbooks', 'Suite bundle'],
   },
 ];
 
@@ -89,13 +95,13 @@ const products = [
   {
     tag: 'Excel workbook',
     name: 'Master Data Quality Audit Workbook',
-    sub: '75 named SAP MDM quality checks, field-level scoring, defect log and remediation tracker.',
+    sub: '75 named SAP Master Data Management quality checks, field-level scoring, defect log and remediation tracker.',
     price: '$79', team: '$149',
     url: 'https://vihrenlabs.gumroad.com/l/znhthm',
   },
   {
     tag: 'Assessment',
-    name: 'MDM Maturity Assessment',
+    name: 'Master Data Management Maturity Assessment',
     sub: '78 anchored questions across 5 domains — a scored, banded read on master-data maturity.',
     price: '$79', team: '$149',
     url: 'https://vihrenlabs.gumroad.com/l/nwbvrn',
@@ -112,7 +118,7 @@ const products = [
 
 <Base
   title="Vihren Labs"
-  description="Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator — SAP, MDM, regulatory compliance, shared services."
+  description="Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator — SAP, Master Data Management, regulatory compliance, shared services."
 >
   <!-- Noise overlay -->
   <div class="noise-overlay" aria-hidden="true"></div>
@@ -145,7 +151,7 @@ const products = [
 
       <!-- Value prop eyebrow — tells cold visitors what this IS before the headline -->
       <p class="fade-up fade-up-delay-2 font-mono text-orange text-sm tracking-[0.18em] uppercase mb-4">
-        5 product lines · Procurement · Regulatory · SAP · MDM · Transformation
+        6 product lines · Procurement · Regulatory · SAP · Master Data Management · Transformation · Digital
       </p>
 
       <!-- Main headline -->
@@ -189,7 +195,7 @@ const products = [
       <div class="mt-20 pt-10 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-8">
         {[
           { n: '15+', label: 'Years in enterprise IT' },
-          { n: '5', label: 'Product lines' },
+          { n: '6', label: 'Product lines' },
           { n: 'SAP', label: 'ECC & S/4HANA' },
           { n: 'EU', label: 'AI Act & DORA' },
         ].map(s => (
