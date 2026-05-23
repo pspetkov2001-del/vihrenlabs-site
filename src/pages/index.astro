@@ -113,6 +113,34 @@ const products = [
     price: '$49', team: '$79',
     url: 'https://vihrenlabs.gumroad.com/l/qwlgi',
   },
+  {
+    tag: 'Operator pack',
+    name: 'SAP Migration Operator\'s Pack',
+    sub: 'The complete SAP S/4HANA migration kit — cutover workbook + playbook ebook + comms templates. The bundle a real cutover needs.',
+    price: '$129', team: '$249',
+    url: 'https://vihrenlabs.gumroad.com/l/yjebue',
+  },
+  {
+    tag: 'Operator pack',
+    name: 'Master Data Operator\'s Pack',
+    sub: 'Audit workbook + maturity assessment + governance playbook — the full master-data operating toolkit, bundled.',
+    price: '$179', team: '$299',
+    url: 'https://vihrenlabs.gumroad.com/l/oocvu',
+  },
+  {
+    tag: 'Excel workbook',
+    name: 'Transition Management Workbook',
+    sub: 'Offshoring + Shared Services transition toolkit — 18-tab Excel + delivery-execution playbook + SOP + engagement templates.',
+    price: '$179', team: '$349',
+    url: 'https://vihrenlabs.gumroad.com/l/iivnut',
+  },
+  {
+    tag: 'Comms kit',
+    name: 'SAP Cutover Comms Kit',
+    sub: 'Pre-cutover, go-live, hypercare and incident announcement templates — the comms templates a real cutover sends. Pay what you want.',
+    price: 'Free+', team: '',
+    url: 'https://vihrenlabs.gumroad.com/l/dlzxfu',
+  },
 ];
 ---
 
@@ -175,7 +203,7 @@ const products = [
           class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base hover:bg-[#E67E22]/30 transition-colors"
         >
           <span class="w-2 h-2 rounded-full bg-[#E67E22] animate-pulse flex-shrink-0"></span>
-          9 products live now on Gumroad
+          13 products live now on Gumroad
         </a>
         <a
           href="/about"
@@ -328,7 +356,7 @@ const products = [
             <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
             <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
             <div class="flex items-center justify-between mt-6">
-              <span class="font-black text-xl text-white/90">{p.price}<span class="text-white/30 text-sm font-normal"> / {p.team}</span></span>
+              <span class="font-black text-xl text-white/90">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
               <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
             </div>
           </a>
