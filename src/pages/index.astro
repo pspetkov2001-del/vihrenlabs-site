@@ -240,10 +240,13 @@ import { products, freeItems } from '../data/products';
   <!-- ═══ AVAILABLE NOW ═══════════════════════════════════════════════ -->
   <section class="py-24 px-6 border-t border-white/5">
     <div class="max-w-6xl mx-auto">
-      <div class="flex items-end justify-between mb-16 flex-wrap gap-4">
+      <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
         <div>
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-3">Available now</p>
-          <h2 class="font-black text-3xl sm:text-4xl leading-tight">First products. Live today.</h2>
+          <h2 class="font-black text-3xl sm:text-4xl leading-tight">Built. Live. <span class="text-white/30">Browse the catalogue.</span></h2>
+          <p class="text-white/40 text-sm max-w-2xl mt-4 leading-relaxed">
+            {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads — grouped by product line. The full catalogue lives on a dedicated page.
+          </p>
         </div>
         <a href="https://vihrenlabs.gumroad.com" target="_blank" rel="noopener noreferrer"
            class="font-mono text-xs text-white/30 hover:text-[#E67E22] transition-colors tracking-wider uppercase border border-white/8 px-4 py-2 rounded">
@@ -251,34 +254,31 @@ import { products, freeItems } from '../data/products';
         </a>
       </div>
 
-      <!-- ── COURSES ─────────────────────────────────────────────────── -->
-      <div class="mb-6 flex items-baseline gap-3">
-        <div class="w-8 h-px bg-[#E67E22]"></div>
-        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Courses · 10 modules each · self-paced</p>
-        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => p.tier === 'course').length} live</span>
-      </div>
-      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
-        Full operator curriculum — 10 modules per course, each with playbook + exercises + workbook + visual one-pagers + capstone. Built from 15 years inside enterprise IT.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
-        {products.filter(p => p.tier === 'course').map(p => (
-          <a href={p.url} target="_blank" rel="noopener noreferrer"
-             class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/50 transition-colors bg-[#E67E22]/[0.03]">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+      <!-- ── SEE FULL CATALOG CTA — primary callout, lists live on /products ── -->
+      <a href="/products"
+         class="group block rounded-2xl border border-[#E67E22]/30 bg-[#E67E22]/[0.04] hover:border-[#E67E22]/60 hover:bg-[#E67E22]/[0.07] transition-colors p-8 sm:p-10 mb-12">
+        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
+          <div class="max-w-2xl">
+            <div class="flex items-center gap-3 mb-3">
+              <div class="w-8 h-px bg-[#E67E22]"></div>
+              <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Full catalogue</p>
+              <span class="font-mono text-[10px] text-white/40 tracking-wider">{products.length + freeItems.length} items live</span>
             </div>
-            <h3 class="font-bold text-base text-white/90 leading-snug mb-2">{p.name}</h3>
-            <p class="text-white/45 text-sm leading-relaxed flex-1">{p.sub}</p>
-            <div class="flex items-center justify-between mt-6">
-              <span class="font-black text-xl text-white/95">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
-              <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Enrol &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
+            <h3 class="font-bold text-2xl text-white/90 leading-snug mb-3">
+              All Vihren Labs courses, toolkits and bundles — in one place.
+            </h3>
+            <p class="text-white/50 text-sm leading-relaxed">
+              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads.
+            </p>
+          </div>
+          <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-semibold px-7 py-4 rounded-full text-base group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
+            View full catalogue &rarr;
+          </div>
+        </div>
+      </a>
 
-      <!-- ── COMING SOON · MASTER DATA ACADEMY ───────────────────────── -->
-      <div class="mb-20 rounded-2xl border border-dashed border-[#E67E22]/30 bg-[#E67E22]/[0.02] p-6 sm:p-8">
+      <!-- ── COMING SOON · MASTER DATA ACADEMY (roadmap signal, not inventory) ─── -->
+      <div class="rounded-2xl border border-dashed border-[#E67E22]/30 bg-[#E67E22]/[0.02] p-6 sm:p-8">
         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div class="max-w-2xl">
             <div class="flex items-center gap-3 mb-3">
@@ -300,55 +300,6 @@ import { products, freeItems } from '../data/products';
           </a>
         </div>
       </div>
-
-      <!-- ── FREE TO TRY ─────────────────────────────────────────────── -->
-      <div class="mb-6 flex items-baseline gap-3">
-        <div class="w-8 h-px bg-[#E67E22]"></div>
-        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Free to try</p>
-        <span class="font-mono text-[10px] text-white/30 tracking-wider">{freeItems.length} free</span>
-      </div>
-      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
-        Two free downloads to see the operator voice before paying for anything. The brand manifesto · plus the four cutover-week comms templates every S/4HANA programme needs.
-      </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
-        {freeItems.map(p => (
-          <a href={p.url} target="_blank" rel="noopener noreferrer"
-             class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/40 transition-colors bg-[#E67E22]/[0.03]">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
-            </div>
-            <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
-            <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
-            <div class="flex items-center justify-between mt-6">
-              <span class="font-black text-xl text-white/90">{p.price}</span>
-              <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-
-      <!-- ── SEE FULL CATALOG CTA — line-grouped toolkits moved to /products ── -->
-      <a href="/products"
-         class="group block rounded-2xl border border-white/8 bg-white/[0.02] hover:border-[#E67E22]/30 transition-colors p-8 sm:p-10">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div class="max-w-2xl">
-            <div class="flex items-center gap-3 mb-3">
-              <div class="w-8 h-px bg-white/30 group-hover:bg-[#E67E22] transition-colors"></div>
-              <p class="font-mono text-white/60 text-xs tracking-[0.2em] uppercase group-hover:text-[#E67E22] transition-colors">Full catalogue</p>
-              <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => p.tier !== 'course').length} workbooks · playbooks · bundles</span>
-            </div>
-            <h3 class="font-bold text-2xl text-white/90 leading-snug mb-3">
-              All Vihren Labs toolkits, grouped by product line
-            </h3>
-            <p class="text-white/45 text-sm leading-relaxed">
-              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · Transformation & SSC/GBS · Regulatory & Compliance. Workbooks, playbooks, and operator-pack bundles in one place.
-            </p>
-          </div>
-          <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/15 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-6 py-3 rounded-full text-sm group-hover:bg-[#E67E22]/25 transition-colors whitespace-nowrap">
-            View full catalogue &rarr;
-          </div>
-        </div>
-      </a>
 
     </div>
   </section>
