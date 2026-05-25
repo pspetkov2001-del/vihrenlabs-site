@@ -327,7 +327,7 @@ const products = [
   <!-- ═══ AVAILABLE NOW ═══════════════════════════════════════════════ -->
   <section class="py-24 px-6 border-t border-white/5">
     <div class="max-w-6xl mx-auto">
-      <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
+      <div class="flex items-end justify-between mb-16 flex-wrap gap-4">
         <div>
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-3">Available now</p>
           <h2 class="font-black text-3xl sm:text-4xl leading-tight">First products. Live today.</h2>
@@ -338,6 +338,41 @@ const products = [
         </a>
       </div>
 
+      <!-- ── COURSES ─────────────────────────────────────────────────── -->
+      <div class="mb-6 flex items-baseline gap-3">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Courses · 10 modules each · self-paced</p>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => p.tag.startsWith('Course')).length} live</span>
+      </div>
+      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
+        Full operator curriculum — 10 modules per course, each with playbook + exercises + workbook + visual one-pagers + capstone. Built from 15 years inside enterprise IT.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
+        {products.filter(p => p.tag.startsWith('Course')).map(p => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+             class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/50 transition-colors bg-[#E67E22]/[0.03]">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+            </div>
+            <h3 class="font-bold text-base text-white/90 leading-snug mb-2">{p.name}</h3>
+            <p class="text-white/45 text-sm leading-relaxed flex-1">{p.sub}</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-black text-xl text-white/95">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
+              <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Enrol &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- ── TOOLKITS · PLAYBOOKS · BUNDLES ──────────────────────────── -->
+      <div class="mb-6 flex items-baseline gap-3">
+        <div class="w-8 h-px bg-white/30"></div>
+        <p class="font-mono text-white/60 text-xs tracking-[0.2em] uppercase">Workbooks · playbooks · bundles</p>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => !p.tag.startsWith('Course')).length + 1} live</span>
+      </div>
+      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
+        Standalone tools and bundles — Excel workbooks, playbook ebooks, assessment frameworks, comms kits and operator packs. Buy individually, or as bundled operator's packs.
+      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
         <!-- T-029 Free manifesto -->
@@ -354,7 +389,7 @@ const products = [
           </div>
         </a>
 
-        {products.map(p => (
+        {products.filter(p => !p.tag.startsWith('Course')).map(p => (
           <a href={p.url} target="_blank" rel="noopener noreferrer"
              class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
             <div class="flex items-center gap-2 mb-4">
