@@ -1,0 +1,169 @@
+---
+import Base from '../layouts/Base.astro';
+import { products, freeItems, lineGroups } from '../data/products';
+---
+
+<Base
+  title="Products · Vihren Labs"
+  description="Vihren Labs full catalogue — courses, workbooks, playbooks and operator bundles for procurement, programme delivery, SAP, master data, transformation, and EU regulatory compliance."
+>
+  <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="relative px-6 py-24 sm:py-32 border-b border-white/5 overflow-hidden">
+    <!-- Radial glow background -->
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full"
+           style="background: radial-gradient(ellipse at center, rgba(30,61,89,0.5) 0%, rgba(8,14,20,0) 70%);">
+      </div>
+    </div>
+
+    <div class="relative max-w-6xl mx-auto">
+      <!-- Eyebrow -->
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Products</span>
+      </div>
+
+      <h1 class="font-black text-4xl sm:text-5xl lg:text-6xl leading-[0.95] tracking-tight mb-6">
+        The full Vihren Labs catalogue.
+      </h1>
+
+      <p class="text-white/50 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
+        {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads — grouped by product line. Operator-grade templates for procurement, SAP migrations, EU regulatory compliance, master data, and shared services transformation.
+      </p>
+
+      <div class="flex flex-wrap gap-3 items-center">
+        <a href="/"
+           class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-6 py-3 rounded-full text-sm transition-colors">
+          &larr; Back to home
+        </a>
+        <a href="https://vihrenlabs.gumroad.com"
+           target="_blank" rel="noopener noreferrer"
+           class="inline-flex items-center justify-center gap-2 font-mono text-xs text-white/30 hover:text-[#E67E22] transition-colors tracking-wider uppercase border border-white/8 px-5 py-2.5 rounded-full">
+          View all in Gumroad shop &rarr;
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ COURSES ════════════════════════════════════════════════════════ -->
+  <section class="py-20 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-6 flex items-baseline gap-3 flex-wrap">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Courses · 10 modules each · self-paced</p>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => p.tier === 'course').length} live</span>
+      </div>
+      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
+        Full operator curriculum — 10 modules per course, each with playbook + exercises + workbook + visual one-pagers + capstone. Built from 15 years inside enterprise IT.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {products.filter(p => p.tier === 'course').map(p => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+             class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/50 transition-colors bg-[#E67E22]/[0.03]">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+            </div>
+            <h3 class="font-bold text-base text-white/90 leading-snug mb-2">{p.name}</h3>
+            <p class="text-white/45 text-sm leading-relaxed flex-1">{p.sub}</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-black text-xl text-white/95">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
+              <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Enrol &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FREE TO TRY ═══════════════════════════════════════════════════ -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-6 flex items-baseline gap-3 flex-wrap">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Free to try</p>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{freeItems.length} free</span>
+      </div>
+      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
+        Two free downloads to see the operator voice before paying for anything. The brand manifesto · plus the four cutover-week comms templates every S/4HANA programme needs.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {freeItems.map(p => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+             class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/40 transition-colors bg-[#E67E22]/[0.03]">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+            </div>
+            <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
+            <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-black text-xl text-white/90">{p.price}</span>
+              <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ LINE-GROUPED CATALOGUE ════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-[#0A1520] border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-12">
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-3">By product line</p>
+        <h2 class="font-black text-3xl sm:text-4xl leading-tight">Workbooks · playbooks · bundles</h2>
+        <p class="text-white/40 text-sm max-w-2xl mt-4 leading-relaxed">
+          Standalone tools and bundles across 6 product lines — buy individually, or as bundled operator's packs.
+        </p>
+      </div>
+
+      {lineGroups.map(group => {
+        const lineProducts = products.filter(p => p.line === group.slug && p.tier !== 'course');
+        if (lineProducts.length === 0) return null;
+        return (
+          <div class="mb-16">
+            <div class="mb-6 flex items-baseline gap-3 flex-wrap">
+              <div class="w-8 h-px bg-white/30"></div>
+              <p class="font-mono text-white/60 text-xs tracking-[0.2em] uppercase">{group.title}</p>
+              <span class="font-mono text-[10px] text-white/30 tracking-wider">{lineProducts.length} live</span>
+            </div>
+            <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">{group.sub}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {lineProducts.map(p => (
+                <a href={p.url} target="_blank" rel="noopener noreferrer"
+                   class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+                  <div class="flex items-center gap-2 mb-4">
+                    <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+                    {p.tier === 'bundle' && <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">Bundle</span>}
+                  </div>
+                  <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
+                  <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
+                  <div class="flex items-center justify-between mt-6">
+                    <span class="font-black text-xl text-white/90">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
+                    <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
+  </section>
+
+  <!-- ═══ BOTTOM CTA ════════════════════════════════════════════════════ -->
+  <section class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Stay in touch</p>
+      <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-6">
+        New products land every 4-6 weeks.
+      </h2>
+      <p class="text-white/50 text-base leading-relaxed mb-8">
+        Subscribe to The Operator Brief — weekly essays on SAP, master data, procurement, transformation, and EU IT regulation. First-look at new SKUs.
+      </p>
+      <a href="/#newsletter"
+         class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base hover:bg-[#E67E22]/30 transition-colors">
+        Subscribe &rarr;
+      </a>
+    </div>
+  </section>
+</Base>
