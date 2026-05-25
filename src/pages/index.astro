@@ -54,10 +54,14 @@ const lines = [
   },
 ];
 
-// Live products — verified on Gumroad 2026-05-25. Titles/prices per
-// Spreadsheet OS Collection/GUMROAD-LISTING-ACTION-PACK.md.
+// Live products — verified on Gumroad 2026-05-25. Each entry tagged with
+// `line` (product line: procurement | sap | master-data | transformation |
+// regulatory) and `tier` (course | toolkit | bundle) so the render block can
+// group them. New lines = add a new lineMeta entry below.
 const products = [
+  // ─── COURSES ────────────────────────────────────────────────────────
   {
+    line: 'master-data', tier: 'course',
     tag: 'Course · 10 modules',
     name: 'Master Data Excellence — Product & SKU Management',
     sub: '10 modules · 10 workbooks · 6 visual one-pagers · editable maturity heatmap · 25-50 page capstone. The full operator curriculum for product master data — from data model and lifecycle to governance, DQ, architecture, operations and value realization.',
@@ -65,13 +69,17 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/ijyliz',
   },
   {
+    line: 'transformation', tier: 'course',
     tag: 'Course · 10 modules',
     name: "The Transition Operator's Course — SSC, GBS & BPO Transitions",
     sub: '10 modules for running an enterprise transition from kickoff to BAU exit — engagement, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live, hypercare. 18-tab transition management workbook + delivery-execution playbook + 6 visual one-pagers.',
     price: '$499', team: '$999',
     url: 'https://vihrenlabs.gumroad.com/l/iivnut',
   },
+
+  // ─── PROCUREMENT & VENDOR MANAGEMENT ────────────────────────────────
   {
+    line: 'procurement', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'IT Vendor & SaaS Procurement TCO',
     sub: 'Vendor registry, 3-year TCO model, 12-month renewal pipeline, RFP scoring — from the distributor side of the table.',
@@ -79,6 +87,7 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/eujpqc',
   },
   {
+    line: 'procurement', tier: 'toolkit',
     tag: 'Ebook',
     name: 'Vendor-Side IT Procurement — The Playbook',
     sub: '8 chapters on how IT distributors and vendors actually price, discount and renew — and how to negotiate against it.',
@@ -86,13 +95,17 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/ovyxjl',
   },
   {
-    tag: 'Starter pack',
-    name: 'EU AI Act SME Compliance Starter',
-    sub: 'Article 50 transparency tracker, high-risk register, deployer readiness assessment. Enforcement: 2 Aug 2026.',
-    price: '€149', team: '€249',
-    url: 'https://vihrenlabs.gumroad.com/l/rqems',
+    line: 'procurement', tier: 'bundle',
+    tag: 'Operator pack',
+    name: "Procurement Operator's Pack",
+    sub: 'IT Vendor TCO + Procurement Playbook + bundle-exclusive Renewal Negotiation Cheat-Sheet. The full IT-procurement operator kit.',
+    price: '$69', team: '',
+    url: 'https://vihrenlabs.gumroad.com/l/qeeja',
   },
+
+  // ─── SAP / ERP OPERATIONS ──────────────────────────────────────────
   {
+    line: 'sap', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'SAP S/4HANA Migration Cutover Excel',
     sub: '52-check readiness matrix, 46-step cutover run sheet, hypercare runbook. What breaks at 3 AM.',
@@ -100,6 +113,7 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/fsslk',
   },
   {
+    line: 'sap', tier: 'toolkit',
     tag: 'Playbook ebook',
     name: "SAP S/4HANA Migration Playbook",
     sub: "The operator's guide beneath the workbook — phase gates, failure modes, the cutover-week methodology.",
@@ -107,6 +121,17 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/bsxhb',
   },
   {
+    line: 'sap', tier: 'bundle',
+    tag: 'Operator pack',
+    name: 'SAP Migration Operator\'s Pack',
+    sub: 'The complete SAP S/4HANA migration kit — cutover workbook + playbook ebook + comms templates. The bundle a real cutover needs.',
+    price: '$129', team: '$249',
+    url: 'https://vihrenlabs.gumroad.com/l/yjebue',
+  },
+
+  // ─── MASTER DATA OPERATIONS ────────────────────────────────────────
+  {
+    line: 'master-data', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'Master Data Quality Audit Workbook',
     sub: '75 named SAP Master Data Management quality checks, field-level scoring, defect log and remediation tracker.',
@@ -114,6 +139,7 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/znhthm',
   },
   {
+    line: 'master-data', tier: 'toolkit',
     tag: 'Assessment',
     name: 'Master Data Management Maturity Assessment',
     sub: '78 anchored questions across 5 domains — a scored, banded read on master-data maturity.',
@@ -121,6 +147,7 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/nwbvrn',
   },
   {
+    line: 'master-data', tier: 'toolkit',
     tag: 'Playbook',
     name: 'MDG Operating Model Playbook',
     sub: 'Data owner + steward roles, RACI and governance-forum design — how to stand up an SAP MDG operating model.',
@@ -128,25 +155,62 @@ const products = [
     url: 'https://vihrenlabs.gumroad.com/l/qwlgi',
   },
   {
-    tag: 'Operator pack',
-    name: 'SAP Migration Operator\'s Pack',
-    sub: 'The complete SAP S/4HANA migration kit — cutover workbook + playbook ebook + comms templates. The bundle a real cutover needs.',
-    price: '$129', team: '$249',
-    url: 'https://vihrenlabs.gumroad.com/l/yjebue',
-  },
-  {
+    line: 'master-data', tier: 'bundle',
     tag: 'Operator pack',
     name: 'Master Data Operator\'s Pack',
     sub: 'Audit workbook + maturity assessment + governance playbook — the full master-data operating toolkit, bundled.',
     price: '$179', team: '$299',
     url: 'https://vihrenlabs.gumroad.com/l/oocvu',
   },
+
+  // ─── TRANSFORMATION & SSC/GBS ──────────────────────────────────────
   {
+    line: 'transformation', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'Transition Management Operator\'s Workbook',
     sub: 'Run an offshoring, SSC or BPO transition end to end — 18-tab Excel workbook + 12-phase delivery playbook + SOP + engagement templates. The standalone toolkit beneath Course 01.',
     price: '$179', team: '$349',
     url: 'https://vihrenlabs.gumroad.com/l/ehmnt',
+  },
+
+  // ─── REGULATORY & COMPLIANCE ───────────────────────────────────────
+  {
+    line: 'regulatory', tier: 'toolkit',
+    tag: 'Starter pack',
+    name: 'EU AI Act SME Compliance Starter',
+    sub: 'Article 50 transparency tracker, high-risk register, deployer readiness assessment. Enforcement: 2 Aug 2026.',
+    price: '€149', team: '€249',
+    url: 'https://vihrenlabs.gumroad.com/l/rqems',
+  },
+];
+
+// Line metadata — display order follows hero eyebrow ordering. To add a new
+// line: append here AND tag the relevant products.line above.
+const lineGroups = [
+  {
+    slug: 'procurement',
+    title: 'Procurement & Vendor Management',
+    sub: 'Procurement-side IT operations — vendor TCO, contract leverage, the discount stack. From the distributor side of the table.',
+  },
+  {
+    slug: 'sap',
+    title: 'SAP / ERP Operations',
+    sub: 'S/4HANA migration governance, cutover discipline, the operator stack for the December 2027 ECC end-of-maintenance deadline.',
+  },
+  {
+    slug: 'master-data',
+    title: 'Master Data Operations',
+    sub: 'From product master data to data quality engineering and MDM operating models — Course 02 plus 3 standalone toolkits and the operator bundle.',
+  },
+  {
+    slug: 'transformation',
+    title: 'Transformation & SSC/GBS',
+    sub: 'Offshoring, GBS rollouts, and BPO transitions — from kickoff to BAU exit. Course 01 plus the standalone $179 workbook.',
+  },
+  {
+    slug: 'regulatory',
+    title: 'Regulatory & Compliance',
+    sub: 'EU regulatory toolkits — AI Act, DORA, GDPR — built operator-first, not legal-first.',
   },
 ];
 
@@ -229,7 +293,7 @@ const freeItems = [
           class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base hover:bg-[#E67E22]/30 transition-colors"
         >
           <span class="w-2 h-2 rounded-full bg-[#E67E22] animate-pulse flex-shrink-0"></span>
-          15 products live now on Gumroad
+          16 products live now on Gumroad
         </a>
         <a
           href="/about"
@@ -361,13 +425,13 @@ const freeItems = [
       <div class="mb-6 flex items-baseline gap-3">
         <div class="w-8 h-px bg-[#E67E22]"></div>
         <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Courses · 10 modules each · self-paced</p>
-        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => p.tag.startsWith('Course')).length} live</span>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => p.tier === 'course').length} live</span>
       </div>
       <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
         Full operator curriculum — 10 modules per course, each with playbook + exercises + workbook + visual one-pagers + capstone. Built from 15 years inside enterprise IT.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-20">
-        {products.filter(p => p.tag.startsWith('Course')).map(p => (
+        {products.filter(p => p.tier === 'course').map(p => (
           <a href={p.url} target="_blank" rel="noopener noreferrer"
              class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/50 transition-colors bg-[#E67E22]/[0.03]">
             <div class="flex items-center gap-2 mb-4">
@@ -407,18 +471,16 @@ const freeItems = [
         </div>
       </div>
 
-      <!-- ── TOOLKITS · PLAYBOOKS · BUNDLES ──────────────────────────── -->
+      <!-- ── FREE TO TRY ─────────────────────────────────────────────── -->
       <div class="mb-6 flex items-baseline gap-3">
-        <div class="w-8 h-px bg-white/30"></div>
-        <p class="font-mono text-white/60 text-xs tracking-[0.2em] uppercase">Workbooks · playbooks · bundles</p>
-        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => !p.tag.startsWith('Course')).length + freeItems.length} live · 2 free</span>
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Free to try</p>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{freeItems.length} free</span>
       </div>
       <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
-        Two free downloads to try the brand voice first, then standalone tools and bundles — Excel workbooks, playbook ebooks, assessment frameworks and operator packs. Buy individually, or as bundled operator's packs.
+        Two free downloads to see the operator voice before paying for anything. The brand manifesto · plus the four cutover-week comms templates every S/4HANA programme needs.
       </p>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-
-        <!-- Free items — rendered FIRST so they sit visually adjacent at every breakpoint -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-20">
         {freeItems.map(p => (
           <a href={p.url} target="_blank" rel="noopener noreferrer"
              class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/40 transition-colors bg-[#E67E22]/[0.03]">
@@ -433,23 +495,41 @@ const freeItems = [
             </div>
           </a>
         ))}
-
-        {products.filter(p => !p.tag.startsWith('Course')).map(p => (
-          <a href={p.url} target="_blank" rel="noopener noreferrer"
-             class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
-            <div class="flex items-center gap-2 mb-4">
-              <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
-            </div>
-            <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
-            <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
-            <div class="flex items-center justify-between mt-6">
-              <span class="font-black text-xl text-white/90">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
-              <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
-            </div>
-          </a>
-        ))}
-
       </div>
+
+      <!-- ── LINE-GROUPED TOOLKITS ───────────────────────────────────── -->
+      {lineGroups.map(group => {
+        const lineProducts = products.filter(p => p.line === group.slug && p.tier !== 'course');
+        if (lineProducts.length === 0) return null;
+        return (
+          <div class="mb-16">
+            <div class="mb-6 flex items-baseline gap-3 flex-wrap">
+              <div class="w-8 h-px bg-white/30"></div>
+              <p class="font-mono text-white/60 text-xs tracking-[0.2em] uppercase">{group.title}</p>
+              <span class="font-mono text-[10px] text-white/30 tracking-wider">{lineProducts.length} live</span>
+            </div>
+            <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">{group.sub}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              {lineProducts.map(p => (
+                <a href={p.url} target="_blank" rel="noopener noreferrer"
+                   class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+                  <div class="flex items-center gap-2 mb-4">
+                    <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+                    {p.tier === 'bundle' && <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">Bundle</span>}
+                  </div>
+                  <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
+                  <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
+                  <div class="flex items-center justify-between mt-6">
+                    <span class="font-black text-xl text-white/90">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
+                    <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+
     </div>
   </section>
 
