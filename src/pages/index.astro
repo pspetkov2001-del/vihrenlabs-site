@@ -141,8 +141,20 @@ const products = [
     price: '$179', team: '$299',
     url: 'https://vihrenlabs.gumroad.com/l/oocvu',
   },
+];
+
+// Free items rendered FIRST in the toolkits grid (right after the hand-coded
+// Operator Standard manifesto) — paired for visual clarity.
+const freeItems = [
   {
-    tag: 'Comms kit',
+    tag: 'Free PDF',
+    name: 'The Vihren Labs Operator Standard',
+    sub: 'The 7 operating principles behind every template in the catalogue.',
+    price: '$0', team: '',
+    url: 'https://vihrenlabs.gumroad.com/l/bwzklq',
+  },
+  {
+    tag: 'Free · PWYW',
     name: 'SAP Cutover Comms Kit',
     sub: 'Pre-cutover, go-live, hypercare and incident announcement templates — the comms templates a real cutover sends. Pay what you want.',
     price: 'Free+', team: '',
@@ -392,26 +404,28 @@ const products = [
       <div class="mb-6 flex items-baseline gap-3">
         <div class="w-8 h-px bg-white/30"></div>
         <p class="font-mono text-white/60 text-xs tracking-[0.2em] uppercase">Workbooks · playbooks · bundles</p>
-        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => !p.tag.startsWith('Course')).length + 1} live</span>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => !p.tag.startsWith('Course')).length + freeItems.length} live · 2 free</span>
       </div>
       <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
-        Standalone tools and bundles — Excel workbooks, playbook ebooks, assessment frameworks, comms kits and operator packs. Buy individually, or as bundled operator's packs.
+        Two free downloads to try the brand voice first, then standalone tools and bundles — Excel workbooks, playbook ebooks, assessment frameworks and operator packs. Buy individually, or as bundled operator's packs.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
 
-        <!-- T-029 Free manifesto -->
-        <a href="https://vihrenlabs.gumroad.com/l/bwzklq" target="_blank" rel="noopener noreferrer"
-           class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
-          <div class="flex items-center gap-2 mb-4">
-            <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">Free PDF</span>
-          </div>
-          <h3 class="font-bold text-base text-white/80 leading-snug mb-2">The Vihren Labs Operator Standard</h3>
-          <p class="text-white/35 text-sm leading-relaxed flex-1">The 7 operating principles behind every template in the catalogue.</p>
-          <div class="flex items-center justify-between mt-6">
-            <span class="font-black text-xl text-white/90">$0</span>
-            <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
-          </div>
-        </a>
+        <!-- Free items — rendered FIRST so they sit visually adjacent at every breakpoint -->
+        {freeItems.map(p => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+             class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/40 transition-colors bg-[#E67E22]/[0.03]">
+            <div class="flex items-center gap-2 mb-4">
+              <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+            </div>
+            <h3 class="font-bold text-base text-white/80 leading-snug mb-2">{p.name}</h3>
+            <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
+            <div class="flex items-center justify-between mt-6">
+              <span class="font-black text-xl text-white/90">{p.price}</span>
+              <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+            </div>
+          </a>
+        ))}
 
         {products.filter(p => !p.tag.startsWith('Course')).map(p => (
           <a href={p.url} target="_blank" rel="noopener noreferrer"
