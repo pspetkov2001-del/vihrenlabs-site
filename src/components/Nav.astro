@@ -11,7 +11,18 @@ const currentPath = Astro.url.pathname;
       <span class="text-white font-semibold text-base tracking-tight">Vihren Labs</span>
     </a>
 
-    <nav class="flex items-center gap-8">
+    <nav class="flex items-center gap-6 sm:gap-8">
+      <a
+        href="/products"
+        class:list={[
+          'text-sm font-medium transition-colors',
+          currentPath === '/products' || currentPath === '/products/'
+            ? 'text-[#E67E22]'
+            : 'text-white/50 hover:text-white'
+        ]}
+      >
+        Products
+      </a>
       <a
         href="/about"
         class:list={[
