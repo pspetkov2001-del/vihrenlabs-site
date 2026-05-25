@@ -1,13 +1,28 @@
 /**
  * POST /api/subscribe
  *
- * Adds a subscriber to Resend Audiences and sends a welcome email.
+ * Adds a subscriber to The Operator Brief newsletter and triggers
+ * welcome email (which delivers the free Operator Standard PDF).
  *
- * Required env vars (set in Vercel → Settings → Environment Variables):
- *   RESEND_API_KEY        — from resend.com → API Keys
- *   RESEND_AUDIENCE_ID    — from resend.com → Audiences → your audience ID
- *   RESEND_FROM_EMAIL     — verified sending address, e.g. newsletter@vihrenlabs.com
- *                           (leave unset to use Resend's test address while verifying domain)
+ * Provider routing — preferred → fallback → silent no-op:
+ *   1. If BEEHIIV_API_KEY + BEEHIIV_PUBLICATION_ID set → use Beehiiv
+ *      (canonical per D-023; Beehiiv welcome sequence W1 delivers the PDF).
+ *   2. Else if RESEND_API_KEY set → use Resend (legacy interim).
+ *   3. Else → silently succeed (form UX not broken during setup).
+ *
+ * --- BEEHIIV SETUP (canonical, D-023) ---
+ * Required env vars in Vercel → Settings → Environment Variables:
+ *   BEEHIIV_API_KEY           — beehiiv.com → Settings → Integrations → API → create key
+ *   BEEHIIV_PUBLICATION_ID    — Settings → Publication → ID at top, format pub_xxxxxxxx
+ *
+ * The PDF delivery happens via Beehiiv's welcome sequence (configured in the
+ * Beehiiv UI per docs/beehiiv-setup-spec.md §Step 4 W1 email). This endpoint
+ * just creates the subscription; Beehiiv handles email.
+ *
+ * --- RESEND SETUP (legacy fallback only) ---
+ *   RESEND_API_KEY            — resend.com → API Keys
+ *   RESEND_AUDIENCE_ID        — resend.com → Audiences → your audience ID
+ *   RESEND_FROM_EMAIL         — verified sending address
  */
 
 import { Resend } from 'resend';
@@ -24,6 +39,7 @@ const WELCOME_HTML = `<!DOCTYPE html>
   .logo{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;background:#E67E22;border-radius:8px;font-weight:900;font-size:20px;color:#fff;margin-bottom:32px}
   h1{font-size:32px;font-weight:900;margin:0 0 20px;letter-spacing:-0.5px}
   p{color:rgba(255,255,255,0.55);font-size:16px;line-height:1.7;margin:0 0 16px}
+  .cta{display:inline-block;background:#E67E22;color:#fff;font-weight:700;text-decoration:none;padding:14px 28px;border-radius:999px;margin:16px 0 8px}
   .divider{width:60px;height:3px;background:#E67E22;border:none;margin:32px 0}
   .sig{color:rgba(255,255,255,0.7);font-size:15px}
   .footer{margin-top:48px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.06)}
@@ -34,8 +50,10 @@ const WELCOME_HTML = `<!DOCTYPE html>
 <body>
 <div class="wrap">
   <div class="logo">V</div>
-  <h1>You're in.</h1>
-  <p>One essay a week from inside enterprise IT — SAP migrations, vendor procurement, EU regulatory compliance, master data. Concrete, vendor-side-honest, no buzzwords.</p>
+  <h1>You're in. Here's your PDF.</h1>
+  <p>The Vihren Labs Operator Standard — 7 principles for running enterprise IT without the consulting-industry fluff.</p>
+  <a class="cta" href="https://vihrenlabs.gumroad.com/l/bwzklq">Download The Operator Standard (free) &rarr;</a>
+  <p style="margin-top:24px">Then: one essay a week from inside enterprise IT — SAP migrations, vendor procurement, EU regulatory compliance, master data. Concrete, vendor-side-honest, no buzzwords.</p>
   <p>First essay lands soon.</p>
   <hr class="divider" />
   <p class="sig">— Petko<br />Vihren Labs</p>
@@ -46,6 +64,58 @@ const WELCOME_HTML = `<!DOCTYPE html>
 </div>
 </body>
 </html>`;
+
+async function subscribeViaBeehiiv(email, apiKey, publicationId) {
+  // Beehiiv Subscriptions API — https://developers.beehiiv.com/api-reference/subscriptions/create
+  // Creates OR reactivates; welcome email + welcome sequence W1 (which links the PDF)
+  // are configured in the Beehiiv UI per docs/beehiiv-setup-spec.md.
+  const resp = await fetch(
+    `https://api.beehiiv.com/v2/publications/${publicationId}/subscriptions`,
+    {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        email,
+        reactivate_existing: true,
+        send_welcome_email: true,
+        utm_source: 'vihrenlabs.com',
+        utm_medium: 'landing-page',
+        utm_campaign: 'operator-standard-leadmagnet',
+      }),
+    }
+  );
+
+  if (!resp.ok) {
+    const text = await resp.text().catch(() => '');
+    throw new Error(`Beehiiv ${resp.status}: ${text.slice(0, 200)}`);
+  }
+  return resp.json();
+}
+
+async function subscribeViaResend(email, apiKey) {
+  // Legacy path — kept as fallback until Beehiiv env vars land in Vercel.
+  const resend = new Resend(apiKey);
+  const audienceId = process.env.RESEND_AUDIENCE_ID;
+  const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev';
+
+  if (audienceId) {
+    await resend.contacts.create({
+      email,
+      audienceId,
+      unsubscribed: false,
+    });
+  }
+
+  await resend.emails.send({
+    from: `Petko @ Vihren Labs <${fromEmail}>`,
+    to: email,
+    subject: "You're on the list — Vihren Labs",
+    html: WELCOME_HTML,
+  });
+}
 
 export default async function handler(req, res) {
   // CORS preflight
@@ -69,41 +139,32 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Please enter a valid email address.' });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    // Newsletter not yet configured — silently succeed in production
-    // so the form UX isn't broken while env vars are being set up.
-    console.warn('RESEND_API_KEY not set — subscriber not recorded:', email);
-    return res.status(200).json({ success: true });
-  }
-
-  const resend = new Resend(apiKey);
-  const audienceId = process.env.RESEND_AUDIENCE_ID;
-  const fromEmail = process.env.RESEND_FROM_EMAIL ?? 'onboarding@resend.dev';
+  const beehiivKey = process.env.BEEHIIV_API_KEY;
+  const beehiivPub = process.env.BEEHIIV_PUBLICATION_ID;
+  const resendKey = process.env.RESEND_API_KEY;
 
   try {
-    // 1. Add to Resend Audiences (deduplicated — safe to call multiple times)
-    if (audienceId) {
-      await resend.contacts.create({
-        email,
-        audienceId,
-        unsubscribed: false,
-      });
+    // Provider priority: Beehiiv (canonical) → Resend (legacy) → silent succeed.
+    if (beehiivKey && beehiivPub) {
+      await subscribeViaBeehiiv(email, beehiivKey, beehiivPub);
+      return res.status(200).json({ success: true, provider: 'beehiiv' });
     }
 
-    // 2. Send welcome email
-    await resend.emails.send({
-      from: `Petko @ Vihren Labs <${fromEmail}>`,
-      to: email,
-      subject: "You're on the list — Vihren Labs",
-      html: WELCOME_HTML,
-    });
+    if (resendKey) {
+      await subscribeViaResend(email, resendKey);
+      return res.status(200).json({ success: true, provider: 'resend' });
+    }
 
-    return res.status(200).json({ success: true });
+    // Neither provider configured — silently succeed so the form UX isn't
+    // broken during initial setup. Subscriber is logged but not recorded.
+    console.warn('No newsletter provider configured (BEEHIIV_API_KEY or RESEND_API_KEY) — subscriber dropped:', email);
+    return res.status(200).json({ success: true, provider: 'none' });
   } catch (err) {
     console.error('Subscribe error:', err);
-    // Surface Resend validation errors; hide internal details
-    const msg = err?.message?.includes('Invalid') ? err.message : 'Something went wrong. Try again in a moment.';
+    // Surface validation errors; hide internal details
+    const msg = err?.message?.includes('Invalid') || err?.message?.includes('Beehiiv 4')
+      ? err.message
+      : 'Something went wrong. Try again in a moment.';
     return res.status(500).json({ error: msg });
   }
 }

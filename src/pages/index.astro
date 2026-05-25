@@ -304,49 +304,45 @@ import { products, freeItems } from '../data/products';
     </div>
   </section>
 
-  <!-- ═══ FREE LEAD MAGNET ══════════════════════════════════════════════ -->
-  <section class="py-28 px-6">
+  <!-- ═══ FREE LEAD MAGNET + NEWSLETTER (merged 2026-05-25) ═════════════
+       Single consolidated funnel: the Operator Standard PDF is the bait,
+       the email is the price. Subscribe → Beehiiv welcome sequence W1
+       delivers the PDF link. See docs/beehiiv-setup-spec.md. ═══════════ -->
+  <section id="newsletter" class="py-28 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="relative rounded-3xl overflow-hidden border border-white/8 p-10 sm:p-16"
            style="background: linear-gradient(135deg, rgba(30,61,89,0.4) 0%, rgba(8,14,20,0.9) 60%);">
         <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
              style="background: radial-gradient(ellipse at top right, #E67E22, transparent 70%);"
              aria-hidden="true"></div>
-        <div class="relative max-w-xl">
-          <div class="inline-flex items-center gap-2 bg-[#E67E22]/10 border border-[#E67E22]/20 rounded-full px-4 py-1.5 mb-8">
-            <span class="text-[#E67E22] font-mono text-xs tracking-widest uppercase">Free</span>
+        <div class="relative grid lg:grid-cols-5 gap-10 items-center">
+
+          <!-- Left: the offer -->
+          <div class="lg:col-span-3 max-w-xl">
+            <div class="inline-flex items-center gap-2 bg-[#E67E22]/10 border border-[#E67E22]/20 rounded-full px-4 py-1.5 mb-8">
+              <span class="text-[#E67E22] font-mono text-xs tracking-widest uppercase">Free · for operators</span>
+            </div>
+            <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-6">
+              The Vihren Labs<br />Operator Standard
+            </h2>
+            <p class="text-white/55 text-lg leading-relaxed mb-4">
+              7 principles for running enterprise IT without the consulting-industry fluff. The foundation everything else is built on.
+            </p>
+            <p class="text-white/40 text-base leading-relaxed">
+              Plus <strong class="text-white/70">The Operator Brief</strong> — one essay a week from inside enterprise IT. SAP migrations, vendor procurement, EU regulatory, master data. Vendor-side-honest, no buzzwords.
+            </p>
           </div>
-          <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-6">
-            The Vihren Labs<br />Operator Standard
-          </h2>
-          <p class="text-white/50 text-lg leading-relaxed mb-10">
-            7 principles for running enterprise IT without the consulting-industry fluff. The foundation everything else is built on.
-          </p>
-          <a
-            href="https://vihrenlabs.gumroad.com/l/bwzklq"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="inline-flex items-center gap-3 bg-white text-[#080E14] font-bold px-8 py-4 rounded-full hover:bg-white/90 transition-colors text-base"
-          >
-            Get it free on Gumroad &rarr;
-          </a>
+
+          <!-- Right: the signup form -->
+          <div class="lg:col-span-2">
+            <div class="bg-white/[0.03] border border-white/8 rounded-2xl p-6 sm:p-7">
+              <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Get the PDF →</p>
+              <NewsletterForm align="left" cta="Get the PDF" />
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- ═══ NEWSLETTER ════════════════════════════════════════════════════ -->
-  <section id="newsletter" class="py-28 px-6 border-t border-white/5 bg-[#0A1520]">
-    <div class="max-w-2xl mx-auto text-center">
-      <p class="font-mono text-orange text-xs tracking-[0.2em] uppercase mb-6">Operator field notes</p>
-      <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-4 text-grey-light">
-        Real lessons from real cutover nights.
-      </h2>
-      <p class="text-white/40 text-lg mb-10 max-w-lg mx-auto">
-        One essay a week from inside enterprise IT — vendor procurement, programme delivery,
-        SAP migrations, master data, SSC/GBS, EU regulatory. Concrete, vendor-side-honest, no buzzwords.
-      </p>
-      <NewsletterForm />
     </div>
   </section>
 </Base>

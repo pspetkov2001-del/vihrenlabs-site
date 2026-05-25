@@ -2,26 +2,25 @@
 /**
  * Self-managed newsletter form → POST /api/subscribe (Vercel serverless).
  *
- * To activate end-to-end:
- *  1. Create a free Resend account at resend.com
- *  2. Settings → API Keys → create one, copy it
- *  3. Resend → Audiences → create "Vihren Labs" audience, copy the ID
- *  4. Verify your sending domain (resend.com → Domains → vihrenlabs.com)
- *     While verifying, leave RESEND_FROM_EMAIL unset to use the test address.
- *  5. In Vercel → Settings → Environment Variables add:
- *       RESEND_API_KEY      = re_xxxxxxxxxxxx
- *       RESEND_AUDIENCE_ID  = aud_xxxxxxxxxxxx
- *       RESEND_FROM_EMAIL   = newsletter@vihrenlabs.com   (after domain verified)
- *  6. Redeploy. Done.
+ * Provider-aware backend:
+ *  - Beehiiv (canonical per D-023) — set BEEHIIV_API_KEY + BEEHIIV_PUBLICATION_ID in Vercel.
+ *    Welcome sequence W1 delivers the free Operator Standard PDF.
+ *  - Resend (legacy fallback) — set RESEND_API_KEY + RESEND_AUDIENCE_ID + RESEND_FROM_EMAIL.
+ *  - Neither configured → form silently no-ops (UX stays clean during setup).
  *
- * Without env vars the form still renders and submissions return 200
- * (silently no-ops) — so the UX is never broken.
+ * See api/subscribe.js header for full setup steps + Beehiiv migration plan.
+ *
+ * Optional props:
+ *  - align: 'left' (default) | 'center' — text alignment for the helper line
+ *  - cta:   button label (default "Get the PDF →")
  */
+const { align = 'left', cta = 'Get the PDF →' } = Astro.props;
+const helperAlign = align === 'center' ? 'text-center' : 'text-left';
 ---
 
 <form
   id="nl-form"
-  class="w-full max-w-md mx-auto"
+  class="w-full max-w-md"
   novalidate
 >
   <div class="flex flex-col sm:flex-row gap-3">
@@ -39,14 +38,14 @@
       type="submit"
       class="bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-7 py-3.5 rounded-full text-sm transition-colors whitespace-nowrap disabled:opacity-50 disabled:cursor-not-allowed"
     >
-      Subscribe &rarr;
+      {cta}
     </button>
   </div>
 
-  <p id="nl-status" class="text-xs mt-4 text-center h-4" aria-live="polite"></p>
+  <p id="nl-status" class={`text-xs mt-4 h-4 ${helperAlign}`} aria-live="polite"></p>
 
-  <p class="text-white/25 text-xs mt-1 text-center">
-    One essay a week. No spam. Unsubscribe any time.
+  <p class={`text-white/25 text-xs mt-1 ${helperAlign}`}>
+    PDF delivered to your inbox + one essay a week. No spam. Unsubscribe any time.
   </p>
 </form>
 
