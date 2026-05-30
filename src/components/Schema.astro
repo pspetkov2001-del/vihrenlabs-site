@@ -1,0 +1,66 @@
+---
+// Schema.astro — JSON-LD structured data for SEO + GEO/AEO.
+// Always emits Organization + Person (the maker). Accepts an optional `extra`
+// prop (a single JSON-LD node or an array) for page-specific schema:
+// Product on product pages, Article on essays, FAQPage, BreadcrumbList, etc.
+//
+// Added 2026-05-30 (visibility track). Wired into Base.astro <head>.
+// Structured data is how Google builds rich results AND how AI assistants
+// (ChatGPT/Claude/Perplexity/Google AI Mode) parse + cite who you are.
+
+interface Props {
+  extra?: Record<string, any> | Record<string, any>[];
+}
+
+const { extra } = Astro.props;
+
+const organization = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Vihren Labs',
+  url: 'https://vihrenlabs.com',
+  logo: 'https://vihrenlabs.com/og-image.png',
+  description:
+    'Operator-grade templates and playbooks for the enterprise IT stack — SAP S/4HANA migration, master data management, IT procurement, programme delivery, SSC/GBS transformation, and EU regulatory compliance.',
+  email: 'hello@vihrenlabs.com',
+  founder: { '@type': 'Person', name: 'Petko Petkov' },
+  knowsAbout: [
+    'SAP S/4HANA migration',
+    'Master Data Management',
+    'IT vendor procurement',
+    'Enterprise IT programme delivery',
+    'SSC/GBS transitions',
+    'DORA compliance',
+    'EU AI Act compliance',
+  ],
+  sameAs: [] as string[], // add LinkedIn / social URLs when confirmed
+};
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Petko Petkov',
+  url: 'https://vihrenlabs.com/about',
+  jobTitle: 'Enterprise IT Operator',
+  worksFor: { '@type': 'Organization', name: 'Vihren Labs' },
+  description:
+    '15-year enterprise IT operator — SAP S/4HANA migrations, vendor procurement, regulatory compliance rollouts, and shared-services-center transitions. Has sat on both the vendor-distribution and buyer-operator sides of the table.',
+  knowsAbout: [
+    'SAP S/4HANA',
+    'Master Data Management',
+    'IT procurement',
+    'Enterprise transitions',
+    'DORA',
+    'EU AI Act',
+  ],
+};
+
+const extras = extra ? (Array.isArray(extra) ? extra : [extra]) : [];
+const nodes = [organization, person, ...extras];
+---
+
+{
+  nodes.map((node) => (
+    <script type="application/ld+json" set:html={JSON.stringify(node)} />
+  ))
+}

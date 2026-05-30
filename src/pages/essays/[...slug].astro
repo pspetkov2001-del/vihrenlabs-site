@@ -1,0 +1,91 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const essays = await getCollection('essays');
+  return essays.map((essay) => ({
+    params: { slug: essay.slug },
+    props: { essay },
+  }));
+}
+
+const { essay } = Astro.props;
+const { Content } = await essay.render();
+const canonical = `https://vihrenlabs.com/essays/${essay.slug}`;
+
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: essay.data.title,
+  description: essay.data.description,
+  datePublished: essay.data.date,
+  dateModified: essay.data.date,
+  author: { '@type': 'Person', name: 'Petko Petkov', url: 'https://vihrenlabs.com/about' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Vihren Labs',
+    logo: { '@type': 'ImageObject', url: 'https://vihrenlabs.com/og-image.png' },
+  },
+  mainEntityOfPage: canonical,
+  keywords: essay.data.keywords.join(', '),
+  articleSection: essay.data.line,
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Essays', item: 'https://vihrenlabs.com/essays' },
+    { '@type': 'ListItem', position: 2, name: essay.data.title, item: canonical },
+  ],
+};
+---
+
+<Base
+  title={essay.data.title}
+  description={essay.data.description}
+  schema={[articleSchema, breadcrumb]}
+>
+  <article class="px-6 py-20 sm:py-24">
+    <div class="max-w-2xl mx-auto">
+      <nav class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-wider uppercase text-white/30">
+        <a href="/essays" class="hover:text-[#E67E22] transition-colors">Essays</a>
+        <span>/</span>
+        <span class="text-white/50">{essay.data.line}</span>
+      </nav>
+
+      <div class="flex items-center gap-3 mb-5 flex-wrap">
+        <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{essay.data.line}</span>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{essay.data.date}</span>
+      </div>
+
+      <h1 class="font-black text-3xl sm:text-4xl leading-[1.08] tracking-tight mb-8">{essay.data.title}</h1>
+
+      <div class="essay-body text-white/70 text-lg leading-relaxed">
+        <Content />
+      </div>
+
+      <div class="mt-12 pt-8 border-t border-white/10">
+        <p class="text-white/40 text-sm leading-relaxed">
+          Written by Petko Petkov — 15 years inside enterprise IT operations. Vihren Labs
+          publishes operator-grade templates and playbooks for the enterprise IT stack.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-5">
+          <a href="/products" class="inline-flex items-center gap-2 bg-[#E67E22]/15 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-[#E67E22]/25 transition-colors">See the templates &rarr;</a>
+          <a href="/essays" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">More essays</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style is:global>
+  .essay-body p { margin-bottom: 1.25rem; }
+  .essay-body strong { color: #fff; font-weight: 600; }
+  .essay-body ol, .essay-body ul { margin: 0 0 1.25rem 1.25rem; }
+  .essay-body ol { list-style: decimal; }
+  .essay-body ul { list-style: disc; }
+  .essay-body li { margin-bottom: 0.5rem; }
+  .essay-body em { color: rgba(255,255,255,0.85); }
+</style>

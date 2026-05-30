@@ -24,6 +24,17 @@ const currentPath = Astro.url.pathname;
         Products
       </a>
       <a
+        href="/essays"
+        class:list={[
+          'text-sm font-medium transition-colors',
+          currentPath.startsWith('/essays')
+            ? 'text-[#E67E22]'
+            : 'text-white/50 hover:text-white'
+        ]}
+      >
+        Essays
+      </a>
+      <a
         href="/about"
         class:list={[
           'text-sm font-medium transition-colors',

@@ -234,3 +234,22 @@ export const lineGroups: LineGroup[] = [
     sub: 'EU regulatory toolkits — AI Act, DORA, GDPR — built operator-first, not legal-first.',
   },
 ];
+
+// Slugify a product name into a clean, keyword-rich URL segment for the on-site
+// product detail pages (/products/<slug>). Single source of truth — imported by
+// products.astro (card hrefs) and products/[slug].astro (getStaticPaths) so the
+// links and the routes can never drift.
+export function productSlug(name: string): string {
+  return name
+    .toLowerCase()
+    .replace(/['’]/g, '')          // drop apostrophes (Operator's -> operators)
+    .replace(/&/g, ' and ')        // & -> and
+    .replace(/[^a-z0-9]+/g, '-')   // non-alnum -> hyphen
+    .replace(/^-+|-+$/g, '')       // trim hyphens
+    .replace(/-+/g, '-');          // collapse repeats
+}
+
+// The product-line display metadata, keyed for quick lookup on detail pages.
+export const lineBySlug: Record<LineSlug, LineGroup> = Object.fromEntries(
+  lineGroups.map((g) => [g.slug, g]),
+) as Record<LineSlug, LineGroup>;

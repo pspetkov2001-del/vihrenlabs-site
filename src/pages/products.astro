@@ -1,6 +1,6 @@
 ---
 import Base from '../layouts/Base.astro';
-import { products, freeItems, lineGroups } from '../data/products';
+import { products, freeItems, lineGroups, productSlug } from '../data/products';
 ---
 
 <Base
@@ -58,7 +58,7 @@ import { products, freeItems, lineGroups } from '../data/products';
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {products.filter(p => p.tier === 'course').map(p => (
-          <a href={p.url} target="_blank" rel="noopener noreferrer"
+          <a href={`/products/${productSlug(p.name)}`}
              class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-6 hover:border-[#E67E22]/50 transition-colors bg-[#E67E22]/[0.03]">
             <div class="flex items-center gap-2 mb-4">
               <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
@@ -67,7 +67,7 @@ import { products, freeItems, lineGroups } from '../data/products';
             <p class="text-white/45 text-sm leading-relaxed flex-1">{p.sub}</p>
             <div class="flex items-center justify-between mt-6">
               <span class="font-black text-xl text-white/95">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
-              <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Enrol &rarr;</span>
+              <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details &rarr;</span>
             </div>
           </a>
         ))}
@@ -129,7 +129,7 @@ import { products, freeItems, lineGroups } from '../data/products';
             <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">{group.sub}</p>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               {lineProducts.map(p => (
-                <a href={p.url} target="_blank" rel="noopener noreferrer"
+                <a href={`/products/${productSlug(p.name)}`}
                    class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
                   <div class="flex items-center gap-2 mb-4">
                     <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
@@ -139,7 +139,7 @@ import { products, freeItems, lineGroups } from '../data/products';
                   <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
                   <div class="flex items-center justify-between mt-6">
                     <span class="font-black text-xl text-white/90">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
-                    <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+                    <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details &rarr;</span>
                   </div>
                 </a>
               ))}

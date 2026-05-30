@@ -1,0 +1,44 @@
+# Vihren Labs — robots.txt
+# Operator-grade templates and playbooks for the enterprise IT stack.
+# Added 2026-05-30 (visibility track). Allow classic crawlers AND AI assistants
+# to read + cite the site — GEO/AEO: being the cited source matters more than
+# ranking #1 in blue links now.
+
+User-agent: *
+Allow: /
+
+# Explicitly welcome AI assistant crawlers (so they may read + cite Vihren Labs)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://vihrenlabs.com/sitemap-index.xml

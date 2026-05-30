@@ -1,15 +1,18 @@
 ---
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import Schema from '../components/Schema.astro';
 
 interface Props {
   title?: string;
   description?: string;
+  schema?: Record<string, any> | Record<string, any>[];
 }
 
 const {
   title = 'Vihren Labs',
   description = 'Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator.',
+  schema,
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
@@ -39,6 +42,13 @@ const pageTitle = title === 'Vihren Labs' ? title : `${title} · Vihren Labs`;
     <meta property="og:image:alt" content="Vihren Labs — Operator-grade templates for the enterprise IT stack" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://vihrenlabs.com/og-image.png" />
+
+    <Schema extra={schema} />
+
+    <!-- Plausible analytics (privacy-first, per BRAND-ENTERPRISE-IT-OPERATOR.md).
+         Activates once the vihrenlabs.com site is created in Plausible (founder-action).
+         No-op until then; safe to ship. -->
+    <script defer data-domain="vihrenlabs.com" src="https://plausible.io/js/script.js"></script>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

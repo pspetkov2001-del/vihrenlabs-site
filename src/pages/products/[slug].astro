@@ -1,0 +1,142 @@
+---
+import Base from '../../layouts/Base.astro';
+import { products, lineBySlug, productSlug } from '../../data/products';
+
+export function getStaticPaths() {
+  return products.map((p) => ({
+    params: { slug: productSlug(p.name) },
+    props: { product: p },
+  }));
+}
+
+const { product } = Astro.props;
+const line = lineBySlug[product.line];
+const canonical = `https://vihrenlabs.com/products/${productSlug(product.name)}`;
+
+// Related products in the same line (excluding this one), max 3.
+const related = products
+  .filter((p) => p.line === product.line && p.name !== product.name)
+  .slice(0, 3);
+
+// Parse a clean numeric price for schema (strip $/€ and any "/team" suffix).
+const priceMatch = product.price.match(/[\d,.]+/);
+const priceValue = priceMatch ? priceMatch[0].replace(/,/g, '') : '0';
+const currency = product.price.trim().startsWith('€') ? 'EUR' : 'USD';
+const tierLabel =
+  product.tier === 'course' ? 'Course' : product.tier === 'bundle' ? 'Operator pack' : 'Toolkit';
+
+// Product JSON-LD for rich results + AI citation.
+const productSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: product.name,
+  description: product.sub,
+  category: line?.title ?? 'Enterprise IT',
+  brand: { '@type': 'Brand', name: 'Vihren Labs' },
+  url: canonical,
+  offers: {
+    '@type': 'Offer',
+    price: priceValue,
+    priceCurrency: currency,
+    availability: 'https://schema.org/InStock',
+    url: product.url,
+  },
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Products', item: 'https://vihrenlabs.com/products' },
+    { '@type': 'ListItem', position: 2, name: product.name, item: canonical },
+  ],
+};
+---
+
+<Base
+  title={`${product.name} · Vihren Labs`}
+  description={product.sub}
+  schema={[productSchema, breadcrumb]}
+>
+  <section class="relative px-6 py-20 sm:py-28 border-b border-white/5 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full"
+           style="background: radial-gradient(ellipse at center, rgba(30,61,89,0.45) 0%, rgba(8,14,20,0) 70%);"></div>
+    </div>
+
+    <div class="relative max-w-3xl mx-auto">
+      <!-- Breadcrumb -->
+      <nav class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-wider uppercase text-white/30">
+        <a href="/products" class="hover:text-[#E67E22] transition-colors">Products</a>
+        <span>/</span>
+        <span class="text-white/50">{line?.title}</span>
+      </nav>
+
+      <div class="flex items-center gap-2 mb-6">
+        <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{product.tag}</span>
+        <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{tierLabel}</span>
+      </div>
+
+      <h1 class="font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+        {product.name}
+      </h1>
+
+      <p class="text-white/55 text-lg leading-relaxed mb-8">{product.sub}</p>
+
+      <div class="flex flex-wrap items-center gap-4 mb-10">
+        <span class="font-black text-3xl text-white">{product.price}</span>
+        {product.team && (
+          <span class="text-white/40 text-sm">Team licence: {product.team}</span>
+        )}
+      </div>
+
+      <a href={product.url} target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-8 py-4 rounded-full text-base transition-colors glow-btn">
+        Get it on Gumroad &rarr;
+      </a>
+      <p class="text-white/30 text-xs mt-4 font-mono">One-time purchase · instant download · no subscription</p>
+    </div>
+  </section>
+
+  <!-- Line context -->
+  <section class="py-16 px-6 border-b border-white/5">
+    <div class="max-w-3xl mx-auto">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-3">{line?.title}</p>
+      <p class="text-white/50 text-base leading-relaxed">{line?.sub}</p>
+    </div>
+  </section>
+
+  <!-- Maker credibility -->
+  <section class="py-16 px-6 border-b border-white/5">
+    <div class="max-w-3xl mx-auto">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-4">Why this is operator-grade</p>
+      <p class="text-white/55 text-base leading-relaxed">
+        Built by Petko Petkov — a 15-year enterprise IT operator who has sat on both the
+        vendor-distribution and buyer-operator sides of the table. Every Vihren Labs product
+        is built from real scenarios: real SAP T-codes, real regulation article numbers, real
+        cutover-night failure modes. Not consultant theory — the templates the operator
+        wished existed when the system had to work on Monday morning.
+      </p>
+      <a href="/about" class="inline-block mt-4 font-mono text-xs text-[#E67E22] hover:underline tracking-wider uppercase">About the maker &rarr;</a>
+    </div>
+  </section>
+
+  <!-- Related -->
+  {related.length > 0 && (
+    <section class="py-16 px-6">
+      <div class="max-w-3xl mx-auto">
+        <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">More in {line?.title}</p>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          {related.map((r) => (
+            <a href={`/products/${productSlug(r.name)}`}
+               class="group flex flex-col border border-white/8 rounded-2xl p-5 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+              <h3 class="font-bold text-sm text-white/80 leading-snug mb-2">{r.name}</h3>
+              <p class="text-white/35 text-xs leading-relaxed flex-1">{r.sub}</p>
+              <span class="font-black text-base text-white/90 mt-4">{r.price}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+</Base>
