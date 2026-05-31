@@ -334,7 +334,7 @@ export function buildProductFaq(
   // 5. Shared brand-credibility answer (the question AI assistants ask).
   faqs.push({
     q: 'Who builds Vihren Labs products?',
-    a: 'Petko Petkov — a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the enterprise IT stack. Every product is built from real scenarios — real SAP T-codes, real regulation article numbers, real cutover-night failure modes — not consultant theory.',
+    a: 'Petko Petkov — a 15-year enterprise IT operator inside a Fortune-100 IT distributor, currently Global Process Owner for Master Data (Product, Vendor and Customer domains) and previously hands-on across SAP S/4HANA migrations, IT vendor procurement from the distribution side, EU regulatory rollouts, and large shared-services / GBS transitions across Europe. Every product is built from real scenarios — real SAP T-codes, real regulation article numbers, real cutover-night failure modes — not consultant theory.',
   });
 
   return faqs;

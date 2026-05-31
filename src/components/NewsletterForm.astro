@@ -12,9 +12,9 @@
  *
  * Optional props:
  *  - align: 'left' (default) | 'center' — text alignment for the helper line
- *  - cta:   button label (default "Get the PDF →")
+ *  - cta:   button label (default "Subscribe →")
  */
-const { align = 'left', cta = 'Get the PDF →' } = Astro.props;
+const { align = 'left', cta = 'Subscribe →' } = Astro.props;
 const helperAlign = align === 'center' ? 'text-center' : 'text-left';
 ---
 
@@ -45,7 +45,7 @@ const helperAlign = align === 'center' ? 'text-center' : 'text-left';
   <p id="nl-status" class={`text-xs mt-4 h-4 ${helperAlign}`} aria-live="polite"></p>
 
   <p class={`text-white/25 text-xs mt-1 ${helperAlign}`}>
-    PDF delivered to your inbox + one essay a week. No spam. Unsubscribe any time.
+    One operator essay a week. No spam. Unsubscribe any time.
   </p>
 </form>
 

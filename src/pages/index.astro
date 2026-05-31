@@ -13,15 +13,15 @@ const brandFaqs = [
   },
   {
     q: 'Who makes Vihren Labs products?',
-    a: 'Petko Petkov — a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the enterprise IT stack: SAP S/4HANA migrations, vendor procurement, regulatory compliance rollouts, and shared-services-center transitions across Europe. The products are written from lived practitioner experience, not consultant theory.',
+    a: 'Petko Petkov — a 15-year enterprise IT operator inside a Fortune-100 IT distributor. He is currently the Global Process Owner (GPO) for Master Data across the Product, Vendor and Customer domains — owning the operating model and governance, and the mandate to automate product and SKU creation end to end: ingestion, standardisation, enrichment, attribute and categorisation rules, mapping and local settings, through to dynamic SKU generation and touchless quoting and ordering. That sits on top of fifteen years across SAP S/4HANA migrations, IT vendor procurement from the distribution side of the table, EU regulatory rollouts, and large shared-services / GBS transitions across Europe — including scaling a shared-services centre from roughly 300 to 700+ FTEs. PRINCE2 Practitioner, Six Sigma. Every product is written from that seat: lived practitioner experience, not consultant theory.',
   },
   {
     q: 'Are Vihren Labs products consulting, or legal or tax advice?',
     a: 'No. They are downloadable, operator-built templates and playbooks you run yourself — not consulting. The regulatory compliance products are organizational and evidence tools, not legal opinions; confirm your specific obligations with qualified counsel.',
   },
   {
-    q: 'Are the products a subscription?',
-    a: 'No. Every Vihren Labs product is a one-time purchase on Gumroad — you buy it, download it, and own it. No recurring fees, no subscription.',
+    q: 'Are the products a subscription? What about the courses, and what is coming next?',
+    a: 'No — every Vihren Labs product is a one-time purchase on Gumroad; you buy it, download it, and own it, with no recurring fees. That includes the two flagship courses — Master Data Excellence (Product & SKU Management, 10 modules) and The Transition Operator\'s Course (SSC, GBS & BPO transitions, 10 modules) — which are one-time too, each with a single-operator licence and a team licence. More is on the roadmap: a Master Data Academy expansion adding Customer Master Data and Vendor / Supplier Master Data courses alongside the live Product/SKU course (with a cross-domain enterprise MDM capstone), plus deeper operator tiers building up from the standalone workbooks to the operator packs to the courses. The model stays the same at every tier — buy once, own it, never a subscription.',
   },
   {
     q: 'Who are Vihren Labs products for?',
@@ -406,27 +406,24 @@ import { products, freeItems } from '../data/products';
           <!-- Left: the offer -->
           <div class="lg:col-span-3 max-w-xl">
             <div class="inline-flex items-center gap-2 bg-[#E67E22]/10 border border-[#E67E22]/20 rounded-full px-4 py-1.5 mb-8">
-              <span class="text-[#E67E22] font-mono text-xs tracking-widest uppercase">Free · for operators</span>
+              <span class="text-[#E67E22] font-mono text-xs tracking-widest uppercase">The newsletter · for operators</span>
             </div>
             <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-6">
-              The Vihren Labs<br />Operator Standard
+              The Operator Brief
             </h2>
             <p class="text-white/55 text-lg leading-relaxed mb-4">
-              7 principles for running enterprise IT without the consulting-industry fluff. The foundation everything else is built on.
+              One essay a week from inside enterprise IT — SAP migrations, vendor procurement, EU regulatory, master data. Vendor-side-honest, no buzzwords.
             </p>
             <p class="text-white/40 text-base leading-relaxed">
-              Plus <strong class="text-white/70">The Operator Brief</strong> — one essay a week from inside enterprise IT. SAP migrations, vendor procurement, EU regulatory, master data. Vendor-side-honest, no buzzwords.
-            </p>
-            <p class="text-white/40 text-sm leading-relaxed mt-5">
-              Prefer to read first? <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Read the full Operator Standard on-site, free &rarr;</a> The email gets you the PDF and the weekly brief.
+              New here? Start with the free <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Operator Standard</a> — the seven principles every product is held to. Read it on-site, no email required; subscribe when you want the weekly brief.
             </p>
           </div>
 
           <!-- Right: the signup form -->
           <div class="lg:col-span-2">
             <div class="bg-white/[0.03] border border-white/8 rounded-2xl p-6 sm:p-7">
-              <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Get the PDF →</p>
-              <NewsletterForm align="left" cta="Get the PDF" />
+              <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Get the weekly brief →</p>
+              <NewsletterForm align="left" cta="Subscribe →" />
             </div>
           </div>
 
