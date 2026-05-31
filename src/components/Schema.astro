@@ -33,7 +33,12 @@ const organization = {
     'DORA compliance',
     'EU AI Act compliance',
   ],
-  sameAs: [] as string[], // add LinkedIn / social URLs when confirmed
+  // Entity-consolidation links for the knowledge graph. The Gumroad storefront
+  // is the brand's verified commercial profile. LinkedIn is intentionally
+  // OMITTED: sameAs consolidates identity, which would tie the brand to the
+  // founder's professional identity where colleagues are — against the day-job
+  // compartmentalisation. Add other brand-owned profiles here, not personal ones.
+  sameAs: ['https://vihrenlabs.gumroad.com'],
 };
 
 const person = {
