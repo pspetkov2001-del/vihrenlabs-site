@@ -2,9 +2,11 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const essays = (await getCollection('essays')).sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
-);
+const essays = (await getCollection('essays')).sort((a, b) => {
+  // Featured essays pin to the top; everything else is newest-first by date.
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
+});
 
 const collectionSchema = {
   '@context': 'https://schema.org',

@@ -11,6 +11,7 @@ const essays = defineCollection({
     date: z.string(), // ISO date string
     line: z.string(), // the product line this essay warms (display + relatedness)
     keywords: z.array(z.string()).default([]),
+    featured: z.boolean().default(false), // pin to top of /essays regardless of date
   }),
 });
 
