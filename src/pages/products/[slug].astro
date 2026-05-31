@@ -1,6 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
-import { products, lineBySlug, productSlug } from '../../data/products';
+import { products, lineBySlug, productSlug, buildProductFaq } from '../../data/products';
+import { faqSchema } from '../../data/schema';
 
 export function getStaticPaths() {
   return products.map((p) => ({
@@ -51,12 +52,17 @@ const breadcrumb = {
     { '@type': 'ListItem', position: 2, name: product.name, item: canonical },
   ],
 };
+
+// FAQ — visible section below + matching FAQPage schema (kept in sync via the
+// single buildProductFaq source). The FAQ is the main GEO/AEO citation surface.
+const faqs = buildProductFaq(product, line);
+const faqJsonLd = faqSchema(faqs);
 ---
 
 <Base
   title={`${product.name} · Vihren Labs`}
   description={product.sub}
-  schema={[productSchema, breadcrumb]}
+  schema={[productSchema, breadcrumb, faqJsonLd]}
 >
   <section class="relative px-6 py-20 sm:py-28 border-b border-white/5 overflow-hidden">
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
@@ -118,6 +124,21 @@ const breadcrumb = {
         wished existed when the system had to work on Monday morning.
       </p>
       <a href="/about" class="inline-block mt-4 font-mono text-xs text-[#E67E22] hover:underline tracking-wider uppercase">About the maker &rarr;</a>
+    </div>
+  </section>
+
+  <!-- FAQ — visible (Google requires on-page content) + FAQPage schema above -->
+  <section class="py-16 px-6 border-b border-white/5">
+    <div class="max-w-3xl mx-auto">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-8">Frequently asked</p>
+      <div class="flex flex-col divide-y divide-white/8 border-y border-white/8">
+        {faqs.map((f) => (
+          <div class="py-6">
+            <h2 class="font-bold text-base text-white/85 leading-snug mb-3">{f.q}</h2>
+            <p class="text-white/50 text-sm leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 

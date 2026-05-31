@@ -28,6 +28,11 @@ export interface Product {
   price: string;
   team: string;
   url: string;
+  // Optional hand-written, buyer-intent FAQ entries for marquee products.
+  // Merged with auto-generated brand/price/audience Q&As by buildProductFaq().
+  // Phrase questions the way a buyer asks an AI assistant — these are the
+  // GEO/AEO citation surface. Keep answers accurate + day-job-safe.
+  faq?: { q: string; a: string }[];
 }
 
 export interface FreeItem {
@@ -54,6 +59,12 @@ export const products: Product[] = [
     sub: '10 modules · 10 workbooks · 6 visual one-pagers · editable maturity heatmap · 25-50 page capstone. The full operator curriculum for product master data — from data model and lifecycle to governance, DQ, architecture, operations and value realization.',
     price: '$499', team: '$999',
     url: 'https://vihrenlabs.gumroad.com/l/ijyliz',
+    faq: [
+      {
+        q: 'What does the Master Data Excellence course cover?',
+        a: '10 modules spanning the product master-data lifecycle — data model and governance, data quality engineering, architecture, MDM operations and value realization — each with a workbook, plus 6 visual one-pagers, an editable maturity heatmap, and a 25-50 page capstone you complete against your own organization.',
+      },
+    ],
   },
   {
     line: 'transformation', tier: 'course',
@@ -62,6 +73,12 @@ export const products: Product[] = [
     sub: '10 modules for running an enterprise transition from kickoff to BAU exit — engagement, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live, hypercare. 18-tab transition management workbook + delivery-execution playbook + 6 visual one-pagers.',
     price: '$499', team: '$999',
     url: 'https://vihrenlabs.gumroad.com/l/iivnut',
+    faq: [
+      {
+        q: 'What does the Transition Operator\'s Course cover?',
+        a: '10 modules for running a shared-services, GBS or BPO transition end to end — engagement and scoping, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live and hypercare to BAU exit — plus an 18-tab transition management workbook, a delivery-execution playbook and 6 visual one-pagers.',
+      },
+    ],
   },
 
   // ─── PROCUREMENT & VENDOR MANAGEMENT ────────────────────────────────
@@ -108,6 +125,16 @@ export const products: Product[] = [
     sub: '52-check readiness matrix, 46-step cutover run sheet, hypercare runbook. What breaks at 3 AM.',
     price: '$99', team: '$249',
     url: 'https://vihrenlabs.gumroad.com/l/fsslk',
+    faq: [
+      {
+        q: 'What does the SAP S/4HANA cutover checklist include?',
+        a: 'A 52-check go-live readiness matrix, a 46-step cutover run sheet sequenced for cutover weekend, and a hypercare runbook for the days after go-live — the operator controls that decide whether a cutover holds at 3 AM, in a workbook you can adapt to your own programme.',
+      },
+      {
+        q: 'When does SAP ECC maintenance end, and how long does an S/4HANA migration take?',
+        a: 'SAP ECC mainstream maintenance ends 31 December 2027. Because transformation capacity is finite, the practical planning cut-off for most mid-market organizations is well before then — the workbook is built to compress readiness and cutover planning rather than the multi-month implementation itself.',
+      },
+    ],
   },
   {
     line: 'sap', tier: 'toolkit',
@@ -134,6 +161,12 @@ export const products: Product[] = [
     sub: '75 named SAP Master Data Management quality checks, field-level scoring, defect log and remediation tracker.',
     price: '$79', team: '$149',
     url: 'https://vihrenlabs.gumroad.com/l/znhthm',
+    faq: [
+      {
+        q: 'What does the master data quality audit workbook check?',
+        a: '75 named master-data quality checks with field-level scoring, a defect log and a remediation tracker — so you can score data quality across your master-data domains, prioritise the fixes that matter, and evidence the improvement over time.',
+      },
+    ],
   },
   {
     line: 'master-data', tier: 'toolkit',
@@ -178,6 +211,16 @@ export const products: Product[] = [
     sub: 'Article 50 transparency tracker, high-risk register, deployer readiness assessment. Enforcement: 2 Aug 2026.',
     price: '€149', team: '€249',
     url: 'https://vihrenlabs.gumroad.com/l/rqems',
+    faq: [
+      {
+        q: 'Is the EU AI Act SME Compliance Starter legal advice?',
+        a: 'No. It is an operator-grade organizational and evidence toolkit — an Article 50 transparency tracker, a high-risk register and a deployer readiness assessment — built to help you structure and document compliance work. It is not legal advice; confirm your specific obligations with qualified counsel.',
+      },
+      {
+        q: 'When does the EU AI Act apply?',
+        a: 'Key deployer transparency obligations under Article 50 apply from 2 August 2026. The Starter is built so an SME can structure its readiness and evidence ahead of that date rather than starting from a blank page.',
+      },
+    ],
   },
 ];
 
@@ -253,3 +296,46 @@ export function productSlug(name: string): string {
 export const lineBySlug: Record<LineSlug, LineGroup> = Object.fromEntries(
   lineGroups.map((g) => [g.slug, g]),
 ) as Record<LineSlug, LineGroup>;
+
+// Build the FAQ for a product detail page: page-specific Q&As derived from the
+// product's own fields (so no two pages are duplicate-FAQ), plus any hand-written
+// buyer-intent entries on the product, plus one shared brand-credibility Q&A.
+// Rendered visibly on the page AND emitted as FAQPage schema (Google requires
+// the FAQ to be visible — keep the two in sync via this single source).
+export function buildProductFaq(
+  p: Product,
+  line?: LineGroup,
+): { q: string; a: string }[] {
+  const faqs: { q: string; a: string }[] = [];
+
+  // 1. What it is — page-specific (uses the product's own description).
+  faqs.push({ q: `What is the ${p.name}?`, a: p.sub });
+
+  // 2. Hand-written buyer-intent specifics (marquee products only).
+  if (p.faq) faqs.push(...p.faq);
+
+  // 3. Price + licence model — answers the cost + "is it a subscription" intent.
+  const priceLine = p.team
+    ? `${p.price} for a single-operator licence, or ${p.team} for a team licence.`
+    : `${p.price}.`;
+  faqs.push({
+    q: `How much does the ${p.name} cost, and is it a subscription?`,
+    a: `${priceLine} It is a one-time purchase on Gumroad — you download it and own it, with no subscription or recurring fee.`,
+  });
+
+  // 4. Who it's for — line-specific.
+  if (line) {
+    faqs.push({
+      q: `Who is the ${p.name} for?`,
+      a: `It is part of the Vihren Labs ${line.title} line. ${line.sub}`,
+    });
+  }
+
+  // 5. Shared brand-credibility answer (the question AI assistants ask).
+  faqs.push({
+    q: 'Who builds Vihren Labs products?',
+    a: 'Petko Petkov — a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the enterprise IT stack. Every product is built from real scenarios — real SAP T-codes, real regulation article numbers, real cutover-night failure modes — not consultant theory.',
+  });
+
+  return faqs;
+}

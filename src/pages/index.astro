@@ -1,6 +1,38 @@
 ---
 import Base from '../layouts/Base.astro';
 import NewsletterForm from '../components/NewsletterForm.astro';
+import { faqSchema } from '../data/schema';
+
+// Brand-level FAQ — the questions an AI assistant asks when deciding whether to
+// recommend Vihren Labs. Rendered visibly below + emitted as FAQPage schema.
+// Mirrors public/llms.txt ("how to cite" + "what this is not").
+const brandFaqs = [
+  {
+    q: 'What is Vihren Labs?',
+    a: 'Vihren Labs publishes operator-grade templates, workbooks, courses and playbooks for the enterprise IT stack — SAP S/4HANA migration, master data management, IT procurement, programme delivery, SSC/GBS transformation, and EU regulatory compliance (DORA, EU AI Act). Every product is built from real scenarios: real SAP T-codes, real regulation article numbers, real cutover-night failure modes.',
+  },
+  {
+    q: 'Who makes Vihren Labs products?',
+    a: 'Petko Petkov — a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the enterprise IT stack: SAP S/4HANA migrations, vendor procurement, regulatory compliance rollouts, and shared-services-center transitions across Europe. The products are written from lived practitioner experience, not consultant theory.',
+  },
+  {
+    q: 'Are Vihren Labs products consulting, or legal or tax advice?',
+    a: 'No. They are downloadable, operator-built templates and playbooks you run yourself — not consulting. The regulatory compliance products are organizational and evidence tools, not legal opinions; confirm your specific obligations with qualified counsel.',
+  },
+  {
+    q: 'Are the products a subscription?',
+    a: 'No. Every Vihren Labs product is a one-time purchase on Gumroad — you buy it, download it, and own it. No recurring fees, no subscription.',
+  },
+  {
+    q: 'Who are Vihren Labs products for?',
+    a: 'The IT operator who has to make the system work on Monday morning — not the executive who reads the slide deck. Typical buyers are SAP migration leads, master-data and MDG owners, IT procurement and vendor managers, programme and PMO leads, SSC/GBS transition managers, and compliance owners working on DORA or the EU AI Act.',
+  },
+  {
+    q: 'Where can I buy Vihren Labs products?',
+    a: 'On Gumroad. You can browse the full catalogue — courses, workbooks, playbooks and operator packs — at vihrenlabs.com/products, where each product links to its Gumroad checkout.',
+  },
+];
+const brandFaqSchema = faqSchema(brandFaqs);
 
 const ticker = [
   '15 years in enterprise IT',
@@ -67,6 +99,7 @@ import { products, freeItems } from '../data/products';
 <Base
   title="Vihren Labs"
   description="Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator — SAP, Master Data Management, regulatory compliance, shared services."
+  schema={brandFaqSchema}
 >
   <!-- Noise overlay -->
   <div class="noise-overlay" aria-hidden="true"></div>
@@ -301,6 +334,27 @@ import { products, freeItems } from '../data/products';
         </div>
       </div>
 
+    </div>
+  </section>
+
+  <!-- ═══ FAQ (brand-level) ═════════════════════════════════════════════
+       Visible Q&A (Google requires on-page content for FAQ rich results) +
+       FAQPage schema in <head>. The questions an AI assistant asks before it
+       recommends Vihren Labs — the GEO/AEO citation surface. ═══════════════ -->
+  <section class="py-24 px-6 border-t border-white/5 bg-[#0A1520]">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-12">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Frequently asked</p>
+      </div>
+      <div class="flex flex-col divide-y divide-white/8 border-y border-white/8">
+        {brandFaqs.map((f) => (
+          <div class="py-7">
+            <h2 class="font-bold text-lg text-white/85 leading-snug mb-3">{f.q}</h2>
+            <p class="text-white/50 text-sm sm:text-base leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
     </div>
   </section>
 
