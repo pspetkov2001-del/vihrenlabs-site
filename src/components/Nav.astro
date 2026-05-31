@@ -2,6 +2,7 @@
 const currentPath = Astro.url.pathname;
 const links = [
   { href: '/products', label: 'Products', active: currentPath === '/products' || currentPath === '/products/' },
+  { href: '/guides', label: 'Guides', active: currentPath.startsWith('/guides') },
   { href: '/essays', label: 'Essays', active: currentPath.startsWith('/essays') },
   { href: '/about', label: 'About', active: currentPath === '/about' || currentPath === '/about/' },
 ];

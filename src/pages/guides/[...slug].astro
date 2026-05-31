@@ -1,0 +1,161 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { faqSchema, howToSchema } from '../../data/schema';
+
+export async function getStaticPaths() {
+  const guides = await getCollection('guides');
+  return guides.map((guide) => ({
+    params: { slug: guide.slug },
+    props: { guide },
+  }));
+}
+
+const { guide } = Astro.props;
+const { Content } = await guide.render();
+const canonical = `https://vihrenlabs.com/guides/${guide.slug}`;
+const d = guide.data;
+
+// Article schema — the page is operator-voice editorial content.
+const articleSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: d.title,
+  description: d.description,
+  datePublished: d.date,
+  dateModified: d.date,
+  author: { '@type': 'Person', name: 'Petko Petkov', url: 'https://vihrenlabs.com/about' },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Vihren Labs',
+    logo: { '@type': 'ImageObject', url: 'https://vihrenlabs.com/og-image.png' },
+  },
+  mainEntityOfPage: canonical,
+  keywords: d.keywords.join(', '),
+  articleSection: d.line,
+};
+
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Guides', item: 'https://vihrenlabs.com/guides' },
+    { '@type': 'ListItem', position: 2, name: d.title, item: canonical },
+  ],
+};
+
+// HowTo + FAQPage from frontmatter — visible content below keeps them on-page
+// (Google policy). These are the rich-result + AI-citation surfaces.
+const schemaNodes: Record<string, any>[] = [articleSchema, breadcrumb];
+if (d.steps.length) {
+  schemaNodes.push(
+    howToSchema({
+      name: d.title,
+      description: d.answer,
+      url: canonical,
+      steps: d.steps,
+    }),
+  );
+}
+if (d.faq.length) schemaNodes.push(faqSchema(d.faq));
+---
+
+<Base title={d.title} description={d.description} schema={schemaNodes}>
+  <article class="px-6 py-20 sm:py-24">
+    <div class="max-w-2xl mx-auto">
+      <nav class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-wider uppercase text-white/30">
+        <a href="/guides" class="hover:text-[#E67E22] transition-colors">Guides</a>
+        <span>/</span>
+        <span class="text-white/50">{d.line}</span>
+      </nav>
+
+      <div class="flex items-center gap-3 mb-5 flex-wrap">
+        <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">{d.line}</span>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">Operator guide</span>
+      </div>
+
+      <h1 class="font-black text-3xl sm:text-4xl leading-[1.08] tracking-tight mb-6">{d.title}</h1>
+
+      <!-- Answer-first lead — the paragraph AI assistants extract -->
+      <div class="rounded-2xl border border-[#E67E22]/25 bg-[#E67E22]/[0.04] p-6 mb-10">
+        <p class="font-mono text-[#E67E22] text-[10px] tracking-[0.2em] uppercase mb-3">The short answer</p>
+        <p class="text-white/75 text-base sm:text-lg leading-relaxed">{d.answer}</p>
+      </div>
+
+      <!-- Visible numbered steps (drives HowTo schema) -->
+      {d.steps.length > 0 && (
+        <section class="mb-12">
+          <h2 class="font-black text-2xl text-white mb-6">{d.stepsTitle}</h2>
+          <ol class="flex flex-col gap-4">
+            {d.steps.map((s, i) => (
+              <li class="flex items-start gap-4 p-5 rounded-xl border border-white/8 bg-white/[0.02]">
+                <span class="font-mono text-sm text-[#E67E22] flex-shrink-0 pt-0.5 tracking-widest">{String(i + 1).padStart(2, '0')}</span>
+                <div>
+                  <h3 class="font-bold text-base text-white/85 leading-snug mb-1.5">{s.name}</h3>
+                  <p class="text-white/55 text-sm leading-relaxed">{s.text}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )}
+
+      <!-- Depth body (markdown) -->
+      <div class="guide-body text-white/70 text-lg leading-relaxed">
+        <Content />
+      </div>
+
+      <!-- FAQ — visible (drives FAQPage schema) -->
+      {d.faq.length > 0 && (
+        <section class="mt-14 pt-2">
+          <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-8">Frequently asked</p>
+          <div class="flex flex-col divide-y divide-white/8 border-y border-white/8">
+            {d.faq.map((f) => (
+              <div class="py-6">
+                <h2 class="font-bold text-base text-white/85 leading-snug mb-3">{f.q}</h2>
+                <p class="text-white/55 text-sm leading-relaxed">{f.a}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+
+      <!-- CTA — funnel to the matching product / resource -->
+      <div class="mt-12 pt-8 border-t border-white/10">
+        {d.ctaUrl && d.ctaLabel && (
+          <div class="rounded-2xl border border-[#E67E22]/30 bg-[#E67E22]/[0.04] p-7">
+            <p class="text-white/60 text-sm leading-relaxed mb-5">{d.ctaSub ?? 'The done-for-you template, built to this standard:'}</p>
+            <a href={d.ctaUrl}
+               class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-semibold px-7 py-3.5 rounded-full text-base transition-colors">
+              {d.ctaLabel} &rarr;
+            </a>
+          </div>
+        )}
+        <p class="text-white/40 text-sm leading-relaxed mt-6">
+          Written by Petko Petkov — 15 years inside enterprise IT operations. Vihren Labs
+          publishes operator-grade templates and playbooks for the enterprise IT stack.
+        </p>
+        <div class="flex flex-wrap gap-3 mt-5">
+          <a href="/essays/the-operator-standard" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">The Operator Standard</a>
+          <a href="/guides" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">More guides</a>
+        </div>
+      </div>
+    </div>
+  </article>
+</Base>
+
+<style is:global>
+  .guide-body p { margin-bottom: 1.25rem; }
+  .guide-body strong { color: #fff; font-weight: 600; }
+  .guide-body ol, .guide-body ul { margin: 0 0 1.25rem 1.25rem; }
+  .guide-body ol { list-style: decimal; }
+  .guide-body ul { list-style: disc; }
+  .guide-body li { margin-bottom: 0.5rem; }
+  .guide-body em { color: rgba(255,255,255,0.85); }
+  .guide-body h2 { font-size: 1.6rem; font-weight: 800; color: #fff; letter-spacing: -0.01em; line-height: 1.2; margin: 2.75rem 0 1rem; }
+  .guide-body h3 { font-size: 1.2rem; font-weight: 700; color: rgba(255,255,255,0.92); margin: 2rem 0 0.75rem; }
+  .guide-body blockquote { border-left: 3px solid #E67E22; padding: 0.75rem 0 0.75rem 1.25rem; margin: 1.75rem 0; color: rgba(255,255,255,0.6); background: rgba(230,126,34,0.04); border-radius: 0 0.5rem 0.5rem 0; }
+  .guide-body hr { border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 2.5rem 0; }
+  .guide-body a { color: #E67E22; text-decoration: underline; text-underline-offset: 2px; }
+  .guide-body a:hover { color: #f0974a; }
+</style>

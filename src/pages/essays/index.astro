@@ -2,11 +2,17 @@
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 
-const essays = (await getCollection('essays')).sort((a, b) => {
-  // Featured essays pin to the top; everything else is newest-first by date.
-  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
-  return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
-});
+const all = await getCollection('essays');
+// The Operator Standard is the cornerstone — surfaced as a dedicated hero card
+// above the list, so it doesn't compete with the dated essays for the #1 slot.
+const cornerstone = all.find((e) => e.slug === 'the-operator-standard');
+const essays = all
+  .filter((e) => e.slug !== 'the-operator-standard')
+  .sort((a, b) => {
+    // Featured essays pin to the top; everything else is newest-first by date.
+    if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+    return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
+  });
 
 const collectionSchema = {
   '@context': 'https://schema.org',
@@ -46,6 +52,17 @@ const collectionSchema = {
 
   <section class="py-16 px-6">
     <div class="max-w-3xl mx-auto flex flex-col gap-4">
+      {cornerstone && (
+        <a href={`/essays/${cornerstone.slug}`}
+           class="group block rounded-2xl border border-[#E67E22]/40 bg-[#E67E22]/[0.05] hover:border-[#E67E22]/70 hover:bg-[#E67E22]/[0.08] transition-colors p-7 sm:p-8 mb-4">
+          <div class="flex items-center gap-3 mb-3 flex-wrap">
+            <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">Start here · the standard</span>
+          </div>
+          <h2 class="font-black text-2xl sm:text-3xl text-white leading-tight mb-3 group-hover:text-white">The Vihren Labs Operator Standard</h2>
+          <p class="text-white/55 text-sm sm:text-base leading-relaxed">Seven principles for running the enterprise IT stack — written from fifteen years in the operator's seat. The standard every product in the catalogue is held to, and the door to the whole catalogue. Free to read.</p>
+          <span class="inline-block mt-4 font-mono text-xs text-[#E67E22] tracking-wider uppercase">Read the standard &rarr;</span>
+        </a>
+      )}
       {essays.map((essay) => (
         <a href={`/essays/${essay.slug}`}
            class="group block border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
