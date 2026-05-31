@@ -1,0 +1,130 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { freeItems } from '../data/products';
+
+const allEssays = await getCollection('essays');
+const cornerstone = allEssays.find((e) => e.slug === 'the-operator-standard');
+const essays = allEssays
+  .filter((e) => e.slug !== 'the-operator-standard')
+  .sort((a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf());
+const guides = (await getCollection('guides')).sort(
+  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+);
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Free operator resources — Vihren Labs',
+  description:
+    'Everything Vihren Labs gives away free: The Operator Standard, step-by-step operator guides, essays from inside enterprise IT, and free downloads (the Operator Standard PDF and the SAP Cutover Comms Kit).',
+  url: 'https://vihrenlabs.com/free',
+};
+---
+
+<Base
+  title="Free operator resources · Vihren Labs"
+  description="Free, no-gate operator resources for the enterprise IT stack: The Operator Standard, step-by-step guides (S/4HANA cutover, master data audit, EU AI Act, DORA, SaaS renewals), essays, and free downloads."
+  schema={collectionSchema}
+>
+  <section class="relative px-6 py-24 sm:py-28 border-b border-white/5 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full"
+           style="background: radial-gradient(ellipse at center, rgba(30,61,89,0.45) 0%, rgba(8,14,20,0) 70%);"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Free · for operators</span>
+      </div>
+      <h1 class="font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight mb-6">
+        Everything we give away.
+      </h1>
+      <p class="text-white/50 text-lg leading-relaxed max-w-2xl">
+        The standard, the guides, the essays, and the downloads — free, no email required. The "what"
+        and the "why" of running the enterprise IT stack. The done-for-you templates live in the
+        <a href="/products" class="text-[#E67E22] hover:underline">catalogue</a>.
+      </p>
+    </div>
+  </section>
+
+  <!-- Start here: the cornerstone -->
+  {cornerstone && (
+    <section class="py-14 px-6">
+      <div class="max-w-4xl mx-auto">
+        <a href={`/essays/${cornerstone.slug}`}
+           class="group block rounded-2xl border border-[#E67E22]/40 bg-[#E67E22]/[0.05] hover:border-[#E67E22]/70 hover:bg-[#E67E22]/[0.08] transition-colors p-7 sm:p-8">
+          <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">Start here</span>
+          <h2 class="font-black text-2xl sm:text-3xl text-white leading-tight mt-4 mb-3">The Vihren Labs Operator Standard</h2>
+          <p class="text-white/55 text-sm sm:text-base leading-relaxed">Seven principles for running the enterprise IT stack, from fifteen years in the operator's seat. The single best page to understand what Vihren Labs is — and your door into the catalogue.</p>
+          <span class="inline-block mt-4 font-mono text-xs text-[#E67E22] tracking-wider uppercase">Read the standard &rarr;</span>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- Guides -->
+  <section class="py-12 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">Step-by-step guides</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {guides.map((g) => (
+          <a href={`/guides/${g.slug}`}
+             class="group flex flex-col border border-white/8 rounded-2xl p-5 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+            <span class="font-mono text-[10px] text-[#E67E22] mb-2 tracking-wider uppercase">{g.data.line}</span>
+            <h3 class="font-bold text-sm text-white/85 leading-snug">{g.data.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Essays -->
+  <section class="py-12 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">Essays</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {essays.map((e) => (
+          <a href={`/essays/${e.slug}`}
+             class="group flex flex-col border border-white/8 rounded-2xl p-5 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+            <span class="font-mono text-[10px] text-[#E67E22] mb-2 tracking-wider uppercase">{e.data.line}</span>
+            <h3 class="font-bold text-sm text-white/85 leading-snug">{e.data.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Free downloads -->
+  <section class="py-12 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">Free downloads</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {freeItems.map((p) => (
+          <a href={p.url} target="_blank" rel="noopener noreferrer"
+             class="group flex flex-col border border-[#E67E22]/20 rounded-2xl p-5 hover:border-[#E67E22]/40 transition-colors bg-[#E67E22]/[0.03]">
+            <span class="font-mono text-[10px] text-[#E67E22] mb-2 tracking-wider uppercase">{p.tag}</span>
+            <h3 class="font-bold text-sm text-white/85 leading-snug mb-1">{p.name}</h3>
+            <p class="text-white/40 text-xs leading-relaxed flex-1">{p.sub}</p>
+            <span class="inline-block mt-3 font-mono text-[10px] text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Soft newsletter CTA (no gate) -->
+  <section class="py-20 px-6 border-t border-white/5">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Stay in touch</p>
+      <h2 class="font-black text-3xl leading-tight mb-5">Want it weekly?</h2>
+      <p class="text-white/50 text-base leading-relaxed mb-8">
+        The Operator Brief — one essay a week from inside enterprise IT. No gate on any of the above; subscribe only if you want it in your inbox.
+      </p>
+      <a href="/#newsletter"
+         class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base hover:bg-[#E67E22]/30 transition-colors">
+        Subscribe &rarr;
+      </a>
+    </div>
+  </section>
+</Base>

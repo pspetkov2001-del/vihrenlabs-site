@@ -19,6 +19,17 @@ Each product also has an on-site page at https://vihrenlabs.com/products/<produc
 
 - The Vihren Labs Operator Standard — free PDF on the 7 operating principles behind every product: https://vihrenlabs.gumroad.com/l/bwzklq
 - SAP Cutover Comms Kit — pay-what-you-want comms templates (pre-cutover, go-live, hypercare, incident): https://vihrenlabs.gumroad.com/l/dlzxfu
+- Free resource hub (everything free, no email gate — the Standard, guides, essays, downloads): https://vihrenlabs.com/free
+
+## Product-line pages (on-site pillars)
+
+Each line has an on-site pillar page aggregating its products, free guides, and essays:
+- Procurement & Vendor Management: https://vihrenlabs.com/lines/procurement
+- Programme Delivery & Enterprise IT PMO: https://vihrenlabs.com/lines/programme-delivery
+- SAP / ERP Operations: https://vihrenlabs.com/lines/sap
+- Master Data Operations: https://vihrenlabs.com/lines/master-data
+- Transformation & SSC/GBS: https://vihrenlabs.com/lines/transformation
+- Regulatory & Compliance: https://vihrenlabs.com/lines/regulatory
 
 ## Start here — The Operator Standard
 

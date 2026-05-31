@@ -1,0 +1,172 @@
+---
+import Base from '../../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+import { products, lineGroups, productSlug } from '../../data/products';
+import { faqSchema } from '../../data/schema';
+
+export async function getStaticPaths() {
+  const allGuides = await getCollection('guides');
+  const allEssays = await getCollection('essays');
+  return lineGroups.map((group) => ({
+    params: { slug: group.slug },
+    props: {
+      group,
+      lineProducts: products.filter((p) => p.line === group.slug),
+      guides: allGuides.filter((g) => g.data.line === group.title),
+      essays: allEssays.filter((e) => e.data.line === group.title),
+    },
+  }));
+}
+
+const { group, lineProducts, guides, essays } = Astro.props;
+const canonical = `https://vihrenlabs.com/lines/${group.slug}`;
+
+// Generated, accurate line-level FAQ (page-specific, no hand-maintained duplication).
+const productList = lineProducts
+  .map((p) => `${p.name} (${p.price})`)
+  .join('; ');
+const faqs: { q: string; a: string }[] = [
+  {
+    q: `What does Vihren Labs offer for ${group.title}?`,
+    a: `${group.sub} The line includes: ${productList}.`,
+  },
+];
+if (guides.length) {
+  faqs.push({
+    q: `Is there a free guide for ${group.title}?`,
+    a: `Yes — ${guides
+      .map((g) => `"${g.data.title}"`)
+      .join(' and ')}, free to read, with a step-by-step checklist and FAQ.`,
+  });
+}
+faqs.push({
+  q: 'Are these one-time purchases or a subscription?',
+  a: 'One-time purchases. You buy on Gumroad, download, and own it — no subscription or recurring fee. Most products offer a single-operator and a team licence.',
+});
+const faqJsonLd = faqSchema(faqs);
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: `${group.title} — Vihren Labs`,
+  description: group.sub,
+  url: canonical,
+};
+const breadcrumb = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Products', item: 'https://vihrenlabs.com/products' },
+    { '@type': 'ListItem', position: 2, name: group.title, item: canonical },
+  ],
+};
+---
+
+<Base
+  title={`${group.title} · Vihren Labs`}
+  description={group.sub}
+  schema={[collectionSchema, breadcrumb, faqJsonLd]}
+>
+  <section class="relative px-6 py-20 sm:py-24 border-b border-white/5 overflow-hidden">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/3 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] rounded-full"
+           style="background: radial-gradient(ellipse at center, rgba(30,61,89,0.45) 0%, rgba(8,14,20,0) 70%);"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto">
+      <nav class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-wider uppercase text-white/30">
+        <a href="/products" class="hover:text-[#E67E22] transition-colors">Products</a>
+        <span>/</span>
+        <span class="text-white/50">{group.title}</span>
+      </nav>
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Product line</span>
+      </div>
+      <h1 class="font-black text-4xl sm:text-5xl leading-[1.0] tracking-tight mb-6">{group.title}</h1>
+      <p class="text-white/55 text-lg leading-relaxed max-w-2xl">{group.sub}</p>
+    </div>
+  </section>
+
+  <!-- Products in this line -->
+  <section class="py-16 px-6">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">The products</p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {lineProducts.map((p) => (
+          <a href={`/products/${productSlug(p.name)}`}
+             class="group flex flex-col border border-white/8 rounded-2xl p-6 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+            <div class="flex items-center gap-2 mb-3">
+              <span class="font-mono text-[10px] text-white/30 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{p.tag}</span>
+              {p.tier === 'bundle' && <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">Bundle</span>}
+              {p.tier === 'course' && <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/8 px-2 py-0.5 rounded tracking-wider uppercase">Course</span>}
+            </div>
+            <h2 class="font-bold text-base text-white/85 leading-snug mb-2">{p.name}</h2>
+            <p class="text-white/40 text-sm leading-relaxed flex-1">{p.sub}</p>
+            <span class="font-black text-lg text-white/90 mt-4">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Related guides -->
+  {guides.length > 0 && (
+    <section class="py-12 px-6 border-t border-white/5">
+      <div class="max-w-4xl mx-auto">
+        <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">Free guides</p>
+        <div class="flex flex-col gap-3">
+          {guides.map((g) => (
+            <a href={`/guides/${g.slug}`}
+               class="group flex items-start justify-between gap-4 border border-white/8 rounded-2xl p-5 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+              <div>
+                <h3 class="font-bold text-sm text-white/85 leading-snug mb-1">{g.data.title}</h3>
+                <p class="text-white/40 text-xs leading-relaxed">{g.data.description}</p>
+              </div>
+              <span class="font-mono text-[10px] text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase whitespace-nowrap pt-1">Read &rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Related essays -->
+  {essays.length > 0 && (
+    <section class="py-12 px-6 border-t border-white/5">
+      <div class="max-w-4xl mx-auto">
+        <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">Essays</p>
+        <div class="flex flex-col gap-3">
+          {essays.map((e) => (
+            <a href={`/essays/${e.slug}`}
+               class="group flex items-start justify-between gap-4 border border-white/8 rounded-2xl p-5 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+              <div>
+                <h3 class="font-bold text-sm text-white/85 leading-snug mb-1">{e.data.title}</h3>
+                <p class="text-white/40 text-xs leading-relaxed">{e.data.description}</p>
+              </div>
+              <span class="font-mono text-[10px] text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase whitespace-nowrap pt-1">Read &rarr;</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- FAQ (visible + FAQPage schema) -->
+  <section class="py-14 px-6 border-t border-white/5">
+    <div class="max-w-4xl mx-auto">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-8">Frequently asked</p>
+      <div class="flex flex-col divide-y divide-white/8 border-y border-white/8">
+        {faqs.map((f) => (
+          <div class="py-6">
+            <h2 class="font-bold text-base text-white/85 leading-snug mb-3">{f.q}</h2>
+            <p class="text-white/55 text-sm leading-relaxed">{f.a}</p>
+          </div>
+        ))}
+      </div>
+      <div class="flex flex-wrap gap-3 mt-10">
+        <a href="/products" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">Full catalogue</a>
+        <a href="/essays/the-operator-standard" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">The Operator Standard</a>
+      </div>
+    </div>
+  </section>
+</Base>

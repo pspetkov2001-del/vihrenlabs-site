@@ -20,8 +20,8 @@ const brandFaqs = [
     a: 'No. They are downloadable, operator-built templates and playbooks you run yourself — not consulting. The regulatory compliance products are organizational and evidence tools, not legal opinions; confirm your specific obligations with qualified counsel.',
   },
   {
-    q: 'Are the products a subscription? What about the courses, and what is coming next?',
-    a: 'No — every Vihren Labs product is a one-time purchase on Gumroad; you buy it, download it, and own it, with no recurring fees. That includes the two flagship courses — Master Data Excellence (Product & SKU Management, 10 modules) and The Transition Operator\'s Course (SSC, GBS & BPO transitions, 10 modules) — which are one-time too, each with a single-operator licence and a team licence. More is on the roadmap: a Master Data Academy expansion adding Customer Master Data and Vendor / Supplier Master Data courses alongside the live Product/SKU course (with a cross-domain enterprise MDM capstone), plus deeper operator tiers building up from the standalone workbooks to the operator packs to the courses. The model stays the same at every tier — buy once, own it, never a subscription.',
+    q: 'Are the products a subscription? What about the courses, and the higher tiers?',
+    a: 'No — every Vihren Labs product you can buy today is a one-time purchase on Gumroad: you buy it, download it, and own it, with no recurring fees. That includes the two flagship courses — Master Data Excellence (Product & SKU Management) and The Transition Operator\'s Course (SSC, GBS & BPO) — which are one-time too. The courses are designed as a three-tier ladder: Tier 1 is the self-serve course you own outright (available now); Tier 2 adds 1:1 sessions with Petko — work reviews and direct guidance as you apply it to your own organisation (planned); and Tier 3 is an enterprise tier — a team-training and rollout model for organisations (planned). Tiers 2 and 3 are engagements, not subscriptions, and are coming in the future. Whatever the tier, the model holds: you are buying a thing or an engagement you own, never a recurring subscription.',
   },
   {
     q: 'Who are Vihren Labs products for?',
@@ -50,36 +50,42 @@ const ticker = [
 const lines = [
   {
     num: '01',
+    slug: 'procurement',
     name: 'Procurement & Vendor Management',
     sub: 'IT vendor TCO, renewal calendars, negotiation playbooks — from the side of the table that knows what distributors don\'t tell you.',
     tags: ['Excel workbook', 'Ebook', 'Bundle'],
   },
   {
     num: '02',
+    slug: 'programme-delivery',
     name: 'Programme Delivery & Enterprise IT PMO',
     sub: 'Enterprise IT programme delivery — multi-country rollouts, finance system implementations, regulatory programmes, vendor-managed programmes, hybrid waterfall-agile governance. From the operator who ran Global Finance AP/EP workflows and other complex IT programmes.',
     tags: ['PMO toolkits', 'Playbooks', 'Cohort course'],
   },
   {
     num: '03',
+    slug: 'sap',
     name: 'SAP / ERP Operations',
     sub: 'S/4HANA cutover management, hypercare runbooks, migration readiness — what actually breaks at 3 AM and how to prevent it.',
     tags: ['Excel workbook', 'Playbook ebook', 'Bundle'],
   },
   {
     num: '04',
+    slug: 'master-data',
     name: 'Master Data & Catalog',
     sub: 'Master Data Management maturity diagnostics, SKU enrichment scorecards, AI-readiness audits — for the person accountable for the data, not the consultant reviewing it.',
     tags: ['Maturity assessment', 'Scorecard', 'Ebook'],
   },
   {
     num: '05',
+    slug: 'transformation',
     name: 'Transformation & SSC/GBS',
     sub: 'Shared Services and Global Business Services transformation — transition management workbooks, SSC standup packs, GPO operating models, transformation PMO toolkits. Drawn from transitions that involved real headcount, real deadlines, and real consequences.',
     tags: ['Workbook', 'Templates', 'PMO pack'],
   },
   {
     num: '06',
+    slug: 'regulatory',
     name: 'Regulatory & Compliance',
     sub: 'EU AI Act, DORA Article 28, compliance registers with real article citations — not consultant summaries.',
     tags: ['Excel register', 'Starter pack', 'Full tier'],
@@ -280,8 +286,9 @@ import { products, freeItems } from '../data/products';
       </div>
 
       <div class="space-y-3">
-        {lines.map((line, i) => (
-          <div class="flex items-start gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02]">
+        {lines.map((line) => (
+          <a href={`/lines/${line.slug}`}
+             class="flex items-start gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
             <div class="flex-shrink-0 pt-1">
               <span class="line-number text-white/15">{line.num}</span>
             </div>
@@ -295,8 +302,9 @@ import { products, freeItems } from '../data/products';
                 </div>
               </div>
               <p class="text-white/40 text-sm leading-relaxed mt-2">{line.sub}</p>
+              <span class="inline-block mt-3 font-mono text-[10px] text-white/25 tracking-wider uppercase">Explore the line &rarr;</span>
             </div>
-          </div>
+          </a>
         ))}
       </div>
     </div>

@@ -123,7 +123,7 @@ import { products, freeItems, lineGroups, productSlug } from '../data/products';
           <div class="mb-16">
             <div class="mb-6 flex items-baseline gap-3 flex-wrap">
               <div class="w-8 h-px bg-white/30"></div>
-              <p class="font-mono text-white/60 text-xs tracking-[0.2em] uppercase">{group.title}</p>
+              <a href={`/lines/${group.slug}`} class="font-mono text-white/60 hover:text-[#E67E22] text-xs tracking-[0.2em] uppercase transition-colors">{group.title} &rarr;</a>
               <span class="font-mono text-[10px] text-white/30 tracking-wider">{lineProducts.length} live</span>
             </div>
             <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">{group.sub}</p>
