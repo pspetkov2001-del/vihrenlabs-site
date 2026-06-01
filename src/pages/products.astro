@@ -1,6 +1,10 @@
 ---
 import Base from '../layouts/Base.astro';
 import { products, freeItems, lineGroups, productSlug } from '../data/products';
+
+// Short line-title lookup for the comparison table.
+const lineTitle = Object.fromEntries(lineGroups.map((g) => [g.slug, g.title]));
+const tierLabel = { course: 'Course', toolkit: 'Toolkit', bundle: 'Operator pack' };
 ---
 
 <Base
@@ -42,6 +46,57 @@ import { products, freeItems, lineGroups, productSlug } from '../data/products';
           View all in Gumroad shop &rarr;
         </a>
       </div>
+    </div>
+  </section>
+
+  <!-- ═══ PRICING AT A GLANCE (comparison table — AI-extractable) ═══════ -->
+  <section class="py-16 px-6 border-b border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="mb-6 flex items-baseline gap-3 flex-wrap">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Pricing at a glance</p>
+      </div>
+      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
+        Every product, one table — single-operator and team pricing. One-time purchase, no subscription.
+      </p>
+      <div class="overflow-x-auto rounded-2xl border border-white/8">
+        <table class="w-full text-left border-collapse text-sm">
+          <thead>
+            <tr class="bg-white/[0.03] text-white/45 font-mono text-[11px] uppercase tracking-wider">
+              <th class="py-3 px-4 font-medium">Product</th>
+              <th class="py-3 px-4 font-medium">Line</th>
+              <th class="py-3 px-4 font-medium">Type</th>
+              <th class="py-3 px-4 font-medium text-right">Single</th>
+              <th class="py-3 px-4 font-medium text-right">Team</th>
+            </tr>
+          </thead>
+          <tbody>
+            {products.map((p) => (
+              <tr class="border-t border-white/5 hover:bg-white/[0.02] transition-colors">
+                <td class="py-3 px-4">
+                  <a href={`/products/${productSlug(p.name)}`} class="text-white/85 hover:text-[#E67E22] transition-colors font-medium">{p.name}</a>
+                </td>
+                <td class="py-3 px-4 text-white/45">{lineTitle[p.line]}</td>
+                <td class="py-3 px-4 text-white/45">{tierLabel[p.tier]}</td>
+                <td class="py-3 px-4 text-right text-white/90 font-semibold whitespace-nowrap">{p.price}</td>
+                <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">{p.team || '—'}</td>
+              </tr>
+            ))}
+            {freeItems.map((p) => (
+              <tr class="border-t border-white/5 hover:bg-white/[0.02] transition-colors">
+                <td class="py-3 px-4">
+                  <a href={p.url} target="_blank" rel="noopener noreferrer" class="text-white/85 hover:text-[#E67E22] transition-colors font-medium">{p.name}</a>
+                </td>
+                <td class="py-3 px-4 text-white/45">Free resources</td>
+                <td class="py-3 px-4 text-white/45">Download</td>
+                <td class="py-3 px-4 text-right text-white/90 font-semibold whitespace-nowrap">{p.price}</td>
+                <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">—</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+      <p class="text-white/30 text-xs mt-4 font-mono">All prices one-time · single-operator and team licences · instant download on Gumroad.</p>
     </div>
   </section>
 
