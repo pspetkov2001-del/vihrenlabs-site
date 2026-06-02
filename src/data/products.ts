@@ -240,6 +240,48 @@ export const products: Product[] = [
       },
     ],
   },
+
+  // ===== STAGED: Digital Transformation line — INERT until uncommented =====
+  // The 6 below are built + audited (see Spreadsheet OS Collection/docs/DT-LINE-PUBLISH-PACK.md).
+  // On each Gumroad publish: uncomment the entry, replace url 'TODO-…' with the real /l/ slug,
+  // then rebuild + deploy. (Line slug 'transformation' reused; add a 'digital-transformation'
+  // LineGroup above if you later want them split into their own line.)
+  // {
+  //   line: 'transformation', tier: 'toolkit', tag: 'Excel + guides',
+  //   name: 'Process Transformation & Automation Toolkit',
+  //   sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model — decide what to automate before you buy a tool.',
+  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-process-automation',
+  // },
+  // {
+  //   line: 'transformation', tier: 'toolkit', tag: 'PDF + Excel',
+  //   name: 'AI Adoption & AI Agents Operating Playbook',
+  //   sub: 'AI use-case pipeline, scoring, governance, and running agents in production — adopt AI without scaling the mess.',
+  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-ai-adoption',
+  // },
+  // {
+  //   line: 'transformation', tier: 'toolkit', tag: 'Excel + Word',
+  //   name: 'Organizational Change Management Pack',
+  //   sub: 'Stakeholder map, change-impact, comms plan, training plan and adoption tracker — the people side of transformation.',
+  //   price: '$59', team: '$119', url: 'https://vihrenlabs.gumroad.com/l/TODO-change-management',
+  // },
+  // {
+  //   line: 'transformation', tier: 'toolkit', tag: 'Excel workbook',
+  //   name: 'Transformation Delivery & PMO Pack',
+  //   sub: 'Programme plan, initiative tracker, milestone gates, RAID, status report and benefits — run the delivery PMO.',
+  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-pmo-pack',
+  // },
+  // {
+  //   line: 'transformation', tier: 'toolkit', tag: 'Excel workbook',
+  //   name: 'Digital Transformation Operating Model & Roadmap Toolkit',
+  //   sub: 'Assessment, maturity model, multi-wave roadmap, value tracker and RAID — the flagship operating model + roadmap.',
+  //   price: '$149', team: '$299', url: 'https://vihrenlabs.gumroad.com/l/TODO-dt-roadmap',
+  // },
+  // {
+  //   line: 'transformation', tier: 'toolkit', tag: 'Excel workbook',
+  //   name: 'Application Portfolio & Cloud Migration Planner',
+  //   sub: 'App portfolio, 6R disposition, migration waves, business case and cutover runbook — plan the cloud move.',
+  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-cloud-migration',
+  // },
 ];
 
 // Free items — paired on the site for visual clarity. Renders in its own
