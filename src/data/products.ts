@@ -185,6 +185,24 @@ export const products: Product[] = [
     url: 'https://vihrenlabs.gumroad.com/l/qwlgi',
   },
   {
+    line: 'master-data', tier: 'toolkit',
+    tag: 'Assessment + Playbook',
+    name: 'AI-Ready Operations — Readiness Assessment',
+    sub: 'Score whether your data and process can carry an AI revenue or triage agent — 18 checks across 5 dimensions (identity, completeness, consistency, governance, process) returning a GO / FIX-FIRST / NOT-READY verdict, with a fix-first plan. Excel assessment + playbook + worked example + go/no-go brief.',
+    price: '$149', team: '$299',
+    url: 'https://vihrenlabs.gumroad.com/l/jrjbvp',
+    faq: [
+      {
+        q: 'Should I run this before deploying an AI agent on sales, support or operations?',
+        a: 'Yes. An AI agent acts on whatever your data says — on duplicated or incomplete records it confidently produces the wrong rankings. This scores your data and process across five dimensions (identity, completeness, consistency, governance, process) and returns a GO / FIX-FIRST / NOT-READY verdict before you deploy, with a blocker gate so one weak dimension cannot hide behind a good average.',
+      },
+      {
+        q: 'Is this a tool for building an AI agent?',
+        a: 'No — it is the data and process readiness layer underneath, and it is deliberately tool-agnostic. It tells you whether your data can carry an agent and, if not, exactly what to fix and in what order. It does not recommend or build any specific AI tool, and it makes no revenue-multiple claims.',
+      },
+    ],
+  },
+  {
     line: 'master-data', tier: 'bundle',
     tag: 'Operator pack',
     name: 'Master Data Operator\'s Pack',
@@ -264,7 +282,7 @@ export const lineGroups: LineGroup[] = [
   {
     slug: 'master-data',
     title: 'Master Data Operations',
-    sub: 'From product master data to data quality engineering and MDM operating models — Course 02 plus 3 standalone toolkits and the operator bundle.',
+    sub: 'From product master data to data quality engineering, MDM operating models and AI-readiness — Course 02 plus 4 standalone toolkits and the operator bundle.',
   },
   {
     slug: 'transformation',
