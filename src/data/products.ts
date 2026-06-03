@@ -252,12 +252,12 @@ export const products: Product[] = [
   //   sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model — decide what to automate before you buy a tool.',
   //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-process-automation',
   // },
-  // {
-  //   line: 'transformation', tier: 'toolkit', tag: 'PDF + Excel',
-  //   name: 'AI Adoption & AI Agents Operating Playbook',
-  //   sub: 'AI use-case pipeline, scoring, governance, and running agents in production — adopt AI without scaling the mess.',
-  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-ai-adoption',
-  // },
+  {
+    line: 'transformation', tier: 'toolkit', tag: 'PDF + Excel (7 tabs)',
+    name: 'AI Adoption & AI Agents Operating Playbook',
+    sub: 'A 9-section playbook + a 7-tab workbook: scored use-case pipeline, dashboard, pilot scorecard, AI governance register, and an agents-in-production tracker — adopt AI without scaling the mess.',
+    price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/ttxneg',
+  },
   // {
   //   line: 'transformation', tier: 'toolkit', tag: 'Excel + Word',
   //   name: 'Organizational Change Management Pack',
