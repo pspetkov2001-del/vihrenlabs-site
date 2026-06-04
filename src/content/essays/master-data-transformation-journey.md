@@ -1,6 +1,6 @@
 ---
 title: "Touchless ordering is a master-data achievement nobody sees"
-description: "A global process owner's account of turning manual product creation into an AI-driven, rules-based, fully-automated master-data engine at distribution scale — ingestion to touchless quoting, the governance that holds it, and what actually breaks. From someone who came to master data from the reporting side, where the drift shows up first."
+description: "An operator's account of turning manual product creation into an AI-driven, rules-based, fully-automated master-data engine at distribution scale — ingestion to touchless quoting, the governance that holds it, and what actually breaks. From someone who came to master data from the reporting side, where the drift shows up first."
 date: "2026-06-09"
 line: "Master Data Operations"
 keywords: ["master data management", "MDM", "product master data", "data governance", "SKU automation", "touchless ordering", "catalog management", "vendor onboarding", "data standardization", "GPO master data"]
@@ -13,7 +13,7 @@ I didn't start in master data. I came to it from the reporting side.
 
 For years I ran vendor and customer reporting at distribution scale — point-of-sale, inventory, ageing, the rebate calculations that had to pay out to SLA for the largest hardware and software brands in the world. That seat teaches you something the org chart hides: **almost every "the report is wrong" problem is a master-data problem wearing a costume.** A rebate that doesn't reconcile, a product that lands in the wrong category, an order that can't be configured — trace it back far enough and you find one attribute, created by hand, that was wrong the day the SKU was born. I spent enough time firefighting the symptoms to want to own the cause.
 
-So when the mandate came to take global process ownership of master data — across Product, Vendor, and Customer domains — I already knew where the bodies were buried.
+So when the mandate came to own master data end-to-end — across Product, Vendor, and Customer domains — I already knew where the bodies were buried.
 
 **The mandate, stated plainly: kill manual product creation.**
 
