@@ -246,12 +246,12 @@ export const products: Product[] = [
   // On each Gumroad publish: uncomment the entry, replace url 'TODO-…' with the real /l/ slug,
   // then rebuild + deploy. (Line slug 'transformation' reused; add a 'digital-transformation'
   // LineGroup above if you later want them split into their own line.)
-  // {
-  //   line: 'transformation', tier: 'toolkit', tag: 'Excel + guides',
-  //   name: 'Process Transformation & Automation Toolkit',
-  //   sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model — decide what to automate before you buy a tool.',
-  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-process-automation',
-  // },
+  {
+    line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
+    name: 'Process Transformation & Automation Toolkit',
+    sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model — plus the playbook on which automation type fits (integration › workflow › RPA › AI agent). Decide what to automate before you buy a tool.',
+    price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/sjunh',
+  },
   {
     line: 'transformation', tier: 'toolkit', tag: 'PDF + Excel (7 tabs)',
     name: 'AI Adoption & AI Agents Operating Playbook',
@@ -270,12 +270,12 @@ export const products: Product[] = [
   //   sub: 'Programme plan, initiative tracker, milestone gates, RAID, status report and benefits — run the delivery PMO.',
   //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-pmo-pack',
   // },
-  // {
-  //   line: 'transformation', tier: 'toolkit', tag: 'Excel workbook',
-  //   name: 'Digital Transformation Operating Model & Roadmap Toolkit',
-  //   sub: 'Assessment, maturity model, multi-wave roadmap, value tracker and RAID — the flagship operating model + roadmap.',
-  //   price: '$149', team: '$299', url: 'https://vihrenlabs.gumroad.com/l/TODO-dt-roadmap',
-  // },
+  {
+    line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
+    name: 'Digital Transformation Operating Model & Roadmap Toolkit',
+    sub: 'Assessment, a capability-maturity radar, multi-wave roadmap, value tracker and RAID — plus the methodology playbook. The flagship operating model + roadmap.',
+    price: '$149', team: '$299', url: 'https://vihrenlabs.gumroad.com/l/mgvuae',
+  },
   // {
   //   line: 'transformation', tier: 'toolkit', tag: 'Excel workbook',
   //   name: 'Application Portfolio & Cloud Migration Planner',
