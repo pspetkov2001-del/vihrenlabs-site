@@ -258,30 +258,30 @@ export const products: Product[] = [
     sub: 'A 9-section playbook + a 7-tab workbook: scored use-case pipeline, dashboard, pilot scorecard, AI governance register, and an agents-in-production tracker — adopt AI without scaling the mess.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/ttxneg',
   },
-  // {
-  //   line: 'transformation', tier: 'toolkit', tag: 'Excel + Word',
-  //   name: 'Organizational Change Management Pack',
-  //   sub: 'Stakeholder map, change-impact, comms plan, training plan and adoption tracker — the people side of transformation.',
-  //   price: '$59', team: '$119', url: 'https://vihrenlabs.gumroad.com/l/TODO-change-management',
-  // },
-  // {
-  //   line: 'transformation', tier: 'toolkit', tag: 'Excel workbook',
-  //   name: 'Transformation Delivery & PMO Pack',
-  //   sub: 'Programme plan, initiative tracker, milestone gates, RAID, status report and benefits — run the delivery PMO.',
-  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-pmo-pack',
-  // },
+  {
+    line: 'transformation', tier: 'toolkit', tag: 'Excel + Word',
+    name: 'Organizational Change Management Pack',
+    sub: 'Stakeholder map, change-impact, comms plan, training plan and adoption tracker — the people side of transformation.',
+    price: '$59', team: '$119', url: 'https://vihrenlabs.gumroad.com/l/aqbqzl',
+  },
+  {
+    line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
+    name: 'Transformation Delivery & PMO Pack',
+    sub: 'Programme plan, initiative tracker, milestone gates, RAID, an auto-summarising status report and benefits — plus the methodology playbook. Run the delivery PMO.',
+    price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/mdntjx',
+  },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Digital Transformation Operating Model & Roadmap Toolkit',
     sub: 'Assessment, a capability-maturity radar, multi-wave roadmap, value tracker and RAID — plus the methodology playbook. The flagship operating model + roadmap.',
     price: '$149', team: '$299', url: 'https://vihrenlabs.gumroad.com/l/mgvuae',
   },
-  // {
-  //   line: 'transformation', tier: 'toolkit', tag: 'Excel workbook',
-  //   name: 'Application Portfolio & Cloud Migration Planner',
-  //   sub: 'App portfolio, 6R disposition, migration waves, business case and cutover runbook — plan the cloud move.',
-  //   price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/TODO-cloud-migration',
-  // },
+  {
+    line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
+    name: 'Application Portfolio & Cloud Migration Planner',
+    sub: 'App portfolio, 6R disposition, migration waves, business case and cutover runbook — plus the methodology playbook. Plan the cloud move.',
+    price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/bddcwz',
+  },
 ];
 
 // Free items — paired on the site for visual clarity. Renders in its own
