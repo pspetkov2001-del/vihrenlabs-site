@@ -44,7 +44,16 @@ const credentials = [
   '15 years in enterprise IT',
   'Bulgarian · English · Spanish',
   'Sofia, Bulgaria',
-  'Vihren Labs LTD',
+  'Vihren Labs EOOD',
+];
+
+const lines = [
+  { name: 'Procurement & Vendor Management', sub: 'TCO, renewals, RFPs', color: '#E67E22' },
+  { name: 'Digital Transformation', sub: 'ERP modernisation, automation, AI adoption', color: '#2980B9' },
+  { name: 'SAP / ERP Operations', sub: 'S/4HANA cutover, hypercare, migration', color: '#27AE60' },
+  { name: 'Master Data & Catalog', sub: 'Quality audits, maturity, governance', color: '#E67E22' },
+  { name: 'Transformation & SSC/GBS', sub: 'Transition workbooks, PMO, GPO models', color: '#2980B9' },
+  { name: 'EU Regulatory & Compliance', sub: 'EU AI Act, ICT third-party-risk registers, real article citations', color: '#27AE60' },
 ];
 ---
 
@@ -152,6 +161,36 @@ const credentials = [
             </div>
           </div>
         ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SIX PRODUCT LINES ═════════════════════════════════════════════ -->
+  <section class="py-28 px-6 bg-[#0A1520] border-y border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
+      <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-4">
+        Six product lines.<br />
+        <span class="text-white/30">Fifteen years, packaged.</span>
+      </h2>
+      <p class="text-white/40 text-base leading-relaxed max-w-2xl mb-12">
+        What those years actually taught me, in formats you can open on Monday and ship by Friday — structured Excel workbooks, operator playbooks, regulatory registers, transformation toolkits, and full self-paced courses.
+      </p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        {lines.map(l => (
+          <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-7 card-hover">
+            <div class="h-0.5 w-10 mb-5" style={`background: ${l.color}`}></div>
+            <h3 class="font-bold text-lg text-white mb-2">{l.name}</h3>
+            <p class="text-white/45 text-sm leading-relaxed">{l.sub}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12">
+        <a href="/products" class="inline-flex items-center gap-2 text-[#E67E22] font-medium text-sm hover:gap-4 transition-all">
+          Browse all six lines <span>&rarr;</span>
+        </a>
       </div>
     </div>
   </section>
