@@ -104,7 +104,7 @@ export const products: Product[] = [
     name: "Procurement Operator's Pack",
     sub: 'IT Vendor TCO + Procurement Playbook + bundle-exclusive Renewal Negotiation Cheat-Sheet. The full IT-procurement operator kit.',
     price: '$69', team: '$129',
-    url: 'https://vihrenlabs.gumroad.com/l/qeeja',
+    url: 'https://vihrenlabs.gumroad.com/l/lhigyh',
   },
 
   // ─── PROGRAMME DELIVERY & ENTERPRISE IT PMO ────────────────────────
