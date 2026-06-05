@@ -2,9 +2,9 @@
 import Base from '../layouts/Base.astro';
 import { products, freeItems, lineGroups, productSlug } from '../data/products';
 
-// Short line-title lookup for the comparison table.
-const lineTitle = Object.fromEntries(lineGroups.map((g) => [g.slug, g.title]));
+// Comparison table is grouped by product line, ordered course → toolkit → bundle.
 const tierLabel = { course: 'Course', toolkit: 'Toolkit', bundle: 'Operator pack' };
+const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
 ---
 
 <Base
@@ -64,30 +64,43 @@ const tierLabel = { course: 'Course', toolkit: 'Toolkit', bundle: 'Operator pack
           <thead>
             <tr class="bg-white/[0.03] text-white/45 font-mono text-[11px] uppercase tracking-wider">
               <th class="py-3 px-4 font-medium">Product</th>
-              <th class="py-3 px-4 font-medium">Line</th>
               <th class="py-3 px-4 font-medium">Type</th>
               <th class="py-3 px-4 font-medium text-right">Single</th>
               <th class="py-3 px-4 font-medium text-right">Team</th>
             </tr>
           </thead>
           <tbody>
-            {products.map((p) => (
-              <tr class="border-t border-white/5 hover:bg-white/[0.02] transition-colors">
-                <td class="py-3 px-4">
-                  <a href={`/products/${productSlug(p.name)}`} class="text-white/85 hover:text-[#E67E22] transition-colors font-medium">{p.name}</a>
-                </td>
-                <td class="py-3 px-4 text-white/45">{lineTitle[p.line]}</td>
-                <td class="py-3 px-4 text-white/45">{tierLabel[p.tier]}</td>
-                <td class="py-3 px-4 text-right text-white/90 font-semibold whitespace-nowrap">{p.price}</td>
-                <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">{p.team || '—'}</td>
-              </tr>
-            ))}
+            {lineGroups.map((group) => {
+              const lineProducts = products
+                .filter((p) => p.line === group.slug)
+                .sort((a, b) => tierOrder[a.tier] - tierOrder[b.tier]);
+              if (lineProducts.length === 0) return null;
+              return (
+                <Fragment>
+                  <tr class="bg-white/[0.04] border-t border-white/8">
+                    <th colspan="4" scope="colgroup" class="py-2.5 px-4 text-left font-mono text-[11px] text-[#E67E22] uppercase tracking-[0.15em]">{group.title}</th>
+                  </tr>
+                  {lineProducts.map((p) => (
+                    <tr class="border-t border-white/5 hover:bg-white/[0.02] transition-colors">
+                      <td class="py-3 px-4">
+                        <a href={`/products/${productSlug(p.name)}`} class="text-white/85 hover:text-[#E67E22] transition-colors font-medium">{p.name}</a>
+                      </td>
+                      <td class="py-3 px-4 text-white/45">{tierLabel[p.tier]}</td>
+                      <td class="py-3 px-4 text-right text-white/90 font-semibold whitespace-nowrap">{p.price}</td>
+                      <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">{p.team || '—'}</td>
+                    </tr>
+                  ))}
+                </Fragment>
+              );
+            })}
+            <tr class="bg-white/[0.04] border-t border-white/8">
+              <th colspan="4" scope="colgroup" class="py-2.5 px-4 text-left font-mono text-[11px] text-[#E67E22] uppercase tracking-[0.15em]">Free resources</th>
+            </tr>
             {freeItems.map((p) => (
               <tr class="border-t border-white/5 hover:bg-white/[0.02] transition-colors">
                 <td class="py-3 px-4">
                   <a href={p.url} target="_blank" rel="noopener noreferrer" class="text-white/85 hover:text-[#E67E22] transition-colors font-medium">{p.name}</a>
                 </td>
-                <td class="py-3 px-4 text-white/45">Free resources</td>
                 <td class="py-3 px-4 text-white/45">Download</td>
                 <td class="py-3 px-4 text-right text-white/90 font-semibold whitespace-nowrap">{p.price}</td>
                 <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">—</td>
