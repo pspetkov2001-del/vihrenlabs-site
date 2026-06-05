@@ -52,14 +52,19 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
   <!-- ═══ PRICING AT A GLANCE (comparison table — AI-extractable) ═══════ -->
   <section class="py-16 px-6 border-b border-white/5">
     <div class="max-w-6xl mx-auto">
-      <div class="mb-6 flex items-baseline gap-3 flex-wrap">
-        <div class="w-8 h-px bg-[#E67E22]"></div>
-        <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Pricing at a glance</p>
-      </div>
-      <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
-        Every product, one table — single-operator and team pricing. One-time purchase, no subscription.
-      </p>
-      <div class="overflow-x-auto rounded-2xl border border-white/8">
+      <details class="group rounded-2xl border border-white/8 bg-white/[0.02]">
+        <summary class="flex items-center justify-between gap-4 cursor-pointer select-none list-none [&::-webkit-details-marker]:hidden px-6 py-5 hover:bg-white/[0.03] transition-colors">
+          <span class="flex items-center gap-3 flex-wrap">
+            <span class="w-8 h-px bg-[#E67E22]"></span>
+            <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Compare every product &amp; price in one table</span>
+          </span>
+          <span class="font-mono text-base text-white/30 group-open:rotate-180 transition-transform">&darr;</span>
+        </summary>
+        <div class="px-6 pb-6">
+          <p class="text-white/40 text-sm max-w-2xl mb-6 leading-relaxed">
+            Every product, one table — single-operator and team pricing, grouped by line. One-time purchase, no subscription.
+          </p>
+          <div class="overflow-x-auto rounded-2xl border border-white/8">
         <table class="w-full text-left border-collapse text-sm">
           <thead>
             <tr class="bg-white/[0.03] text-white/45 font-mono text-[11px] uppercase tracking-wider">
@@ -108,8 +113,10 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
             ))}
           </tbody>
         </table>
-      </div>
-      <p class="text-white/30 text-xs mt-4 font-mono">All prices one-time · single-operator and team licences · instant download on Gumroad.</p>
+          </div>
+          <p class="text-white/30 text-xs mt-4 font-mono">All prices one-time · single-operator and team licences · instant download on Gumroad.</p>
+        </div>
+      </details>
     </div>
   </section>
 
