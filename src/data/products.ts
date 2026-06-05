@@ -218,6 +218,14 @@ export const products: Product[] = [
     ],
   },
   {
+    line: 'ai-governance', tier: 'bundle',
+    tag: 'Operator pack',
+    name: 'AI Adoption & Governance Operator\'s Pack',
+    sub: 'AI-Ready Operations Assessment + AI Vendor Evaluation & TCO + AI Adoption & AI Agents Playbook — the operator kit for putting AI agents into production, bundled. Score readiness, price the vendors, govern what you ship.',
+    price: '$199', team: '$399',
+    url: 'https://vihrenlabs.gumroad.com/l/aglxp',
+  },
+  {
     line: 'master-data', tier: 'bundle',
     tag: 'Operator pack',
     name: 'Master Data Operator\'s Pack',
