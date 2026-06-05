@@ -204,6 +204,20 @@ export const products: Product[] = [
     ],
   },
   {
+    line: 'ai-governance', tier: 'toolkit',
+    tag: 'Excel workbook',
+    name: 'AI Vendor Evaluation & TCO Workbook',
+    sub: '6-tab Excel — AI vendor registry, 3-year TCO model, weighted evaluation scorecard, a governance quick-check, and a renewal/usage tracker. Price, govern and compare the AI tools you buy — before you sign.',
+    price: '$39', team: '$79',
+    url: 'https://vihrenlabs.gumroad.com/l/scbtwe',
+    faq: [
+      {
+        q: 'How do I compare AI vendors and work out the real cost before buying?',
+        a: 'This workbook gives you an AI vendor registry, a 3-year total-cost-of-ownership model, a weighted evaluation scorecard, a governance quick-check and a renewal/usage tracker — so you can score competing AI tools on the same basis, surface the true multi-year cost rather than the sticker price, and keep a governance and renewal record after you buy.',
+      },
+    ],
+  },
+  {
     line: 'master-data', tier: 'bundle',
     tag: 'Operator pack',
     name: 'Master Data Operator\'s Pack',
