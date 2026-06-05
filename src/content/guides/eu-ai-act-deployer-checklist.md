@@ -1,7 +1,7 @@
 ---
 title: "The EU AI Act deployer checklist — what an SME has to do before August 2026"
 description: "A practical EU AI Act readiness checklist for deployers: build the AI system inventory, classify each system (prohibited, high-risk under Annex III, limited-risk, minimal), meet the Article 50 transparency obligations, cover the Article 26 deployer duties, and assemble the evidence — treated as a documentation exercise, not a legal one."
-date: "2026-06-11"
+date: "2026-06-05"
 line: "Regulatory & Compliance"
 keywords: ["EU AI Act deployer checklist", "EU AI Act compliance", "Article 50 transparency", "Annex III high-risk AI", "AI system inventory", "EU AI Act SME", "AI deployer obligations", "AI Act August 2026"]
 answer: "EU AI Act readiness for a deployer comes down to five things: (1) inventory every AI system you use, with owner and purpose; (2) classify each one — prohibited, high-risk (Annex III), limited-risk with transparency duties, or minimal; (3) meet the Article 50 transparency obligations where they apply (tell people they are interacting with AI, label AI-generated and deepfake content); (4) cover the Article 26 deployer duties for any high-risk system (human oversight, monitoring, keeping logs, using it per the provider's instructions); and (5) keep the evidence — inventory, risk classification, and disclosures — in a form an auditor can walk through. Most of this is documentation discipline; reserve counsel for the genuinely ambiguous edge cases. Key obligations apply from 2 August 2026."

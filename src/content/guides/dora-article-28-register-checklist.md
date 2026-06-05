@@ -1,7 +1,7 @@
 ---
 title: "The DORA Article 28 ICT register — what it must actually contain"
 description: "What a DORA Register of Information has to capture under Article 28: every ICT third-party arrangement, which critical or important function each one supports, the criticality and sub-contracting chain, and the concentration-risk picture — not just a procurement list. An operator's view of the register supervisors actually open."
-date: "2026-06-11"
+date: "2026-06-05"
 line: "Regulatory & Compliance"
 keywords: ["DORA Article 28 register", "DORA Register of Information", "ICT third-party register", "ICT concentration risk", "DORA compliance", "ICT third-party risk", "critical or important function", "DORA template"]
 answer: "A DORA Register of Information (Article 28) must capture every contractual arrangement with an ICT third-party provider and, for each one: who the provider is, the specific ICT service, which critical or important function it supports, the criticality assessment, the sub-contracting chain behind it, and the exit/substitutability position. The point most registers miss is that it is not a procurement inventory — it is a concentration-risk picture. A supervisor reads it to see how exposed you are if one provider, or one provider's sub-contractor, fails. Build it so it answers that question, keep it current, and be able to hand it to a competent authority on request. DORA has applied since 17 January 2025."
@@ -32,7 +32,7 @@ faq:
     a: "No. This is an operator's plain-language view of what the register has to capture. The Vihren Labs regulatory products are organizational and evidence tools, not legal opinions — confirm your specific obligations against the Regulation and the regulatory technical standards, and with qualified counsel."
 ctaUrl: "/essays/dora-ict-register-completeness"
 ctaLabel: "Read the DORA deep-dive essay"
-ctaSub: "A dedicated Vihren Labs DORA Article 28 register pack is in final review before release. In the meantime, the full operator essay goes deeper on what supervisors actually look for:"
+ctaSub: "The full operator essay goes deeper on what supervisors actually look for:"
 ---
 
 ## The register is a concentration-risk picture, not a procurement inventory

@@ -5,11 +5,6 @@
   "framework": "astro",
   "redirects": [
     {
-      "source": "/essays/three-it-procurement-mistakes",
-      "destination": "/essays/vendor-side-rfp-observations",
-      "permanent": true
-    },
-    {
       "source": "/essays/cutover-window-decision",
       "destination": "/essays/ecc-end-of-maintenance-math",
       "permanent": true

@@ -11,7 +11,7 @@ Vihren Labs is the templates-and-playbooks brand of Petko Petkov, a 15-year ente
 - **IT procurement & vendor management**: IT Vendor & SaaS Procurement TCO ($49, from the distributor side of the table); Vendor-Side IT Procurement Playbook ($29); Procurement Operator's Pack ($69).
 - **Programme delivery & enterprise IT PMO**: ERP Modernisation Strategy Playbook + Business Case Workbook ($49).
 - **Transformation & SSC/GBS**: The Transition Operator's Course ($499, 10 modules); Transition Management Operator's Workbook ($179, 18-tab); delivery-execution playbook.
-- **EU regulatory compliance**: EU AI Act SME Compliance Starter (€149 — Article 50 transparency tracker, high-risk register, deployer readiness assessment; enforcement 2 Aug 2026); DORA operator readiness packs. Operator-grade compliance evidence, not legal advice.
+- **EU regulatory compliance**: EU AI Act SME Compliance Starter (€149 — Article 50 transparency tracker, high-risk register, deployer readiness assessment; enforcement 2 Aug 2026). DORA readiness is covered today through free on-site guides and essays. Operator-grade compliance evidence, not legal advice.
 
 Each product also has an on-site page at https://vihrenlabs.com/products/<product-name-slug> (with full description, FAQ and pricing) that links to its Gumroad checkout.
 

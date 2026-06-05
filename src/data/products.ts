@@ -16,6 +16,7 @@ export type LineSlug =
   | 'programme-delivery'
   | 'sap'
   | 'master-data'
+  | 'ai-governance'
   | 'transformation'
   | 'regulatory';
 
@@ -185,7 +186,7 @@ export const products: Product[] = [
     url: 'https://vihrenlabs.gumroad.com/l/qwlgi',
   },
   {
-    line: 'master-data', tier: 'toolkit',
+    line: 'ai-governance', tier: 'toolkit',
     tag: 'Assessment + Playbook',
     name: 'AI-Ready Operations — Readiness Assessment',
     sub: 'Score whether your data and process can carry an AI revenue or triage agent — 18 checks across 5 dimensions (identity, completeness, consistency, governance, process) returning a GO / FIX-FIRST / NOT-READY verdict, with a fix-first plan. Excel assessment + playbook + worked example + go/no-go brief.',
@@ -253,7 +254,7 @@ export const products: Product[] = [
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/sjunh',
   },
   {
-    line: 'transformation', tier: 'toolkit', tag: 'PDF + Excel (7 tabs)',
+    line: 'ai-governance', tier: 'toolkit', tag: 'PDF + Excel (7 tabs)',
     name: 'AI Adoption & AI Agents Operating Playbook',
     sub: 'A 9-section playbook + a 7-tab workbook: scored use-case pipeline, dashboard, pilot scorecard, AI governance register, and an agents-in-production tracker — adopt AI without scaling the mess.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/ttxneg',
@@ -324,7 +325,12 @@ export const lineGroups: LineGroup[] = [
   {
     slug: 'master-data',
     title: 'Master Data Operations',
-    sub: 'From product master data to data quality engineering, MDM operating models and AI-readiness — Course 02 plus 4 standalone toolkits and the operator bundle.',
+    sub: 'From product master data to data quality engineering and MDM operating models — Course 02 plus 3 standalone toolkits and the operator bundle.',
+  },
+  {
+    slug: 'ai-governance',
+    title: 'AI Adoption & Governance',
+    sub: 'The operator layer for putting AI agents into production — data and process readiness, an AI governance register, an agents-in-production tracker, and AI vendor TCO. Govern the agent, don\'t just buy it.',
   },
   {
     slug: 'transformation',

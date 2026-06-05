@@ -1,7 +1,7 @@
 ---
 title: "Vendor-side observations on how enterprise IT procurement actually works"
 description: "What the vendor and distribution side actually does when your IT spend comes up — whether it's a competitive RFP or a quiet renewal. The signals they read: is the competition genuine, who controls the channel and deal registration, the executive relationship map, your own internal fault lines, whether you can operationally switch — and the two renewal mistakes that cost more than any discount saves."
-date: "2026-06-06"
+date: "2026-06-05"
 line: "Procurement & Vendor Management"
 keywords: ["IT procurement", "enterprise software RFP", "deal registration", "channel conflict", "vendor renewal negotiation", "software contract terms", "RFP strategy", "incumbent displacement", "IT vendor management", "switching costs"]
 ---

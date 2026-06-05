@@ -1,7 +1,7 @@
 ---
 title: "Touchless ordering is a master-data achievement nobody sees"
 description: "An operator's account of turning manual product creation into an AI-driven, rules-based, fully-automated master-data engine at distribution scale — ingestion to touchless quoting, the governance that holds it, and what actually breaks. From someone who came to master data from the reporting side, where the drift shows up first."
-date: "2026-06-09"
+date: "2026-06-05"
 line: "Master Data Operations"
 keywords: ["master data management", "MDM", "product master data", "data governance", "SKU automation", "touchless ordering", "catalog management", "vendor onboarding", "data standardization", "GPO master data"]
 featured: true

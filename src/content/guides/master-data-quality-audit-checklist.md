@@ -1,7 +1,7 @@
 ---
 title: "The master data quality audit — the checks that actually matter"
 description: "How to run a master data quality audit: the six dimensions worth scoring (completeness, validity, consistency, uniqueness, conformity, timeliness), how to score at field level, how to log and prioritise defects, and how to evidence the improvement over time — for the person accountable for the data, not the consultant reviewing it."
-date: "2026-06-11"
+date: "2026-06-05"
 line: "Master Data Operations"
 keywords: ["master data quality audit checklist", "data quality metrics", "master data quality dimensions", "MDM data quality", "SAP master data quality", "data defect log", "data quality scoring", "master data remediation"]
 answer: "A master data quality audit scores each critical field against six dimensions — completeness (is it populated?), validity (does it conform to the allowed format/values?), consistency (does it agree across systems?), uniqueness (are there duplicates?), conformity (does it match the governed standard?), and timeliness (is it current?). You score at field level rather than record level, log every defect with an owner and a root cause, prioritise by business impact rather than by count, and re-score on a fixed cadence so the trend is evidenced. The output is not a one-time report — it is a repeatable, banded score that proves whether quality is improving."

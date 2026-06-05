@@ -73,18 +73,25 @@ const lines = [
     num: '04',
     slug: 'master-data',
     name: 'Master Data & Catalog',
-    sub: 'Master Data Management maturity diagnostics, SKU enrichment scorecards, AI-readiness audits — for the person accountable for the data, not the consultant reviewing it.',
+    sub: 'Master Data Management maturity diagnostics, data quality audits, SKU enrichment scorecards — for the person accountable for the data, not the consultant reviewing it.',
     tags: ['Maturity assessment', 'Scorecard', 'Ebook'],
   },
   {
     num: '05',
+    slug: 'ai-governance',
+    name: 'AI Adoption & Governance',
+    sub: 'Putting AI agents into production without scaling the mess — data and process readiness, an AI governance register, an agents-in-production tracker, and AI vendor TCO. For the operator accountable for making the agent work on real enterprise data.',
+    tags: ['Readiness assessment', 'Governance register', 'Vendor TCO'],
+  },
+  {
+    num: '06',
     slug: 'transformation',
     name: 'Transformation & SSC/GBS',
     sub: 'Shared Services and Global Business Services transformation — transition management workbooks, SSC standup packs, GPO operating models, transformation PMO toolkits. Drawn from transitions that involved real headcount, real deadlines, and real consequences.',
     tags: ['Workbook', 'Templates', 'PMO pack'],
   },
   {
-    num: '06',
+    num: '07',
     slug: 'regulatory',
     name: 'Regulatory & Compliance',
     sub: 'EU AI Act, DORA Article 28, compliance registers with real article citations — not consultant summaries.',
@@ -138,7 +145,7 @@ import { products, freeItems } from '../data/products';
 
       <!-- Value prop eyebrow — tells cold visitors what this IS before the headline -->
       <p class="fade-up fade-up-delay-2 font-mono text-orange text-sm tracking-[0.18em] uppercase mb-4">
-        6 product lines · Procurement · Programme Delivery · SAP · Master Data Management · SSC/GBS · Regulatory
+        7 product lines · Procurement · Programme Delivery · SAP · Master Data · AI Governance · SSC/GBS · Regulatory
       </p>
 
       <!-- Main headline -->
@@ -162,7 +169,7 @@ import { products, freeItems } from '../data/products';
           class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base hover:bg-[#E67E22]/30 transition-colors"
         >
           <span class="w-2 h-2 rounded-full bg-[#E67E22] animate-pulse flex-shrink-0"></span>
-          17 products live now on Gumroad
+          {products.length} products live now on Gumroad
         </a>
         <a
           href="/about"
@@ -182,7 +189,7 @@ import { products, freeItems } from '../data/products';
       <div class="mt-20 pt-10 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-8">
         {[
           { n: '15+', label: 'Years in enterprise IT' },
-          { n: '6', label: 'Product lines' },
+          { n: '7', label: 'Product lines' },
           { n: 'SAP', label: 'ECC & S/4HANA' },
           { n: 'EU', label: 'AI Act & DORA' },
         ].map(s => (
@@ -278,7 +285,7 @@ import { products, freeItems } from '../data/products';
       <div class="flex items-end justify-between mb-16 flex-wrap gap-4">
         <div>
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Product lines</p>
-          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Five expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
+          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Seven expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
         </div>
         <span class="font-mono text-xs text-white/25 border border-white/8 px-5 py-2.5 rounded-full">
           Live now on Gumroad
