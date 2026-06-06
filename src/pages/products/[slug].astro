@@ -1,7 +1,7 @@
 ---
 import Base from '../../layouts/Base.astro';
 import { getCollection } from 'astro:content';
-import { products, lineBySlug, productSlug, buildProductFaq } from '../../data/products';
+import { products, lineBySlug, productSlug, buildProductFaq, ladderNext } from '../../data/products';
 import { faqSchema } from '../../data/schema';
 
 export function getStaticPaths() {
@@ -15,9 +15,12 @@ const { product } = Astro.props;
 const line = lineBySlug[product.line];
 const canonical = `https://vihrenlabs.com/products/${productSlug(product.name)}`;
 
-// Related products in the same line (excluding this one), max 3.
+// The next step up the value ladder — powers the cross-sell / "pay more" CTA.
+const nextStep = ladderNext(product);
+
+// Related products in the same line (excluding this one + the ladder CTA), max 3.
 const related = products
-  .filter((p) => p.line === product.line && p.name !== product.name)
+  .filter((p) => p.line === product.line && p.name !== product.name && p.name !== nextStep?.name)
   .slice(0, 3);
 
 // Essay-as-proof: the on-site essays tagged to this product's line — the
@@ -109,8 +112,28 @@ const faqJsonLd = faqSchema(faqs);
         Get it on Gumroad &rarr;
       </a>
       <p class="text-white/30 text-xs mt-4 font-mono">One-time purchase · instant download · no subscription</p>
+      {product.lastUpdated && (
+        <p class="text-white/30 text-xs mt-2 font-mono">Last updated {product.lastUpdated}{product.changelog ? ` — ${product.changelog}` : ''}</p>
+      )}
     </div>
   </section>
+
+  <!-- Value-ladder cross-sell (the "complete the system / go deeper" CTA) -->
+  {nextStep && (
+    <section class="py-10 px-6 border-b border-white/5">
+      <div class="max-w-3xl mx-auto">
+        <a href={`/products/${productSlug(nextStep.name)}`}
+           class="group flex items-center justify-between gap-4 border border-[#E67E22]/25 bg-[#E67E22]/[0.04] rounded-2xl p-5 hover:border-[#E67E22]/50 transition-colors">
+          <div>
+            <p class="font-mono text-[10px] text-[#E67E22] tracking-[0.2em] uppercase mb-1">{nextStep.tier === 'course' ? 'Go deeper' : 'Complete the system'}</p>
+            <h3 class="font-bold text-sm text-white/85 leading-snug">{nextStep.name}</h3>
+            <p class="text-white/40 text-xs leading-relaxed mt-1">{nextStep.sub}</p>
+          </div>
+          <span class="font-black text-base text-white/90 whitespace-nowrap pt-1">{nextStep.price} &rarr;</span>
+        </a>
+      </div>
+    </section>
+  )}
 
   <!-- Line context -->
   <section class="py-16 px-6 border-b border-white/5">

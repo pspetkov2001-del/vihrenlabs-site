@@ -21,6 +21,8 @@
 | About | `src/pages/about.astro` |
 | Privacy | `src/pages/privacy.astro` |
 
+> **Product-detail retention fields** (`src/data/products.ts`): `lastUpdated` + `changelog` render the "Last updated · what's new" trust line; the value-ladder cross-sell CTA is derived by `ladderNext()` (toolkit → Operator's Pack → course) with an optional `next` override. On any genuine SKU update, set `lastUpdated`/`changelog` here **and** announce it to existing holders — see `Spreadsheet OS Collection/docs/RETENTION-PLAYBOOK.md`.
+
 ## Components
 - `src/components/ProductCard.astro` — product grid card (check wrap/spacing on mobile).
 - `src/components/NewsletterForm.astro` — Beehiiv/email capture (`/api/subscribe`).

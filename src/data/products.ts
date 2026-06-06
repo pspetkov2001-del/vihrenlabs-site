@@ -29,6 +29,15 @@ export interface Product {
   price: string;
   team: string;
   url: string;
+  // Optional retention/LTV surfaces (rendered on the product detail page).
+  // Set lastUpdated ONLY on a genuine revision — it powers the "Last updated"
+  // trust signal AND the update-announce loop (Gumroad Post to existing holders).
+  // Never fabricate a date. See docs/RETENTION-PLAYBOOK.md.
+  lastUpdated?: string;   // ISO date of the last real update
+  changelog?: string;     // one-line "what's new", shown next to lastUpdated
+  // Editorial override for the value-ladder CTA: the exact `name` of the next
+  // product to recommend. Defaults to a derived within-line step (see ladderNext).
+  next?: string;
   // Optional hand-written, buyer-intent FAQ entries for marquee products.
   // Merged with auto-generated brand/price/audience Q&As by buildProductFaq().
   // Phrase questions the way a buyer asks an AI assistant — these are the
@@ -192,6 +201,8 @@ export const products: Product[] = [
     sub: 'Stand up an AI CoE and run the agent lifecycle end to end — org, governance, reference architecture, the 10-gate delivery lifecycle, RACI, metrics, maturity — with 3 worked use cases + a 9-tab tracking workbook. ~80-page handbook.',
     price: '$199', team: '$399',
     url: 'https://vihrenlabs.gumroad.com/l/mmkqsg',
+    lastUpdated: '2026-06-06',
+    changelog: 'Expanded to the ~80-page handbook + 9-tab workbook, with three end-to-end worked use cases.',
     faq: [
       {
         q: 'What does the AI Center of Excellence Handbook cover?',
@@ -206,6 +217,8 @@ export const products: Product[] = [
     sub: 'Decide which use cases are good, feasible candidates for an AI agent before you build — score 6 weighted criteria, gate on data and risk, get a GO / PILOT / PARK verdict. 4-tab Excel + guide.',
     price: '$49', team: '$99',
     url: 'https://vihrenlabs.gumroad.com/l/hjtvm',
+    lastUpdated: '2026-06-06',
+    changelog: 'New SKU — 6-criteria weighted scorecard with the data/risk blocker rule and a GO / PILOT / PARK verdict.',
     faq: [
       {
         q: 'How do I choose which processes are good candidates for an AI agent?',
@@ -252,6 +265,8 @@ export const products: Product[] = [
     sub: 'The complete AI governance system, bundled: the AI Center of Excellence Handbook (the frame) + the Use-Case Selection Scorecard, AI-Ready Operations, AI Adoption & AI Agents Playbook and AI Vendor Evaluation & TCO (the tools at each gate). Five products, one operator system.',
     price: '$349', team: '$649',
     url: 'https://vihrenlabs.gumroad.com/l/aglxp',
+    lastUpdated: '2026-06-06',
+    changelog: 'Evolved into the full 5-component system (Handbook + Scorecard + AI-Ready Ops + Adoption Playbook + Vendor TCO).',
   },
   {
     line: 'master-data', tier: 'bundle',
@@ -412,6 +427,24 @@ export function productSlug(name: string): string {
 export const lineBySlug: Record<LineSlug, LineGroup> = Object.fromEntries(
   lineGroups.map((g) => [g.slug, g]),
 ) as Record<LineSlug, LineGroup>;
+
+// The "next step up" in a product's value ladder — powers the cross-sell CTA on
+// the product detail page (the "pay more / go deeper" lever). Derived, so it
+// needs no per-product upkeep and can't drift: a toolkit points to its line's
+// Operator's Pack (bundle), else the line's course; a bundle points to the
+// course. Returns undefined at the top of a ladder. A product may set `next`
+// (an exact product name) to override with an editorial / cross-line pointer.
+export function ladderNext(p: Product): Product | undefined {
+  if (p.next) return products.find((x) => x.name === p.next);
+  const inLine = products.filter((x) => x.line === p.line && x.name !== p.name);
+  if (p.tier === 'toolkit') {
+    return inLine.find((x) => x.tier === 'bundle') ?? inLine.find((x) => x.tier === 'course');
+  }
+  if (p.tier === 'bundle') {
+    return inLine.find((x) => x.tier === 'course');
+  }
+  return undefined; // course = top of the ladder
+}
 
 // Build the FAQ for a product detail page: page-specific Q&As derived from the
 // product's own fields (so no two pages are duplicate-FAQ), plus any hand-written
