@@ -187,6 +187,34 @@ export const products: Product[] = [
   },
   {
     line: 'ai-governance', tier: 'toolkit',
+    tag: 'Handbook + Excel',
+    name: 'AI Center of Excellence Handbook',
+    sub: 'Stand up an AI CoE and run the agent lifecycle end to end — org, governance, reference architecture, the 10-gate delivery lifecycle, RACI, metrics, maturity — with 3 worked use cases + a 9-tab tracking workbook. ~80-page handbook.',
+    price: '$199', team: '$399',
+    url: 'https://vihrenlabs.gumroad.com/l/mmkqsg',
+    faq: [
+      {
+        q: 'What does the AI Center of Excellence Handbook cover?',
+        a: 'How to design and run an AI CoE end to end: the mandate and funding model, operating-model patterns, roles and RACI, the reference architecture and control plane, the governance framework (risk tiers, acceptable-use, approval gates), quality and incident standards, the 10-gate agent delivery lifecycle from intake to retirement, metrics and maturity — plus three end-to-end worked use cases (low, medium and high risk) and a 9-tab tracking workbook.',
+      },
+    ],
+  },
+  {
+    line: 'ai-governance', tier: 'toolkit',
+    tag: 'Excel + guide',
+    name: 'AI Agent Use-Case Selection & Feasibility Scorecard',
+    sub: 'Decide which use cases are good, feasible candidates for an AI agent before you build — score 6 weighted criteria, gate on data and risk, get a GO / PILOT / PARK verdict. 4-tab Excel + guide.',
+    price: '$49', team: '$99',
+    url: 'https://vihrenlabs.gumroad.com/l/hjtvm',
+    faq: [
+      {
+        q: 'How do I choose which processes are good candidates for an AI agent?',
+        a: 'Score each candidate 1-5 on six agent-suitability criteria — task structure, data readiness, value/ROI, risk containability, build feasibility, adoption readiness — with editable weights. The workbook returns a weighted score and a GO / PILOT / PARK verdict, plus a blocker rule that forces FIX-FIRST if data readiness or risk containability is too low, so a fatal weakness cannot hide behind a good average.',
+      },
+    ],
+  },
+  {
+    line: 'ai-governance', tier: 'toolkit',
     tag: 'Assessment + Playbook',
     name: 'AI-Ready Operations — Readiness Assessment',
     sub: 'Score whether your data and process can carry an AI revenue or triage agent — 18 checks across 5 dimensions (identity, completeness, consistency, governance, process) returning a GO / FIX-FIRST / NOT-READY verdict, with a fix-first plan. Excel assessment + playbook + worked example + go/no-go brief.',
@@ -221,8 +249,8 @@ export const products: Product[] = [
     line: 'ai-governance', tier: 'bundle',
     tag: 'Operator pack',
     name: 'AI Adoption & Governance Operator\'s Pack',
-    sub: 'AI-Ready Operations Assessment + AI Vendor Evaluation & TCO + AI Adoption & AI Agents Playbook — the operator kit for putting AI agents into production, bundled. Score readiness, price the vendors, govern what you ship.',
-    price: '$199', team: '$399',
+    sub: 'The complete AI governance system, bundled: the AI Center of Excellence Handbook (the frame) + the Use-Case Selection Scorecard, AI-Ready Operations, AI Adoption & AI Agents Playbook and AI Vendor Evaluation & TCO (the tools at each gate). Five products, one operator system.',
+    price: '$349', team: '$649',
     url: 'https://vihrenlabs.gumroad.com/l/aglxp',
   },
   {
