@@ -156,8 +156,8 @@ import { products, freeItems } from '../data/products';
       </h1>
 
       <!-- Sub -->
-      <p class="fade-up fade-up-delay-3 text-white/50 text-lg sm:text-xl leading-relaxed max-w-xl mb-12">
-        Operator-grade templates for procurement, SAP migrations, EU regulatory compliance, master data, AI adoption & governance, and shared services transformation.
+      <p class="fade-up fade-up-delay-3 text-white/50 text-lg sm:text-xl leading-relaxed max-w-2xl mb-12">
+        For the operator who's accountable when it has to work on Monday morning — the cutover, the renewal, the migration, the AI agent. Operator-grade templates and playbooks for the enterprise IT stack, built from real scenarios, not consultant theory.
       </p>
 
       <!-- CTAs -->
@@ -215,6 +215,72 @@ import { products, freeItems } from '../data/products';
       </div>
     </div>
   </div>
+
+  <!-- ═══ WHY / WHO / PROBLEMS — the mission ════════════════════════════ -->
+  <section class="py-28 px-6 border-t border-white/5">
+    <!-- Why this exists -->
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Why this exists</span>
+      </div>
+      <h2 class="font-black text-4xl sm:text-5xl lg:text-6xl leading-[1.04] tracking-tight mb-8 max-w-3xl">
+        Enterprise IT is written by everyone <span class="text-white/30">except the person it lands on.</span>
+      </h2>
+      <div class="space-y-5 text-white/60 text-lg leading-relaxed max-w-2xl">
+        <p>Vendors sell the product. Consultants bill the programme and leave. Analysts draw the quadrant. Almost nobody writes for the person who is still in the seat on Tuesday — when the cutover failed at 3 a.m., when the renewal auto-rolled at +18%, when the agent shipped on data nobody had cleaned.</p>
+        <p><strong class="text-white/85">Vihren Labs is the catalogue I wish I had had in that seat.</strong> The operating detail, written down — by someone who has been on call for it, on both sides of the table. The purpose is narrow and on purpose: take fifteen years of pattern-recognition and turn it into tools an operator can open on Monday and use by Friday.</p>
+      </div>
+    </div>
+
+    <!-- Who it's for -->
+    <div class="max-w-6xl mx-auto mt-20">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-5">Who I want to help</p>
+      <p class="text-white/70 text-xl sm:text-2xl leading-relaxed max-w-3xl mb-8">
+        If your name is on the decision when it goes wrong, this is for you.
+      </p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        {[
+          'SAP / S4HANA migration & cutover leads',
+          'Master-data & MDG owners and stewards',
+          'Transformation, transition & SSC/GBS managers',
+          'Programme & PMO leads',
+          'IT procurement & vendor managers',
+          'AI adoption & governance owners',
+          'DORA & EU AI Act compliance leads',
+          'IT directors carrying the whole stack',
+        ].map(who => (
+          <div class="flex items-center gap-3 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
+            <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
+            <span class="text-white/60 text-sm">{who}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- The problems it solves -->
+    <div class="max-w-6xl mx-auto mt-20">
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">The problems I want to solve</p>
+      <div class="grid md:grid-cols-2 gap-4">
+        {[
+          { p: 'Governance failures kill programmes the technology would have survived.', f: 'Runsheets, freezes and rollback criteria — named owners, pre-agreed, before T-day.' },
+          { p: 'Cutovers fall apart at 3 a.m. because the rollback was never a decision.', f: 'A 52-check readiness matrix and an hour-by-hour run sheet that holds when twelve people disagree.' },
+          { p: 'Renewals are lost to the information the vendor has and you don\'t.', f: 'The true 3-year TCO, the notice-period trap, and what the distribution channel already knows.' },
+          { p: 'AI projects get cancelled for want of an operating model, not a better model.', f: 'A use-case gate, a governance register, and a named owner after launch — decided before you build.' },
+          { p: 'Master data nobody owns — so every report is "wrong" and every agent inherits the mess.', f: 'Field-level quality scoring, a maturity read, and an operating model with real decision rights.' },
+          { p: 'Compliance run as document theatre instead of operational evidence.', f: 'Registers with real article numbers — EU AI Act, DORA Article 28 — built to be walked by an auditor in 30 minutes.' },
+        ].map(item => (
+          <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+            <p class="text-white/85 text-base font-semibold leading-snug mb-3">{item.p}</p>
+            <p class="text-white/45 text-sm leading-relaxed">{item.f}</p>
+          </div>
+        ))}
+      </div>
+      <p class="text-white/55 text-base leading-relaxed max-w-3xl mt-10">
+        The standard is the same across all of it: run on the obligation, build governance like architecture, concrete beats abstract. Operator-grade, not consulting — you buy it, you own it, no subscription. <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Read the Operator Standard &rarr;</a>
+      </p>
+    </div>
+  </section>
 
   <!-- ═══ OPERATOR VOICE ════════════════════════════════════════════════ -->
   <section class="py-28 px-6">
