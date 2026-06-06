@@ -51,7 +51,7 @@ The technology was fine. What failed was this: the master data freeze date was a
 
 Technical risk is well-instrumented: monitoring tools, alerting, automated tests, error-rate thresholds. When something breaks technically, it usually shows up in a dashboard. Governance risk is invisible until the moment it matters. There is no monitor for "the runsheet owner is working from the wrong version."
 
-Build governance with the same rigour you build technical architecture. The cutover runsheet is the artifact that determines whether sixty people on a 3 AM call know what to do next. The master data freeze is a control, and controls need owners who can enforce them. The rollback criteria are a pre-agreed decision — a named person, a specific threshold, a time limit. Write them down before you start. This is the discipline behind the [SAP Migration Operator's Pack](/products/sap-migration-operators-pack).
+Build governance with the same rigour you build technical architecture. The cutover runsheet is the artifact that determines whether sixty people on a 3 AM call know what to do next. The master data freeze is a control, and controls need owners who can enforce them. The rollback criteria are a pre-agreed decision — a named person, a specific threshold, a time limit. Write them down before you start. This is the discipline behind the [SAP Migration Operator's Pack](/products/sap-migration-operators-pack) — and, increasingly, behind AI: most agent programmes fail on the operating model, not the model, which is the whole argument of [governance, not agents](/essays/governance-not-agents).
 
 ## 3. Concrete beats abstract
 
@@ -132,6 +132,7 @@ If you read this far, one of the seven principles probably landed harder than th
 - **Principles 1 + 4** (the honest case + vendor economics) → start with [Procurement & Vendor Management](/products).
 - **Principles 3 + 5** (concrete + regulation as operational) → start with the [Regulatory & Compliance](/products) line.
 - **Principles 2 + 6** (governance + pre-mortem) → start with [SAP / ERP Operations](/products).
+- **Principle 2, applied to AI** (governance before agents) → the [AI Center of Excellence Handbook](/products/ai-center-of-excellence-handbook) is the operating model; the [AI Adoption & Governance Operator's Pack](/products/ai-adoption-and-governance-operators-pack) bundles it with the tools at each gate.
 - **Principle 7** (the catalogue compounds) → browse the [full catalogue](/products) and pick whichever line matches the most expensive next project on your desk.
 
 The standard is the same across all of them. The size of the buyer changes; the rigour does not. If you want the step-by-step versions, the [operator guides](/guides) walk the cutover, the master-data audit, and the EU regulatory registers in detail.
