@@ -347,8 +347,10 @@ export const products: Product[] = [
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Digital Transformation Operating Model & Roadmap Toolkit',
-    sub: 'Assessment, a capability-maturity radar, multi-wave roadmap, value tracker and RAID — plus the methodology playbook. The flagship operating model + roadmap.',
+    sub: 'Assessment, a capability-maturity radar, multi-wave roadmap, value tracker and RAID — plus a 15-page operating handbook. The flagship operating model + roadmap.',
     price: '$149', team: '$299', url: 'https://vihrenlabs.gumroad.com/l/mgvuae',
+    lastUpdated: '2026-06-07',
+    changelog: 'Playbook expanded to a 15-page operating handbook — a transformation-readiness self-check, the 7 failure modes, the operating spine, the five domains and what to probe in each, honest maturity scoring + reading the radar shape, the optimisation-not-transformation pattern, wave sequencing, phased gate-tied funding, the target operating model that makes change stick, governance that decides, value net of run-cost, sponsorship + change management, the team you need, leading-vs-lagging metrics, the stop/pause/re-sequence discipline, the first 90 days, and a worked example (a distributor turning "modernise IT" into a defensible programme) carried through all six moves — plus templates + a glossary.',
   },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
