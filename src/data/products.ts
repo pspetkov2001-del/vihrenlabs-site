@@ -321,8 +321,10 @@ export const products: Product[] = [
   {
     line: 'ai-governance', tier: 'toolkit', tag: 'PDF + Excel (7 tabs)',
     name: 'AI Adoption & AI Agents Operating Playbook',
-    sub: 'A 9-section playbook + a 7-tab workbook: scored use-case pipeline, dashboard, pilot scorecard, AI governance register, and an agents-in-production tracker — adopt AI without scaling the mess.',
+    sub: 'A 15-page operating handbook + a 7-tab workbook: scored use-case pipeline, dashboard, pilot scorecard, AI governance register, and an agents-in-production tracker — adopt AI without scaling the mess.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/ttxneg',
+    lastUpdated: '2026-06-07',
+    changelog: 'Expanded to a 15-page operating handbook — scoring rubrics, a worked example carried end to end, the agent operating model, a glossary, and fillable templates.',
   },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + Word',
