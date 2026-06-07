@@ -351,8 +351,10 @@ export const products: Product[] = [
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Application Portfolio & Cloud Migration Planner',
-    sub: 'App portfolio, 6R disposition, migration waves, business case and cutover runbook — plus the methodology playbook. Plan the cloud move.',
+    sub: 'App portfolio, 6R disposition, migration waves, business case and cutover runbook — plus a 15-page operating handbook. Plan the cloud move.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/bddcwz',
+    lastUpdated: '2026-06-07',
+    changelog: 'Playbook expanded to a 15-page operating handbook — a maturity self-check, the 6R disposition with a worked split + reading-the-mix, the landing zone, security/residency, wave sequencing, a worked TCO with the run-cost trap + hidden costs, big-bang/phased/strangler approaches, data-migration validation, two worked examples (wave-1 + the ERP cluster), FinOps, when-cloud-is-wrong, roles, a 90-day plan, and a glossary + templates.',
   },
 ];
 
