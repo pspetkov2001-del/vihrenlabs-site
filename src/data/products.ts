@@ -122,9 +122,11 @@ export const products: Product[] = [
     line: 'programme-delivery', tier: 'toolkit',
     tag: 'Playbook + Excel',
     name: 'ERP Modernisation Strategy Playbook + Business Case Workbook',
-    sub: 'Whether to modernise · which of 5 options · how to phase it. 4-page strategy guide + 6-tab business-case workbook. Before a consultant is on site.',
+    sub: 'Whether to modernise · which of 5 options · how to phase it. A 15-page operating handbook + 6-tab business-case workbook. Before a consultant is on site.',
     price: '$49', team: '$99',
     url: 'https://vihrenlabs.gumroad.com/l/cryqw',
+    lastUpdated: '2026-06-07',
+    changelog: 'Playbook expanded to a 15-page operating handbook — a readiness self-check, the "past the point of deferral?" estate diagnostic, the five options each with its trap, the brownfield/greenfield/selective asset-vs-liability test, the business case both sides with the cost-of-not-acting frame + a worked 5-year TCO + the data-remediation line, the weighted scorecard with a worked result, the RISE/commercial deep-dive, the one-page board decision, data-first phasing + the dual-running trap, choosing the SI, the seven failure modes as a symptom→fix catalogue, the people side, the first 90 days, objections, and a worked example throughout (Meridian, a €400M manufacturer on ECC) — plus templates + a glossary.',
   },
 
   // ─── SAP / ERP OPERATIONS ──────────────────────────────────────────
@@ -284,9 +286,11 @@ export const products: Product[] = [
     line: 'transformation', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'Transition Management Operator\'s Workbook',
-    sub: 'Run an offshoring, SSC or BPO transition end to end — 18-tab Excel workbook + 12-phase delivery playbook + SOP + engagement templates. The standalone toolkit beneath Course 01.',
+    sub: 'Run an offshoring, SSC or BPO transition end to end — 18-tab Excel workbook + a 15-page, 12-phase delivery handbook + SOP + engagement templates. The standalone toolkit beneath Course 01.',
     price: '$179', team: '$349',
     url: 'https://vihrenlabs.gumroad.com/l/ehmnt',
+    lastUpdated: '2026-06-07',
+    changelog: 'Delivery & Execution Playbook expanded to a 15-page operating handbook — the 12-phase / 3-stage method (exit gate per phase) preserved, surrounded with the four transition models, the FTE math worked (fund the ramp, not the steady state), choosing Wave 1 + sequencing, a knowledge-transfer deep-dive (advance on evidence), the retained organisation, governance + self-writing status, leading-vs-lagging metrics, a transition risk catalogue, the recovery move, the first 30 days, objections, and a worked example throughout (a finance SSC moving AP/AR/GL) — plus templates + a glossary. Workbook + Word templates unchanged.',
   },
 
   // ─── REGULATORY & COMPLIANCE ───────────────────────────────────────
