@@ -228,11 +228,13 @@ export const products: Product[] = [
   },
   {
     line: 'ai-governance', tier: 'toolkit',
-    tag: 'Assessment + Playbook',
+    tag: 'Assessment + Handbook',
     name: 'AI-Ready Operations — Readiness Assessment',
-    sub: 'Score whether your data and process can carry an AI revenue or triage agent — 18 checks across 5 dimensions (identity, completeness, consistency, governance, process) returning a GO / FIX-FIRST / NOT-READY verdict, with a fix-first plan. Excel assessment + playbook + worked example + go/no-go brief.',
+    sub: 'Score whether your data and process can carry an AI revenue or triage agent — 18 checks across 5 dimensions (identity, completeness, consistency, governance, process) returning a GO / FIX-FIRST / NOT-READY verdict, with a fix-first plan. Excel assessment + 15-page handbook + worked example + go/no-go brief.',
     price: '$149', team: '$299',
     url: 'https://vihrenlabs.gumroad.com/l/jrjbvp',
+    lastUpdated: '2026-06-07',
+    changelog: 'The Readiness Playbook expanded to a 15-page handbook — a 0–4 scoring rubric, two worked examples end to end, per-dimension remediation, autonomy calibration, a go-live runbook, and monitoring readiness over time. (Workbook also adds a re-score cadence + target.)',
     faq: [
       {
         q: 'Should I run this before deploying an AI agent on sales, support or operations?',
