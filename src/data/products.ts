@@ -317,8 +317,10 @@ export const products: Product[] = [
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Process Transformation & Automation Toolkit',
-    sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model — plus the playbook on which automation type fits (integration › workflow › RPA › AI agent). Decide what to automate before you buy a tool.',
+    sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model — plus a 15-page operating handbook on which automation type fits (integration › workflow › RPA › AI agent). Decide what to automate before you buy a tool.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/sjunh',
+    lastUpdated: '2026-06-07',
+    changelog: 'Playbook expanded to a 15-page operating handbook — a maturity self-check, the automatability test + re-engineering, a 5-process scorecard, the integration/workflow/RPA/AI tool decision with a worked example, the RPA true-cost model, a payback model, the operating discipline, a 90-day plan, two worked examples, and a glossary + templates.',
   },
   {
     line: 'ai-governance', tier: 'toolkit', tag: 'PDF + Excel (7 tabs)',
