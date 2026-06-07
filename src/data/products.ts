@@ -339,8 +339,10 @@ export const products: Product[] = [
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Transformation Delivery & PMO Pack',
-    sub: 'Programme plan, initiative tracker, milestone gates, RAID, an auto-summarising status report and benefits — plus the methodology playbook. Run the delivery PMO.',
+    sub: 'Programme plan, initiative tracker, milestone gates, RAID, an auto-summarising status report and benefits — plus a 15-page operating handbook. Run the delivery PMO.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/mdntjx',
+    lastUpdated: '2026-06-07',
+    changelog: 'Playbook expanded to a 15-page operating handbook — a PMO maturity self-check, sizing the PMO, change control, the defensible-RAG rubric, reading-the-dashboard signals, budget burn-vs-progress, the conditional-pass discipline, the RAID dependency that bites, steering the steering committee, the benefits-realization gap, the recovery PMO, early-warning signals, metrics that matter, a worked example throughout, and templates + a governance RACI.',
   },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
