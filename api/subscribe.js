@@ -58,7 +58,7 @@ const WELCOME_HTML = `<!DOCTYPE html>
   <hr class="divider" />
   <p class="sig">— Petko<br />Vihren Labs</p>
   <div class="footer">
-    <p>You subscribed at <a href="https://vihrenlabs.com">vihrenlabs.com</a>.
+    <p>You subscribed at <a href="https://www.vihrenlabs.com">vihrenlabs.com</a>.
     To unsubscribe, reply to this email with "unsubscribe" in the subject.</p>
   </div>
 </div>
@@ -119,7 +119,7 @@ async function subscribeViaResend(email, apiKey) {
 
 export default async function handler(req, res) {
   // CORS preflight
-  res.setHeader('Access-Control-Allow-Origin', 'https://vihrenlabs.com');
+  res.setHeader('Access-Control-Allow-Origin', 'https://www.vihrenlabs.com');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   if (req.method === 'OPTIONS') return res.status(200).end();

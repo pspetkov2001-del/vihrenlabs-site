@@ -41,4 +41,4 @@ Allow: /
 User-agent: Applebot-Extended
 Allow: /
 
-Sitemap: https://vihrenlabs.com/sitemap-index.xml
+Sitemap: https://www.vihrenlabs.com/sitemap-index.xml

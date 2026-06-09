@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { guide } = Astro.props;
 const { Content } = await guide.render();
-const canonical = `https://vihrenlabs.com/guides/${guide.slug}`;
+const canonical = `https://www.vihrenlabs.com/guides/${guide.slug}`;
 const d = guide.data;
 
 // Article schema — the page is operator-voice editorial content.
@@ -24,11 +24,11 @@ const articleSchema = {
   description: d.description,
   datePublished: d.date,
   dateModified: d.date,
-  author: { '@type': 'Person', name: 'Petko Petkov', url: 'https://vihrenlabs.com/about' },
+  author: { '@type': 'Person', name: 'Petko Petkov', url: 'https://www.vihrenlabs.com/about' },
   publisher: {
     '@type': 'Organization',
     name: 'Vihren Labs',
-    logo: { '@type': 'ImageObject', url: 'https://vihrenlabs.com/og-image.png' },
+    logo: { '@type': 'ImageObject', url: 'https://www.vihrenlabs.com/og-image.png' },
   },
   mainEntityOfPage: canonical,
   keywords: d.keywords.join(', '),
@@ -39,7 +39,7 @@ const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Guides', item: 'https://vihrenlabs.com/guides' },
+    { '@type': 'ListItem', position: 1, name: 'Guides', item: 'https://www.vihrenlabs.com/guides' },
     { '@type': 'ListItem', position: 2, name: d.title, item: canonical },
   ],
 };

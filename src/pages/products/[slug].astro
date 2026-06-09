@@ -13,7 +13,7 @@ export function getStaticPaths() {
 
 const { product } = Astro.props;
 const line = lineBySlug[product.line];
-const canonical = `https://vihrenlabs.com/products/${productSlug(product.name)}`;
+const canonical = `https://www.vihrenlabs.com/products/${productSlug(product.name)}`;
 
 // The next step up the value ladder — powers the cross-sell / "pay more" CTA.
 const nextStep = ladderNext(product);
@@ -59,7 +59,7 @@ const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Products', item: 'https://vihrenlabs.com/products' },
+    { '@type': 'ListItem', position: 1, name: 'Products', item: 'https://www.vihrenlabs.com/products' },
     { '@type': 'ListItem', position: 2, name: product.name, item: canonical },
   ],
 };
