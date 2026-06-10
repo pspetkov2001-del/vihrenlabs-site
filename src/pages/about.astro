@@ -142,19 +142,19 @@ const lines = [
       <div class="space-y-6">
         {clusters.map((c) => (
           <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-8 sm:p-10 card-hover">
-            <div class="flex items-start gap-6 flex-wrap sm:flex-nowrap">
+            <div class="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
               <div class="flex-shrink-0 sm:w-36">
                 <div class="font-mono text-xs uppercase tracking-widest mb-2" style={`color: ${c.color}`}>
                   {c.period}
                 </div>
                 <div class="h-0.5 w-12" style={`background: ${c.color}`}></div>
               </div>
-              <div class="flex-1 min-w-0">
+              <div class="flex-1 min-w-0 w-full">
                 <h3 class="font-bold text-xl text-white mb-5">{c.tag}</h3>
                 <ul class="space-y-3">
                   {c.items.map(item => (
                     <li class="flex items-start gap-3 text-white/50 text-sm leading-relaxed">
-                      <span class="flex-shrink-0 mt-1.5 w-1 h-1 rounded-full" style={`background: ${c.color}`}></span>
+                      <span class="flex-shrink-0 mt-2 w-1.5 h-1.5 rounded-full" style={`background: ${c.color}`}></span>
                       {item}
                     </li>
                   ))}
