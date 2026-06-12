@@ -75,6 +75,37 @@ export const products: Product[] = [
         a: '10 modules spanning the product master-data lifecycle — data model and governance, data quality engineering, architecture, MDM operations and value realization — each with a workbook, plus 6 visual one-pagers, an editable maturity heatmap, and a 25-50 page capstone you complete against your own organization.',
       },
     ],
+    next: 'Master Data Excellence — Customer & Business Partner',
+  },
+  {
+    line: 'master-data', tier: 'course',
+    tag: 'Course · 10 modules',
+    name: 'Master Data Excellence — Customer & Business Partner',
+    sub: '12 module playbooks · 8 operator templates (Customer Data Dictionary, RACI, KPI library, match-merge rulebook, consent register, onboarding SOP, governance charter, workflow templates) · 6 visual one-pagers · capstone. The customer master as the system-of-record under your CRM and ERP — Business Partner model, match-merge and survivorship, consent and lawful erasure, Customer-360.',
+    price: '$499', team: '$999',
+    url: 'https://vihrenlabs.gumroad.com/l/sshhgb',
+    next: 'Master Data Excellence — Vendor & Supplier Master',
+    faq: [
+      {
+        q: 'What does the Customer Master Data course cover?',
+        a: '10 modules on the enterprise customer master — the system-of-record under CRM and ERP, not CRM list hygiene: Business Partner model and roles, lifecycle to lawful erasure, governance and consent, match-merge with survivorship, architecture, operations, and value realization. Ships as 12 module playbooks plus 8 ready-to-use operator templates (data dictionary, RACI, KPI library, match-merge rulebook, consent register, onboarding SOP, governance charter, workflow templates), 6 visual one-pagers, and a capstone you build against your own organization.',
+      },
+    ],
+  },
+  {
+    line: 'master-data', tier: 'course',
+    tag: 'Course · 10 modules',
+    name: 'Master Data Excellence — Vendor & Supplier Master',
+    sub: '12 module playbooks · 8 operator templates (Vendor Data Dictionary, RACI with segregation of duties, KPI library, DQ scorecard + screening gate, onboarding SOP, bank-detail change SOP, governance + SoD charter, workflows) · 6 visual one-pagers · capstone. The vendor master as a financial-control surface — bank integrity, segregation of duties, sanctions screening, dedup.',
+    price: '$499', team: '$999',
+    url: 'https://vihrenlabs.gumroad.com/l/zpdoyp',
+    next: 'Master Data Excellence — Product & SKU Management',
+    faq: [
+      {
+        q: 'What does the Vendor Master Data course cover?',
+        a: '10 modules treating the vendor master as a financial-control and risk surface — bank-detail integrity, segregation of duties (create ≠ approve ≠ pay), sanctions/PEP screening, and duplicate prevention as first-class topics. Ships as 12 module playbooks plus 8 operator templates (data dictionary, RACI with SoD, KPI library, DQ scorecard + screening gate, onboarding SOP, the bank-detail change SOP with out-of-band callback verification, governance + SoD charter, workflow templates), 6 visual one-pagers, and a capstone.',
+      },
+    ],
   },
   {
     line: 'transformation', tier: 'course',
