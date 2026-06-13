@@ -371,11 +371,10 @@ export const products: Product[] = [
     ],
   },
 
-  // ===== STAGED: Digital Transformation line — INERT until uncommented =====
-  // The 6 below are built + audited (see Spreadsheet OS Collection/docs/DT-LINE-PUBLISH-PACK.md).
-  // On each Gumroad publish: uncomment the entry, replace url 'TODO-…' with the real /l/ slug,
-  // then rebuild + deploy. (Line slug 'transformation' reused; add a 'digital-transformation'
-  // LineGroup above if you later want them split into their own line.)
+  // ===== Digital Transformation line — LIVE (5 toolkits, published 2026-06) =====
+  // Built + audited (see Spreadsheet OS Collection/docs/DT-LINE-PUBLISH-PACK.md).
+  // Note: line slug 'transformation' is reused for these; add a 'digital-transformation'
+  // LineGroup above if you later want them split into their own line.
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Process Transformation & Automation Toolkit',
