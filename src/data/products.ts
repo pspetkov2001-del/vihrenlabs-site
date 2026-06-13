@@ -437,7 +437,7 @@ export const lineGroups: LineGroup[] = [
   {
     slug: 'master-data',
     title: 'Master Data Operations',
-    sub: 'From product master data to data quality engineering and MDM operating models — Course 02 plus 3 standalone toolkits and the operator bundle.',
+    sub: 'The full Master Data Academy — three operator courses (Product & SKU, Customer, and Vendor master data) plus 3 standalone toolkits and the operator bundle.',
   },
   {
     slug: 'ai-governance',
