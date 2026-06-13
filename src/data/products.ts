@@ -312,6 +312,33 @@ export const products: Product[] = [
     url: 'https://vihrenlabs.gumroad.com/l/oocvu',
   },
 
+  // ===== STAGED: Master Data course bundles — INERT until uncommented =====
+  // Requested 2026-06-13. Each needs a real Gumroad product first: create it,
+  // replace url 'TODO-…' with the /l/ slug, uncomment, rebuild + deploy, then
+  // surface in the landing "Master Data Academy" block.
+  //   1. Full academy bundle — the three $499 courses sold together at $1,199
+  //      (≈20% off vs $1,497). On Gumroad: a bundle product wrapping the 3 courses.
+  //   2. Essentials (Lite) — a SINGLE combined high-level workbook (Product +
+  //      Customer + Vendor essentials), $199 on-ramp. Build the workbook first;
+  //      it is deliberately NOT the full courses (would cannibalize them).
+  // {
+  //   line: 'master-data', tier: 'bundle',
+  //   tag: 'Bundle · 3 courses',
+  //   name: 'Master Data Academy — Complete (All 3 Domains)',
+  //   sub: 'All three operator courses — Product & SKU, Customer & Business Partner, and Vendor & Supplier Master — bundled. 30 modules, 30+ operator templates, 18 visual one-pagers, three capstones. Save ~20% vs buying the three separately.',
+  //   price: '$1,199', team: '$2,399',
+  //   url: 'TODO-gumroad-academy-complete-bundle',
+  //   next: 'Master Data Operator\'s Pack',
+  // },
+  // {
+  //   line: 'master-data', tier: 'toolkit',
+  //   tag: 'Essentials workbook',
+  //   name: 'Master Data Essentials — Product · Customer · Vendor',
+  //   sub: 'The essentials of all three master-data domains in one workbook — the data model, the six core data-quality dimensions, and the governance basics for Product, Customer and Vendor master data. The $199 on-ramp beneath the full courses.',
+  //   price: '$199', team: '$349',
+  //   url: 'TODO-gumroad-md-essentials-lite',
+  // },
+
   // ─── TRANSFORMATION & SSC/GBS ──────────────────────────────────────
   {
     line: 'transformation', tier: 'toolkit',
