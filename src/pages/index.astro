@@ -108,6 +108,13 @@ const lines = [
 // a CTA to /products. Full catalog (line-grouped) lives on /products.
 import { products, freeItems } from '../data/products';
 
+// Value-ladder anchors for the "Three ways in" section — derived from the
+// canonical catalog so the prices can't drift as products change. usdPrice
+// ignores non-$ prices (e.g. the €149 regulatory starter) when finding the floor.
+const usdPrice = (s: string) => { const m = String(s).match(/\$([\d,]+)/); return m ? parseInt(m[1].replace(/,/g, ''), 10) : Infinity; };
+const toolkitFloor = Math.min(...products.filter(p => p.tier !== 'course').map(p => usdPrice(p.price)).filter(n => Number.isFinite(n)));
+const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
+
 // REMOVED 2026-05-25: inline products/lineGroups/freeItems arrays — all
 // data now imported from src/data/products.ts. /products page consumes
 // the same data for the full catalog.
@@ -283,6 +290,63 @@ import { products, freeItems } from '../data/products';
       <p class="text-white/55 text-base leading-relaxed max-w-3xl mt-10">
         The standard is the same across all of it: run on the obligation, build governance like architecture, concrete beats abstract. Operator-grade, not consulting — you buy it, you own it, no subscription. <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Read the Operator Standard &rarr;</a>
       </p>
+    </div>
+  </section>
+
+  <!-- ═══ THREE WAYS IN — explicit value ladder, self-select by depth ════
+       A cold buyer can see all three commitment levels (free → one tool →
+       whole domain) in one glance, with real prices derived from the catalog.
+       Rung 1 is the Operator Standard, elaborated by the cornerstone below. -->
+  <section class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-5">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Where to begin</span>
+      </div>
+      <h2 class="font-black text-4xl sm:text-5xl leading-tight tracking-tight mb-4 max-w-3xl">
+        Three ways in. <span class="text-white/30">Pick how deep you need to go.</span>
+      </h2>
+      <p class="text-white/50 text-lg leading-relaxed max-w-2xl mb-12">
+        Read the thinking for free, buy the one tool for the problem on your desk, or take a whole domain end to end. Every purchase is one-time — you own it, no subscription.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-4">
+        <!-- Rung 1 — Free -->
+        <a href="/essays/the-operator-standard"
+           class="group flex flex-col p-7 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">Start free</span>
+            <span class="font-black text-2xl text-white/80">$0</span>
+          </div>
+          <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Read the standard</h3>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">The seven operating principles behind every product — the fastest way to know this is built by someone who's actually done it. No email, no purchase.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">Read the Operator Standard &rarr;</span>
+        </a>
+
+        <!-- Rung 2 — Own one tool (entry purchase; orange-emphasised) -->
+        <a href="/products"
+           class="group flex flex-col p-7 rounded-2xl border border-[#E67E22]/25 bg-[#E67E22]/[0.04] card-hover">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">First purchase</span>
+            <span class="font-black text-2xl text-white/80">from ${toolkitFloor}</span>
+          </div>
+          <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Own the tool for one problem</h3>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">Take the thing on your desk this week — a cutover, a renewal, a master-data mess, an AI go/no-go — and buy the workbook or operator pack built for exactly it.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">Browse workbooks &amp; packs &rarr;</span>
+        </a>
+
+        <!-- Rung 3 — Go deep -->
+        <a href="/lines/master-data"
+           class="group flex flex-col p-7 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
+          <div class="flex items-center justify-between mb-5">
+            <span class="font-mono text-[10px] text-white/40 border border-white/15 px-2 py-0.5 rounded tracking-wider uppercase">Go deep</span>
+            <span class="font-black text-2xl text-white/80">{coursePrice}</span>
+          </div>
+          <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Take a whole domain</h3>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">A full operator course — 10 modules, workbooks, operator templates and a capstone you build against your own organization. Master Data, or SSC/GBS transitions.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the courses &rarr;</span>
+        </a>
+      </div>
     </div>
   </section>
 
