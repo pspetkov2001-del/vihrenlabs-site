@@ -3,11 +3,9 @@ const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-white/8 mt-0">
-  <div class="max-w-6xl mx-auto px-6 py-12 flex flex-col sm:flex-row items-center justify-between gap-6">
-    <div class="flex items-center gap-3">
-      <div class="w-7 h-7 bg-[#E67E22] rounded flex items-center justify-center flex-shrink-0">
-        <span class="text-white font-bold text-xs font-mono">V</span>
-      </div>
+  <div class="max-w-6xl mx-auto px-6 pt-12 pb-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+    <div class="flex items-center gap-2.5">
+      <span class="material-symbols-outlined text-[#E67E22] text-xl flex-shrink-0">terminal</span>
       <span class="text-white/40 text-sm">
         &copy; {year} Vihren Labs Ltd. &middot; Sofia, Bulgaria
         <span class="block text-white/25 text-xs mt-1">Operator-grade templates for the enterprise IT stack &middot; built by a 15-year enterprise IT operator</span>
@@ -25,5 +23,14 @@ const year = new Date().getFullYear();
       <a href="/privacy" class="text-white/30 hover:text-[#E67E22] transition-colors">Privacy</a>
       <a href="/imprint" class="text-white/30 hover:text-[#E67E22] transition-colors">Imprint</a>
     </div>
+  </div>
+
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="ledger-line opacity-20"></div>
+  </div>
+  <div class="max-w-6xl mx-auto px-6 pt-6 pb-12">
+    <p class="text-white/25 text-xs leading-relaxed max-w-3xl">
+      Vihren Labs is an independent educational-publishing business. Views expressed are solely my own and do not represent any current or former employer.
+    </p>
   </div>
 </footer>

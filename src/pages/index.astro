@@ -129,15 +129,15 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
   <div class="noise-overlay" aria-hidden="true"></div>
 
   <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
-  <section class="relative min-h-[90vh] flex flex-col justify-center px-6 overflow-hidden">
+  <section class="relative min-h-[90vh] flex flex-col justify-center px-6 overflow-hidden blueprint-pattern">
 
     <!-- Radial glow background -->
     <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[600px] rounded-full"
-           style="background: radial-gradient(ellipse at center, rgba(30,61,89,0.6) 0%, rgba(8,14,20,0) 70%);">
+           style="background: radial-gradient(ellipse at center, rgba(30, 61, 89,0.6) 0%, rgba(8, 14, 20,0) 70%);">
       </div>
       <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[400px] h-[400px] rounded-full opacity-20"
-           style="background: radial-gradient(ellipse at center, rgba(230,126,34,0.4) 0%, transparent 70%);">
+           style="background: radial-gradient(ellipse at center, rgba(30, 61, 89,0.4) 0%, transparent 70%);">
       </div>
     </div>
 
@@ -155,7 +155,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
       </div>
 
       <!-- Value prop eyebrow — tells cold visitors what this IS before the headline -->
-      <p class="fade-up fade-up-delay-2 font-mono text-orange text-sm tracking-[0.18em] uppercase mb-4">
+      <p class="fade-up fade-up-delay-2 font-mono text-[#E67E22] text-sm tracking-[0.18em] uppercase mb-4">
         7 product lines · Procurement · Programme Delivery · SAP · Master Data · AI Governance · SSC/GBS · Regulatory
       </p>
 
@@ -177,22 +177,22 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
           href="https://vihrenlabs.gumroad.com"
           target="_blank"
           rel="noopener noreferrer"
-          class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-8 py-4 rounded-full text-base hover:bg-[#E67E22]/30 transition-colors"
+          class="inline-flex items-center justify-center gap-2.5 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-mono text-xs font-bold uppercase tracking-widest px-8 py-4 rounded-lg hover:bg-[#E67E22]/30 transition-colors"
         >
           <span class="w-2 h-2 rounded-full bg-[#E67E22] animate-pulse flex-shrink-0"></span>
           {products.length} products live now on Gumroad
         </a>
         <a
           href="/about"
-          class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-8 py-4 rounded-full text-base transition-colors"
+          class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-lg transition-colors"
         >
           About Vihren Labs
         </a>
       </div>
 
       <!-- Author byline pill — authority signal above the fold -->
-      <div class="mt-8 inline-flex items-center gap-3 px-4 py-2 bg-navy-light/40 border border-orange/20 rounded-full font-mono text-xs text-grey-light">
-        <span class="w-2 h-2 rounded-full bg-orange flex-shrink-0"></span>
+      <div class="mt-8 inline-flex items-center gap-3 px-4 py-2 bg-[#1E3D59]/40 border border-[#E67E22]/20 rounded-full font-mono text-xs text-white/70">
+        <span class="w-2 h-2 rounded-full bg-[#E67E22] flex-shrink-0"></span>
         Built by Petko Petkov · 15 years in enterprise IT — vendor-distribution & buyer-operator sides
       </div>
 
@@ -374,7 +374,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
             The standard every product in the catalogue is held to — and the fastest way to know
             whether Vihren Labs is built by someone who has actually done this. <strong class="text-white/80">Read it before you buy anything.</strong>
           </p>
-          <span class="inline-flex items-center gap-2 bg-[#E67E22] group-hover:bg-[#CA6F1E] text-white font-semibold px-7 py-3.5 rounded-full text-base transition-colors">
+          <span class="inline-flex items-center gap-2 bg-[#E67E22] group-hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-7 py-3.5 rounded-lg transition-colors">
             Read the Operator Standard &rarr;
           </span>
         </div>
@@ -454,7 +454,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
               Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads.
             </p>
           </div>
-          <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-semibold px-7 py-4 rounded-full text-base group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
+          <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-mono text-sm font-bold uppercase tracking-widest px-7 py-4 rounded-lg group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
             View full catalogue &rarr;
           </div>
         </div>
@@ -514,7 +514,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
   <section id="newsletter" class="py-28 px-6">
     <div class="max-w-6xl mx-auto">
       <div class="relative rounded-3xl overflow-hidden border border-white/8 p-10 sm:p-16"
-           style="background: linear-gradient(135deg, rgba(30,61,89,0.4) 0%, rgba(8,14,20,0.9) 60%);">
+           style="background: linear-gradient(135deg, rgba(30, 61, 89,0.4) 0%, rgba(8, 14, 20,0.9) 60%);">
         <div class="absolute top-0 right-0 w-96 h-96 rounded-full opacity-10 pointer-events-none"
              style="background: radial-gradient(ellipse at top right, #E67E22, transparent 70%);"
              aria-hidden="true"></div>

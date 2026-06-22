@@ -3,7 +3,7 @@
  * ProductCard — polished digital product card for vihrenlabs.com shop.
  *
  * Adapted from 21st.dev "Inflected Card" + "Amazing Card" demos via Magic MCP,
- * 2026-05-18. Stripped to fit Vihren Labs' editorial dark-amber aesthetic.
+ * 2026-05-18. Restyled to the Vihren Labs operator-console aesthetic (slate + blue/mint).
  *
  * Usage:
  *   <ProductCard
@@ -51,10 +51,10 @@ const {
 
 <a
   href={href}
-  class="product-card group block rounded-2xl border border-neutral-800 bg-neutral-950 p-6 transition-all hover:border-amber-500/40 hover:bg-neutral-900 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-500/5"
+  class="product-card group block rounded-xl border border-white/10 bg-[#080E14] p-6 transition-all hover:border-[#E67E22]/40 hover:bg-[#0F1E2E] hover:-translate-y-1 hover:shadow-xl hover:shadow-[#E67E22]/10"
 >
   {image && (
-    <div class="mb-5 aspect-[16/9] overflow-hidden rounded-lg bg-neutral-900 border border-neutral-800">
+    <div class="mb-5 aspect-[16/9] overflow-hidden rounded-lg bg-[#0F1E2E] border border-white/10">
       <img
         src={image}
         alt={title}
@@ -65,22 +65,22 @@ const {
   )}
 
   {badge && (
-    <div class="mb-3 inline-flex items-center rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-amber-400">
+    <div class="mb-3 inline-flex items-center rounded-full border border-[#E67E22]/30 bg-[#E67E22]/10 px-2.5 py-1 text-[11px] font-mono font-semibold uppercase tracking-wider text-[#E67E22]">
       {badge}
     </div>
   )}
 
   <h3 class="text-xl font-bold text-white mb-2 leading-tight">{title}</h3>
-  <p class="text-sm text-neutral-400 leading-relaxed mb-5">{description}</p>
+  <p class="text-sm text-white/50 leading-relaxed mb-5">{description}</p>
 
   <div class="flex items-end justify-between gap-3">
     <div class="flex items-baseline gap-2">
       <span class="text-2xl font-bold text-white tabular-nums">{price}</span>
       {compareAt && (
-        <span class="text-sm text-neutral-500 line-through tabular-nums">{compareAt}</span>
+        <span class="text-sm text-white/40 line-through tabular-nums">{compareAt}</span>
       )}
     </div>
-    <span class="text-sm font-semibold text-amber-400 transition-transform group-hover:translate-x-1">
+    <span class="text-sm font-mono font-semibold uppercase tracking-wider text-[#E67E22] transition-transform group-hover:translate-x-1">
       {ctaLabel}
     </span>
   </div>
