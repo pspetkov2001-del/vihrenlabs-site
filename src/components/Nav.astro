@@ -1,4 +1,5 @@
 ---
+import Logo from './Logo.astro';
 const currentPath = Astro.url.pathname;
 const links = [
   { href: '/products', label: 'Products', active: currentPath === '/products' || currentPath === '/products/' },
@@ -11,7 +12,7 @@ const links = [
 <header class="fixed top-0 left-0 right-0 z-50 border-b border-white/5 backdrop-blur-md bg-[#080E14]/80">
   <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between gap-4">
     <a href="/" class="flex items-center gap-2.5 group flex-shrink-0">
-      <span class="material-symbols-outlined text-[#E67E22] text-2xl flex-shrink-0">terminal</span>
+      <Logo class="w-7 h-7 shrink-0 text-[#E67E22]" />
       <span class="text-white font-display font-bold text-lg tracking-tight">Vihren Labs</span>
     </a>
 

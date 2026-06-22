@@ -1,11 +1,12 @@
 ---
+import Logo from './Logo.astro';
 const year = new Date().getFullYear();
 ---
 
 <footer class="border-t border-white/8 mt-0">
   <div class="max-w-6xl mx-auto px-6 pt-12 pb-8 flex flex-col sm:flex-row items-center justify-between gap-6">
     <div class="flex items-center gap-2.5">
-      <span class="material-symbols-outlined text-[#E67E22] text-xl flex-shrink-0">terminal</span>
+      <Logo class="w-6 h-6 shrink-0 text-[#E67E22]" />
       <span class="text-white/40 text-sm">
         &copy; {year} Vihren Labs Ltd. &middot; Sofia, Bulgaria
         <span class="block text-white/25 text-xs mt-1">Operator-grade templates for the enterprise IT stack &middot; built by a 15-year enterprise IT operator</span>
