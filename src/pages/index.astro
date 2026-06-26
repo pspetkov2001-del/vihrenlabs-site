@@ -197,12 +197,10 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
       </div>
 
       <!-- Stats row -->
-      <div class="mt-20 pt-10 border-t border-white/5 grid grid-cols-2 sm:grid-cols-4 gap-8">
+      <div class="mt-20 pt-10 border-t border-white/5 flex flex-wrap gap-16">
         {[
           { n: '15+', label: 'Years in enterprise IT' },
           { n: '7', label: 'Product lines' },
-          { n: 'SAP', label: 'ECC & S/4HANA' },
-          { n: 'EU', label: 'AI Act & DORA' },
         ].map(s => (
           <div>
             <div class="font-black text-3xl text-[#E67E22]">{s.n}</div>
