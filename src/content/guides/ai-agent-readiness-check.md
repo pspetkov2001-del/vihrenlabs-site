@@ -38,9 +38,9 @@ faq:
     a: "Identity (can you tell entities apart and is there a source of truth), completeness (are the needed fields populated), consistency (are values standardised across systems), governance (is there an owner, a control, and an audit trail), and process (is the workflow stable, with a human escape hatch and a defined success bar)."
   - q: "Is this legal or vendor advice?"
     a: "No. It's an operator's readiness check, and it's deliberately tool-agnostic — it does not recommend or rank any AI vendor, and it makes no revenue or savings claims. It tells you whether your data and process can carry an agent and, if not, what to fix first."
-ctaUrl: "/products/ai-ready-operations-readiness-assessment"
+ctaUrl: "/products/ai-ready-operations-assessment-pro"
 ctaLabel: "Run the full readiness assessment"
-ctaSub: "This 12-point check is the free preview. The AI-Ready Operations Assessment is the full operator tool — 18 checks across the five dimensions, field-level scoring, and a GO / FIX-FIRST / NOT-READY verdict with a fix-first plan and a worked example:"
+ctaSub: "This 12-point check is the free preview. The AI-Ready Operations Assessment Pro is the full operator tool — 18 checks across the five dimensions, field-level scoring, and a GO / FIX-FIRST / NOT-READY verdict with a fix-first plan and a worked example:"
 ---
 
 ## An agent amplifies whatever your data already is
