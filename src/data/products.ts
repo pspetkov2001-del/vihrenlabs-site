@@ -434,6 +434,13 @@ export const freeItems: FreeItem[] = [
     url: 'https://vihrenlabs.gumroad.com/l/bwzklq',
   },
   {
+    tag: 'Free PDF',
+    name: 'AI-Ready Operations Assessment',
+    sub: 'The five-layer maturity model + a 12-point readiness check — find your weakest layer before you deploy an AI agent. The free tier beneath Assessment Pro.',
+    price: '$0', team: '',
+    url: 'https://vihrenlabs.gumroad.com/l/rmkje',
+  },
+  {
     tag: 'Free · PWYW',
     name: 'SAP Cutover Comms Kit',
     sub: 'Pre-cutover, go-live, hypercare and incident announcement templates — the comms templates a real cutover sends. Pay what you want.',
