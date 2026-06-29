@@ -199,7 +199,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
       <!-- Stats row -->
       <div class="mt-20 pt-10 border-t border-white/5 flex flex-wrap gap-16">
         {[
-          { n: '15+', label: 'Years in enterprise IT' },
+          { n: '15', label: 'Years in enterprise IT' },
           { n: '7', label: 'Product lines' },
         ].map(s => (
           <div>
@@ -449,7 +449,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
               All Vihren Labs courses, toolkits and bundles — in one place.
             </h3>
             <p class="text-white/50 text-sm leading-relaxed">
-              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads.
+              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · AI Adoption & Governance · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads.
             </p>
           </div>
           <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-mono text-sm font-bold uppercase tracking-widest px-7 py-4 rounded-lg group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
