@@ -5,6 +5,12 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/",
+      "has": [{ "type": "host", "value": "^vihrenlabs\\.com$" }],
+      "destination": "https://www.vihrenlabs.com/",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "^vihrenlabs\\.com$" }],
       "destination": "https://www.vihrenlabs.com/:path*",
