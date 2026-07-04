@@ -16,7 +16,16 @@ const {
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
-const pageTitle = title === 'Vihren Labs' ? title : `${title} · Vihren Labs`;
+// The homepage <title> is prime SEO/SERP real estate, so give it a descriptive,
+// keyword-bearing title instead of the bare brand name. Every other page keeps
+// "<page title> · Vihren Labs". Keyed on the path so pages that omit an explicit
+// title prop (and essays whose own titles contain "Vihren Labs") are unaffected.
+const isHome = Astro.url.pathname === '/';
+const pageTitle = isHome
+  ? 'Vihren Labs — Operator-grade templates for the enterprise IT stack'
+  : title === 'Vihren Labs'
+    ? title
+    : `${title} · Vihren Labs`;
 ---
 
 <!doctype html>

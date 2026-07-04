@@ -5,6 +5,12 @@
   "framework": "astro",
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "^vihrenlabs\\.com$" }],
+      "destination": "https://www.vihrenlabs.com/:path*",
+      "permanent": true
+    },
+    {
       "source": "/essays/cutover-window-decision",
       "destination": "/essays/ecc-end-of-maintenance-math",
       "permanent": true
