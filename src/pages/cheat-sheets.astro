@@ -1,0 +1,118 @@
+---
+import Base from '../layouts/Base.astro';
+
+// Free, ungated one-pagers. They are self-funnelling: each PDF prints the
+// Assessment CTA on it, so an ungated download still drives to the gated
+// Assessment (l/rmkje). Source PDFs/PNGs live in the video repo
+// (ai-ready-operations/ep*/pack/11-cheat-sheet.*) and are copied into
+// public/cheat-sheets/ — keep them in sync from that one source.
+const ASSESSMENT_URL = 'https://vihrenlabs.gumroad.com/l/rmkje';
+
+const sheets = [
+  {
+    eyebrow: 'Cornerstone · all five layers',
+    title: 'Why most AI projects fail before the model does',
+    sub: 'The whole map on one page — the five operational layers, and the 60-second tell that reveals which one you\'re missing.',
+    png: '/cheat-sheets/five-layers-cheat-sheet.png',
+    pdf: '/cheat-sheets/five-layers-cheat-sheet.pdf',
+  },
+  {
+    eyebrow: 'Layer 1 · Governance',
+    title: 'Governance, not agents',
+    sub: 'The five failure modes (four aren\'t technical), the six decision rights to name, and the autonomy ladder — Layer 1\'s Monday-morning move.',
+    png: '/cheat-sheets/governance-cheat-sheet.png',
+    pdf: '/cheat-sheets/governance-cheat-sheet.pdf',
+  },
+  {
+    eyebrow: 'Layer 2 · Clean Data',
+    title: 'An amplifier, not a brain',
+    sub: 'The three checks before you deploy — identity, completeness, source of truth — and why bad data stops looking broken and starts looking persuasive.',
+    png: '/cheat-sheets/clean-data-cheat-sheet.png',
+    pdf: '/cheat-sheets/clean-data-cheat-sheet.pdf',
+  },
+];
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'AI-Ready Operations cheat sheets — Vihren Labs',
+  description:
+    'Free one-page cheat sheets from The Five Layers of AI-Ready Operations — the layer, the tells that reveal you are missing it, and the Monday-morning move. Free, no email.',
+  url: 'https://www.vihrenlabs.com/cheat-sheets',
+};
+---
+
+<Base
+  title="Cheat Sheets"
+  description="Free one-page cheat sheets from The Five Layers of AI-Ready Operations — governance, clean data, and more. The layer, the tells that reveal you're missing it, and the Monday-morning move. Free, no email."
+  schema={collectionSchema}
+>
+  <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="relative px-6 py-24 sm:py-28 border-b border-white/5 overflow-hidden blueprint-pattern">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full"
+           style="background: radial-gradient(ellipse at center, rgba(30,61,89,0.45) 0%, rgba(8,14,20,0) 70%);"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Free · one page each</span>
+      </div>
+      <h1 class="font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight mb-6">
+        The Five Layers, one page each.
+      </h1>
+      <p class="text-white/50 text-lg leading-relaxed max-w-2xl">
+        The cheat sheets from <span class="text-white/70">The Five Layers of AI-Ready Operations</span> — each one is a single layer, the tells that reveal you're missing it, and the one Monday-morning move. Free, no email. The version to forward to whoever owns AI where you work.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ GRID ══════════════════════════════════════════════════════════ -->
+  <section class="py-16 px-6">
+    <div class="max-w-6xl mx-auto">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {sheets.map((s) => (
+          <a href={s.pdf} download
+             class="group flex flex-col rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden card-hover">
+            <div class="overflow-hidden border-b border-white/8">
+              <img src={s.png} alt={`${s.eyebrow} — ${s.title} cheat sheet`} loading="lazy" width="1080" height="1660"
+                   class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]" />
+            </div>
+            <div class="flex flex-col flex-1 p-5">
+              <span class="font-mono text-[10px] text-[#E67E22] mb-2 tracking-wider uppercase">{s.eyebrow}</span>
+              <h3 class="font-bold text-base text-white/90 leading-snug mb-1.5">{s.title}</h3>
+              <p class="text-white/40 text-sm leading-relaxed flex-1">{s.sub}</p>
+              <span class="inline-flex items-center gap-2 mt-4 font-mono text-xs text-white/40 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                Download PDF
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+      <p class="text-white/30 text-xs font-mono mt-8 text-center tracking-wider">
+        A new sheet drops with each episode — Layers 3–5 on the way.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ ASSESSMENT CTA ════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 border-t border-white/5">
+    <div class="max-w-3xl mx-auto text-center">
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Go one level deeper</p>
+      <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-5">Score your own organization.</h2>
+      <p class="text-white/50 text-base leading-relaxed mb-8">
+        The cheat sheets are the map. The free <span class="text-white/70">AI-Ready Operations Assessment</span> turns all five layers into a readiness check you run on your own org — a maturity scale from "ad hoc" to "AI-ready", so you can see your weakest layer before you spend a cent on tooling.
+      </p>
+      <a href={ASSESSMENT_URL} target="_blank" rel="noopener noreferrer"
+         class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg transition-colors">
+        Get the free assessment &rarr;
+      </a>
+      <p class="text-white/30 text-xs mt-6 leading-relaxed max-w-xl mx-auto">
+        Education, not consulting, legal, or vendor advice. Tool-agnostic. Go deeper in the <a href="/products" class="text-white/45 hover:text-[#E67E22] transition-colors">operator library &rarr;</a>
+      </p>
+    </div>
+  </section>
+</Base>
