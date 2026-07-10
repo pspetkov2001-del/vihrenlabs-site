@@ -32,6 +32,16 @@ const sheets = [
   },
 ];
 
+// Full five-layer set for the overview map. Available = has a pdf; the rest are "coming".
+const layerMap = [
+  { n: '◆',  label: 'The Five Layers',        desc: 'the whole framework on one page',                  pdf: '/cheat-sheets/five-layers-cheat-sheet.pdf', cornerstone: true },
+  { n: '01', label: 'Governance',             desc: 'who owns AI — and how you decide what ships',       pdf: '/cheat-sheets/governance-cheat-sheet.pdf' },
+  { n: '02', label: 'Clean Data',             desc: 'one source of truth, or the agent scales the mess', pdf: '/cheat-sheets/clean-data-cheat-sheet.pdf' },
+  { n: '03', label: 'Standardized Processes', desc: 'consistent enough to automate at all',              pdf: null },
+  { n: '04', label: 'Controls',               desc: 'catch, audit, and roll back a fast mistake',        pdf: null },
+  { n: '05', label: 'Operating Model',        desc: 'who owns it after the launch demo',                 pdf: null },
+];
+
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
@@ -92,8 +102,45 @@ const collectionSchema = {
           </a>
         ))}
       </div>
-      <p class="text-white/30 text-xs font-mono mt-8 text-center tracking-wider">
-        A new sheet drops with each episode — Layers 3–5 on the way.
+    </div>
+  </section>
+
+  <!-- ═══ THE COMPLETE SET (five-layer map) ═════════════════════════════ -->
+  <section class="pb-4 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">The complete set</span>
+      </div>
+      <div class="rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden">
+        {layerMap.map((L) => (
+          L.pdf ? (
+            <a href={L.pdf} download
+               class:list={["group flex items-center gap-4 px-5 py-3.5 border-b border-white/5 last:border-b-0 transition-colors", L.cornerstone ? "bg-[#E67E22]/[0.05] hover:bg-[#E67E22]/[0.09]" : "hover:bg-white/[0.02]"]}>
+              <span class:list={["font-mono text-xs w-7 shrink-0 text-center", L.cornerstone ? "text-[#E67E22]" : "text-[#E67E22]/80"]}>{L.n}</span>
+              <div class="flex-1 min-w-0">
+                <span class="font-bold text-sm text-white/90">{L.label}</span>
+                <span class="text-white/40 text-sm"> — {L.desc}</span>
+              </div>
+              <span class="font-mono text-[10px] text-white/35 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                PDF
+              </span>
+            </a>
+          ) : (
+            <div class="flex items-center gap-4 px-5 py-3.5 border-b border-white/5 last:border-b-0">
+              <span class="font-mono text-xs w-7 shrink-0 text-center text-white/25">{L.n}</span>
+              <div class="flex-1 min-w-0">
+                <span class="font-bold text-sm text-white/45">{L.label}</span>
+                <span class="text-white/25 text-sm"> — {L.desc}</span>
+              </div>
+              <span class="font-mono text-[10px] text-white/25 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase whitespace-nowrap shrink-0">Coming</span>
+            </div>
+          )
+        ))}
+      </div>
+      <p class="text-white/30 text-xs font-mono mt-4 tracking-wider">
+        A new layer drops with each episode. <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">Subscribe</a> to catch the rest.
       </p>
     </div>
   </section>
