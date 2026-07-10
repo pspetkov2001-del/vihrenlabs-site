@@ -2,6 +2,7 @@
 import Logo from './Logo.astro';
 const currentPath = Astro.url.pathname;
 const links = [
+  { href: '/paths', label: 'Start here', active: currentPath.startsWith('/paths') },
   { href: '/products', label: 'Products', active: currentPath === '/products' || currentPath === '/products/' },
   { href: '/cheat-sheets', label: 'Cheat Sheets', active: currentPath.startsWith('/cheat-sheets') },
   { href: '/guides', label: 'Guides', active: currentPath.startsWith('/guides') },
