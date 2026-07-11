@@ -51,58 +51,6 @@ const ticker = [
   'Catalog automation & governance',
 ];
 
-const lines = [
-  {
-    num: '01',
-    slug: 'procurement',
-    name: 'Procurement & Vendor Management',
-    sub: 'IT vendor TCO, renewal calendars, negotiation playbooks — from the side of the table that knows what distributors don\'t tell you.',
-    tags: ['Excel workbook', 'Ebook', 'Bundle'],
-  },
-  {
-    num: '02',
-    slug: 'programme-delivery',
-    name: 'Programme Delivery & Enterprise IT PMO',
-    sub: 'Enterprise IT programme delivery — multi-country rollouts, finance system implementations, regulatory programmes, vendor-managed programmes, hybrid waterfall-agile governance. From the operator who ran Global Finance AP/EP workflows and other complex IT programmes.',
-    tags: ['PMO toolkits', 'Playbooks', 'Cohort course'],
-  },
-  {
-    num: '03',
-    slug: 'sap',
-    name: 'SAP / ERP Operations',
-    sub: 'S/4HANA cutover management, hypercare runbooks, migration readiness — what actually breaks at 3 AM and how to prevent it.',
-    tags: ['Excel workbook', 'Playbook ebook', 'Bundle'],
-  },
-  {
-    num: '04',
-    slug: 'master-data',
-    name: 'Master Data & Catalog',
-    sub: 'Master Data Management maturity diagnostics, data quality audits, SKU enrichment scorecards — for the person accountable for the data, not the consultant reviewing it.',
-    tags: ['Maturity assessment', 'Scorecard', 'Ebook'],
-  },
-  {
-    num: '05',
-    slug: 'ai-governance',
-    name: 'AI Adoption & Governance',
-    sub: 'Putting AI agents into production without scaling the mess — data and process readiness, an AI governance register, an agents-in-production tracker, and AI vendor TCO. For the operator accountable for making the agent work on real enterprise data.',
-    tags: ['Readiness assessment', 'Governance register', 'Vendor TCO'],
-  },
-  {
-    num: '06',
-    slug: 'transformation',
-    name: 'Transformation & SSC/GBS',
-    sub: 'Shared Services and Global Business Services transformation — transition management workbooks, SSC standup packs, GPO operating models, transformation PMO toolkits. Drawn from transitions that involved real headcount, real deadlines, and real consequences.',
-    tags: ['Workbook', 'Templates', 'PMO pack'],
-  },
-  {
-    num: '07',
-    slug: 'regulatory',
-    name: 'Regulatory & Compliance',
-    sub: 'EU AI Act, DORA Article 28, compliance registers with real article citations — not consultant summaries.',
-    tags: ['Excel register', 'Starter pack', 'Full tier'],
-  },
-];
-
 // Product catalog data imported from the canonical source — see
 // src/data/products.ts. Landing page renders only courses + free items +
 // a CTA to /products. Full catalog (line-grouped) lives on /products.
@@ -183,10 +131,10 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
           {products.length} products live now on Gumroad
         </a>
         <a
-          href="/about"
+          href="/paths"
           class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-lg transition-colors"
         >
-          About Vihren Labs
+          Start here &rarr;
         </a>
       </div>
 
@@ -305,20 +253,22 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
         Three ways in. <span class="text-white/30">Pick how deep you need to go.</span>
       </h2>
       <p class="text-white/50 text-lg leading-relaxed max-w-2xl mb-12">
-        Read the thinking for free, buy the one tool for the problem on your desk, or take a whole domain end to end. Every purchase is one-time — you own it, no subscription.
+        Start with a free guided path, buy the one tool for the problem on your desk, or take a whole domain end to end. Every purchase is one-time — you own it, no subscription.
       </p>
 
       <div class="grid md:grid-cols-3 gap-4">
-        <!-- Rung 1 — Free -->
-        <a href="/essays/the-operator-standard"
+        <!-- Rung 1 — Free guided path (repointed to /paths 2026-07-11 — the
+             Operator Standard now lives in the cornerstone banner below, so this
+             rung wires in the guided front door instead of twinning it) -->
+        <a href="/paths"
            class="group flex flex-col p-7 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
           <div class="flex items-center justify-between mb-5">
             <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">Start free</span>
             <span class="font-black text-2xl text-white/80">$0</span>
           </div>
-          <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Read the standard</h3>
-          <p class="text-white/45 text-sm leading-relaxed flex-1">The seven operating principles behind every product — the fastest way to know this is built by someone who's actually done it. No email, no purchase.</p>
-          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">Read the Operator Standard &rarr;</span>
+          <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Find your starting point</h3>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">A guided path for each line — a free entry point, then the exact tool for the problem on your desk. No email, no purchase.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the learning paths &rarr;</span>
         </a>
 
         <!-- Rung 2 — Own one tool (entry purchase; orange-emphasised) -->
@@ -380,53 +330,20 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
     </div>
   </section>
 
-  <!-- ═══ PRODUCT LINES ═════════════════════════════════════════════════ -->
-  <section class="py-28 px-6 bg-[#0A1520]">
-    <div class="max-w-6xl mx-auto">
-      <div class="flex items-end justify-between mb-16 flex-wrap gap-4">
-        <div>
-          <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Product lines</p>
-          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Seven expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
-        </div>
-        <span class="font-mono text-xs text-white/25 border border-white/8 px-5 py-2.5 rounded-full">
-          Live now on Gumroad
-        </span>
-      </div>
-
-      <div class="space-y-3">
-        {lines.map((line) => (
-          <a href={`/lines/${line.slug}`}
-             class="flex items-start gap-6 sm:gap-8 p-6 sm:p-8 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
-            <div class="flex-shrink-0 pt-1">
-              <span class="line-number text-white/15">{line.num}</span>
-            </div>
-            <div class="flex-1 min-w-0">
-              <div class="flex items-start justify-between gap-4 flex-wrap">
-                <h3 class="font-bold text-lg text-white/80">{line.name}</h3>
-                <div class="flex flex-wrap gap-2 flex-shrink-0">
-                  {line.tags.map(tag => (
-                    <span class="font-mono text-[10px] text-white/20 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase">{tag}</span>
-                  ))}
-                </div>
-              </div>
-              <p class="text-white/40 text-sm leading-relaxed mt-2">{line.sub}</p>
-              <span class="inline-block mt-3 font-mono text-[10px] text-white/25 tracking-wider uppercase">Explore the line &rarr;</span>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- ═══ AVAILABLE NOW ═══════════════════════════════════════════════ -->
-  <section class="py-24 px-6 border-t border-white/5">
+  <!-- ═══ THE CATALOGUE (Product Lines + Available Now merged 2026-07-11) ══
+       Was two sections — a 7-line card grid and an Available-now block with two
+       stacked orange banners. Condensed: the seven lines now live on /products
+       and /paths, so this is one routing block — the "seven clusters" headline,
+       one catalogue banner (Master Data Academy woven in as the live highlight),
+       and light /paths + /cheat-sheets pointers. ════════════════════════════ -->
+  <section class="py-28 px-6 border-t border-white/5">
     <div class="max-w-6xl mx-auto">
       <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
         <div>
-          <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-3">Available now</p>
-          <h2 class="font-black text-3xl sm:text-4xl leading-tight">Built. Live. <span class="text-white/30">Browse the catalogue.</span></h2>
-          <p class="text-white/40 text-sm max-w-2xl mt-4 leading-relaxed">
-            {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads — grouped by product line. The full catalogue lives on a dedicated page.
+          <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
+          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Seven expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
+          <p class="text-white/40 text-sm max-w-2xl mt-5 leading-relaxed">
+            {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads — grouped by product line on a dedicated page.
           </p>
         </div>
         <a href="https://vihrenlabs.gumroad.com" target="_blank" rel="noopener noreferrer"
@@ -435,9 +352,9 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
         </a>
       </div>
 
-      <!-- ── SEE FULL CATALOG CTA — primary callout, lists live on /products ── -->
+      <!-- ── One catalogue banner — full catalogue, Master Data Academy woven in ── -->
       <a href="/products"
-         class="group block rounded-2xl border border-[#E67E22]/30 bg-[#E67E22]/[0.04] hover:border-[#E67E22]/60 hover:bg-[#E67E22]/[0.07] transition-colors p-8 sm:p-10 mb-12">
+         class="group block rounded-2xl border border-[#E67E22]/30 bg-[#E67E22]/[0.04] hover:border-[#E67E22]/60 hover:bg-[#E67E22]/[0.07] transition-colors p-8 sm:p-10">
         <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
           <div class="max-w-2xl">
             <div class="flex items-center gap-3 mb-3">
@@ -446,10 +363,10 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
               <span class="font-mono text-[10px] text-white/40 tracking-wider">{products.length + freeItems.length} items live</span>
             </div>
             <h3 class="font-bold text-2xl text-white/90 leading-snug mb-3">
-              All Vihren Labs courses, toolkits and bundles — in one place.
+              All courses, toolkits and bundles — across seven lines, in one place.
             </h3>
             <p class="text-white/50 text-sm leading-relaxed">
-              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · AI Adoption & Governance · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads.
+              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · AI Adoption & Governance · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">The 3-course Master Data Academy — Product · Customer · Vendor — is live now.</strong>
             </p>
           </div>
           <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-mono text-sm font-bold uppercase tracking-widest px-7 py-4 rounded-lg group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
@@ -458,27 +375,16 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
         </div>
       </a>
 
-      <!-- ── MASTER DATA ACADEMY · all three domains live ────────────────── -->
-      <div class="rounded-2xl border border-[#E67E22]/30 bg-[#E67E22]/[0.04] p-6 sm:p-8">
-        <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6">
-          <div class="max-w-2xl">
-            <div class="flex items-center gap-3 mb-3">
-              <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">Live now</span>
-              <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Master Data Academy</p>
-            </div>
-            <h3 class="font-bold text-lg text-white/90 leading-snug mb-3">
-              The 3-course Master Data Academy is live — Product · Customer · Vendor
-            </h3>
-            <p class="text-white/45 text-sm leading-relaxed">
-              All three operator courses are out now — Master Data Excellence for <strong class="text-white/70">Product &amp; SKU</strong>, <strong class="text-white/70">Customer &amp; Business Partner</strong>, and <strong class="text-white/70">Vendor &amp; Supplier Master</strong>. Same shape, same depth, mid-market operator audience: each is 10 modules with workbooks, operator templates and a capstone you build against your own organization.
-            </p>
-          </div>
-          <a href="/lines/master-data"
-             class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/15 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-6 py-3 rounded-full text-sm hover:bg-[#E67E22]/25 transition-colors whitespace-nowrap">
-            <span class="w-2 h-2 rounded-full bg-[#E67E22] flex-shrink-0"></span>
-            Explore the Academy &rarr;
-          </a>
-        </div>
+      <!-- ── Light pointers — guided paths + free cheat sheets ── -->
+      <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mt-8">
+        <a href="/paths" class="inline-flex items-center gap-2 font-mono text-xs text-white/50 hover:text-[#E67E22] tracking-wider uppercase transition-colors">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
+          Not sure where to start? Find your path &rarr;
+        </a>
+        <a href="/cheat-sheets" class="inline-flex items-center gap-2 font-mono text-xs text-white/50 hover:text-[#E67E22] tracking-wider uppercase transition-colors">
+          <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
+          Free: the AI-Ready Operations cheat sheets &rarr;
+        </a>
       </div>
 
     </div>
