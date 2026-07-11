@@ -145,21 +145,33 @@ const collectionSchema = {
     </div>
   </section>
 
-  <!-- ═══ ASSESSMENT CTA ════════════════════════════════════════════════ -->
+  <!-- ═══ ASSESSMENT CTA — the primary email-capture path ═══════════════
+       The individual sheets above stay ungated (frictionless + shareable);
+       this is the "want the whole framework, by email" option that captures
+       the lead into Beehiiv via the free Assessment (l/rmkje). Kept honest:
+       it points at the Assessment (covers all five layers as a scored check),
+       NOT a claim that it bundles the individual sheet PDFs. ═══════════════ -->
   <section class="py-20 px-6 border-t border-white/5">
-    <div class="max-w-3xl mx-auto text-center">
-      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Go one level deeper</p>
-      <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-5">Score your own organization.</h2>
-      <p class="text-white/50 text-base leading-relaxed mb-8">
-        The cheat sheets are the map. The free <span class="text-white/70">AI-Ready Operations Assessment</span> turns all five layers into a readiness check you run on your own org — a maturity scale from "ad hoc" to "AI-ready", so you can see your weakest layer before you spend a cent on tooling.
-      </p>
-      <a href={ASSESSMENT_URL} target="_blank" rel="noopener noreferrer"
-         class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg transition-colors">
-        Get the free assessment &rarr;
-      </a>
-      <p class="text-white/30 text-xs mt-6 leading-relaxed max-w-xl mx-auto">
-        Education, not consulting, legal, or vendor advice. Tool-agnostic. Go deeper in the <a href="/products" class="text-white/45 hover:text-[#E67E22] transition-colors">operator library &rarr;</a>
-      </p>
+    <div class="max-w-3xl mx-auto">
+      <div class="relative overflow-hidden rounded-3xl border border-[#E67E22]/30 bg-gradient-to-br from-[#1E3D59]/40 to-[#080E14]/80 p-8 sm:p-12 text-center">
+        <div class="absolute top-0 right-0 w-80 h-80 rounded-full opacity-10 pointer-events-none"
+             style="background: radial-gradient(ellipse at top right, #E67E22, transparent 70%);" aria-hidden="true"></div>
+        <div class="relative">
+          <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Want all five in one go?</p>
+          <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-5">Get the whole framework — scored on your own org.</h2>
+          <p class="text-white/55 text-base leading-relaxed mb-8 max-w-xl mx-auto">
+            Grab the sheets one at a time above — or get the whole thing in one place. The free <span class="text-white/80">AI-Ready Operations Assessment</span> turns all five layers into a readiness check you run on your own organization — a maturity scale from "ad hoc" to "AI-ready" that shows your weakest layer before you spend a cent on tooling. Enter your email and it lands in your inbox.
+          </p>
+          <a href={ASSESSMENT_URL} target="_blank" rel="noopener noreferrer"
+             class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg transition-colors">
+            Get the free assessment &rarr;
+          </a>
+          <p class="text-white/35 text-xs mt-5 font-mono tracking-wider">Free · straight to your inbox · no spam</p>
+          <p class="text-white/30 text-xs mt-4 leading-relaxed max-w-xl mx-auto">
+            Education, not consulting, legal, or vendor advice. Tool-agnostic. Go deeper in the <a href="/products" class="text-white/45 hover:text-[#E67E22] transition-colors">operator library &rarr;</a>
+          </p>
+        </div>
+      </div>
     </div>
   </section>
 </Base>
