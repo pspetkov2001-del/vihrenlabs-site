@@ -10,16 +10,16 @@ const guides = (await getCollection('guides')).sort((a, b) => {
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Operator Guides — Vihren Labs',
+  name: 'Operator Guides - Vihren Labs',
   description:
-    'Step-by-step operator guides for the enterprise IT stack — S/4HANA cutover, master data quality audits, EU AI Act readiness, and DORA ICT registers. Answer-first, free to read.',
+    'Step-by-step operator guides for the enterprise IT stack - S/4HANA cutover, master data quality audits, EU AI Act readiness, and DORA ICT registers. Answer-first, free to read.',
   url: 'https://www.vihrenlabs.com/guides',
 };
 ---
 
 <Base
   title="Guides · Vihren Labs"
-  description="Step-by-step operator guides — S/4HANA cutover checklist, master data quality audit, EU AI Act readiness, DORA Article 28 register. The what and why, free; the done-for-you template, in the catalogue."
+  description="Step-by-step operator guides - S/4HANA cutover checklist, master data quality audit, EU AI Act readiness, DORA Article 28 register. The what and why, free; the done-for-you template, in the catalogue."
   schema={collectionSchema}
 >
   <section class="relative px-6 py-24 sm:py-28 border-b border-white/5 overflow-hidden blueprint-pattern">
@@ -36,7 +36,7 @@ const collectionSchema = {
         The step-by-step versions.
       </h1>
       <p class="text-white/50 text-lg leading-relaxed">
-        How to run the cutover, the master-data audit, the EU regulatory registers — answered
+        How to run the cutover, the master-data audit, the EU regulatory registers - answered
         in operator depth, free. Each guide gives away the what and the why. The done-for-you
         template lives in the <a href="/products" class="text-[#E67E22] hover:underline">catalogue</a>.
       </p>
@@ -53,7 +53,7 @@ const collectionSchema = {
           </div>
           <h2 class="font-bold text-xl text-white/90 leading-snug mb-2 group-hover:text-white transition-colors">{guide.data.title}</h2>
           <p class="text-white/45 text-sm leading-relaxed">{guide.data.description}</p>
-          <span class="inline-block mt-4 font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Read the guide &rarr;</span>
+          <span class="inline-block mt-4 font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Read the guide</span>
         </a>
       ))}
     </div>

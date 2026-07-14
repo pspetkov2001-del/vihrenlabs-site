@@ -1,13 +1,13 @@
 ---
 title: "Your AI agent will amplify your data problems, not fix them"
-description: "An AI agent is an amplifier — point it at fragmented, duplicated, or stale data and it scales the confusion, fluently. Why bad data no longer looks broken but looks persuasive, why enterprise systems were never built for autonomous decisions, and the three readiness questions — identity, completeness, source of truth — to answer before you deploy an AI agent on anything that matters."
+description: "An AI agent is an amplifier - point it at fragmented, duplicated, or stale data and it scales the confusion, fluently. Why bad data no longer looks broken but looks persuasive, why enterprise systems were never built for autonomous decisions, and the three readiness questions - identity, completeness, source of truth - to answer before you deploy an AI agent on anything that matters."
 date: "2026-06-02"
 line: "AI Adoption & Governance"
 keywords: ["AI agent readiness", "AI data quality", "AI agent failure", "master data for AI", "lead scoring AI", "data governance AI", "AI revenue agent", "AI adoption enterprise", "source of truth", "deduplication"]
 featured: true
 ---
 
-**The old automation failures looked broken. This one looks persuasive — which is exactly what makes it dangerous.**
+**The old automation failures looked broken. This one looks persuasive - which is exactly what makes it dangerous.**
 
 Every week now I see another company announcing an AI agent rollout.
 
@@ -15,11 +15,11 @@ A sales agent that scores leads automatically. A procurement agent that flags su
 
 And honestly, some of these companies are getting real results.
 
-But then you talk to another company using almost the exact same tools — same models, same prompts, same integrations — and the outcome is completely different. The agent produces noise. Users stop trusting it after two weeks. The rankings make no sense. The recommendations feel random. People quietly go back to spreadsheets.
+But then you talk to another company using almost the exact same tools - same models, same prompts, same integrations - and the outcome is completely different. The agent produces noise. Users stop trusting it after two weeks. The rankings make no sense. The recommendations feel random. People quietly go back to spreadsheets.
 
 Most of the time, the difference is not the AI model. It is the quality of the data underneath it.
 
-Because AI agents are not magic. They are amplifiers. They take whatever operational reality exists in your systems and scale it — faster, more confidently, and across more decisions than a human team ever could.
+Because AI agents are not magic. They are amplifiers. They take whatever operational reality exists in your systems and scale it - faster, more confidently, and across more decisions than a human team ever could.
 
 If the underlying data is structured well, governed, and consistent, the agent can look remarkably intelligent. If the underlying data is fragmented, duplicated, stale, or incomplete, the agent scales the confusion. Usually with very convincing language.
 
@@ -97,13 +97,13 @@ This matters because AI systems silently interpret missing data. If industry cla
 
 ### 3. Is there an actual source of truth?
 
-In many enterprises the same entity exists across ERP, CRM, procurement platforms, support systems, data warehouses, spreadsheets, and regional databases — often with conflicting values.
+In many enterprises the same entity exists across ERP, CRM, procurement platforms, support systems, data warehouses, spreadsheets, and regional databases - often with conflicting values.
 
 The AI agent does not magically reconcile these disagreements. It inherits them. If your systems disagree about who the customer is, what they purchased, who owns the account, or whether the contract is active, the agent's recommendations become unreliable very quickly. And once users lose trust in the output, adoption collapses.
 
 ## The uncomfortable reality
 
-Most AI vendors will not spend much time talking about data readiness. Not because it is unimportant — because fixing enterprise data is slow, operationally difficult, and usually outside the scope of the product being sold.
+Most AI vendors will not spend much time talking about data readiness. Not because it is unimportant - because fixing enterprise data is slow, operationally difficult, and usually outside the scope of the product being sold.
 
 It is easier to demo the agent than to discuss master data governance, ERP harmonization, duplicate resolution, taxonomy redesign, or ownership accountability.
 

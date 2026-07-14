@@ -9,31 +9,31 @@ import { faqSchema } from '../data/schema';
 const brandFaqs = [
   {
     q: 'What is Vihren Labs?',
-    a: 'Vihren Labs publishes operator-grade templates, workbooks, courses and playbooks for the enterprise IT stack — SAP S/4HANA migration, master data management, IT procurement, programme delivery, SSC/GBS transformation, and EU regulatory compliance (DORA, EU AI Act). Every product is built from real scenarios: real SAP T-codes, real regulation article numbers, real cutover-night failure modes.',
+    a: 'Vihren Labs publishes operator-grade templates, workbooks, courses and playbooks for the enterprise IT stack - SAP S/4HANA migration, master data management, IT procurement, programme delivery, SSC/GBS transformation, and EU regulatory compliance (DORA, EU AI Act). Every product is built from real scenarios: real SAP T-codes, real regulation article numbers, real cutover-night failure modes.',
   },
   {
     q: 'Who makes Vihren Labs products?',
-    a: 'Petko Petkov — a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table. His work spans master data management and governance — the operating model, and automating product and SKU creation end to end, from ingestion, standardisation, enrichment and categorisation rules through to dynamic SKU generation and touchless quoting — alongside SAP S/4HANA migrations, IT vendor procurement from the distribution side, EU regulatory rollouts, and large shared-services / GBS transitions across Europe. PRINCE2 Practitioner, Six Sigma. Every product is written from lived practitioner experience, not consultant theory.',
+    a: 'Petko Petkov - a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table. His work spans master data management and governance - the operating model, and automating product and SKU creation end to end, from ingestion, standardisation, enrichment and categorisation rules through to dynamic SKU generation and touchless quoting - alongside SAP S/4HANA migrations, IT vendor procurement from the distribution side, EU regulatory rollouts, and large shared-services / GBS transitions across Europe. PRINCE2 Practitioner, Six Sigma. Every product is written from lived practitioner experience, not consultant theory.',
   },
   {
     q: 'Are Vihren Labs products consulting, or legal or tax advice?',
-    a: 'No. They are downloadable, operator-built templates and playbooks you run yourself — not consulting. The regulatory compliance products are organizational and evidence tools, not legal opinions; confirm your specific obligations with qualified counsel.',
+    a: 'No. They are downloadable, operator-built templates and playbooks you run yourself - not consulting. The regulatory compliance products are organizational and evidence tools, not legal opinions; confirm your specific obligations with qualified counsel.',
   },
   {
     q: 'What courses does Vihren Labs offer?',
-    a: 'Four operator courses, all live and one-time purchases. The Master Data Academy is a three-course set — Master Data Excellence for Product & SKU Management, for Customer & Business Partner, and for Vendor & Supplier Master — each 10 modules with workbooks, operator templates and a capstone you build against your own organization. Alongside them is The Transition Operator\'s Course for SSC, GBS and BPO transitions. Each course also anchors a value ladder of standalone workbooks and operator packs in the same line.',
+    a: 'Four operator courses, all live and one-time purchases. The Master Data Academy is a three-course set - Master Data Excellence for Product & SKU Management, for Customer & Business Partner, and for Vendor & Supplier Master - each 10 modules with workbooks, operator templates and a capstone you build against your own organization. Alongside them is The Transition Operator\'s Course for SSC, GBS and BPO transitions. Each course also anchors a value ladder of standalone workbooks and operator packs in the same line.',
   },
   {
     q: 'Are the products a subscription? What about the courses, and the higher tiers?',
-    a: 'No — every Vihren Labs product you can buy today is a one-time purchase on Gumroad: you buy it, download it, and own it, with no recurring fees. That includes all four courses — the three-course Master Data Academy (Product & SKU, Customer & Business Partner, and Vendor & Supplier Master) and The Transition Operator\'s Course (SSC, GBS & BPO) — which are one-time too. The courses are designed as a three-tier ladder: Tier 1 is the self-serve course you own outright (available now); Tier 2 adds 1:1 sessions with Petko — work reviews and direct guidance as you apply it to your own organisation (planned); and Tier 3 is an enterprise tier — a team-training and rollout model for organisations (planned). Tiers 2 and 3 are engagements, not subscriptions, and are coming in the future. Whatever the tier, the model holds: you are buying a thing or an engagement you own, never a recurring subscription.',
+    a: 'No - every Vihren Labs product you can buy today is a one-time purchase on Gumroad: you buy it, download it, and own it, with no recurring fees. That includes all four courses - the three-course Master Data Academy (Product & SKU, Customer & Business Partner, and Vendor & Supplier Master) and The Transition Operator\'s Course (SSC, GBS & BPO) - which are one-time too. The courses are designed as a three-tier ladder: Tier 1 is the self-serve course you own outright (available now); Tier 2 adds 1:1 sessions with Petko - work reviews and direct guidance as you apply it to your own organisation (planned); and Tier 3 is an enterprise tier - a team-training and rollout model for organisations (planned). Tiers 2 and 3 are engagements, not subscriptions, and are coming in the future. Whatever the tier, the model holds: you are buying a thing or an engagement you own, never a recurring subscription.',
   },
   {
     q: 'Who are Vihren Labs products for?',
-    a: 'The IT operator who has to make the system work on Monday morning — not the executive who reads the slide deck. Typical buyers are SAP migration leads, master-data and MDG owners, IT procurement and vendor managers, programme and PMO leads, SSC/GBS transition managers, and compliance owners working on DORA or the EU AI Act.',
+    a: 'The IT operator who has to make the system work on Monday morning - not the executive who reads the slide deck. Typical buyers are SAP migration leads, master-data and MDG owners, IT procurement and vendor managers, programme and PMO leads, SSC/GBS transition managers, and compliance owners working on DORA or the EU AI Act.',
   },
   {
     q: 'Where can I buy Vihren Labs products?',
-    a: 'On Gumroad. You can browse the full catalogue — courses, workbooks, playbooks and operator packs — at vihrenlabs.com/products, where each product links to its Gumroad checkout.',
+    a: 'On Gumroad. You can browse the full catalogue - courses, workbooks, playbooks and operator packs - at vihrenlabs.com/products, where each product links to its Gumroad checkout.',
   },
 ];
 const brandFaqSchema = faqSchema(brandFaqs);
@@ -70,7 +70,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
 
 <Base
   title="Vihren Labs"
-  description="Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator — SAP, Master Data Management, AI governance, regulatory compliance, shared services."
+  description="Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator - SAP, Master Data Management, AI governance, regulatory compliance, shared services."
   schema={brandFaqSchema}
 >
   <!-- Noise overlay -->
@@ -116,7 +116,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
 
       <!-- Sub -->
       <p class="fade-up fade-up-delay-3 text-white/50 text-lg sm:text-xl leading-relaxed max-w-2xl mb-12">
-        For the operator who's accountable when it has to work on Monday morning — the cutover, the renewal, the migration, the AI agent. Operator-grade templates and playbooks for the enterprise IT stack, built from real scenarios, not consultant theory.
+        For the operator who's accountable when it has to work on Monday morning - the cutover, the renewal, the migration, the AI agent. Operator-grade templates and playbooks for the enterprise IT stack, built from real scenarios, not consultant theory.
       </p>
 
       <!-- CTAs -->
@@ -134,14 +134,14 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
           href="/paths"
           class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-lg transition-colors"
         >
-          Start here &rarr;
+          Start here
         </a>
       </div>
 
       <!-- Author byline pill — authority signal above the fold -->
       <div class="mt-8 inline-flex items-center gap-3 px-4 py-2 bg-[#1E3D59]/40 border border-[#E67E22]/20 rounded-full font-mono text-xs text-white/70">
         <span class="w-2 h-2 rounded-full bg-[#E67E22] flex-shrink-0"></span>
-        Built by Petko Petkov · 15 years in enterprise IT — vendor-distribution & buyer-operator sides
+        Built by Petko Petkov · 15 years in enterprise IT - vendor-distribution & buyer-operator sides
       </div>
 
       <!-- Stats row -->
@@ -185,8 +185,8 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
         Enterprise IT is written by everyone <span class="text-white/30">except the person it lands on.</span>
       </h2>
       <div class="space-y-5 text-white/60 text-lg leading-relaxed max-w-2xl">
-        <p>Vendors sell the product. Consultants bill the programme and leave. Analysts draw the quadrant. Almost nobody writes for the person who is still in the seat on Tuesday — when the cutover failed at 3 a.m., when the renewal auto-rolled at +18%, when the agent shipped on data nobody had cleaned.</p>
-        <p><strong class="text-white/85">Vihren Labs is the catalogue I wish I had had in that seat.</strong> The operating detail, written down — by someone who has been on call for it, on both sides of the table. The purpose is narrow and on purpose: take fifteen years of pattern-recognition and turn it into tools an operator can open on Monday and use by Friday.</p>
+        <p>Vendors sell the product. Consultants bill the programme and leave. Analysts draw the quadrant. Almost nobody writes for the person who is still in the seat on Tuesday - when the cutover failed at 3 a.m., when the renewal auto-rolled at +18%, when the agent shipped on data nobody had cleaned.</p>
+        <p><strong class="text-white/85">Vihren Labs is the catalogue I wish I had had in that seat.</strong> The operating detail, written down - by someone who has been on call for it, on both sides of the table. The purpose is narrow and on purpose: take fifteen years of pattern-recognition and turn it into tools an operator can open on Monday and use by Friday.</p>
       </div>
     </div>
 
@@ -220,12 +220,12 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
       <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">The problems I want to solve</p>
       <div class="grid md:grid-cols-2 gap-4">
         {[
-          { p: 'Governance failures kill programmes the technology would have survived.', f: 'Runsheets, freezes and rollback criteria — named owners, pre-agreed, before T-day.' },
+          { p: 'Governance failures kill programmes the technology would have survived.', f: 'Runsheets, freezes and rollback criteria - named owners, pre-agreed, before T-day.' },
           { p: 'Cutovers fall apart at 3 a.m. because the rollback was never a decision.', f: 'A 52-check readiness matrix and an hour-by-hour run sheet that holds when twelve people disagree.' },
           { p: 'Renewals are lost to the information the vendor has and you don\'t.', f: 'The true 3-year TCO, the notice-period trap, and what the distribution channel already knows.' },
-          { p: 'AI projects get cancelled for want of an operating model, not a better model.', f: 'A use-case gate, a governance register, and a named owner after launch — decided before you build.' },
-          { p: 'Master data nobody owns — so every report is "wrong" and every agent inherits the mess.', f: 'Field-level quality scoring, a maturity read, and an operating model with real decision rights.' },
-          { p: 'Compliance run as document theatre instead of operational evidence.', f: 'Registers with real article numbers — EU AI Act, DORA Article 28 — built to be walked by an auditor in 30 minutes.' },
+          { p: 'AI projects get cancelled for want of an operating model, not a better model.', f: 'A use-case gate, a governance register, and a named owner after launch - decided before you build.' },
+          { p: 'Master data nobody owns - so every report is "wrong" and every agent inherits the mess.', f: 'Field-level quality scoring, a maturity read, and an operating model with real decision rights.' },
+          { p: 'Compliance run as document theatre instead of operational evidence.', f: 'Registers with real article numbers - EU AI Act, DORA Article 28 - built to be walked by an auditor in 30 minutes.' },
         ].map(item => (
           <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
             <p class="text-white/85 text-base font-semibold leading-snug mb-3">{item.p}</p>
@@ -234,7 +234,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
         ))}
       </div>
       <p class="text-white/55 text-base leading-relaxed max-w-3xl mt-10">
-        The standard is the same across all of it: run on the obligation, build governance like architecture, concrete beats abstract. Operator-grade, not consulting — you buy it, you own it, no subscription. <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Read the Operator Standard &rarr;</a>
+        The standard is the same across all of it: run on the obligation, build governance like architecture, concrete beats abstract. Operator-grade, not consulting - you buy it, you own it, no subscription. <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Read the Operator Standard</a>
       </p>
     </div>
   </section>
@@ -253,7 +253,7 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
         Three ways in. <span class="text-white/30">Pick how deep you need to go.</span>
       </h2>
       <p class="text-white/50 text-lg leading-relaxed max-w-2xl mb-12">
-        Start with a free guided path, buy the one tool for the problem on your desk, or take a whole domain end to end. Every purchase is one-time — you own it, no subscription.
+        Start with a free guided path, buy the one tool for the problem on your desk, or take a whole domain end to end. Every purchase is one-time - you own it, no subscription.
       </p>
 
       <div class="grid md:grid-cols-3 gap-4">
@@ -267,8 +267,8 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
             <span class="font-black text-2xl text-white/80">$0</span>
           </div>
           <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Find your starting point</h3>
-          <p class="text-white/45 text-sm leading-relaxed flex-1">A guided path for each line — a free entry point, then the exact tool for the problem on your desk. No email, no purchase.</p>
-          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the learning paths &rarr;</span>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">A guided path for each line - a free entry point, then the exact tool for the problem on your desk. No email, no purchase.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the learning paths</span>
         </a>
 
         <!-- Rung 2 — Own one tool (entry purchase; orange-emphasised) -->
@@ -279,8 +279,8 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
             <span class="font-black text-2xl text-white/80">from ${toolkitFloor}</span>
           </div>
           <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Own the tool for one problem</h3>
-          <p class="text-white/45 text-sm leading-relaxed flex-1">Take the thing on your desk this week — a cutover, a renewal, a master-data mess, an AI go/no-go — and buy the workbook or operator pack built for exactly it.</p>
-          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">Browse workbooks &amp; packs &rarr;</span>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">Take the thing on your desk this week - a cutover, a renewal, a master-data mess, an AI go/no-go - and buy the workbook or operator pack built for exactly it.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">Browse workbooks &amp; packs</span>
         </a>
 
         <!-- Rung 3 — Go deep -->
@@ -291,8 +291,8 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
             <span class="font-black text-2xl text-white/80">{coursePrice}</span>
           </div>
           <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Take a whole domain</h3>
-          <p class="text-white/45 text-sm leading-relaxed flex-1">A full operator course — 10 modules, workbooks, operator templates and a capstone you build against your own organization. Master Data, or SSC/GBS transitions.</p>
-          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the courses &rarr;</span>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">A full operator course - 10 modules, workbooks, operator templates and a capstone you build against your own organization. Master Data, or SSC/GBS transitions.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the courses</span>
         </a>
       </div>
     </div>
@@ -316,14 +316,14 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
             The Vihren Labs Operator Standard
           </h2>
           <p class="text-white/60 text-lg leading-relaxed max-w-2xl mb-8">
-            Seven principles for running the enterprise IT stack — written from fifteen years in the
+            Seven principles for running the enterprise IT stack - written from fifteen years in the
             seat where the cutover has to work on Monday morning. Run on the obligation, not the
             aspiration. Governance kills more programmes than technology. Concrete beats abstract.
-            The standard every product in the catalogue is held to — and the fastest way to know
+            The standard every product in the catalogue is held to - and the fastest way to know
             whether Vihren Labs is built by someone who has actually done this. <strong class="text-white/80">Read it before you buy anything.</strong>
           </p>
           <span class="inline-flex items-center gap-2 bg-[#E67E22] group-hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-7 py-3.5 rounded-lg transition-colors">
-            Read the Operator Standard &rarr;
+            Read the Operator Standard
           </span>
         </div>
       </a>
@@ -343,12 +343,12 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
           <h2 class="font-black text-4xl sm:text-5xl leading-tight">Seven expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
           <p class="text-white/40 text-sm max-w-2xl mt-5 leading-relaxed">
-            {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads — grouped by product line on a dedicated page.
+            {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads - grouped by product line on a dedicated page.
           </p>
         </div>
         <a href="https://vihrenlabs.gumroad.com" target="_blank" rel="noopener noreferrer"
            class="font-mono text-xs text-white/30 hover:text-[#E67E22] transition-colors tracking-wider uppercase border border-white/8 px-4 py-2 rounded">
-          View all in shop &rarr;
+          View all in shop
         </a>
       </div>
 
@@ -363,14 +363,14 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
               <span class="font-mono text-[10px] text-white/40 tracking-wider">{products.length + freeItems.length} items live</span>
             </div>
             <h3 class="font-bold text-2xl text-white/90 leading-snug mb-3">
-              All courses, toolkits and bundles — across seven lines, in one place.
+              All courses, toolkits and bundles - across seven lines, in one place.
             </h3>
             <p class="text-white/50 text-sm leading-relaxed">
-              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · AI Adoption & Governance · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">The 3-course Master Data Academy — Product · Customer · Vendor — is live now.</strong>
+              Procurement & Vendor Management · Programme Delivery & Enterprise IT PMO · SAP / ERP Operations · Master Data Operations · AI Adoption & Governance · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">The 3-course Master Data Academy - Product · Customer · Vendor - is live now.</strong>
             </p>
           </div>
           <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-mono text-sm font-bold uppercase tracking-widest px-7 py-4 rounded-lg group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
-            View full catalogue &rarr;
+            View full catalogue
           </div>
         </div>
       </a>
@@ -379,11 +379,11 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
       <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mt-8">
         <a href="/paths" class="inline-flex items-center gap-2 font-mono text-xs text-white/50 hover:text-[#E67E22] tracking-wider uppercase transition-colors">
           <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
-          Not sure where to start? Find your path &rarr;
+          Not sure where to start? Find your path
         </a>
         <a href="/cheat-sheets" class="inline-flex items-center gap-2 font-mono text-xs text-white/50 hover:text-[#E67E22] tracking-wider uppercase transition-colors">
           <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
-          Free: the AI-Ready Operations cheat sheets &rarr;
+          Free: the AI-Ready Operations cheat sheets
         </a>
       </div>
 
@@ -433,18 +433,18 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
               The Operator Brief
             </h2>
             <p class="text-white/55 text-lg leading-relaxed mb-4">
-              One essay a week from inside enterprise IT — SAP migrations, vendor procurement, EU regulatory, master data. Vendor-side-honest, no buzzwords.
+              One essay a week from inside enterprise IT - SAP migrations, vendor procurement, EU regulatory, master data. Vendor-side-honest, no buzzwords.
             </p>
             <p class="text-white/40 text-base leading-relaxed">
-              New here? Start with the free <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Operator Standard</a> — the seven principles every product is held to. Read it on-site, no email required; subscribe when you want the weekly brief.
+              New here? Start with the free <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Operator Standard</a> - the seven principles every product is held to. Read it on-site, no email required; subscribe when you want the weekly brief.
             </p>
           </div>
 
           <!-- Right: the signup form -->
           <div class="lg:col-span-2">
             <div class="bg-white/[0.03] border border-white/8 rounded-2xl p-6 sm:p-7">
-              <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Get the weekly brief →</p>
-              <NewsletterForm align="left" cta="Subscribe →" />
+              <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Get the weekly brief</p>
+              <NewsletterForm align="left" cta="Subscribe" />
             </div>
           </div>
 

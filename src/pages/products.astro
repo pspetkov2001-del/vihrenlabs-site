@@ -9,7 +9,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
 
 <Base
   title="Products · Vihren Labs"
-  description="Vihren Labs full catalogue — courses, workbooks, playbooks and operator bundles for procurement, programme delivery, SAP, master data, AI adoption & governance, transformation, and EU regulatory compliance."
+  description="Vihren Labs full catalogue - courses, workbooks, playbooks and operator bundles for procurement, programme delivery, SAP, master data, AI adoption & governance, transformation, and EU regulatory compliance."
 >
   <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
   <section class="relative px-6 py-24 sm:py-32 border-b border-white/5 overflow-hidden blueprint-pattern">
@@ -32,7 +32,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
       </h1>
 
       <p class="text-white/50 text-lg sm:text-xl leading-relaxed max-w-2xl mb-10">
-        {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads — grouped by product line. Operator-grade templates for procurement, SAP migrations, EU regulatory compliance, master data, AI adoption & governance, and shared services transformation.
+        {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads - grouped by product line. Operator-grade templates for procurement, SAP migrations, EU regulatory compliance, master data, AI adoption & governance, and shared services transformation.
       </p>
 
       <div class="flex flex-wrap gap-3 items-center">
@@ -43,7 +43,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
         <a href="https://vihrenlabs.gumroad.com"
            target="_blank" rel="noopener noreferrer"
            class="inline-flex items-center justify-center gap-2 font-mono text-xs text-white/30 hover:text-[#E67E22] transition-colors tracking-wider uppercase border border-white/8 px-5 py-2.5 rounded-full">
-          View all in Gumroad shop &rarr;
+          View all in Gumroad shop
         </a>
       </div>
     </div>
@@ -62,7 +62,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
         </summary>
         <div class="px-6 pb-6">
           <p class="text-white/40 text-sm max-w-2xl mb-6 leading-relaxed">
-            Every product, one table — single-operator and team pricing, grouped by line. One-time purchase, no subscription.
+            Every product, one table - single-operator and team pricing, grouped by line. One-time purchase, no subscription.
           </p>
           <div class="overflow-x-auto rounded-2xl border border-white/8">
         <table class="w-full text-left border-collapse text-sm">
@@ -92,7 +92,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
                       </td>
                       <td class="py-3 px-4 text-white/45">{tierLabel[p.tier]}</td>
                       <td class="py-3 px-4 text-right text-white/90 font-semibold whitespace-nowrap">{p.price}</td>
-                      <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">{p.team || '—'}</td>
+                      <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">{p.team || '-'}</td>
                     </tr>
                   ))}
                 </Fragment>
@@ -108,7 +108,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
                 </td>
                 <td class="py-3 px-4 text-white/45">Download</td>
                 <td class="py-3 px-4 text-right text-white/90 font-semibold whitespace-nowrap">{p.price}</td>
-                <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">—</td>
+                <td class="py-3 px-4 text-right text-white/40 whitespace-nowrap">-</td>
               </tr>
             ))}
           </tbody>
@@ -129,7 +129,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
         <span class="font-mono text-[10px] text-white/30 tracking-wider">{products.filter(p => p.tier === 'course').length} live</span>
       </div>
       <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">
-        Full operator curriculum — 10 modules per course, each with playbook + exercises + workbook + visual one-pagers + capstone. Built from 15 years inside enterprise IT.
+        Full operator curriculum - 10 modules per course, each with playbook + exercises + workbook + visual one-pagers + capstone. Built from 15 years inside enterprise IT.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {products.filter(p => p.tier === 'course').map(p => (
@@ -142,7 +142,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
             <p class="text-white/45 text-sm leading-relaxed flex-1">{p.sub}</p>
             <div class="flex items-center justify-between mt-6">
               <span class="font-black text-xl text-white/95">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
-              <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details &rarr;</span>
+              <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details</span>
             </div>
           </a>
         ))}
@@ -172,7 +172,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
             <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
             <div class="flex items-center justify-between mt-6">
               <span class="font-black text-xl text-white/90">{p.price}</span>
-              <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it &rarr;</span>
+              <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Get it</span>
             </div>
           </a>
         ))}
@@ -187,7 +187,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
         <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-3">By product line</p>
         <h2 class="font-black text-3xl sm:text-4xl leading-tight">Workbooks · playbooks · bundles</h2>
         <p class="text-white/40 text-sm max-w-2xl mt-4 leading-relaxed">
-          Standalone tools and bundles across 6 product lines — buy individually, or as bundled operator's packs.
+          Standalone tools and bundles across 6 product lines - buy individually, or as bundled operator's packs.
         </p>
       </div>
 
@@ -198,7 +198,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
           <div class="mb-16">
             <div class="mb-6 flex items-baseline gap-3 flex-wrap">
               <div class="w-8 h-px bg-white/30"></div>
-              <a href={`/lines/${group.slug}`} class="font-mono text-white/60 hover:text-[#E67E22] text-xs tracking-[0.2em] uppercase transition-colors">{group.title} &rarr;</a>
+              <a href={`/lines/${group.slug}`} class="font-mono text-white/60 hover:text-[#E67E22] text-xs tracking-[0.2em] uppercase transition-colors">{group.title}</a>
               <span class="font-mono text-[10px] text-white/30 tracking-wider">{lineProducts.length} live</span>
             </div>
             <p class="text-white/40 text-sm max-w-2xl mb-8 leading-relaxed">{group.sub}</p>
@@ -214,7 +214,7 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
                   <p class="text-white/35 text-sm leading-relaxed flex-1">{p.sub}</p>
                   <div class="flex items-center justify-between mt-6">
                     <span class="font-black text-xl text-white/90">{p.price}{p.team ? (<span class="text-white/30 text-sm font-normal"> / {p.team}</span>) : null}</span>
-                    <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details &rarr;</span>
+                    <span class="font-mono text-xs text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details</span>
                   </div>
                 </a>
               ))}
@@ -233,11 +233,11 @@ const tierOrder = { course: 0, toolkit: 1, bundle: 2 };
         New products land every 4-6 weeks.
       </h2>
       <p class="text-white/50 text-base leading-relaxed mb-8">
-        Subscribe to The Operator Brief — weekly essays on SAP, master data, procurement, transformation, and EU IT regulation. First-look at new SKUs.
+        Subscribe to The Operator Brief - weekly essays on SAP, master data, procurement, transformation, and EU IT regulation. First-look at new SKUs.
       </p>
       <a href="/#newsletter"
          class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/20 border border-[#E67E22]/40 text-[#E67E22] font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg hover:bg-[#E67E22]/30 transition-colors">
-        Subscribe &rarr;
+        Subscribe
       </a>
     </div>
   </section>

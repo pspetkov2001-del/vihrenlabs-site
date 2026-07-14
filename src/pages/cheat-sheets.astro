@@ -12,21 +12,21 @@ const sheets = [
   {
     eyebrow: 'Cornerstone · all five layers',
     title: 'Why most AI projects fail before the model does',
-    sub: 'The whole map on one page — the five operational layers, and the 60-second tell that reveals which one you\'re missing.',
+    sub: 'The whole map on one page - the five operational layers, and the 60-second tell that reveals which one you\'re missing.',
     png: '/cheat-sheets/five-layers-cheat-sheet.png',
     pdf: '/cheat-sheets/five-layers-cheat-sheet.pdf',
   },
   {
     eyebrow: 'Layer 1 · Governance',
     title: 'Governance, not agents',
-    sub: 'The five failure modes (four aren\'t technical), the six decision rights to name, and the autonomy ladder — Layer 1\'s Monday-morning move.',
+    sub: 'The five failure modes (four aren\'t technical), the six decision rights to name, and the autonomy ladder - Layer 1\'s Monday-morning move.',
     png: '/cheat-sheets/governance-cheat-sheet.png',
     pdf: '/cheat-sheets/governance-cheat-sheet.pdf',
   },
   {
     eyebrow: 'Layer 2 · Clean Data',
     title: 'An amplifier, not a brain',
-    sub: 'The three checks before you deploy — identity, completeness, source of truth — and why bad data stops looking broken and starts looking persuasive.',
+    sub: 'The three checks before you deploy - identity, completeness, source of truth - and why bad data stops looking broken and starts looking persuasive.',
     png: '/cheat-sheets/clean-data-cheat-sheet.png',
     pdf: '/cheat-sheets/clean-data-cheat-sheet.pdf',
   },
@@ -35,7 +35,7 @@ const sheets = [
 // Full five-layer set for the overview map. Available = has a pdf; the rest are "coming".
 const layerMap = [
   { n: '◆',  label: 'The Five Layers',        desc: 'the whole framework on one page',                  pdf: '/cheat-sheets/five-layers-cheat-sheet.pdf', cornerstone: true },
-  { n: '01', label: 'Governance',             desc: 'who owns AI — and how you decide what ships',       pdf: '/cheat-sheets/governance-cheat-sheet.pdf' },
+  { n: '01', label: 'Governance',             desc: 'who owns AI - and how you decide what ships',       pdf: '/cheat-sheets/governance-cheat-sheet.pdf' },
   { n: '02', label: 'Clean Data',             desc: 'one source of truth, or the agent scales the mess', pdf: '/cheat-sheets/clean-data-cheat-sheet.pdf' },
   { n: '03', label: 'Standardized Processes', desc: 'consistent enough to automate at all',              pdf: null },
   { n: '04', label: 'Controls',               desc: 'catch, audit, and roll back a fast mistake',        pdf: null },
@@ -45,16 +45,16 @@ const layerMap = [
 const collectionSchema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'AI-Ready Operations cheat sheets — Vihren Labs',
+  name: 'AI-Ready Operations cheat sheets - Vihren Labs',
   description:
-    'Free one-page cheat sheets from The Five Layers of AI-Ready Operations — the layer, the tells that reveal you are missing it, and the Monday-morning move. Free, no email.',
+    'Free one-page cheat sheets from The Five Layers of AI-Ready Operations - the layer, the tells that reveal you are missing it, and the Monday-morning move. Free, no email.',
   url: 'https://www.vihrenlabs.com/cheat-sheets',
 };
 ---
 
 <Base
   title="Cheat Sheets"
-  description="Free one-page cheat sheets from The Five Layers of AI-Ready Operations — governance, clean data, and more. The layer, the tells that reveal you're missing it, and the Monday-morning move. Free, no email."
+  description="Free one-page cheat sheets from The Five Layers of AI-Ready Operations - governance, clean data, and more. The layer, the tells that reveal you're missing it, and the Monday-morning move. Free, no email."
   schema={collectionSchema}
 >
   <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
@@ -72,7 +72,7 @@ const collectionSchema = {
         The Five Layers, one page each.
       </h1>
       <p class="text-white/50 text-lg leading-relaxed max-w-2xl">
-        The cheat sheets from <span class="text-white/70">The Five Layers of AI-Ready Operations</span> — each one is a single layer, the tells that reveal you're missing it, and the one Monday-morning move. Free, no email. The version to forward to whoever owns AI where you work.
+        The cheat sheets from <span class="text-white/70">The Five Layers of AI-Ready Operations</span> - each one is a single layer, the tells that reveal you're missing it, and the one Monday-morning move. Free, no email. The version to forward to whoever owns AI where you work.
       </p>
     </div>
   </section>
@@ -85,7 +85,7 @@ const collectionSchema = {
           <a href={s.pdf} download
              class="group flex flex-col rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden card-hover">
             <div class="overflow-hidden border-b border-white/8">
-              <img src={s.png} alt={`${s.eyebrow} — ${s.title} cheat sheet`} loading="lazy" width="1080" height="1660"
+              <img src={s.png} alt={`${s.eyebrow} - ${s.title} cheat sheet`} loading="lazy" width="1080" height="1660"
                    class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]" />
             </div>
             <div class="flex flex-col flex-1 p-5">
@@ -120,7 +120,7 @@ const collectionSchema = {
               <span class:list={["font-mono text-xs w-7 shrink-0 text-center", L.cornerstone ? "text-[#E67E22]" : "text-[#E67E22]/80"]}>{L.n}</span>
               <div class="flex-1 min-w-0">
                 <span class="font-bold text-sm text-white/90">{L.label}</span>
-                <span class="text-white/40 text-sm"> — {L.desc}</span>
+                <span class="text-white/40 text-sm"> - {L.desc}</span>
               </div>
               <span class="font-mono text-[10px] text-white/35 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
                 <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
@@ -132,7 +132,7 @@ const collectionSchema = {
               <span class="font-mono text-xs w-7 shrink-0 text-center text-white/25">{L.n}</span>
               <div class="flex-1 min-w-0">
                 <span class="font-bold text-sm text-white/45">{L.label}</span>
-                <span class="text-white/25 text-sm"> — {L.desc}</span>
+                <span class="text-white/25 text-sm"> - {L.desc}</span>
               </div>
               <span class="font-mono text-[10px] text-white/25 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase whitespace-nowrap shrink-0">Coming</span>
             </div>
@@ -158,17 +158,17 @@ const collectionSchema = {
              style="background: radial-gradient(ellipse at top right, #E67E22, transparent 70%);" aria-hidden="true"></div>
         <div class="relative">
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Want all five in one go?</p>
-          <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-5">Get the whole framework — scored on your own org.</h2>
+          <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-5">Get the whole framework - scored on your own org.</h2>
           <p class="text-white/55 text-base leading-relaxed mb-8 max-w-xl mx-auto">
-            Grab the sheets one at a time above — or get the whole thing in one place. The free <span class="text-white/80">AI-Ready Operations Assessment</span> turns all five layers into a readiness check you run on your own organization — a maturity scale from "ad hoc" to "AI-ready" that shows your weakest layer before you spend a cent on tooling. Enter your email and it lands in your inbox.
+            Grab the sheets one at a time above - or get the whole thing in one place. The free <span class="text-white/80">AI-Ready Operations Assessment</span> turns all five layers into a readiness check you run on your own organization - a maturity scale from "ad hoc" to "AI-ready" that shows your weakest layer before you spend a cent on tooling. Enter your email and it lands in your inbox.
           </p>
           <a href={ASSESSMENT_URL} target="_blank" rel="noopener noreferrer"
              class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg transition-colors">
-            Get the free assessment &rarr;
+            Get the free assessment
           </a>
           <p class="text-white/35 text-xs mt-5 font-mono tracking-wider">Free · straight to your inbox · no spam</p>
           <p class="text-white/30 text-xs mt-4 leading-relaxed max-w-xl mx-auto">
-            Education, not consulting, legal, or vendor advice. Tool-agnostic. Go deeper in the <a href="/products" class="text-white/45 hover:text-[#E67E22] transition-colors">operator library &rarr;</a>
+            Education, not consulting, legal, or vendor advice. Tool-agnostic. Go deeper in the <a href="/products" class="text-white/45 hover:text-[#E67E22] transition-colors">operator library</a>
           </p>
         </div>
       </div>

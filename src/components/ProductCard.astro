@@ -24,7 +24,7 @@
  *   badge      — optional pill ("New", "Aug 2 deadline", "Bestseller")
  *   href       — required, link to Gumroad/checkout
  *   image      — optional cover image (place in public/products/)
- *   ctaLabel   — optional, defaults to "Get it →"
+ *   ctaLabel   — optional, defaults to "Get it"
  */
 interface Props {
   title: string;
@@ -45,7 +45,7 @@ const {
   badge,
   href,
   image,
-  ctaLabel = "Get it →",
+  ctaLabel = "Get it",
 } = Astro.props;
 ---
 

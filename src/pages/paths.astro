@@ -36,7 +36,7 @@ const paths = lineGroups.map((g) => {
 const schema = {
   '@context': 'https://schema.org',
   '@type': 'CollectionPage',
-  name: 'Learning paths — Vihren Labs',
+  name: 'Learning paths - Vihren Labs',
   description:
     'Where to start and how the Vihren Labs catalogue fits together: a free entry point per product line, the tools and courses that build on it, and the operator bundle that packages them.',
   url: 'https://www.vihrenlabs.com/paths',
@@ -45,7 +45,7 @@ const schema = {
 
 <Base
   title="Start here"
-  description="Where to start, and how it fits together. A free entry point per line, the operator tools and courses that build on it, and the bundle that packages them — procurement, SAP, master data, AI governance, transformation and more."
+  description="Where to start, and how it fits together. A free entry point per line, the operator tools and courses that build on it, and the bundle that packages them - procurement, SAP, master data, AI governance, transformation and more."
   schema={schema}
 >
   <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
@@ -60,7 +60,7 @@ const schema = {
         <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Start here</span>
       </div>
       <h1 class="font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight mb-6">
-        Where to start — and how it fits together.
+        Where to start - and how it fits together.
       </h1>
       <p class="text-white/50 text-lg leading-relaxed max-w-2xl">
         Every line has the same shape: a <span class="text-white/70">free entry point</span>, the operator
@@ -78,7 +78,7 @@ const schema = {
           <div class="mb-5">
             <a href={`/lines/${P.g.slug}`} class="group inline-flex items-baseline gap-2">
               <h2 class="font-black text-xl sm:text-2xl text-white/90 group-hover:text-[#E67E22] transition-colors leading-tight">{P.g.title}</h2>
-              <span class="font-mono text-[10px] text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">line &rarr;</span>
+              <span class="font-mono text-[10px] text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">line</span>
             </a>
           </div>
 
@@ -88,7 +88,7 @@ const schema = {
                class="group shrink-0 lg:w-56 flex flex-col justify-center rounded-xl border border-[#E67E22]/30 bg-[#E67E22]/[0.05] hover:bg-[#E67E22]/[0.09] transition-colors p-4">
               <span class="font-mono text-[10px] text-[#E67E22] mb-1.5 tracking-wider uppercase">Start free</span>
               <span class="font-bold text-sm text-white/90 leading-snug">{P.free.name}</span>
-              <span class="font-mono text-[10px] text-white/35 group-hover:text-[#E67E22] transition-colors mt-2 tracking-wider uppercase">Get it &rarr;</span>
+              <span class="font-mono text-[10px] text-white/35 group-hover:text-[#E67E22] transition-colors mt-2 tracking-wider uppercase">Get it</span>
             </a>
 
             <div class="hidden lg:flex items-center text-white/20 font-mono text-lg shrink-0" aria-hidden="true">&rarr;</div>
@@ -119,7 +119,7 @@ const schema = {
               <span class="flex items-center gap-3 shrink-0">
                 {P.saving > 0 && <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/30 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">save ${P.saving}</span>}
                 <span class="font-black text-lg text-white/95">{P.bundle.price}</span>
-                <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details &rarr;</span>
+                <span class="font-mono text-xs text-white/30 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">Details</span>
               </span>
             </a>
           )}
@@ -134,14 +134,14 @@ const schema = {
       <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">Not sure where you stand?</p>
       <h2 class="font-black text-3xl sm:text-4xl leading-tight mb-5">Run the free readiness check first.</h2>
       <p class="text-white/50 text-base leading-relaxed mb-8">
-        The free <span class="text-white/70">AI-Ready Operations Assessment</span> finds your weakest layer in a few minutes — so you know which path to walk before you buy anything.
+        The free <span class="text-white/70">AI-Ready Operations Assessment</span> finds your weakest layer in a few minutes - so you know which path to walk before you buy anything.
       </p>
       <a href="https://vihrenlabs.gumroad.com/l/rmkje" target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg transition-colors">
-        Get the free assessment &rarr;
+        Get the free assessment
       </a>
       <p class="text-white/30 text-xs mt-6">
-        Prefer the full catalogue? <a href="/products" class="text-white/45 hover:text-[#E67E22] transition-colors">Every product &amp; price &rarr;</a>
+        Prefer the full catalogue? <a href="/products" class="text-white/45 hover:text-[#E67E22] transition-colors">Every product &amp; price</a>
       </p>
     </div>
   </section>
