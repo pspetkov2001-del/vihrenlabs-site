@@ -109,11 +109,11 @@ const faqJsonLd = faqSchema(faqs);
 
       <a href={product.url} target="_blank" rel="noopener noreferrer"
          class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg transition-colors glow-btn">
-        Get it on Gumroad &rarr;
+        Get it on Gumroad
       </a>
       <p class="text-white/30 text-xs mt-4 font-mono">One-time purchase · instant download · no subscription</p>
       {product.lastUpdated && (
-        <p class="text-white/30 text-xs mt-2 font-mono">Last updated {product.lastUpdated}{product.changelog ? ` — ${product.changelog}` : ''}</p>
+        <p class="text-white/30 text-xs mt-2 font-mono">Last updated {product.lastUpdated}{product.changelog ? ` - ${product.changelog}` : ''}</p>
       )}
     </div>
   </section>
@@ -129,7 +129,7 @@ const faqJsonLd = faqSchema(faqs);
             <h3 class="font-bold text-sm text-white/85 leading-snug">{nextStep.name}</h3>
             <p class="text-white/40 text-xs leading-relaxed mt-1">{nextStep.sub}</p>
           </div>
-          <span class="font-black text-base text-white/90 whitespace-nowrap pt-1">{nextStep.price} &rarr;</span>
+          <span class="font-black text-base text-white/90 whitespace-nowrap pt-1">{nextStep.price}</span>
         </a>
       </div>
     </section>
@@ -148,13 +148,13 @@ const faqJsonLd = faqSchema(faqs);
     <div class="max-w-3xl mx-auto">
       <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-4">Why this is operator-grade</p>
       <p class="text-white/55 text-base leading-relaxed">
-        Built by Petko Petkov — a 15-year enterprise IT operator who has sat on both the
+        Built by Petko Petkov - a 15-year enterprise IT operator who has sat on both the
         vendor-distribution and buyer-operator sides of the table. Every Vihren Labs product
         is built from real scenarios: real SAP T-codes, real regulation article numbers, real
-        cutover-night failure modes. Not consultant theory — the templates the operator
+        cutover-night failure modes. Not consultant theory - the templates the operator
         wished existed when the system had to work on Monday morning.
       </p>
-      <a href="/about" class="inline-block mt-4 font-mono text-xs text-[#E67E22] hover:underline tracking-wider uppercase">About the maker &rarr;</a>
+      <a href="/about" class="inline-block mt-4 font-mono text-xs text-[#E67E22] hover:underline tracking-wider uppercase">About the maker</a>
 
       {lineEssays.length > 0 && (
         <div class="mt-10 pt-8 border-t border-white/8">
@@ -167,7 +167,7 @@ const faqJsonLd = faqSchema(faqs);
                   <h3 class="font-bold text-sm text-white/85 leading-snug mb-1">{e.data.title}</h3>
                   <p class="text-white/40 text-xs leading-relaxed">{e.data.description}</p>
                 </div>
-                <span class="font-mono text-[10px] text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase whitespace-nowrap pt-1">Read &rarr;</span>
+                <span class="font-mono text-[10px] text-white/25 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase whitespace-nowrap pt-1">Read</span>
               </a>
             ))}
           </div>

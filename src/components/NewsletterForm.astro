@@ -12,9 +12,9 @@
  *
  * Optional props:
  *  - align: 'left' (default) | 'center' — text alignment for the helper line
- *  - cta:   button label (default "Subscribe →")
+ *  - cta:   button label (default "Subscribe")
  */
-const { align = 'left', cta = 'Subscribe →' } = Astro.props;
+const { align = 'left', cta = 'Subscribe' } = Astro.props;
 const helperAlign = align === 'center' ? 'text-center' : 'text-left';
 ---
 
@@ -84,13 +84,13 @@ const helperAlign = align === 'center' ? 'text-center' : 'text-left';
         status.textContent = data.error ?? 'Something went wrong. Try again.';
         status.className = 'text-red-400 text-xs mt-4 text-center h-4';
         btn.disabled = false;
-        btn.textContent = 'Subscribe →';
+        btn.textContent = 'Subscribe';
       }
     } catch {
       status.textContent = 'Network error. Check your connection and try again.';
       status.className = 'text-red-400 text-xs mt-4 text-center h-4';
       btn.disabled = false;
-      btn.textContent = 'Subscribe →';
+      btn.textContent = 'Subscribe';
     }
   });
 </script>

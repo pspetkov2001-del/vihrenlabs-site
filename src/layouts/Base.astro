@@ -22,7 +22,7 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // title prop (and essays whose own titles contain "Vihren Labs") are unaffected.
 const isHome = Astro.url.pathname === '/';
 const pageTitle = isHome
-  ? 'Vihren Labs — Operator-grade templates for the enterprise IT stack'
+  ? 'Vihren Labs - Operator-grade templates for the enterprise IT stack'
   : title === 'Vihren Labs'
     ? title
     : `${title} · Vihren Labs`;
@@ -48,7 +48,7 @@ const pageTitle = isHome
     <meta property="og:image" content="https://www.vihrenlabs.com/og-image.png" />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
-    <meta property="og:image:alt" content="Vihren Labs — Operator-grade templates for the enterprise IT stack" />
+    <meta property="og:image:alt" content="Vihren Labs - Operator-grade templates for the enterprise IT stack" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://www.vihrenlabs.com/og-image.png" />
 

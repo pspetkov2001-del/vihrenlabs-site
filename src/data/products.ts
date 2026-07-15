@@ -65,59 +65,59 @@ export const products: Product[] = [
   {
     line: 'master-data', tier: 'course',
     tag: 'Course · 10 modules',
-    name: 'Master Data Excellence — Product & SKU Management',
-    sub: '10 modules · 10 workbooks · 6 visual one-pagers · editable maturity heatmap · 25-50 page capstone. The full operator curriculum for product master data — from data model and lifecycle to governance, DQ, architecture, operations and value realization.',
+    name: 'Master Data Excellence - Product & SKU Management',
+    sub: '10 modules · 10 workbooks · 6 visual one-pagers · editable maturity heatmap · 25-50 page capstone. The full operator curriculum for product master data - from data model and lifecycle to governance, DQ, architecture, operations and value realization.',
     price: '$499', team: '$999',
     url: 'https://vihrenlabs.gumroad.com/l/ijyliz',
     faq: [
       {
         q: 'What does the Master Data Excellence course cover?',
-        a: '10 modules spanning the product master-data lifecycle — data model and governance, data quality engineering, architecture, MDM operations and value realization — each with a workbook, plus 6 visual one-pagers, an editable maturity heatmap, and a 25-50 page capstone you complete against your own organization.',
+        a: '10 modules spanning the product master-data lifecycle - data model and governance, data quality engineering, architecture, MDM operations and value realization - each with a workbook, plus 6 visual one-pagers, an editable maturity heatmap, and a 25-50 page capstone you complete against your own organization.',
       },
     ],
-    next: 'Master Data Excellence — Customer & Business Partner',
+    next: 'Master Data Excellence - Customer & Business Partner',
   },
   {
     line: 'master-data', tier: 'course',
     tag: 'Course · 10 modules',
-    name: 'Master Data Excellence — Customer & Business Partner',
-    sub: '10 module playbooks · 8 operator templates (Customer Data Dictionary, RACI, KPI library, match-merge rulebook, consent register, onboarding SOP, governance charter, workflow templates) · 6 visual one-pagers · capstone. The customer master as the system-of-record under your CRM and ERP — Business Partner model, match-merge and survivorship, consent and lawful erasure, Customer-360.',
+    name: 'Master Data Excellence - Customer & Business Partner',
+    sub: '10 module playbooks · 8 operator templates (Customer Data Dictionary, RACI, KPI library, match-merge rulebook, consent register, onboarding SOP, governance charter, workflow templates) · 6 visual one-pagers · capstone. The customer master as the system-of-record under your CRM and ERP - Business Partner model, match-merge and survivorship, consent and lawful erasure, Customer-360.',
     price: '$499', team: '$999',
     url: 'https://vihrenlabs.gumroad.com/l/sshhgb',
-    next: 'Master Data Excellence — Vendor & Supplier Master',
+    next: 'Master Data Excellence - Vendor & Supplier Master',
     faq: [
       {
         q: 'What does the Customer Master Data course cover?',
-        a: '10 modules on the enterprise customer master — the system-of-record under CRM and ERP, not CRM list hygiene: Business Partner model and roles, lifecycle to lawful erasure, governance and consent, match-merge with survivorship, architecture, operations, and value realization. Ships as 10 module playbooks plus 8 ready-to-use operator templates (data dictionary, RACI, KPI library, match-merge rulebook, consent register, onboarding SOP, governance charter, workflow templates), 6 visual one-pagers, and a capstone you build against your own organization.',
+        a: '10 modules on the enterprise customer master - the system-of-record under CRM and ERP, not CRM list hygiene: Business Partner model and roles, lifecycle to lawful erasure, governance and consent, match-merge with survivorship, architecture, operations, and value realization. Ships as 10 module playbooks plus 8 ready-to-use operator templates (data dictionary, RACI, KPI library, match-merge rulebook, consent register, onboarding SOP, governance charter, workflow templates), 6 visual one-pagers, and a capstone you build against your own organization.',
       },
     ],
   },
   {
     line: 'master-data', tier: 'course',
     tag: 'Course · 10 modules',
-    name: 'Master Data Excellence — Vendor & Supplier Master',
-    sub: '10 module playbooks · 8 operator templates (Vendor Data Dictionary, RACI with segregation of duties, KPI library, DQ scorecard + screening gate, onboarding SOP, bank-detail change SOP, governance + SoD charter, workflows) · 6 visual one-pagers · capstone. The vendor master as a financial-control surface — bank integrity, segregation of duties, sanctions screening, dedup.',
+    name: 'Master Data Excellence - Vendor & Supplier Master',
+    sub: '10 module playbooks · 8 operator templates (Vendor Data Dictionary, RACI with segregation of duties, KPI library, DQ scorecard + screening gate, onboarding SOP, bank-detail change SOP, governance + SoD charter, workflows) · 6 visual one-pagers · capstone. The vendor master as a financial-control surface - bank integrity, segregation of duties, sanctions screening, dedup.',
     price: '$499', team: '$999',
     url: 'https://vihrenlabs.gumroad.com/l/zpdoyp',
-    next: 'Master Data Excellence — Product & SKU Management',
+    next: 'Master Data Excellence - Product & SKU Management',
     faq: [
       {
         q: 'What does the Vendor Master Data course cover?',
-        a: '10 modules treating the vendor master as a financial-control and risk surface — bank-detail integrity, segregation of duties (create ≠ approve ≠ pay), sanctions/PEP screening, and duplicate prevention as first-class topics. Ships as 10 module playbooks plus 8 operator templates (data dictionary, RACI with SoD, KPI library, DQ scorecard + screening gate, onboarding SOP, the bank-detail change SOP with out-of-band callback verification, governance + SoD charter, workflow templates), 6 visual one-pagers, and a capstone.',
+        a: '10 modules treating the vendor master as a financial-control and risk surface - bank-detail integrity, segregation of duties (create ≠ approve ≠ pay), sanctions/PEP screening, and duplicate prevention as first-class topics. Ships as 10 module playbooks plus 8 operator templates (data dictionary, RACI with SoD, KPI library, DQ scorecard + screening gate, onboarding SOP, the bank-detail change SOP with out-of-band callback verification, governance + SoD charter, workflow templates), 6 visual one-pagers, and a capstone.',
       },
     ],
   },
   {
     line: 'transformation', tier: 'course',
     tag: 'Course · 10 modules',
-    name: "The Transition Operator's Course — SSC, GBS & BPO Transitions",
-    sub: '10 modules for running an enterprise transition from kickoff to BAU exit — engagement, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live, hypercare. 18-tab transition management workbook + delivery-execution playbook + 6 visual one-pagers.',
+    name: "The Transition Operator's Course - SSC, GBS & BPO Transitions",
+    sub: '10 modules for running an enterprise transition from kickoff to BAU exit - engagement, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live, hypercare. 18-tab transition management workbook + delivery-execution playbook + 6 visual one-pagers.',
     price: '$499', team: '$999',
     url: 'https://vihrenlabs.gumroad.com/l/iivnut',
     faq: [
       {
         q: 'What does the Transition Operator\'s Course cover?',
-        a: '10 modules for running a shared-services, GBS or BPO transition end to end — engagement and scoping, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live and hypercare to BAU exit — plus an 18-tab transition management workbook, a delivery-execution playbook and 6 visual one-pagers.',
+        a: '10 modules for running a shared-services, GBS or BPO transition end to end - engagement and scoping, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live and hypercare to BAU exit - plus an 18-tab transition management workbook, a delivery-execution playbook and 6 visual one-pagers.',
       },
     ],
   },
@@ -127,15 +127,15 @@ export const products: Product[] = [
     line: 'procurement', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'IT Vendor & SaaS Procurement TCO',
-    sub: 'Vendor registry, 3-year TCO model, 12-month renewal pipeline, RFP scoring — from the distributor side of the table.',
+    sub: 'Vendor registry, 3-year TCO model, 12-month renewal pipeline, RFP scoring - from the distributor side of the table.',
     price: '$49', team: '$99',
     url: 'https://vihrenlabs.gumroad.com/l/eujpqc',
   },
   {
     line: 'procurement', tier: 'toolkit',
     tag: 'Ebook',
-    name: 'Vendor-Side IT Procurement — The Playbook',
-    sub: '8 chapters on how IT distributors and vendors actually price, discount and renew — and how to negotiate against it.',
+    name: 'Vendor-Side IT Procurement - The Playbook',
+    sub: '8 chapters on how IT distributors and vendors actually price, discount and renew - and how to negotiate against it.',
     price: '$29', team: '$79',
     url: 'https://vihrenlabs.gumroad.com/l/ovyxjl',
   },
@@ -157,7 +157,7 @@ export const products: Product[] = [
     price: '$49', team: '$99',
     url: 'https://vihrenlabs.gumroad.com/l/cryqw',
     lastUpdated: '2026-06-07',
-    changelog: 'Playbook expanded to a 15-page operating handbook — a readiness self-check, the "past the point of deferral?" estate diagnostic, the five options each with its trap, the brownfield/greenfield/selective asset-vs-liability test, the business case both sides with the cost-of-not-acting frame + a worked 5-year TCO + the data-remediation line, the weighted scorecard with a worked result, the RISE/commercial deep-dive, the one-page board decision, data-first phasing + the dual-running trap, choosing the SI, the seven failure modes as a symptom→fix catalogue, the people side, the first 90 days, objections, and a worked example throughout (Meridian, a €400M manufacturer on ECC) — plus templates + a glossary.',
+    changelog: 'Playbook expanded to a 15-page operating handbook - a readiness self-check, the "past the point of deferral?" estate diagnostic, the five options each with its trap, the brownfield/greenfield/selective asset-vs-liability test, the business case both sides with the cost-of-not-acting frame + a worked 5-year TCO + the data-remediation line, the weighted scorecard with a worked result, the RISE/commercial deep-dive, the one-page board decision, data-first phasing + the dual-running trap, choosing the SI, the seven failure modes as a symptom-to-fix catalogue, the people side, the first 90 days, objections, and a worked example throughout (Meridian, a €400M manufacturer on ECC) - plus templates + a glossary.',
   },
 
   // ─── SAP / ERP OPERATIONS ──────────────────────────────────────────
@@ -171,11 +171,11 @@ export const products: Product[] = [
     faq: [
       {
         q: 'What does the SAP S/4HANA cutover checklist include?',
-        a: 'A 52-check go-live readiness matrix, a 46-step cutover run sheet sequenced for cutover weekend, and a hypercare runbook for the days after go-live — the operator controls that decide whether a cutover holds at 3 AM, in a workbook you can adapt to your own programme.',
+        a: 'A 52-check go-live readiness matrix, a 46-step cutover run sheet sequenced for cutover weekend, and a hypercare runbook for the days after go-live - the operator controls that decide whether a cutover holds at 3 AM, in a workbook you can adapt to your own programme.',
       },
       {
         q: 'When does SAP ECC maintenance end, and how long does an S/4HANA migration take?',
-        a: 'SAP ECC mainstream maintenance ends 31 December 2027. Because transformation capacity is finite, the practical planning cut-off for most mid-market organizations is well before then — the workbook is built to compress readiness and cutover planning rather than the multi-month implementation itself.',
+        a: 'SAP ECC mainstream maintenance ends 31 December 2027. Because transformation capacity is finite, the practical planning cut-off for most mid-market organizations is well before then - the workbook is built to compress readiness and cutover planning rather than the multi-month implementation itself.',
       },
     ],
   },
@@ -183,7 +183,7 @@ export const products: Product[] = [
     line: 'sap', tier: 'toolkit',
     tag: 'Playbook ebook',
     name: "SAP S/4HANA Migration Playbook",
-    sub: "The operator's guide beneath the workbook — phase gates, failure modes, the cutover-week methodology.",
+    sub: "The operator's guide beneath the workbook - phase gates, failure modes, the cutover-week methodology.",
     price: '$39', team: '$99',
     url: 'https://vihrenlabs.gumroad.com/l/bsxhb',
   },
@@ -191,7 +191,7 @@ export const products: Product[] = [
     line: 'sap', tier: 'bundle',
     tag: 'Operator pack',
     name: 'SAP Migration Operator\'s Pack',
-    sub: 'The complete SAP S/4HANA migration kit — cutover workbook + playbook ebook + comms templates. The bundle a real cutover needs.',
+    sub: 'The complete SAP S/4HANA migration kit - cutover workbook + playbook ebook + comms templates. The bundle a real cutover needs.',
     price: '$129', team: '$249',
     url: 'https://vihrenlabs.gumroad.com/l/yjebue',
   },
@@ -207,7 +207,7 @@ export const products: Product[] = [
     faq: [
       {
         q: 'What does the master data quality audit workbook check?',
-        a: '75 named master-data quality checks with field-level scoring, a defect log and a remediation tracker — so you can score data quality across your master-data domains, prioritise the fixes that matter, and evidence the improvement over time.',
+        a: '75 named master-data quality checks with field-level scoring, a defect log and a remediation tracker - so you can score data quality across your master-data domains, prioritise the fixes that matter, and evidence the improvement over time.',
       },
     ],
   },
@@ -215,7 +215,7 @@ export const products: Product[] = [
     line: 'master-data', tier: 'toolkit',
     tag: 'Assessment',
     name: 'Master Data Management Maturity Assessment',
-    sub: '78 anchored questions across 5 domains — a scored, banded read on master-data maturity.',
+    sub: '78 anchored questions across 5 domains - a scored, banded read on master-data maturity.',
     price: '$79', team: '$149',
     url: 'https://vihrenlabs.gumroad.com/l/nwbvrn',
   },
@@ -223,7 +223,7 @@ export const products: Product[] = [
     line: 'master-data', tier: 'toolkit',
     tag: 'Playbook',
     name: 'MDG Operating Model Playbook',
-    sub: 'Data owner + steward roles, RACI and governance-forum design — how to stand up an SAP MDG operating model.',
+    sub: 'Data owner + steward roles, RACI and governance-forum design - how to stand up an SAP MDG operating model.',
     price: '$49', team: '$79',
     url: 'https://vihrenlabs.gumroad.com/l/qwlgi',
   },
@@ -231,7 +231,7 @@ export const products: Product[] = [
     line: 'ai-governance', tier: 'toolkit',
     tag: 'Handbook + Excel',
     name: 'AI Center of Excellence Handbook',
-    sub: 'Stand up an AI CoE and run the agent lifecycle end to end — org, governance, reference architecture, the 10-gate delivery lifecycle, RACI, metrics, maturity — with 3 worked use cases + a 9-tab tracking workbook. ~80-page handbook.',
+    sub: 'Stand up an AI CoE and run the agent lifecycle end to end - org, governance, reference architecture, the 10-gate delivery lifecycle, RACI, metrics, maturity - with 3 worked use cases + a 9-tab tracking workbook. ~80-page handbook.',
     price: '$199', team: '$399',
     url: 'https://vihrenlabs.gumroad.com/l/mmkqsg',
     lastUpdated: '2026-06-06',
@@ -239,7 +239,7 @@ export const products: Product[] = [
     faq: [
       {
         q: 'What does the AI Center of Excellence Handbook cover?',
-        a: 'How to design and run an AI CoE end to end: the mandate and funding model, operating-model patterns, roles and RACI, the reference architecture and control plane, the governance framework (risk tiers, acceptable-use, approval gates), quality and incident standards, the 10-gate agent delivery lifecycle from intake to retirement, metrics and maturity — plus three end-to-end worked use cases (low, medium and high risk) and a 9-tab tracking workbook.',
+        a: 'How to design and run an AI CoE end to end: the mandate and funding model, operating-model patterns, roles and RACI, the reference architecture and control plane, the governance framework (risk tiers, acceptable-use, approval gates), quality and incident standards, the 10-gate agent delivery lifecycle from intake to retirement, metrics and maturity - plus three end-to-end worked use cases (low, medium and high risk) and a 9-tab tracking workbook.',
       },
     ],
   },
@@ -247,15 +247,15 @@ export const products: Product[] = [
     line: 'ai-governance', tier: 'toolkit',
     tag: 'Excel + guide',
     name: 'AI Agent Use-Case Selection & Feasibility Scorecard',
-    sub: 'Decide which use cases are good, feasible candidates for an AI agent before you build — score 6 weighted criteria, gate on data and risk, get a GO / PILOT / PARK verdict. 4-tab Excel + guide.',
+    sub: 'Decide which use cases are good, feasible candidates for an AI agent before you build - score 6 weighted criteria, gate on data and risk, get a GO / PILOT / PARK verdict. 4-tab Excel + guide.',
     price: '$49', team: '$99',
     url: 'https://vihrenlabs.gumroad.com/l/hjtvm',
     lastUpdated: '2026-06-06',
-    changelog: 'New SKU — 6-criteria weighted scorecard with the data/risk blocker rule and a GO / PILOT / PARK verdict.',
+    changelog: 'New SKU - 6-criteria weighted scorecard with the data/risk blocker rule and a GO / PILOT / PARK verdict.',
     faq: [
       {
         q: 'How do I choose which processes are good candidates for an AI agent?',
-        a: 'Score each candidate 1-5 on six agent-suitability criteria — task structure, data readiness, value/ROI, risk containability, build feasibility, adoption readiness — with editable weights. The workbook returns a weighted score and a GO / PILOT / PARK verdict, plus a blocker rule that forces FIX-FIRST if data readiness or risk containability is too low, so a fatal weakness cannot hide behind a good average.',
+        a: 'Score each candidate 1-5 on six agent-suitability criteria - task structure, data readiness, value/ROI, risk containability, build feasibility, adoption readiness - with editable weights. The workbook returns a weighted score and a GO / PILOT / PARK verdict, plus a blocker rule that forces FIX-FIRST if data readiness or risk containability is too low, so a fatal weakness cannot hide behind a good average.',
       },
     ],
   },
@@ -263,19 +263,19 @@ export const products: Product[] = [
     line: 'ai-governance', tier: 'toolkit',
     tag: 'Assessment + Handbook',
     name: 'AI-Ready Operations Assessment Pro',
-    sub: 'The complete, paid tier of the AI-Ready Operations Assessment (the free version covers the five-layer maturity model + a core readiness check). Score whether your data and process can carry an AI revenue or triage agent — 18 checks across 5 dimensions (identity, completeness, consistency, governance, process) returning a GO / FIX-FIRST / NOT-READY verdict, with a fix-first plan. Excel assessment + 15-page handbook + worked example + go/no-go brief.',
+    sub: 'The complete, paid tier of the AI-Ready Operations Assessment (the free version covers the five-layer maturity model + a core readiness check). Score whether your data and process can carry an AI revenue or triage agent - 18 checks across 5 dimensions (identity, completeness, consistency, governance, process) returning a GO / FIX-FIRST / NOT-READY verdict, with a fix-first plan. Excel assessment + 15-page handbook + worked example + go/no-go brief.',
     price: '$149', team: '$299',
     url: 'https://vihrenlabs.gumroad.com/l/jrjbvp',
     lastUpdated: '2026-06-07',
-    changelog: 'The Readiness Playbook expanded to a 15-page handbook — a 0–4 scoring rubric, two worked examples end to end, per-dimension remediation, autonomy calibration, a go-live runbook, and monitoring readiness over time. (Workbook also adds a re-score cadence + target.)',
+    changelog: 'The Readiness Playbook expanded to a 15-page handbook - a 0–4 scoring rubric, two worked examples end to end, per-dimension remediation, autonomy calibration, a go-live runbook, and monitoring readiness over time. (Workbook also adds a re-score cadence + target.)',
     faq: [
       {
         q: 'Should I run this before deploying an AI agent on sales, support or operations?',
-        a: 'Yes. An AI agent acts on whatever your data says — on duplicated or incomplete records it confidently produces the wrong rankings. This scores your data and process across five dimensions (identity, completeness, consistency, governance, process) and returns a GO / FIX-FIRST / NOT-READY verdict before you deploy, with a blocker gate so one weak dimension cannot hide behind a good average.',
+        a: 'Yes. An AI agent acts on whatever your data says - on duplicated or incomplete records it confidently produces the wrong rankings. This scores your data and process across five dimensions (identity, completeness, consistency, governance, process) and returns a GO / FIX-FIRST / NOT-READY verdict before you deploy, with a blocker gate so one weak dimension cannot hide behind a good average.',
       },
       {
         q: 'Is this a tool for building an AI agent?',
-        a: 'No — it is the data and process readiness layer underneath, and it is deliberately tool-agnostic. It tells you whether your data can carry an agent and, if not, exactly what to fix and in what order. It does not recommend or build any specific AI tool, and it makes no revenue-multiple claims.',
+        a: 'No - it is the data and process readiness layer underneath, and it is deliberately tool-agnostic. It tells you whether your data can carry an agent and, if not, exactly what to fix and in what order. It does not recommend or build any specific AI tool, and it makes no revenue-multiple claims.',
       },
     ],
   },
@@ -283,13 +283,13 @@ export const products: Product[] = [
     line: 'ai-governance', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'AI Vendor Evaluation & TCO Workbook',
-    sub: '6-tab Excel — AI vendor registry, 3-year TCO model, weighted evaluation scorecard, a governance quick-check, and a renewal/usage tracker. Price, govern and compare the AI tools you buy — before you sign.',
+    sub: '6-tab Excel - AI vendor registry, 3-year TCO model, weighted evaluation scorecard, a governance quick-check, and a renewal/usage tracker. Price, govern and compare the AI tools you buy - before you sign.',
     price: '$39', team: '$79',
     url: 'https://vihrenlabs.gumroad.com/l/scbtwe',
     faq: [
       {
         q: 'How do I compare AI vendors and work out the real cost before buying?',
-        a: 'This workbook gives you an AI vendor registry, a 3-year total-cost-of-ownership model, a weighted evaluation scorecard, a governance quick-check and a renewal/usage tracker — so you can score competing AI tools on the same basis, surface the true multi-year cost rather than the sticker price, and keep a governance and renewal record after you buy.',
+        a: 'This workbook gives you an AI vendor registry, a 3-year total-cost-of-ownership model, a weighted evaluation scorecard, a governance quick-check and a renewal/usage tracker - so you can score competing AI tools on the same basis, surface the true multi-year cost rather than the sticker price, and keep a governance and renewal record after you buy.',
       },
     ],
   },
@@ -307,7 +307,7 @@ export const products: Product[] = [
     line: 'master-data', tier: 'bundle',
     tag: 'Operator pack',
     name: 'Master Data Operator\'s Pack',
-    sub: 'Audit workbook + maturity assessment + governance playbook — the full master-data operating toolkit, bundled.',
+    sub: 'Audit workbook + maturity assessment + governance playbook - the full master-data operating toolkit, bundled.',
     price: '$179', team: '$299',
     url: 'https://vihrenlabs.gumroad.com/l/oocvu',
   },
@@ -344,11 +344,11 @@ export const products: Product[] = [
     line: 'transformation', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'Transition Management Operator\'s Workbook',
-    sub: 'Run an offshoring, SSC or BPO transition end to end — 18-tab Excel workbook + a 15-page, 12-phase delivery handbook + SOP + engagement templates. The standalone toolkit beneath Course 01.',
+    sub: 'Run an offshoring, SSC or BPO transition end to end - 18-tab Excel workbook + a 15-page, 12-phase delivery handbook + SOP + engagement templates. The standalone toolkit beneath Course 01.',
     price: '$179', team: '$349',
     url: 'https://vihrenlabs.gumroad.com/l/ehmnt',
     lastUpdated: '2026-06-07',
-    changelog: 'Delivery & Execution Playbook expanded to a 15-page operating handbook — the 12-phase / 3-stage method (exit gate per phase) preserved, surrounded with the four transition models, the FTE math worked (fund the ramp, not the steady state), choosing Wave 1 + sequencing, a knowledge-transfer deep-dive (advance on evidence), the retained organisation, governance + self-writing status, leading-vs-lagging metrics, a transition risk catalogue, the recovery move, the first 30 days, objections, and a worked example throughout (a finance SSC moving AP/AR/GL) — plus templates + a glossary. Workbook + Word templates unchanged.',
+    changelog: 'Delivery & Execution Playbook expanded to a 15-page operating handbook - the 12-phase / 3-stage method (exit gate per phase) preserved, surrounded with the four transition models, the FTE math worked (fund the ramp, not the steady state), choosing Wave 1 + sequencing, a knowledge-transfer deep-dive (advance on evidence), the retained organisation, governance + self-writing status, leading-vs-lagging metrics, a transition risk catalogue, the recovery move, the first 30 days, objections, and a worked example throughout (a finance SSC moving AP/AR/GL) - plus templates + a glossary. Workbook + Word templates unchanged.',
   },
 
   // ─── REGULATORY & COMPLIANCE ───────────────────────────────────────
@@ -362,7 +362,7 @@ export const products: Product[] = [
     faq: [
       {
         q: 'Is the EU AI Act SME Compliance Starter legal advice?',
-        a: 'No. It is an operator-grade organizational and evidence toolkit — an Article 50 transparency tracker, a high-risk register and a deployer readiness assessment — built to help you structure and document compliance work. It is not legal advice; confirm your specific obligations with qualified counsel.',
+        a: 'No. It is an operator-grade organizational and evidence toolkit - an Article 50 transparency tracker, a high-risk register and a deployer readiness assessment - built to help you structure and document compliance work. It is not legal advice; confirm your specific obligations with qualified counsel.',
       },
       {
         q: 'When does the EU AI Act apply?',
@@ -378,48 +378,48 @@ export const products: Product[] = [
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Process Transformation & Automation Toolkit',
-    sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model — plus a 15-page operating handbook on which automation type fits (integration › workflow › RPA › AI agent). Decide what to automate before you buy a tool.',
+    sub: 'Process inventory, automation scoring, a ranked backlog and a benefits model - plus a 15-page operating handbook on which automation type fits (integration › workflow › RPA › AI agent). Decide what to automate before you buy a tool.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/sjunh',
     lastUpdated: '2026-06-07',
-    changelog: 'Playbook expanded to a 15-page operating handbook — a maturity self-check, the automatability test + re-engineering, a 5-process scorecard, the integration/workflow/RPA/AI tool decision with a worked example, the RPA true-cost model, a payback model, the operating discipline, a 90-day plan, two worked examples, and a glossary + templates.',
+    changelog: 'Playbook expanded to a 15-page operating handbook - a maturity self-check, the automatability test + re-engineering, a 5-process scorecard, the integration/workflow/RPA/AI tool decision with a worked example, the RPA true-cost model, a payback model, the operating discipline, a 90-day plan, two worked examples, and a glossary + templates.',
   },
   {
     line: 'ai-governance', tier: 'toolkit', tag: 'PDF + Excel (7 tabs)',
     name: 'AI Adoption & AI Agents Operating Playbook',
-    sub: 'A 15-page operating handbook + a 7-tab workbook: scored use-case pipeline, dashboard, pilot scorecard, AI governance register, and an agents-in-production tracker — adopt AI without scaling the mess.',
+    sub: 'A 15-page operating handbook + a 7-tab workbook: scored use-case pipeline, dashboard, pilot scorecard, AI governance register, and an agents-in-production tracker - adopt AI without scaling the mess.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/ttxneg',
     lastUpdated: '2026-06-07',
-    changelog: 'Expanded to a 15-page operating handbook — scoring rubrics, a worked example carried end to end, the agent operating model, a glossary, and fillable templates.',
+    changelog: 'Expanded to a 15-page operating handbook - scoring rubrics, a worked example carried end to end, the agent operating model, a glossary, and fillable templates.',
   },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + Word',
     name: 'Organizational Change Management Pack',
-    sub: 'Stakeholder map, change-impact, comms plan, training plan and adoption tracker — the people side of transformation.',
+    sub: 'Stakeholder map, change-impact, comms plan, training plan and adoption tracker - the people side of transformation.',
     price: '$59', team: '$119', url: 'https://vihrenlabs.gumroad.com/l/aqbqzl',
   },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Transformation Delivery & PMO Pack',
-    sub: 'Programme plan, initiative tracker, milestone gates, RAID, an auto-summarising status report and benefits — plus a 15-page operating handbook. Run the delivery PMO.',
+    sub: 'Programme plan, initiative tracker, milestone gates, RAID, an auto-summarising status report and benefits - plus a 15-page operating handbook. Run the delivery PMO.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/mdntjx',
     lastUpdated: '2026-06-07',
-    changelog: 'Playbook expanded to a 15-page operating handbook — a PMO maturity self-check, sizing the PMO, change control, the defensible-RAG rubric, reading-the-dashboard signals, budget burn-vs-progress, the conditional-pass discipline, the RAID dependency that bites, steering the steering committee, the benefits-realization gap, the recovery PMO, early-warning signals, metrics that matter, a worked example throughout, and templates + a governance RACI.',
+    changelog: 'Playbook expanded to a 15-page operating handbook - a PMO maturity self-check, sizing the PMO, change control, the defensible-RAG rubric, reading-the-dashboard signals, budget burn-vs-progress, the conditional-pass discipline, the RAID dependency that bites, steering the steering committee, the benefits-realization gap, the recovery PMO, early-warning signals, metrics that matter, a worked example throughout, and templates + a governance RACI.',
   },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Digital Transformation Operating Model & Roadmap Toolkit',
-    sub: 'Assessment, a capability-maturity radar, multi-wave roadmap, value tracker and RAID — plus a 15-page operating handbook. The flagship operating model + roadmap.',
+    sub: 'Assessment, a capability-maturity radar, multi-wave roadmap, value tracker and RAID - plus a 15-page operating handbook. The flagship operating model + roadmap.',
     price: '$149', team: '$299', url: 'https://vihrenlabs.gumroad.com/l/mgvuae',
     lastUpdated: '2026-06-07',
-    changelog: 'Playbook expanded to a 15-page operating handbook — a transformation-readiness self-check, the 7 failure modes, the operating spine, the five domains and what to probe in each, honest maturity scoring + reading the radar shape, the optimisation-not-transformation pattern, wave sequencing, phased gate-tied funding, the target operating model that makes change stick, governance that decides, value net of run-cost, sponsorship + change management, the team you need, leading-vs-lagging metrics, the stop/pause/re-sequence discipline, the first 90 days, and a worked example (a distributor turning "modernise IT" into a defensible programme) carried through all six moves — plus templates + a glossary.',
+    changelog: 'Playbook expanded to a 15-page operating handbook - a transformation-readiness self-check, the 7 failure modes, the operating spine, the five domains and what to probe in each, honest maturity scoring + reading the radar shape, the optimisation-not-transformation pattern, wave sequencing, phased gate-tied funding, the target operating model that makes change stick, governance that decides, value net of run-cost, sponsorship + change management, the team you need, leading-vs-lagging metrics, the stop/pause/re-sequence discipline, the first 90 days, and a worked example (a distributor turning "modernise IT" into a defensible programme) carried through all six moves - plus templates + a glossary.',
   },
   {
     line: 'transformation', tier: 'toolkit', tag: 'Excel + playbook',
     name: 'Application Portfolio & Cloud Migration Planner',
-    sub: 'App portfolio, 6R disposition, migration waves, business case and cutover runbook — plus a 15-page operating handbook. Plan the cloud move.',
+    sub: 'App portfolio, 6R disposition, migration waves, business case and cutover runbook - plus a 15-page operating handbook. Plan the cloud move.',
     price: '$79', team: '$149', url: 'https://vihrenlabs.gumroad.com/l/bddcwz',
     lastUpdated: '2026-06-07',
-    changelog: 'Playbook expanded to a 15-page operating handbook — a maturity self-check, the 6R disposition with a worked split + reading-the-mix, the landing zone, security/residency, wave sequencing, a worked TCO with the run-cost trap + hidden costs, big-bang/phased/strangler approaches, data-migration validation, two worked examples (wave-1 + the ERP cluster), FinOps, when-cloud-is-wrong, roles, a 90-day plan, and a glossary + templates.',
+    changelog: 'Playbook expanded to a 15-page operating handbook - a maturity self-check, the 6R disposition with a worked split + reading-the-mix, the landing zone, security/residency, wave sequencing, a worked TCO with the run-cost trap + hidden costs, big-bang/phased/strangler approaches, data-migration validation, two worked examples (wave-1 + the ERP cluster), FinOps, when-cloud-is-wrong, roles, a 90-day plan, and a glossary + templates.',
   },
 ];
 
@@ -436,14 +436,14 @@ export const freeItems: FreeItem[] = [
   {
     tag: 'Free PDF',
     name: 'AI-Ready Operations Assessment',
-    sub: 'The five-layer maturity model + a 12-point readiness check — find your weakest layer before you deploy an AI agent. The free tier beneath Assessment Pro.',
+    sub: 'The five-layer maturity model + a 12-point readiness check - find your weakest layer before you deploy an AI agent. The free tier beneath Assessment Pro.',
     price: '$0', team: '',
     url: 'https://vihrenlabs.gumroad.com/l/rmkje',
   },
   {
     tag: 'Free · PWYW',
     name: 'SAP Cutover Comms Kit',
-    sub: 'Pre-cutover, go-live, hypercare and incident announcement templates — the comms templates a real cutover sends. Pay what you want.',
+    sub: 'Pre-cutover, go-live, hypercare and incident announcement templates - the comms templates a real cutover sends. Pay what you want.',
     price: 'Free+', team: '',
     url: 'https://vihrenlabs.gumroad.com/l/dlzxfu',
   },
@@ -455,12 +455,12 @@ export const lineGroups: LineGroup[] = [
   {
     slug: 'procurement',
     title: 'Procurement & Vendor Management',
-    sub: 'Procurement-side IT operations — vendor TCO, contract leverage, the discount stack. From the distributor side of the table.',
+    sub: 'Procurement-side IT operations - vendor TCO, contract leverage, the discount stack. From the distributor side of the table.',
   },
   {
     slug: 'programme-delivery',
     title: 'Programme Delivery & Enterprise IT PMO',
-    sub: 'Pre-implementation strategy — the operator decisions before a consultant is on site. ERP modernisation framing, business cases, decision scorecards.',
+    sub: 'Pre-implementation strategy - the operator decisions before a consultant is on site. ERP modernisation framing, business cases, decision scorecards.',
   },
   {
     slug: 'sap',
@@ -470,22 +470,22 @@ export const lineGroups: LineGroup[] = [
   {
     slug: 'master-data',
     title: 'Master Data Operations',
-    sub: 'The full Master Data Academy — three operator courses (Product & SKU, Customer, and Vendor master data) plus 3 standalone toolkits and the operator bundle.',
+    sub: 'The full Master Data Academy - three operator courses (Product & SKU, Customer, and Vendor master data) plus 3 standalone toolkits and the operator bundle.',
   },
   {
     slug: 'ai-governance',
     title: 'AI Adoption & Governance',
-    sub: 'The operator layer for putting AI agents into production — data and process readiness, an AI governance register, an agents-in-production tracker, and AI vendor TCO. Govern the agent, don\'t just buy it.',
+    sub: 'The operator layer for putting AI agents into production - data and process readiness, an AI governance register, an agents-in-production tracker, and AI vendor TCO. Govern the agent, don\'t just buy it.',
   },
   {
     slug: 'transformation',
     title: 'Transformation & SSC/GBS',
-    sub: 'Offshoring, GBS rollouts, and BPO transitions — from kickoff to BAU exit. A full operator course plus six standalone toolkits — transition delivery, process automation, org change, PMO, target operating model and cloud migration.',
+    sub: 'Offshoring, GBS rollouts, and BPO transitions - from kickoff to BAU exit. A full operator course plus six standalone toolkits - transition delivery, process automation, org change, PMO, target operating model and cloud migration.',
   },
   {
     slug: 'regulatory',
     title: 'Regulatory & Compliance',
-    sub: 'Operator-first EU regulatory compliance — currently the EU AI Act SME compliance starter, built operator-first, not legal-first.',
+    sub: 'Operator-first EU regulatory compliance - currently the EU AI Act SME compliance starter, built operator-first, not legal-first.',
   },
 ];
 
@@ -549,7 +549,7 @@ export function buildProductFaq(
     : `${p.price}.`;
   faqs.push({
     q: `How much does the ${p.name} cost, and is it a subscription?`,
-    a: `${priceLine} It is a one-time purchase on Gumroad — you download it and own it, with no subscription or recurring fee.`,
+    a: `${priceLine} It is a one-time purchase on Gumroad - you download it and own it, with no subscription or recurring fee.`,
   });
 
   // 4. Who it's for — line-specific.
@@ -563,7 +563,7 @@ export function buildProductFaq(
   // 5. Shared brand-credibility answer (the question AI assistants ask).
   faqs.push({
     q: 'Who builds Vihren Labs products?',
-    a: 'Petko Petkov — a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table: SAP S/4HANA migrations, master data management and governance, IT vendor procurement from the distribution side, EU regulatory rollouts, and large shared-services / GBS transitions across Europe. Every product is built from real scenarios — real SAP T-codes, real regulation article numbers, real cutover-night failure modes — not consultant theory.',
+    a: 'Petko Petkov - a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table: SAP S/4HANA migrations, master data management and governance, IT vendor procurement from the distribution side, EU regulatory rollouts, and large shared-services / GBS transitions across Europe. Every product is built from real scenarios - real SAP T-codes, real regulation article numbers, real cutover-night failure modes - not consultant theory.',
   });
 
   return faqs;
