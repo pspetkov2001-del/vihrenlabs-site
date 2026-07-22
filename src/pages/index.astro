@@ -63,6 +63,18 @@ const usdPrice = (s: string) => { const m = String(s).match(/\$([\d,]+)/); retur
 const toolkitFloor = Math.min(...products.filter(p => p.tier !== 'course').map(p => usdPrice(p.price)).filter(n => Number.isFinite(n)));
 const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
 
+// Credential chips for the landing bio block. A tighter subset of the /about
+// list — the language and legal-entity chips stay on /about so this section
+// reads compact.
+const credentials = [
+  '15 years in enterprise IT',
+  'Both sides: vendor-distribution & buyer-operator',
+  'Master data transformation & governance',
+  'PRINCE2 Practitioner',
+  'Six Sigma',
+  'Sofia, Bulgaria',
+];
+
 // REMOVED 2026-05-25: inline products/lineGroups/freeItems arrays — all
 // data now imported from src/data/products.ts. /products page consumes
 // the same data for the full catalog.
@@ -173,69 +185,57 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
     </div>
   </div>
 
-  <!-- ═══ WHY / WHO / PROBLEMS — the mission ════════════════════════════ -->
-  <section class="py-28 px-6 border-t border-white/5">
-    <!-- Why this exists -->
-    <div class="max-w-4xl mx-auto">
-      <div class="flex items-center gap-3 mb-6">
-        <div class="w-8 h-px bg-[#E67E22]"></div>
-        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Why this exists</span>
+  <!-- ═══ WHO'S BEHIND THIS — the operator bio ══════════════════════════
+       Replaced the former "Why this exists / Who it's for / The problems I
+       want to solve" sprawl (2026-07-22, founder request: shorter landing,
+       more bio). The bio carries the same credibility in a fraction of the
+       length and puts a real face above the value ladder. The audience list
+       survives as one line instead of eight chips. Clean-room per the OBA
+       posture — no employer or client names. ═══════════════════════════ -->
+  <section class="py-24 px-6 border-t border-white/5">
+    <div class="max-w-5xl mx-auto grid lg:grid-cols-[auto_1fr] gap-12 lg:gap-16 items-center">
+      <!-- Founder photo — natural headshot, not the brand avatar -->
+      <div class="flex justify-center lg:justify-start">
+        <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden flex-shrink-0"
+             style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);">
+          <img
+            src="/petko-photo.webp"
+            alt="Petko Petkov, founder of Vihren Labs"
+            width="640"
+            height="640"
+            loading="lazy"
+            class="w-full h-full object-cover"
+          />
+        </div>
       </div>
-      <h2 class="font-black text-4xl sm:text-5xl lg:text-6xl leading-[1.04] tracking-tight mb-8 max-w-3xl">
-        Enterprise IT is written by everyone <span class="text-white/30">except the person it lands on.</span>
-      </h2>
-      <div class="space-y-5 text-white/60 text-lg leading-relaxed max-w-2xl">
-        <p>Vendors sell the product. Consultants bill the programme and leave. Analysts draw the quadrant. Almost nobody writes for the person who is still in the seat on Tuesday - when the cutover failed at 3 a.m., when the renewal auto-rolled at +18%, when the agent shipped on data nobody had cleaned.</p>
-        <p><strong class="text-white/85">Vihren Labs is the catalogue I wish I had had in that seat.</strong> The operating detail, written down - by someone who has been on call for it, on both sides of the table. The purpose is narrow and on purpose: take fifteen years of pattern-recognition and turn it into tools an operator can open on Monday and use by Friday.</p>
-      </div>
-    </div>
 
-    <!-- Who it's for -->
-    <div class="max-w-6xl mx-auto mt-20">
-      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-5">Who I want to help</p>
-      <p class="text-white/70 text-xl sm:text-2xl leading-relaxed max-w-3xl mb-8">
-        If your name is on the decision when it goes wrong, this is for you.
-      </p>
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
-        {[
-          'SAP / S4HANA migration & cutover leads',
-          'Master-data & MDG owners and stewards',
-          'Transformation, transition & SSC/GBS managers',
-          'Programme & PMO leads',
-          'IT procurement & vendor managers',
-          'AI adoption & governance owners',
-          'DORA & EU AI Act compliance leads',
-          'IT directors carrying the whole stack',
-        ].map(who => (
-          <div class="flex items-center gap-3 p-4 rounded-xl border border-white/5 bg-white/[0.02]">
-            <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
-            <span class="text-white/60 text-sm">{who}</span>
-          </div>
-        ))}
-      </div>
-    </div>
+      <div>
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-8 h-px bg-[#E67E22]"></div>
+          <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Who's behind this</span>
+        </div>
+        <h2 class="font-black text-3xl sm:text-4xl lg:text-5xl leading-[1.05] tracking-tight mb-6">
+          Enterprise IT is written by everyone <span class="text-white/30">except the person it lands on.</span>
+        </h2>
+        <div class="space-y-4 text-white/60 text-base sm:text-lg leading-relaxed max-w-2xl">
+          <p>
+            I'm Petko Petkov. Fifteen years inside enterprise IT - and on both sides of every deal. I've run SSC/GBS transitions across multiple European countries, run finance workflows when SOX was teeth-on-the-floor, and sat on the vendor-distribution side of EMEA reporting across the world's largest hardware and software vendors.
+          </p>
+          <p>
+            More recently I've led enterprise master-data transformation - turning manual product and SKU creation into an automated, rules-based, governed pipeline. <strong class="text-white/85">Vihren Labs is the catalogue I wish I'd had in that seat:</strong> fifteen years of pattern-recognition turned into tools an operator can open on Monday and use by Friday.
+          </p>
+        </div>
 
-    <!-- The problems it solves -->
-    <div class="max-w-6xl mx-auto mt-20">
-      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-6">The problems I want to solve</p>
-      <div class="grid md:grid-cols-2 gap-4">
-        {[
-          { p: 'Governance failures kill programmes the technology would have survived.', f: 'Runsheets, freezes and rollback criteria - named owners, pre-agreed, before T-day.' },
-          { p: 'Cutovers fall apart at 3 a.m. because the rollback was never a decision.', f: 'A 52-check readiness matrix and an hour-by-hour run sheet that holds when twelve people disagree.' },
-          { p: 'Renewals are lost to the information the vendor has and you don\'t.', f: 'The true 3-year TCO, the notice-period trap, and what the distribution channel already knows.' },
-          { p: 'AI projects get cancelled for want of an operating model, not a better model.', f: 'A use-case gate, a governance register, and a named owner after launch - decided before you build.' },
-          { p: 'Master data nobody owns - so every report is "wrong" and every agent inherits the mess.', f: 'Field-level quality scoring, a maturity read, and an operating model with real decision rights.' },
-          { p: 'Compliance run as document theatre instead of operational evidence.', f: 'Registers with real article numbers - EU AI Act, DORA Article 28 - built to be walked by an auditor in 30 minutes.' },
-        ].map(item => (
-          <div class="p-6 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
-            <p class="text-white/85 text-base font-semibold leading-snug mb-3">{item.p}</p>
-            <p class="text-white/45 text-sm leading-relaxed">{item.f}</p>
-          </div>
-        ))}
+        <div class="flex flex-wrap gap-2 mt-8">
+          {credentials.map(c => (
+            <span class="font-mono text-xs text-white/35 border border-white/10 px-3 py-1.5 rounded-full">{c}</span>
+          ))}
+        </div>
+
+        <p class="text-white/40 text-sm leading-relaxed mt-8 max-w-2xl">
+          I write for the people whose name is on the decision when it goes wrong - SAP and cutover leads, master-data owners, programme and PMO leads, procurement and vendor managers, and DORA / EU AI Act compliance owners. <a href="/about" class="text-[#E67E22] hover:underline font-medium">More about me</a>
+        </p>
       </div>
-      <p class="text-white/55 text-base leading-relaxed max-w-3xl mt-10">
-        The standard is the same across all of it: run on the obligation, build governance like architecture, concrete beats abstract. Operator-grade, not consulting - you buy it, you own it, no subscription. <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Read the Operator Standard</a>
-      </p>
     </div>
   </section>
 
@@ -402,10 +402,16 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
       </div>
       <div class="flex flex-col divide-y divide-white/8 border-y border-white/8">
         {brandFaqs.map((f) => (
-          <div class="py-7">
-            <h2 class="font-bold text-lg text-white/85 leading-snug mb-3">{f.q}</h2>
-            <p class="text-white/50 text-sm sm:text-base leading-relaxed">{f.a}</p>
-          </div>
+          <details class="group">
+            <summary class="flex items-start justify-between gap-5 cursor-pointer list-none [&::-webkit-details-marker]:hidden py-6">
+              <h2 class="font-bold text-base sm:text-lg text-white/85 leading-snug">{f.q}</h2>
+              <span
+                class="faq-plus text-[#E67E22] font-mono text-xl leading-none mt-0.5 flex-shrink-0"
+                aria-hidden="true"
+              >+</span>
+            </summary>
+            <p class="text-white/50 text-sm sm:text-base leading-relaxed pb-7 max-w-2xl">{f.a}</p>
+          </details>
         ))}
       </div>
     </div>
@@ -453,3 +459,15 @@ const coursePrice = products.find(p => p.tier === 'course')?.price ?? '$499';
     </div>
   </section>
 </Base>
+
+<style>
+  /* FAQ accordion "+" -> "x" on open. Written as a plain rule rather than
+     Tailwind's group-open:rotate-45 so the rotation does not depend on the
+     group-open variant or on Tailwind's --tw-* transform variable chain. */
+  .faq-plus {
+    transition: transform 0.2s ease;
+  }
+  details[open] .faq-plus {
+    transform: rotate(45deg);
+  }
+</style>
