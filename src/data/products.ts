@@ -13,7 +13,6 @@
 export type Tier = 'course' | 'toolkit' | 'bundle';
 export type LineSlug =
   | 'procurement'
-  | 'programme-delivery'
   | 'sap'
   | 'master-data'
   | 'ai-governance'
@@ -148,9 +147,15 @@ export const products: Product[] = [
     url: 'https://vihrenlabs.gumroad.com/l/lhigyh',
   },
 
-  // ─── PROGRAMME DELIVERY & ENTERPRISE IT PMO ────────────────────────
+  // ─── (was PROGRAMME DELIVERY & ENTERPRISE IT PMO) ───────────────────
+  // Line retired 2026-07-22: it held a single SKU with nothing queued behind
+  // it, so it read as breadth without depth. The playbook moved to
+  // Transformation, whose upstream-strategy toolkits (target operating model,
+  // application portfolio) are the same genre, and which already carries the
+  // PMO identity via the Transformation Delivery & PMO Pack.
+  // /lines/programme-delivery 301s to /lines/transformation.
   {
-    line: 'programme-delivery', tier: 'toolkit',
+    line: 'transformation', tier: 'toolkit',
     tag: 'Playbook + Excel',
     name: 'ERP Modernisation Strategy Playbook + Business Case Workbook',
     sub: 'Whether to modernise · which of 5 options · how to phase it. A 15-page operating handbook + 6-tab business-case workbook. Before a consultant is on site.',
@@ -458,11 +463,6 @@ export const lineGroups: LineGroup[] = [
     sub: 'Procurement-side IT operations - vendor TCO, contract leverage, the discount stack. From the distributor side of the table.',
   },
   {
-    slug: 'programme-delivery',
-    title: 'Programme Delivery & Enterprise IT PMO',
-    sub: 'Pre-implementation strategy - the operator decisions before a consultant is on site. ERP modernisation framing, business cases, decision scorecards.',
-  },
-  {
     slug: 'sap',
     title: 'SAP / ERP Operations',
     sub: 'S/4HANA migration governance, cutover discipline, the operator stack for the December 2027 ECC end-of-maintenance deadline.',
@@ -480,7 +480,7 @@ export const lineGroups: LineGroup[] = [
   {
     slug: 'transformation',
     title: 'Transformation & SSC/GBS',
-    sub: 'Offshoring, GBS rollouts, and BPO transitions - from kickoff to BAU exit. A full operator course plus six standalone toolkits - transition delivery, process automation, org change, PMO, target operating model and cloud migration.',
+    sub: 'Offshoring, GBS rollouts, and BPO transitions - from kickoff to BAU exit, plus the pre-implementation decisions that come before them. A full operator course and seven standalone toolkits - transition delivery, process automation, org change, PMO, target operating model, cloud migration and the ERP modernisation business case.',
   },
   {
     slug: 'regulatory',

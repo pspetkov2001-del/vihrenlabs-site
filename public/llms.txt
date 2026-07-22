@@ -27,7 +27,6 @@ Each product also has an on-site page at https://www.vihrenlabs.com/products/<pr
 
 Each line has an on-site pillar page aggregating its products, free guides, and essays:
 - Procurement & Vendor Management: https://www.vihrenlabs.com/lines/procurement
-- Programme Delivery & Enterprise IT PMO: https://www.vihrenlabs.com/lines/programme-delivery
 - SAP / ERP Operations: https://www.vihrenlabs.com/lines/sap
 - Master Data Operations: https://www.vihrenlabs.com/lines/master-data
 - Transformation & SSC/GBS: https://www.vihrenlabs.com/lines/transformation

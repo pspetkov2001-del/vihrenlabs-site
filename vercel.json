@@ -22,6 +22,11 @@
       "permanent": true
     },
     {
+      "source": "/lines/programme-delivery",
+      "destination": "/lines/transformation",
+      "permanent": true
+    },
+    {
       "source": "/essays",
       "destination": "/writing",
       "permanent": true
