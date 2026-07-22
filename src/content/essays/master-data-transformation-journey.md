@@ -23,13 +23,13 @@ The starting state, before any of it: every vendor sends their catalog in their 
 
 **The pipeline - ingestion to touchless.**
 
-This was never one project. It was a pipeline, built and hardened stage by stage:
+This was never one project, whatever the steering deck called it. It was a pipeline, built and hardened one stage at a time, and each stage had to hold before the next one was worth building:
 
 1. **Ingestion** - take the vendor catalog in whatever shape it arrives. Stop fighting the vendor to conform to your format; meet the catalog where it is and transform on your side.
 2. **Transformation + standardization** - normalize every catalog into one internal structure. One field, one meaning, everywhere.
 3. **Enrichment** - fill what the vendor didn't send: the attributes your buyers, your quoting engine, and your compliance obligations need but the source never carried.
 4. **Categorization + attribute rules** - the real leverage. Rules that read a product and decide *what it is* and *which attributes apply*, so categorization stops being a human judgment call and becomes a governed, repeatable, AI-assisted decision.
-5. **Mapping + local settings** - the layer everyone underestimates. The same product behaves differently across country operations; the rules have to carry the local overrides without collapsing into a pile of exceptions nobody can maintain.
+5. **Mapping + local settings** - the layer every plan I have seen underestimates. The same product behaves differently across country operations; the rules have to carry the local overrides without collapsing into a pile of exceptions nobody can maintain. An exception that only one person understands is not a rule, it's a dependency.
 6. **Dynamic SKU creation** - when ingestion, standardization, enrichment, categorization and mapping all hold, the SKU gets created automatically, correctly, the moment it's needed.
 7. **Touchless quoting and ordering** - the payoff. The salesperson and the customer never see steps 1–6. They see a quote that's right and an order that flows.
 
@@ -37,7 +37,7 @@ The point isn't the diagram. It's the sequence: **automation is the last step, n
 
 **Governance is what makes it survive contact with reality.**
 
-A pipeline is a one-time build. Governance is what keeps it true after the project team rolls off and the volume triples. The hard questions are never technical:
+A pipeline is a one-time build. Governance is what keeps it true after the project team rolls off and the volume triples. I have never watched this work come apart in the build; it comes apart six months later, quietly, one accepted exception at a time. The hard questions are never technical:
 
 - *Who decides what an attribute means* when two countries disagree?
 - *Who owns a category rule* - and who is allowed to add the exception that quietly breaks it for everyone else?
@@ -47,7 +47,7 @@ Master data without an operating model - named owners, decision rights, SLAs, an
 
 **The endpoint is a platform for the operators and the vendors - not a tidy table.**
 
-Clean, governed, automated data is the precondition; the *experience* is the product. When the data underneath is trustworthy, you can give vendors a self-service surface to bring their catalog in, and give the internal associates tooling that doesn't fight them. The catalog platform is for the people who run the catalog and the vendors who feed it - the data quality is what makes that platform possible at all.
+Clean, governed, automated data is the precondition; the *experience* is the product. When the data underneath is trustworthy, you can give vendors a self-service surface to bring their catalog in, and give the internal associates tooling that doesn't fight them. The catalog platform is for the people who run the catalog and the vendors who feed it - the data quality is what makes that platform possible at all. Build the surface first, on data you don't trust, and all you've done is give people a nicer place to be wrong.
 
 > **The pattern that makes the case:** standing up products and SKUs in the product master is usually slow, manual work - read a catalog, decide what the product is, type it in, map it by hand, hope the next person does it the same way. Once the data standards, the categorization rules, and AI/LLM-assisted categorization, enrichment, and attribute assignment are in place, ingesting a major vendor's full catalog - the kind that runs into the millions of part numbers - and creating the resulting products can run in a fraction of the time. Weeks of manual work compressed to a single run. That gap is not an AI achievement; it's a data-standards achievement that AI was finally allowed to run on top of.
 

@@ -42,7 +42,7 @@ A defensible PMO status is built on four disciplines. None of them is clever. Al
 
 ## 1. RAG with written triggers
 
-The most common failure in programme reporting is the **watermelon**: green on the outside, red on the inside, right up until it can't be hidden. It happens because nobody wrote down what the colours mean, so green drifts into "we haven't admitted it's amber yet."
+The most common failure in programme reporting is the **watermelon**: green on the outside, red on the inside, right up until it can't be hidden. I have never once seen that caused by a PM lying. It is caused by a PM with no definition to hold on to, so green quietly drifts into "we haven't admitted it's amber yet."
 
 Fix it with three written definitions, agreed by the steering committee once:
 
@@ -52,21 +52,31 @@ Fix it with three written definitions, agreed by the steering committee once:
 
 Now the colour is a fact, not a mood. Two people looking at the same programme reach the same colour.
 
+Getting those three lines agreed costs you one steering meeting. Not having them costs you the room, and it always happens on the week you can least afford it.
+
 ## 2. RAID that's owned, not listed
 
-A RAID log - Risks, Assumptions, Issues, Dependencies - becomes a graveyard the moment its rows are descriptions instead of actions. Every item needs **one named owner and a next action with a date**. The test is simple: point at any row and say who is doing what, by when. If you can't, it's a museum of problems.
+A RAID log - Risks, Assumptions, Issues, Dependencies - becomes a graveyard the moment its rows are descriptions instead of actions. Every RAID log I have inherited had the same shape: rows and rows of well-written problems, a status column reading "Open" all the way down, and not one name sitting next to a date.
+
+Every item needs **one named owner and a next action with a date**. The test is simple: point at any row and say who is doing what, by when. If you can't, it's a museum of problems. A risk with no owner isn't a managed risk; it's a documented one.
 
 ## 3. Gates that are pre-agreed criteria
 
-A stage gate only means something if the pass criteria were set *before* the stage, not defended on the day. "We're at the gate, are we good?" is theatre. "Here are the five criteria we agreed; four are met, the fifth is conditional with an owner and a date" is a decision. Conditional passes are fine - undefined passes are not.
+A stage gate only means something if the pass criteria were set *before* the stage, not defended on the day. "We're at the gate, are we good?" is theatre. "Here are the five criteria we agreed; four are met, the fifth is conditional with an owner and a date" is a decision.
+
+The gates I have watched go wrong were almost never gates that failed. They were gates where the criteria got invented in the room, on the day, by the people who most needed to pass. Conditional passes are fine - undefined passes are not.
 
 ## 4. Numbers that assemble themselves
 
-The quantitative half of the report should pull from the trackers automatically - initiatives by status, budget burn versus progress, milestone and RAID counts. Hand-narrated numbers drift to flatter the programme; assembled numbers can't. And always show **budget burn next to progress**: a wave that has spent 60% to deliver 30% is in trouble long before the value number admits it.
+The quantitative half of the report should pull from the trackers automatically - initiatives by status, budget burn versus progress, milestone and RAID counts. Hand-narrated numbers drift to flatter the programme; assembled numbers can't.
+
+I have retyped a status deck on a Sunday night, and I know what happens to numbers when a tired person owns them. They round the right way. Nobody decides to do it, which is exactly why you take the decision away from them.
+
+And always show **budget burn next to progress**: a wave that has spent 60% to deliver 30% is in trouble long before the value number admits it.
 
 ## The role behind the report
 
-If you run a PMO, your credibility is the report. Make every colour defensible, every RAID row owned, every gate pre-agreed, and every red a decision waiting to be made - and the steering committee starts deciding instead of debating. That is the whole job.
+If you run a PMO, your credibility is the report. You don't own the delivery; you own whether the truth about it arrives early enough for someone to act on it. Make every colour defensible, every RAID row owned, every gate pre-agreed, and every red a decision waiting to be made - and the steering committee starts deciding instead of debating. That is the whole job.
 
 ---
 

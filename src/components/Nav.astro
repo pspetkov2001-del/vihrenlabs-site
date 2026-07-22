@@ -7,8 +7,16 @@ const links = [
   // too, consistent with every other entry here.
   { href: '/products', label: 'Products', active: currentPath.startsWith('/products') },
   { href: '/cheat-sheets', label: 'Cheat Sheets', active: currentPath.startsWith('/cheat-sheets') },
-  { href: '/guides', label: 'Guides', active: currentPath.startsWith('/guides') },
-  { href: '/essays', label: 'Essays', active: currentPath.startsWith('/essays') },
+  // 'Guides' + 'Essays' index pages merged into /writing 2026-07-22. Article
+  // URLs are unchanged, so this stays active on /guides/* and /essays/* too.
+  {
+    href: '/writing',
+    label: 'Writing',
+    active:
+      currentPath.startsWith('/writing') ||
+      currentPath.startsWith('/guides') ||
+      currentPath.startsWith('/essays'),
+  },
   { href: '/about', label: 'About', active: currentPath === '/about' || currentPath === '/about/' },
 ];
 ---

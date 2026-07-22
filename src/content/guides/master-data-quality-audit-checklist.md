@@ -8,19 +8,19 @@ answer: "A master data quality audit scores each critical field against six dime
 stepsTitle: "The audit checklist - eight moves"
 steps:
   - name: "Scope to the fields that drive decisions"
-    text: "Don't audit every field. Identify the master-data attributes that actually drive downstream processes - the ones that, when wrong, break ordering, invoicing, reporting, or compliance. Audit those first."
+    text: "Don't audit every field. The audits that stall are the ones that tried to score the whole data model. Identify the master-data attributes that actually drive downstream processes - the ones that, when wrong, break ordering, invoicing, reporting, or compliance. Audit those first."
   - name: "Score completeness"
     text: "For each in-scope field, what percentage of records is populated? Completeness is the cheapest dimension to measure and often the most revealing - empty mandatory fields are a process-control gap, not a data-entry gap."
   - name: "Score validity and conformity"
     text: "Does the value conform to the allowed format, value list, or governed standard (e.g. a valid tax ID format, an approved unit of measure, a sanctioned material group)? Validity catches the values that are present but wrong."
   - name: "Score consistency across systems"
-    text: "Where the same master-data object exists in more than one system, do the values agree? Cross-system inconsistency is where 'the data is fine in SAP but wrong in the catalogue' lives."
+    text: "Where the same master-data object exists in more than one system, do the values agree? Cross-system inconsistency is where 'the data is fine in SAP but wrong in the catalogue' lives, and it is the dimension nobody owns until you score it."
   - name: "Score uniqueness - find the duplicates"
     text: "Duplicate customers, vendors, or materials inflate spend, fragment reporting, and break matching. Score uniqueness with deterministic and fuzzy matching, and decide a survivorship rule before you merge."
   - name: "Score timeliness"
     text: "How current is the record? A field that was correct two years ago and never reviewed is a latent defect. Timeliness ties data quality to a review cadence and a named owner."
   - name: "Log every defect with owner and root cause"
-    text: "A defect log that records only the error is a list. A defect log that records the error, the owning function, and the root cause is a remediation plan. Most defects trace to a missing control, not a careless user."
+    text: "A defect log that records only the error is a list. A defect log that records the error, the owning function, and the root cause is a remediation plan. Most defects trace to a missing control, not a careless user. A defect with no named owner does not get fixed."
   - name: "Prioritise by impact, then re-score on a cadence"
     text: "Rank remediation by business impact, not defect count - a hundred cosmetic gaps matter less than one wrong tax classification. Then re-run the audit on a fixed cadence so the score is a trend line, not a snapshot."
 faq:
@@ -39,18 +39,18 @@ ctaSub: "The done-for-you version: 75 named master-data quality checks with fiel
 
 ## Why field-level scoring beats a pass/fail report
 
-The most common mistake in a master data quality audit is scoring at record level - "this record is clean / not clean." It hides where the problem actually is. A record can fail on one field while being perfect on twenty others, and a record-level fail tells you nothing about which field to fix or which control to add.
+The most common mistake in a master data quality audit is scoring at record level - "this record is clean / not clean." I have watched that number get presented, nodded at, and acted on by nobody, because it hides where the problem actually is. A record can fail on one field while being perfect on twenty others, and a record-level fail tells you nothing about which field to fix or which control to add. A score nobody can act on is not a measurement.
 
-Field-level scoring inverts that. You learn that, say, completeness on the tax-classification field is at 62% across vendors - which points at a specific control gap in vendor onboarding, with a specific owner. That is a remediation instruction. "Vendor data is 78% clean" is not.
+Field-level scoring inverts that. You learn that, say, completeness on the tax-classification field is at 62% across vendors - which points at a specific control gap in vendor onboarding, with a specific owner. That is a remediation instruction. "Vendor data is 78% clean" is not. The first number moves next quarter because someone can be held to it; the second one has been the same number for years.
 
 ## Defects trace to controls, not to people
 
-When you log a defect, record the root cause - and most root causes turn out to be a missing or unenforced control, not a careless user. A mandatory field left blank usually means the process let it through. A duplicate vendor usually means there was no match-check at creation. Fixing the data without fixing the control just means you re-run the audit next quarter and find the same defect.
+When you log a defect, record the root cause - and in the defect logs I have worked through, most root causes were a missing or unenforced control, not a careless user. A mandatory field left blank usually means the process let it through. A duplicate vendor usually means there was no match-check at creation. Blaming the person who typed it is the cheapest available answer and the one that changes nothing. Fixing the data without fixing the control just means you re-run the audit next quarter and find the same defect wearing a different record number.
 
 This is why the audit and the operating model belong together. The audit finds the defects; a governance model - data owners, stewards, a RACI, a forum that actually meets - stops them recurring. The reasoning behind treating reporting and master data as one discipline is in the essay [Touchless ordering is a master-data achievement nobody sees](/essays/master-data-transformation-journey).
 
 ## From audit to a maturity read
 
-Once you have a field-level score and a defect log, you can place the domain on a maturity band - and that banded read is what a steering committee actually responds to. If you want the structured version of that diagnostic, the [Master Data Management Maturity Assessment](/products/master-data-management-maturity-assessment) scores 78 anchored questions across five domains.
+Once you have a field-level score and a defect log, you can place the domain on a maturity band - and that banded read is what a steering committee actually responds to. No steering committee has ever read a defect log. They read the band, and they fund the gap between the band you are on and the one you claimed. If you want the structured version of that diagnostic, the [Master Data Management Maturity Assessment](/products/master-data-management-maturity-assessment) scores 78 anchored questions across five domains.
 
 *This guide is operator practice - adapt the dimensions and thresholds to your own data model and governance standard.*

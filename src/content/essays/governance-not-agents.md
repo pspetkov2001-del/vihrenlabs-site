@@ -9,13 +9,13 @@ featured: true
 
 **The model is rarely the reason an AI agent project gets cancelled. The operating model usually is.**
 
-Gartner has forecast that more than 40% of agentic-AI projects will be scrapped by the end of 2027 - and the reasons it gives are not technical. Escalating costs. Unclear business value. Inadequate risk controls. That is a forecast, not a measured outcome, so read it as a forecast. But it matches what is already visible to anyone watching these programmes from the inside: the model almost never fails first. The function around it does.
+Gartner has forecast that more than 40% of agentic-AI projects will be scrapped by the end of 2027 - and the reasons it gives are not technical. Escalating costs. Unclear business value. Inadequate risk controls. That is a forecast, not a measured outcome, so read it as a forecast. But it matches what is already visible from inside these programmes, long before anyone writes the cancellation memo: the model almost never fails first. The function around it does.
 
 I wrote a companion piece to this one arguing that an AI agent will amplify your data problems rather than fix them. That is true, and data is one of the things that breaks. But data is only the first of five, and the other four are organisational, not technical. After fifteen years inside enterprise IT operations - standing up shared-services functions, running transformation programmes, owning master data across product, vendor, and customer domains - I have watched the same five failure modes repeat. None of them is the model.
 
 ## The same tools, opposite outcomes
 
-Two organisations buy the same platform. Same models, same prompts, same integrations. One gets real results within a quarter. The other produces noise, loses user trust in a fortnight, and quietly cancels the budget at the next planning cycle.
+It runs both ways, and the split is uncomfortably clean. Two organisations buy the same platform. Same models, same prompts, same integrations. One gets real results within a quarter. The other produces noise, loses user trust in a fortnight, and quietly cancels the budget at the next planning cycle.
 
 The variable is almost never the technology. It is whether anyone built the function that decides which use cases get attempted, what "good enough to ship" means, who signs off the risk, what it is allowed to cost, and who runs it on the Monday after launch. The winning organisation built that function before it scaled agents. The losing one bought agents and assumed the function would assemble itself.
 
@@ -25,11 +25,11 @@ It does not assemble itself.
 
 Strip away the demos and the failure modes are boringly consistent:
 
-1. **No decision rights.** Nobody can say which projects start, which stop, and who is accountable when an agent makes a bad call in production. Pilots get picked by whoever is most enthusiastic, not by where the value is.
+1. **No decision rights.** Nobody can say which projects start, which stop, and who is accountable when an agent makes a bad call in production. Pilots get picked by whoever is most enthusiastic, not by where the value is, and the escalation path only gets drawn after the first bad output has already reached someone who matters.
 2. **No use-case gate.** Every team wants an agent. With no objective filter - task structure, data readiness, value, risk, build effort - the programme spreads itself across a dozen weak candidates instead of two strong ones. Most of them should have been a rule, a report, or a better form.
 3. **Broken data underneath.** The agent inherits every duplicate, every missing field, every disagreement between systems about who the customer is - and scales the confusion, fluently. This is the failure I covered separately, and it is real, but it is one of five.
-4. **Runaway cost.** Token spend, orchestration, human-in-the-loop review, and vendor fees compound quietly. Without a three-year total-cost view, the bill arrives after the budget is committed and the value is still unproven.
-5. **No owner after launch.** The pilot team disbands. The agent drifts as the underlying data and processes change. Six months later it is producing subtly wrong output that nobody is watching, and the first sign of trouble is a user complaint, not a dashboard.
+4. **Runaway cost.** Token spend, orchestration, human-in-the-loop review, and vendor fees compound quietly. The line nobody budgets is the human review, and it is the one that grows. Without a three-year total-cost view, the bill arrives after the budget is committed and the value is still unproven.
+5. **No owner after launch.** The pilot team disbands back into the day jobs it was borrowed from. The agent drifts as the underlying data and processes change. Six months later it is producing subtly wrong output that nobody is watching, and the first sign of trouble is a user complaint, not a dashboard.
 
 Notice that four of the five are governance and ownership questions. The model is a component. The operating model is the system.
 
@@ -51,13 +51,13 @@ Wrap those around a delivery lifecycle - intake, candidate selection, design, bu
 
 ## The blocker rule: governance is enablement, not theatre
 
-There is a failure mode on the other side, and it is just as fatal: the CoE that becomes a bottleneck. A function that reviews everything, approves nothing, and turns into a compliance ritual will get routed around - shadow AI appears, and you are worse off than before, because now the risk is invisible.
+There is a failure mode on the other side, and it is just as fatal: the CoE that becomes a bottleneck. The people who route around a board like that are almost never reckless - they are trying to hit a date that nobody moved. A function that reviews everything, approves nothing, and turns into a compliance ritual will get routed around - shadow AI appears, and you are worse off than before, because now the risk is invisible. A gate everybody works around has not reduced risk, only your view of it.
 
 Good governance is fast and decisive. The use-case gate returns a verdict with a reason: GO, or PILOT with these guardrails, or PARK because the data is not ready and here is the one thing to fix first. A clear *no* with a reason is enablement. A slow *maybe* is theatre. The difference between the two is whether the function is designed to move at the speed of the work or to protect itself.
 
 ## The boring work comes first
 
-The organisations that will get the most from AI over the next few years are not the ones with the most agents. They are the ones that stood up the operating model - the decision rights, the gate, the standards, the owners - before they scaled. Not because they were "preparing for AI," but because that is how durable functions have always been built. The agents are the easy part now. The function around them is the work, and it is the work almost nobody demos.
+The organisations that will get the most from AI over the next few years are not the ones with the most agents. They are the ones that stood up the operating model - the decision rights, the gate, the standards, the owners - before they scaled. Not because they were "preparing for AI," but because that is how durable functions have always been built. The agents are the easy part now. The function around them is the work, and it is the work almost nobody demos. I have never seen one assemble itself after the fact - it gets built on purpose, or the programme gets cancelled and everyone blames the model.
 
 A lot of leadership teams are asking *which AI agent should we buy.* The more useful question is the one underneath it: *if an agent made decisions from our data, on our processes, with our cost structure, continuously and at scale - who would own the consequences, and how would we have decided to let it?*
 

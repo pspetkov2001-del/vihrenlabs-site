@@ -8,13 +8,13 @@ answer: "A DORA Register of Information (Article 28) must capture every contract
 stepsTitle: "The register checklist - seven moves"
 steps:
   - name: "Enumerate every ICT third-party arrangement"
-    text: "List every contractual arrangement for ICT services - not just the big platforms. Shadow SaaS, embedded providers, and the small tools count. A register that omits arrangements understates concentration risk."
+    text: "List every contractual arrangement for ICT services - not just the big platforms. Shadow SaaS, embedded providers, and the small tools count. The ones that go missing are the ones nobody in procurement ever raised a purchase order for. A register that omits arrangements understates concentration risk."
   - name: "Map each arrangement to a function - and flag critical or important ones"
-    text: "For each provider, record which business function the ICT service supports, and whether that function is 'critical or important'. The arrangements supporting critical or important functions carry the heavier obligations and are where supervisory attention lands."
+    text: "For each provider, record which business function the ICT service supports, and whether that function is 'critical or important'. This is the column teams leave half-empty: it needs a business owner to answer, not a procurement extract. The arrangements supporting critical or important functions carry the heavier obligations and are where supervisory attention lands."
   - name: "Record the contractual essentials"
-    text: "Capture the terms DORA expects in arrangements for critical or important functions - service levels, audit and access rights, exit strategies and transitional periods, sub-contracting conditions, and termination rights. A gap here is a contractual remediation item, not just a register field."
+    text: "Capture the terms DORA expects in arrangements for critical or important functions - service levels, audit and access rights, exit strategies and transitional periods, sub-contracting conditions, and termination rights. Filling the field takes a minute; reopening the contract behind it takes a renewal cycle. A gap here is a contractual remediation item, not just a register field."
   - name: "Trace the sub-contracting chain"
-    text: "Record the sub-contractors behind each provider that support the service. Concentration risk often hides one layer down - several of your providers may rest on the same underlying cloud or data-centre."
+    text: "Record the sub-contractors behind each provider that support the service. Ask the provider directly - the contract rarely names them, and you cannot infer the chain from an invoice. Concentration risk often hides one layer down - several of your providers may rest on the same underlying cloud or data-centre."
   - name: "Assess concentration risk explicitly"
     text: "The register is a concentration-risk picture, not a list. Surface where one provider (or one fourth-party) supports many critical functions, and where substitutability is low. This is the analysis a procurement inventory never produces."
   - name: "Assess substitutability and exit"
@@ -37,13 +37,13 @@ ctaSub: "The full operator essay goes deeper on what supervisors actually look f
 
 ## The register is a concentration-risk picture, not a procurement inventory
 
-This is the line that separates a register that survives supervisory scrutiny from one that doesn't. Many organisations build the Register of Information by exporting the supplier master from procurement and reformatting it. That produces a list of who you pay - which is not what Article 28 is for.
+This is the line that separates a register that survives supervisory scrutiny from one that doesn't. There is a fast way to build the Register of Information: export the supplier master from procurement, drop it into the template, reformat the columns, call it done. That produces a list of who you pay - which is not what Article 28 is for. It is also the version that looks finished, which is why nobody goes back to it.
 
-A supervisor opens the register to answer a different question: *how exposed is this entity if one ICT provider, or one provider's sub-contractor, goes down?* That question is only answerable if the register maps each arrangement to the critical or important function it supports, traces the sub-contracting chain, and makes concentration visible - several "different" providers resting on the same underlying cloud is exactly the exposure the register is meant to expose.
+A supervisor opens the register to answer a different question: *how exposed is this entity if one ICT provider, or one provider's sub-contractor, goes down?* That question is only answerable if the register maps each arrangement to the critical or important function it supports, traces the sub-contracting chain, and makes concentration visible - several "different" providers resting on the same underlying cloud is exactly the exposure the register is meant to expose. A register that only knows who you pay cannot tell anyone what breaks when one of them stops answering.
 
 ## Regulation is operational, not legal
 
-DORA is not an abstract legal risk - it is an operational requirement with a live application date, specific evidence artifacts, and a register you must be able to hand to a competent authority. The operator who treats it as a documentation discipline - build the register, map the functions, trace the chain, maintain the change log - produces something defensible. Reserve counsel for genuinely ambiguous interpretation, not for populating fields.
+DORA is not an abstract legal risk - it is an operational requirement with a live application date, specific evidence artifacts, and a register you must be able to hand to a competent authority. In practice the work stalls when it gets parked with legal and waits for an interpretation, while the arrangements it is supposed to describe keep being signed. The operator who treats it as a documentation discipline - build the register, map the functions, trace the chain, maintain the change log - produces something defensible. Reserve counsel for genuinely ambiguous interpretation, not for populating fields. A register nobody owns between reviews is not a control.
 
 The deeper treatment of what supervisory authorities actually look for - across both DORA and the EU AI Act - is in the essay [What supervisory authorities actually look for in DORA and EU AI Act compliance](/essays/dora-ict-register-completeness).
 

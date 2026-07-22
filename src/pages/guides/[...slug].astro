@@ -39,7 +39,7 @@ const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Guides', item: 'https://www.vihrenlabs.com/guides' },
+    { '@type': 'ListItem', position: 1, name: 'Writing', item: 'https://www.vihrenlabs.com/writing' },
     { '@type': 'ListItem', position: 2, name: d.title, item: canonical },
   ],
 };
@@ -64,7 +64,7 @@ if (d.faq.length) schemaNodes.push(faqSchema(d.faq));
   <article class="px-6 py-20 sm:py-24">
     <div class="max-w-2xl mx-auto">
       <nav class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-wider uppercase text-white/30">
-        <a href="/guides" class="hover:text-[#E67E22] transition-colors">Guides</a>
+        <a href="/writing" class="hover:text-[#E67E22] transition-colors">Writing</a>
         <span>/</span>
         <span class="text-white/50">{d.line}</span>
       </nav>
@@ -137,7 +137,7 @@ if (d.faq.length) schemaNodes.push(faqSchema(d.faq));
         </p>
         <div class="flex flex-wrap gap-3 mt-5">
           <a href="/essays/the-operator-standard" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">The Operator Standard</a>
-          <a href="/guides" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">More guides</a>
+          <a href="/writing" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">More writing</a>
         </div>
       </div>
     </div>

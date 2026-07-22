@@ -16,7 +16,7 @@ steps:
   - name: "Validate Business Partner conversion (BP-MASS)"
     text: "Run BP-MASS validation against the Business Partner conversion and hold it to a pre-agreed error threshold (e.g. <0.5%). BP conversion drift above threshold is the classic 'it'll improve in production' trap that surfaces as broken financials by Tuesday."
   - name: "Reconcile stock on hand (MIGO)"
-    text: "Reconcile MIGO stock-on-hand against the goods-movement archive. Quantity or valuation gaps here become inventory and costing errors the business notices first."
+    text: "Reconcile MIGO stock-on-hand against the goods-movement archive. Quantity or valuation gaps here become inventory and costing errors the business notices first - the warehouse spots them before finance does, and it spots them out loud."
   - name: "Validate the general ledger (FBL3N)"
     text: "Validate FBL3N general-ledger line items against legacy AP/AR and GL balances. The finance team's trust in S/4 is won or lost on whether the numbers tie out on day one."
   - name: "Pre-agree the rollback criteria - person, threshold, time limit"
@@ -49,10 +49,10 @@ So the checklist above is mostly governance dressed as logistics. The data-valid
 
 ## The readiness matrix beats the RAG slide
 
-A go/no-go decision made on a colour-coded slide is a decision made on opinion. "Amber, but we think it'll be green by Friday" is not evidence. Replace it with a matrix where every line has an owner, an objective threshold, and a state that is observably done or not done. When the steering committee asks "are we ready," the answer is the matrix, not a sentiment.
+I have sat in the go/no-go where the deciding artefact was a slide of coloured squares, and not one person in the room could say what a single square actually measured. A go/no-go decision made on a colour-coded slide is a decision made on opinion. "Amber, but we think it'll be green by Friday" is not evidence - it is a forecast of somebody's mood. Replace it with a matrix where every line has an owner, an objective threshold, and a state that is observably done or not done. When the steering committee asks "are we ready," the answer is the matrix, not a sentiment. The useful side effect is that the argument happens weeks out, in daylight, instead of at 4 a.m. on the Sunday.
 
 ## Hypercare is where the programme is judged
 
-Everyone plans the weekend. Far fewer plan the two weeks after, which is where the programme is actually judged - by whether incidents get triaged fast, whether the business keeps trusting the data, and whether there are clear criteria to exit hypercare into business-as-usual. Plan it as a phase with its own staffing, triage path, and exit criteria. The free [SAP Cutover Comms Kit](https://vihrenlabs.gumroad.com/l/dlzxfu) covers the announcements a real cutover sends; the deeper timeline reasoning is in the essay [The S/4HANA deadline math most organizations calculate wrong](/essays/ecc-end-of-maintenance-math).
+Everyone plans the weekend. Far fewer plan the two weeks after, which is where the programme is actually judged - by whether incidents get triaged fast, whether the business keeps trusting the data, and whether there are clear criteria to exit hypercare into business-as-usual. I have watched teams run a clean technical weekend and still lose the business, because the week that followed was staffed by whoever happened to still be awake and every incident escalated to the same three exhausted people. Plan it as a phase with its own staffing, triage path, and exit criteria. The cutover ends on Sunday night; the verdict on it lands two weeks later. The free [SAP Cutover Comms Kit](https://vihrenlabs.gumroad.com/l/dlzxfu) covers the announcements a real cutover sends; the deeper timeline reasoning is in the essay [The S/4HANA deadline math most organizations calculate wrong](/essays/ecc-end-of-maintenance-math).
 
 *This guide is operator practice, not SAP documentation - confirm transaction behaviour and dates against your own system and SAP's published maintenance schedule.*

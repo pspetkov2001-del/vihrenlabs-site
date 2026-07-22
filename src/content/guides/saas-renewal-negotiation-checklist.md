@@ -8,19 +8,19 @@ answer: "A SaaS renewal is not adversarial - it is a structured information-asym
 stepsTitle: "The renewal checklist - seven moves"
 steps:
   - name: "Find the notice period and work backwards 90–120 days"
-    text: "Open the contract and find the notice period and the auto-renewal trigger date. Set your start date 90–120 days before the notice deadline - not before the renewal date, before the notice deadline. This single step is where most renewal leverage is won or lost."
+    text: "Open the contract and find the notice period and the auto-renewal trigger date. Set your start date 90–120 days before the notice deadline - not before the renewal date, before the notice deadline. I have watched buyers diarise the renewal date, miss the notice window that sits in front of it, and hand the vendor the entire negotiation before a single call. This one step is where most renewal leverage is won or lost."
   - name: "Pull your real usage"
-    text: "Get the actual numbers: seats provisioned versus active, the features and modules you pay for versus the ones anyone uses, consumption versus the committed tier. Over-provisioning and shelf-ware are your strongest, most defensible levers - you are not asking for a favour, you are right-sizing."
+    text: "Get the actual numbers: seats provisioned versus active, the features and modules you pay for versus the ones anyone uses, consumption versus the committed tier. Over-provisioning and shelf-ware are the figures a rep least wants read out on the call, and they are your strongest, most defensible levers - you are not asking for a favour, you are right-sizing."
   - name: "Build the true three-year TCO"
     text: "Model the real cost over the term: list price, the bolt-ons and add-on modules, overage/true-up charges, and the internal admin time the tool consumes. 'It feels expensive' is sentiment; a three-year TCO with the line items is a negotiating position."
   - name: "Read the vendor's leverage - and the calendar"
-    text: "The vendor knows their floor price, whether the deal is registered with a distributor (and the margin protection that affords), and your renewal date down to the day. Know their fiscal quarter-end; a rep carrying a number into quarter-close is a different negotiator than one in week two of the quarter."
+    text: "The vendor knows their floor price, whether the deal is registered with a distributor (and the margin protection that affords), and your renewal date down to the day. Know their fiscal quarter-end. I have sat on the side of the table where those floors get set, and a rep carrying a number into quarter-close is a different negotiator than the same rep in week two of the quarter."
   - name: "Establish a credible alternative"
     text: "You don't need to switch - you need a credible, specific alternative you are willing to reference: a competitor quote, a partial migration, or a documented downgrade path. Leverage without an alternative is hope; an alternative you can name changes the conversation."
   - name: "Counter the uplift with specifics, not 'it's too expensive'"
     text: "Tie every ask to evidence: 'usage is at 60% of the committed seats, so we right-size to actuals'; 'we'll commit for two years at flat pricing if the sandbox and the premium tier are included in writing.' Specific, evidence-backed asks land; generic push-back gets a generic 'best I can do.'"
   - name: "Get every concession in writing - then log it for next time"
-    text: "A discount promised on a call is not a discount. Get the price, the inclusions, the notice period and the cap on next year's uplift in the order form or an amendment before you sign. Then record the outcome so the next renewal starts from a documented baseline, not the last invoice."
+    text: "A discount promised on a call is not a discount. Get the price, the inclusions, the notice period and the cap on next year's uplift into the order form or an amendment before you sign. Goodwill does not survive an account-manager handover; the paper does. Then record the outcome so the next renewal starts from a documented baseline, not the last invoice."
 faq:
   - q: "When should I start a SaaS renewal negotiation?"
     a: "90–120 days before the contractual notice deadline - not the renewal date. The notice period is the window in which you must give notice to avoid auto-renewal; if you start after it has passed, the contract has effectively already renewed and your leverage is gone. Starting early is the cheapest advantage available."
@@ -45,9 +45,9 @@ That asymmetry is the whole game - and it is closable. "Better information" here
 
 ## The cost is paid in the prep that didn't happen
 
-Most buyers who lose money on renewals do not lose it because they negotiate badly in the room. They lose it because they walk into the conversation two weeks before the auto-renewal, when all the leverage has already expired. The number on the final invoice is a symptom; the cause is the ninety days of preparation that didn't happen.
+Most buyers who lose money on renewals do not lose it because they negotiate badly in the room. They lose it because they walk into the conversation two weeks before the auto-renewal, when all the leverage has already expired. From the vendor seat, that buyer was the easiest call of the quarter: no usage data, no alternative, no time to build either, and a date in the contract doing the closing for us. The number on the final invoice is a symptom; the cause is the ninety days of preparation that didn't happen.
 
-This is why the renewal pipeline matters more than the renewal call. A simple calendar of every contract, its notice deadline, and a start-prep trigger 90–120 days out turns renewals from a scramble into a process. That, plus the discipline of recording each outcome so the next cycle starts from a documented baseline, is most of the win.
+This is why the renewal pipeline matters more than the renewal call. A simple calendar of every contract, its notice deadline, and a start-prep trigger 90–120 days out turns renewals from a scramble into a process. That, plus the discipline of recording each outcome so the next cycle starts from a documented baseline, is most of the win. A renewal date nobody owns is not a date, it is an auto-renewal waiting to happen.
 
 The reasoning behind treating procurement as an information game is in the essay [Vendor-side observations on how enterprise IT procurement actually works](/essays/vendor-side-rfp-observations), and the principle it draws on - *vendor economics are not your enemy, but they are not your friend* - is principle four of [The Operator Standard](/essays/the-operator-standard).
 

@@ -8,15 +8,15 @@ answer: "Transformations almost never fail because the technology wasn't good en
 stepsTitle: "The operating spine - six segments, in order"
 steps:
   - name: "Honest current-state assessment"
-    text: "Write down where you actually are, by domain - core systems, process, data, AI, operating model - with the specific pain and the business impact, not a slogan. 'Data is a bit messy' is not an assessment; 'master data is fragmented across three systems with no owner, which drives bad availability decisions' is. The business-impact line is what earns the funding."
+    text: "Write down where you actually are, by domain - core systems, process, data, AI, operating model - with the specific pain and the business impact, not a slogan. 'Data is a bit messy' is not an assessment; 'master data is fragmented across three systems with no owner, which drives bad availability decisions' is. The business-impact line is what earns the funding - I have never seen a steering committee release money for a slogan."
   - name: "Capability maturity, scored honestly"
-    text: "Score each capability today and at target on a 1–5 scale anchored to observable behaviour - and remember a scale with no 1s or 2s is a lie. Target is not '5 everywhere'; pick the level each capability genuinely needs. The gap, weighted by business value, is the raw material for the roadmap. The maturity radar's shape tells you where to spend."
+    text: "Score each capability today and at target on a 1–5 scale anchored to observable behaviour - and remember a scale with no 1s or 2s is a lie. Every flattering radar I have been handed was scored by the people who owned the capability being scored. Target is not '5 everywhere'; pick the level each capability genuinely needs. The gap, weighted by business value, is the raw material for the roadmap. The maturity radar's shape tells you where to spend."
   - name: "The roadmap - waves, quick wins first"
-    text: "Turn the gaps into initiatives, sequenced into waves. Quick wins first - visible, low-dependency work that proves the team can ship and earns the credibility the big builds need. Sequence by dependency, not enthusiasm. Cap work-in-progress per wave. Every initiative gets an owner and an expected value, or it won't happen and you can't prove it later."
+    text: "Turn the gaps into initiatives, sequenced into waves. Quick wins first - visible, low-dependency work that proves the team can ship and earns the credibility the big builds need. Sequence by dependency, not enthusiasm - enthusiasm is what puts forty initiatives in Wave 1. Cap work-in-progress per wave. Every initiative gets an owner and an expected value, or it won't happen and you can't prove it later."
   - name: "Target operating model - who runs it after"
-    text: "For every capability the roadmap builds, name who operates it in steady state. If the answer is 'the project team' or 'TBD', the change will drift back the moment the programme closes. A transformation with no operating model for the after is a renovation nobody moves into. The shift is usually from organised-by-system to organised-by-capability."
+    text: "For every capability the roadmap builds, name who operates it in steady state. If the answer is 'the project team' or 'TBD', the change will drift back the moment the programme closes. I have watched 'the project team' own a new way of working for exactly as long as the project team existed. A transformation with no operating model for the after is a renovation nobody moves into. The shift is usually from organised-by-system to organised-by-capability."
   - name: "Governance that decides"
-    text: "Write down the decision rights - who can approve a scope change, a re-sequence, a budget move, and at what threshold. Give every RAID item an owner and an action. Run a steering forum that makes the decisions only it can make, instead of watching a RAG dashboard change shade. A steering meeting that produced no decision was a status email with chairs."
+    text: "Write down the decision rights - who can approve a scope change, a re-sequence, a budget move, and at what threshold. Give every RAID item an owner and an action. Run a steering forum that makes the decisions only it can make, instead of watching a RAG dashboard change shade. I have sat through the hour that updated every slide and settled nothing. A steering meeting that produced no decision was a status email with chairs."
   - name: "Value - baseline, target, actual"
     text: "For each initiative, capture a baseline before you start, a target, and a measured actual - net of the run cost the capability creates. Roll it into one executive scorecard: planned versus realised, by wave. Value appears after delivery, as adoption lands - exactly when the team is disbanding - so keep the value tab live past go-live, or you'll deliver the capability and never capture the benefit."
 faq:
@@ -38,7 +38,7 @@ featured: false
 
 I have run transformation programmes, and the thing that surprises people is how rarely the technology is the problem. The cloud platform works. The new ERP works. The AI model is fine. What fails is the discipline around them - and it fails in the same seven ways almost every time.
 
-1. **No honest baseline.** The programme starts from where people *say* things are. Six months in, the "quick win" turns out to depend on a system nobody owns.
+1. **No honest baseline.** The programme starts from where people *say* things are. Six months in, the "quick win" turns out to depend on a system nobody owns - and I have never once seen that dependency surface during the assessment. It surfaces when someone tries to ship.
 2. **Maturity scored to flatter.** Every capability is a 3. A scorecard with no 1s and no 2s is one nobody was honest enough to fill in.
 3. **Everything is Wave 1.** Forty initiatives, all "critical", all starting at once, none finishing. The programme runs out of attention before it runs out of money.
 4. **Strategic builds before quick wins.** The 18-month platform replacement starts before the two-week integration that would have proven the team can ship. Credibility is spent before it is earned.
@@ -52,7 +52,7 @@ A transformation is not a project plan. It is an **operating spine** with six se
 
 > **Assessment - Capability maturity - Roadmap - Target operating model - Governance - Value**
 
-Each segment prevents one or more of the seven failures. Skip one and the spine bends: a roadmap with no maturity baseline is a wish list; an operating model with no roadmap is an org chart for a company that doesn't exist yet; value with no baseline is a press release. The six steps above are the spine in order - work them, and the boring, disciplined transformation that actually lands becomes the one you are running.
+Each segment prevents one or more of the seven failures. Skip one and the spine bends: a roadmap with no maturity baseline is a wish list; an operating model with no roadmap is an org chart for a company that doesn't exist yet; value with no baseline is a press release. The six steps above are the spine in order. Work them in order, and the transformation you are running becomes the boring, disciplined one that actually lands - which is the only kind I have seen survive its own closing meeting.
 
 ---
 

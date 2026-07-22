@@ -36,7 +36,7 @@ const breadcrumb = {
   '@context': 'https://schema.org',
   '@type': 'BreadcrumbList',
   itemListElement: [
-    { '@type': 'ListItem', position: 1, name: 'Essays', item: 'https://www.vihrenlabs.com/essays' },
+    { '@type': 'ListItem', position: 1, name: 'Writing', item: 'https://www.vihrenlabs.com/writing' },
     { '@type': 'ListItem', position: 2, name: essay.data.title, item: canonical },
   ],
 };
@@ -50,7 +50,7 @@ const breadcrumb = {
   <article class="px-6 py-20 sm:py-24">
     <div class="max-w-2xl mx-auto">
       <nav class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-wider uppercase text-white/30">
-        <a href="/essays" class="hover:text-[#E67E22] transition-colors">Essays</a>
+        <a href="/writing" class="hover:text-[#E67E22] transition-colors">Writing</a>
         <span>/</span>
         <span class="text-white/50">{essay.data.line}</span>
       </nav>
@@ -73,7 +73,7 @@ const breadcrumb = {
         </p>
         <div class="flex flex-wrap gap-3 mt-5">
           <a href="/products" class="inline-flex items-center gap-2 bg-[#E67E22]/15 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-[#E67E22]/25 transition-colors">See the templates</a>
-          <a href="/essays" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">More essays</a>
+          <a href="/writing" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">More writing</a>
         </div>
       </div>
     </div>

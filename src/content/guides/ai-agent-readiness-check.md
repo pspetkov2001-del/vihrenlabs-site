@@ -47,14 +47,18 @@ ctaSub: "Run it on your own org: the free AI-Ready Operations Assessment - the f
 
 The old automation failures looked broken - a job crashed, a row errored, someone noticed. An AI agent fails differently: it keeps going, confidently, and produces output that *looks* right. That's the trap. Point an agent at duplicated customers, half-empty product records, or three systems that disagree, and it will make decisions on all of it without hesitating - and present them persuasively.
 
+I've spent years on the master-data side of that mess: the duplicate business partners nobody wants to own, the vendor records carrying three spellings of the same company, the material master where half the fields were filled in once and never touched again. Those defects used to sit quietly and cost a bit of rework at month-end. Give an agent write access and they stop being quiet. An amplifier does not care what it amplifies.
+
 So the readiness question isn't "is the model good enough?" It's "can my data and process carry an autonomous decision?" The 12 points above are the fast version of that question, grouped into the five dimensions that actually predict whether a deployment holds: **identity, completeness, consistency, governance, process.**
 
 ## Gate on the weakest dimension, not the average
 
 The most common mistake is averaging. Four dimensions at 90% and one at 30% is not "78% ready" - it's *not ready*, because the agent will act through the 30% gap every time it hits it. Treat each dimension as a gate: a single weak one is a blocker until you fix it. That's the discipline the full assessment enforces with a blocker rule, so a good average can't hide a fatal gap.
 
+I have yet to see a readiness slide that didn't average its way to green before a go-live. The weak dimension was always in the deck somewhere, sitting inside a rolled-up number nobody was asked to defend. A score that can only go up is not a measurement.
+
 ## How to use this check
 
-Run it against one specific agent use-case, not your whole estate - readiness is per-task. Answer each point honestly with yes / partial / no. Any "no" on identity or source-of-truth (points 1–2) is a stop: fix those before anything else, because everything downstream inherits them. Then work the rest in order, and define your success bar (point 12) *before* go-live so you can tell whether the agent is actually working once it's live.
+Run it against one specific agent use-case, not your whole estate - readiness is per-task. Answer each point honestly with yes / partial / no, and answer it with the people who maintain the records, not just the ones sponsoring the project. The sponsor's "yes" and the data owner's "yes" are rarely the same answer, and only one of them has opened the table. Any "no" on identity or source-of-truth (points 1–2) is a stop: fix those before anything else, because everything downstream inherits them. Then work the rest in order, and define your success bar (point 12) *before* go-live so you can tell whether the agent is actually working once it's live.
 
 *This is an operator's plain-language readiness check, not legal or vendor advice. It is tool-agnostic and makes no performance claims.*

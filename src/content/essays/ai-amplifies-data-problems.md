@@ -23,6 +23,8 @@ Because AI agents are not magic. They are amplifiers. They take whatever operati
 
 If the underlying data is structured well, governed, and consistent, the agent can look remarkably intelligent. If the underlying data is fragmented, duplicated, stale, or incomplete, the agent scales the confusion. Usually with very convincing language.
 
+An amplifier does not care what it is amplifying.
+
 ## The dangerous part is that the output still looks intelligent
 
 That is what makes this different from older automation failures.
@@ -33,13 +35,13 @@ AI agents are different. They can produce completely coherent explanations on to
 
 Which means bad data no longer looks broken. It looks persuasive.
 
-That is a much more dangerous failure mode.
+A broken dashboard gets escalated. A confident wrong answer gets forwarded.
 
 ## A simple example
 
-Imagine a sales organization deploying an AI agent to prioritize accounts for renewal outreach.
+This is the shape I have seen most often, so take a sales organization deploying an AI agent to prioritize accounts for renewal outreach.
 
-The agent reads CRM activity history, support tickets, opportunity pipeline, invoice data, and customer segmentation fields. On paper, this sounds straightforward.
+The agent reads CRM activity history, support tickets, opportunity pipeline, invoice data, and customer segmentation fields. On paper, this sounds straightforward. In the demo it is straightforward, because the demo runs on data somebody cleaned.
 
 But underneath the surface:
 
@@ -67,19 +69,19 @@ Which means many ERP and CRM environments contain years of duplicate records, pa
 
 Humans learn to work around these imperfections. Sales reps know which customer record is "the real one." Procurement teams know which vendor entries to ignore. Finance teams maintain unofficial reconciliation spreadsheets. Operations teams memorize exceptions.
 
-Human organizations compensate socially for bad data all the time.
+Human organizations compensate socially for bad data all the time. Every one of those workarounds is a known defect somebody quietly decided to live with, and none of them are written down anywhere the machine can read.
 
-AI agents cannot. They treat the data literally. And that is where the problems start.
+AI agents cannot compensate. They treat the data literally. And that is where the problems start.
 
 ## The companies getting real AI value usually did the boring work first
 
-I spent years owning master data across product, vendor, and customer domains. The pattern was remarkably consistent.
+I spent years owning master data across product, vendor, and customer domains. Merge rules, duplicate queues, and long arguments about which system was allowed to win a field. From that seat the pattern was remarkably consistent.
 
 The companies that benefited most from automation were rarely the ones chasing the newest tooling first. They were usually the organizations that had already invested in governance, data ownership, lifecycle controls, standardized taxonomies, deduplication, stewardship processes, and source-of-truth discipline.
 
 Not because they were trying to "prepare for AI." Most of this work happened years before the current AI wave. But it created something critical: operational consistency. And AI systems perform exceptionally well when operational consistency already exists.
 
-The organizations that skipped this work often discovered something uncomfortable: AI does not remove the need for master data discipline. It increases it.
+The organizations that skipped this work often discovered something uncomfortable, and they discovered it after go-live rather than before: AI does not remove the need for master data discipline. It increases it.
 
 ## Three questions worth asking before deploying an AI agent
 
@@ -87,7 +89,9 @@ The organizations that skipped this work often discovered something uncomfortabl
 
 Can you deterministically tell when two records represent the same customer, supplier, product, material, contract, or location?
 
-If not, every downstream recommendation becomes unstable. Duplicate entities create double counting, fragmented history, broken relationship mapping, and distorted prioritization. The AI layer inherits all of it.
+By rule, in the system, and not because a steward happens to recognize the name. If you cannot, every downstream recommendation becomes unstable. Duplicate entities create double counting, fragmented history, broken relationship mapping, and distorted prioritization. The AI layer inherits all of it.
+
+An entity you cannot resolve is an entity you cannot govern.
 
 ### 2. Are the important fields consistently populated?
 
@@ -99,13 +103,13 @@ This matters because AI systems silently interpret missing data. If industry cla
 
 In many enterprises the same entity exists across ERP, CRM, procurement platforms, support systems, data warehouses, spreadsheets, and regional databases - often with conflicting values.
 
-The AI agent does not magically reconcile these disagreements. It inherits them. If your systems disagree about who the customer is, what they purchased, who owns the account, or whether the contract is active, the agent's recommendations become unreliable very quickly. And once users lose trust in the output, adoption collapses.
+The AI agent does not magically reconcile these disagreements. It inherits them. Two systems that disagree do not average out. One of them wins, quietly, and nobody chose which. If your systems disagree about who the customer is, what they purchased, who owns the account, or whether the contract is active, the agent's recommendations become unreliable very quickly. And once users lose trust in the output, adoption collapses. Trust is cheap to lose here and expensive to rebuild.
 
 ## The uncomfortable reality
 
 Most AI vendors will not spend much time talking about data readiness. Not because it is unimportant - because fixing enterprise data is slow, operationally difficult, and usually outside the scope of the product being sold.
 
-It is easier to demo the agent than to discuss master data governance, ERP harmonization, duplicate resolution, taxonomy redesign, or ownership accountability.
+It is easier to demo the agent than to discuss master data governance, ERP harmonization, duplicate resolution, taxonomy redesign, or ownership accountability. I have sat through enough of those demos to know which slide never appears.
 
 But underneath almost every successful enterprise AI deployment is a quieter story: somebody spent years cleaning the foundation first.
 

@@ -1,0 +1,131 @@
+---
+import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
+
+// Merged 2026-07-22: /essays and /guides index pages folded into one hub.
+// Only the INDEX pages merged - the two content collections stay separate
+// because guides carry answer/steps/faq frontmatter that generates HowTo and
+// FAQPage structured data (the AI-citation surface) and essays do not.
+// Article URLs are unchanged: /essays/<slug> and /guides/<slug>.
+// /essays and /guides now 301 here (see vercel.json).
+const byFeaturedThenDate = (a, b) => {
+  if (a.data.featured !== b.data.featured) return a.data.featured ? -1 : 1;
+  return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
+};
+
+const allEssays = await getCollection('essays');
+// The Operator Standard is the cornerstone - kept as a dedicated hero card so
+// it does not compete with the dated pieces for the top slot.
+const cornerstone = allEssays.find((e) => e.slug === 'the-operator-standard');
+const essays = allEssays
+  .filter((e) => e.slug !== 'the-operator-standard')
+  .sort(byFeaturedThenDate);
+const guides = (await getCollection('guides')).sort(byFeaturedThenDate);
+
+const collectionSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'CollectionPage',
+  name: 'Writing - Vihren Labs',
+  description:
+    'Operator guides and essays on SAP S/4HANA migration, master data, IT procurement, enterprise transitions, and EU IT regulation (DORA, EU AI Act). Guides answer a question step by step; essays argue a position from the operator seat.',
+  url: 'https://www.vihrenlabs.com/writing',
+};
+---
+
+<Base
+  title="Writing"
+  description="Operator guides and essays on SAP S/4HANA migration, master data, IT procurement, enterprise transitions, and EU IT regulation - DORA, EU AI Act. Written from 15 years inside enterprise IT."
+  schema={collectionSchema}
+>
+  <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->
+  <section class="relative px-6 py-24 sm:py-28 border-b border-white/5 overflow-hidden blueprint-pattern">
+    <div class="absolute inset-0 pointer-events-none" aria-hidden="true">
+      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[500px] rounded-full"
+           style="background: radial-gradient(ellipse at center, rgba(30, 61, 89,0.45) 0%, rgba(8, 14, 20,0) 70%);"></div>
+    </div>
+    <div class="relative max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Guides &amp; essays</span>
+      </div>
+      <h1 class="font-black text-4xl sm:text-5xl leading-[0.98] tracking-tight mb-6">
+        Notes from inside the enterprise IT stack.
+      </h1>
+      <p class="text-white/50 text-lg leading-relaxed">
+        Everything I have written down, in one place. The <span class="text-white/70">guides</span> answer
+        one question step by step - a checklist you can run. The <span class="text-white/70">essays</span> argue
+        a position from the operator seat. Real T-codes, real article numbers, real failure modes. All free to read.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ CORNERSTONE ═══════════════════════════════════════════════════ -->
+  {cornerstone && (
+    <section class="pt-14 px-6">
+      <div class="max-w-4xl mx-auto">
+        <a href={`/essays/${cornerstone.slug}`}
+           class="group block rounded-2xl border border-[#E67E22]/40 bg-[#E67E22]/[0.05] hover:border-[#E67E22]/70 hover:bg-[#E67E22]/[0.08] transition-colors p-7 sm:p-8">
+          <div class="flex items-center gap-3 mb-3 flex-wrap">
+            <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">Start here · the standard</span>
+          </div>
+          <h2 class="font-black text-2xl sm:text-3xl text-white leading-tight mb-3">The Vihren Labs Operator Standard</h2>
+          <p class="text-white/55 text-sm sm:text-base leading-relaxed">Seven principles for running the enterprise IT stack - written from fifteen years in the operator's seat. The standard every product in the catalogue is held to, and the door to the whole catalogue. Free to read.</p>
+          <span class="inline-block mt-4 font-mono text-xs text-[#E67E22] tracking-wider uppercase">Read the standard</span>
+        </a>
+      </div>
+    </section>
+  )}
+
+  <!-- ═══ GUIDES ════════════════════════════════════════════════════════ -->
+  <section class="py-14 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-baseline gap-3 flex-wrap mb-3">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <h2 class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Guides</h2>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{guides.length} live</span>
+      </div>
+      <p class="text-white/40 text-sm leading-relaxed max-w-2xl mb-8">
+        Answer-first. Each one takes a single question an operator actually gets asked, and works
+        through it as a checklist you can run this week.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {guides.map((g) => (
+          <a href={`/guides/${g.slug}`}
+             class="group flex flex-col border border-white/8 rounded-xl p-5 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+            <span class="font-mono text-[10px] text-[#E67E22]/80 tracking-wider uppercase mb-2">{g.data.line}</span>
+            <h3 class="font-bold text-base text-white/90 leading-snug mb-2 group-hover:text-white transition-colors">{g.data.title}</h3>
+            <p class="text-white/40 text-sm leading-relaxed line-clamp-2">{g.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ ESSAYS ════════════════════════════════════════════════════════ -->
+  <section class="pb-20 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="flex items-baseline gap-3 flex-wrap mb-3">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <h2 class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Essays</h2>
+        <span class="font-mono text-[10px] text-white/30 tracking-wider">{essays.length + 1} live</span>
+      </div>
+      <p class="text-white/40 text-sm leading-relaxed max-w-2xl mb-8">
+        Where I argue a position rather than hand you a checklist - what I watched go wrong, and
+        what I think it means.
+      </p>
+      <div class="grid sm:grid-cols-2 gap-3">
+        {essays.map((e) => (
+          <a href={`/essays/${e.slug}`}
+             class="group flex flex-col border border-white/8 rounded-xl p-5 hover:border-[#E67E22]/30 transition-colors bg-white/[0.02]">
+            <div class="flex items-center gap-2.5 mb-2 flex-wrap">
+              <span class="font-mono text-[10px] text-[#E67E22]/80 tracking-wider uppercase">{e.data.line}</span>
+              <span class="font-mono text-[10px] text-white/25 tracking-wider">{e.data.date}</span>
+            </div>
+            <h3 class="font-bold text-base text-white/90 leading-snug mb-2 group-hover:text-white transition-colors">{e.data.title}</h3>
+            <p class="text-white/40 text-sm leading-relaxed line-clamp-2">{e.data.description}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</Base>

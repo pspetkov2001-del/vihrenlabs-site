@@ -8,13 +8,13 @@ answer: "A job description is not a description of the work - it is a document w
 stepsTitle: "The Job Decoder - six questions"
 steps:
   - name: "What does this person actually do all day?"
-    text: "Strip the verbs like 'drive', 'own', and 'lead' and ask what lands in their inbox on a Tuesday. A master-data manager does not 'ensure data integrity' - they decide the rules for what a product or vendor record is and who may change it, and they run the queue of change requests. Describe the day, not the aspiration."
+    text: "Strip the verbs like 'drive', 'own', and 'lead' and ask what lands in their inbox on a Tuesday. A master-data manager does not 'ensure data integrity' - they decide the rules for what a product or vendor record is and who may change it, and they run the queue of change requests. Almost every role looks different on a Tuesday than it did in the posting. Describe the day, not the aspiration."
   - name: "What are they really measured on?"
     text: "Find the one or two numbers that decide whether they are good at it. A buyer is measured on realised savings and the terms they lock, not on 'managing stakeholders'. A planner is measured on forecast accuracy and stockout-versus-excess. If you cannot name the metric, you do not yet understand the role."
   - name: "Who do they work with?"
     text: "Map the real interfaces - the handful of roles they negotiate, hand off to, and depend on. This is where a role's power (or lack of it) lives: a steward who 'works with' the business but cannot make it comply has no authority, whatever the title says."
   - name: "What is the number-one failure mode?"
-    text: "Every role has a characteristic way it goes wrong. The steward named on paper with no time or authority. The buyer who starts at T-30, after the leverage expired. The PMO that reports colour instead of making decisions. Knowing the failure mode tells you what the job is really defending against."
+    text: "Every role has a characteristic way it goes wrong. The steward named on paper with no time or authority. The buyer who starts at T-30, after the leverage expired. The PMO that reports colour instead of making decisions. All three happen to capable people who were set up to lose. Knowing the failure mode tells you what the job is really defending against."
   - name: "What skills actually get the work done?"
     text: "Ignore the certification list and ask what the good people can actually do. For most operations roles it is: go deep in one domain before going wide; write a rule, not just spot a bad record; read a number at the right level of detail; and govern - know who decides. These beat the tool certification almost every time."
   - name: "How do you break in?"
@@ -42,13 +42,13 @@ It is a document written by committee, for three audiences, and none of them is 
 
 - **The applicant-tracking software.** Most large companies filter applications automatically before a human reads them. So the posting is written to match search terms, not to inform a reader. "Stakeholder management, cross-functional alignment, data-driven decision-making" are there to clear a filter.
 - **HR and legal.** "And other duties as assigned" exists so the role can change without rewriting the contract. The generic competencies and compliance hedges are risk management, not description.
-- **The internal pay grade.** Words like "strategic", "senior", and "complex" are often there to justify the band the role sits in. The same task is "execution" at one level and "strategic delivery" at the next.
+- **The internal pay grade.** Words like "strategic", "senior", and "complex" are often there to justify the band the role sits in. The word gets added in the review that sets the band, and nobody in the room pretends otherwise. The same task is "execution" at one level and "strategic delivery" at the next.
 
 And then there is **copy-paste lineage**: most descriptions are forked from an older one nobody rewrote. The role drifted over five years; the posting did not. You are reading an archaeology of what the job used to be.
 
 ## The six questions that decode any role
 
-The fix is to stop reading the prose and start interrogating the role. Six questions do it:
+So I stopped reading the prose and started interrogating the role. Six questions do it:
 
 1. **What does this person do all day?** - the work that actually lands, not the verbs.
 2. **What are they really measured on?** - the one or two numbers that decide if they are good.
@@ -61,7 +61,7 @@ Answer those and you understand the job. The posting answered almost none of the
 
 ## A worked example - "Master Data Manager"
 
-Take a real line from a posting: *"ensure data integrity across enterprise systems and drive governance initiatives."*
+This is the role I have decoded most often, for candidates and for the managers hiring them. Take a real line from a posting: *"ensure data integrity across enterprise systems and drive governance initiatives."*
 
 Decoded:
 
@@ -76,7 +76,7 @@ None of that was in the posting. All of it is the job.
 
 ## If you are the one writing the description
 
-Answer the same six questions in plain words. You will get fewer applicants who matched keywords and more who can actually do the work - which is the entire point of writing the thing.
+Answer the same six questions in plain words. I have written the keyword version, and it does exactly what it is built to do: it fills the pipeline with people who match every term in the posting and cannot clear the queue in week three. You will get fewer applicants who matched keywords and more who can actually do the work - which is the entire point of writing the thing.
 
 ---
 

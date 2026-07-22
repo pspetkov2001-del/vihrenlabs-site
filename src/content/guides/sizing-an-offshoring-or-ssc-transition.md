@@ -12,9 +12,9 @@ steps:
   - name: "Apply the ramp uplift - and fund it"
     text: "A team three months into a new process is not as fast as one with five years on it. Apply a ramp-inefficiency uplift (commonly +15% in year one, set from your own evidence): 20 × 1.15 = 23 FTE. Budget the 23; promise the board the 20 at maturity, not on day one. Staffing the steady-state number from day one is how a new centre earns a bad reputation in its first quarter."
   - name: "Choose the transition model deliberately"
-    text: "Four models: lift-and-shift (move as-is, improve later - lowest transfer risk); lift-transform-shift (redesign then move - double the risk); build-operate-transfer (a partner runs it, then hands over); and phased/hybrid (lift-and-shift first, transform once stable). Default to phased/hybrid. The most common self-inflicted wound is choosing lift-transform-shift by accident - changing the process and the team at the same time."
+    text: "Four models: lift-and-shift (move as-is, improve later - lowest transfer risk); lift-transform-shift (redesign then move - double the risk); build-operate-transfer (a partner runs it, then hands over); and phased/hybrid (lift-and-shift first, transform once stable). Default to phased/hybrid. The most common self-inflicted wound is choosing lift-transform-shift by accident - changing the process and the team at the same time. Nobody writes that choice in the plan; it arrives as a handful of sensible improvements agreed during discovery, and then no failure can be traced back to a single cause."
   - name: "Run knowledge transfer in four evidence-gated steps"
-    text: "KT runs per process in four steps: discovery (document the real process), shadowing (the learner watches), reverse-shadowing (the learner does it, the expert corrects), and independent (the learner works unsupervised, spot-checked). Advance a process on evidence - the work is right - not on a calendar date. The expensive shortcut is marking KT 'complete' on the plan date while the learner still needs the expert, who then leaves."
+    text: "KT runs per process in four steps: discovery (document the real process), shadowing (the learner watches), reverse-shadowing (the learner does it, the expert corrects), and independent (the learner works unsupervised, spot-checked). Advance a process on evidence - the work is right - not on a calendar date. The expensive shortcut is marking KT 'complete' on the plan date while the learner still needs the expert, who then leaves. A green KT tracker is a claim about a date, not about whether anyone can do the work on Monday."
   - name: "Budget the dual-running window"
     text: "While the source team ramps down and the target ramps up, you pay for both. Model that peak cost week by week, and set explicit decommission criteria - 'old system off when X, Y, Z are green for two periods' - not 'until we're comfortable.' A window with no exit criteria never closes, and the run-cost saving the business case depends on never arrives."
   - name: "Define done as BAU exit criteria, not go-live"
@@ -36,9 +36,9 @@ featured: false
 
 ## Most transitions are sized with optimism, not arithmetic
 
-I have run shared-service and offshoring transitions, and the most common, most expensive mistake is made before the work even starts: the target team is sized to the source team's *mature* productivity. The new team is then understaffed for its first six months - exactly when quality matters most and the centre's reputation is being set.
+I have run shared-service and offshoring transitions, and the most common, most expensive mistake is made before a single process moves: the target team is sized to the source team's *mature* productivity. It happens in a business case, in a spreadsheet, months before anyone has been hired - and by the time it hurts, the number has been signed off twice and nobody wants to reopen it. The new team is then understaffed for its first six months - exactly when quality matters most and the centre's reputation is being set.
 
-The fix is arithmetic.
+The fix is not more governance. The fix is arithmetic.
 
 ## The FTE math, worked
 
@@ -49,12 +49,12 @@ The fix is arithmetic.
 - **Base FTE** = 240,000 ÷ 12,000 = **20**.
 - **Ramp uplift, year one (+15%):** 20 × 1.15 = **23**.
 
-The two numbers do different jobs. The **20** is your steady-state target - the basis for the run-cost saving you promise the board. The **23** is what you actually staff and fund in year one, because a team three months in is not as fast as one with five years on the process. **Budget the 23; promise the 20 at maturity.** Staffing the 20 from day one is how a new centre builds a backlog and a bad reputation in its first quarter.
+The two numbers do different jobs. The **20** is your steady-state target - the basis for the run-cost saving you promise the board. The **23** is what you actually staff and fund in year one, because a team three months in is not as fast as one with five years on the process. **Budget the 23; promise the 20 at maturity.** What I have seen instead is a business case that carries only the 20, because the 20 is the number that made the saving look good in the approval meeting. Staffing the 20 from day one is how a new centre builds a backlog and a bad reputation in its first quarter.
 
 ## The two traps after the maths
 
-- **Dual-running.** While the source ramps down and the target ramps up, you pay for both. Model that peak, and set explicit decommission criteria - not "until we're comfortable." A window with no exit never closes.
-- **Declaring victory at go-live.** A transition is done when each process meets its **BAU exit criteria** - SLA, error rate, backlog, escalation - not on the cutover date. Go-live is the start of stabilisation, not the end of the transition.
+- **Dual-running.** While the source ramps down and the target ramps up, you pay for both. Model that peak week by week, and set explicit decommission criteria - not "until we're comfortable." A window like that can stay open for the better part of a year, because nobody wrote down what would close it, and every month the answer to "can we switch the old one off?" is another month. A window with no exit never closes.
+- **Declaring victory at go-live.** A transition is done when each process meets its **BAU exit criteria** - SLA, error rate, backlog, escalation - not on the cutover date. The cutover celebration is the easiest thing in the whole programme to schedule and the least informative thing in it. Go-live is the start of stabilisation, not the end of the transition.
 
 Get the maths honest, fund the ramp, and run knowledge transfer on evidence rather than a calendar, and the transition lands stable instead of on time and broken.
 

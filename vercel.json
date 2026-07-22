@@ -22,6 +22,16 @@
       "permanent": true
     },
     {
+      "source": "/essays",
+      "destination": "/writing",
+      "permanent": true
+    },
+    {
+      "source": "/guides",
+      "destination": "/writing",
+      "permanent": true
+    },
+    {
       "source": "/essays/cutover-window-decision",
       "destination": "/essays/ecc-end-of-maintenance-math",
       "permanent": true

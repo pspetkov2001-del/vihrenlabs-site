@@ -35,13 +35,15 @@ ctaSub: "The done-for-you version: an AI system inventory, a risk-classification
 
 ## Why readiness is a documentation problem, not a legal one
 
-The operator who treats the EU AI Act as a legal function will pay specialist hourly rates to produce templates that should have cost a fraction to build internally. The operator who treats it as a documentation function - build the inventory, classify the systems, publish the disclosures, keep the evidence - produces something a supervisor can open on a laptop and walk through in thirty minutes.
+The common SME reflex is to hand the whole EU AI Act question to outside counsel, and what comes back is often a memo restating the Regulation plus a template its own people could have drafted in an afternoon. The operator who treats the Act as a legal function pays specialist hourly rates for exactly that. The operator who treats it as a documentation function - build the inventory, classify the systems, publish the disclosures, keep the evidence - produces something a supervisor can open on a laptop and walk through in thirty minutes. One of those two is ready. The other has an invoice.
 
-Counsel is for interpretation: the genuinely ambiguous Annex III edge cases, the novel situations specific to your business. Counsel is not for formatting an Article 50 disclosure for a website chatbot. Conflating the two means you pay too much and move too slowly - and the enforcement deadline does not move to accommodate a slow legal queue.
+Counsel is for interpretation: the genuinely ambiguous Annex III edge cases, the novel situations specific to your business. Counsel is not for formatting an Article 50 disclosure for a website chatbot. That is a writing job with a legal constraint on it, and the person who owns the website can do it. Conflating the two means you pay too much and move too slowly - and the enforcement deadline does not move to accommodate a slow legal queue.
 
 ## The inventory is the keystone
 
 Everything downstream depends on the inventory. You cannot classify a system you have not listed, you cannot meet transparency duties for a chatbot you forgot was AI, and you cannot evidence anything without knowing what is in scope. Start there - including the AI quietly embedded in SaaS tools you already pay for, which is where most "we didn't realise that counted" gaps live.
+
+Every first-pass inventory I have sat through came back short, and it was never the obvious model that was missing. It was the summarisation feature switched on inside a helpdesk tool during an upgrade, or the candidate-ranking toggle someone in HR enabled because the vendor put it there. An inventory assembled only from what procurement knowingly bought is not an inventory. Ask the system owners what their tools do now, not what the contract said they did.
 
 The shift underneath all of this - from document-based compliance to a governance-maturity assessment - is the subject of the essay [What supervisory authorities actually look for in DORA and EU AI Act compliance](/essays/dora-ict-register-completeness).
 

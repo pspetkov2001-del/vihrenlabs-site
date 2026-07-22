@@ -12,15 +12,15 @@ None of them are about being a worse negotiator. They're about starting from the
 
 ## Mistake 1 - the renewal conversation starts at T-30
 
-At 30 days before renewal you are a retention problem, not a competitive threat. By then the vendor's account team already has a read on your likelihood of switching - from adoption data, support-ticket volume, and whatever the account manager picked up in quarterly reviews. You're negotiating on their timeline, with their pricing logic, against your own urgency.
+At 30 days before renewal you are a retention problem, not a competitive threat. By then the vendor's account team already has a read on your likelihood of switching - from adoption data, support-ticket volume, and whatever the account manager picked up in quarterly reviews. I watched that read get built months before the buyer had even put the renewal on a calendar. You're negotiating on their timeline, with their pricing logic, against your own urgency. A conversation you open at T-30 is a conversation the vendor has already had without you.
 
-The leverage window is **T-90**. Not earlier - at T-180 the conversation is too theoretical to move anyone. Not later - at T-45 your leverage is already gone. At T-90 you open the conversation with a credible signal that you're evaluating alternatives, and you still have time to make that signal real.
+The leverage window is **T-90**. Not earlier - at T-180 the conversation is too theoretical to move anyone. Not later - at T-45 your leverage is already gone. At T-90 you open the conversation with a credible signal that you're evaluating alternatives, and you still have time to make that signal real. A signal you can't afford to act on is not leverage, and the account team can tell the difference.
 
-There's a second timing lever most buyers ignore: the vendor's fiscal calendar. Account teams carry quarterly and annual quota. A renewal that closes in the last two weeks of the vendor's quarter is worth materially more to that rep than the same renewal a month later - and that difference shows up as flexibility. You don't have to disclose that you know their year-end. You just schedule your decision window to land on it.
+There's a second timing lever most buyers ignore: the vendor's fiscal calendar. Account teams carry quarterly and annual quota, and I spent my quarter-ends on the other end of those calls, watching what a rep would give up to land a deal before the number closed. A renewal that closes in the last two weeks of the vendor's quarter is worth materially more to that rep than the same renewal a month later - and that difference shows up as flexibility. You don't have to disclose that you know their year-end. You just schedule your decision window to land on it.
 
 ## Mistake 2 - negotiating on price instead of contract terms
 
-A 10% price discount feels like a win. Over a three-year contract it might be worth €15,000. Meanwhile an uncapped auto-renewal escalation clause at 8% a year on the same contract quietly costs you €40,000+ over the same period - and you signed it without a second look because all your energy went into the headline discount.
+A 10% price discount feels like a win. Over a three-year contract it might be worth €15,000. Meanwhile an uncapped auto-renewal escalation clause at 8% a year on the same contract quietly costs you €40,000+ over the same period - and you signed it without a second look because all your energy went into the headline discount. I watched buyers spend weeks on the number on the front page and minutes on the clause that takes it back in year two.
 
 The real value in a renewal is in the clauses, not the number:
 
@@ -29,7 +29,7 @@ The real value in a renewal is in the clauses, not the number:
 - **Auto-renewal notice window** - 30 days is standard; 60-90 is a trap. Miss the window by a day and you're committed for another full term.
 - **Audit rights** - unlimited frequency and scope is operational risk. Negotiate to once per term, 30 days' notice, scoped to the product.
 
-Each of these is worth more over the term than the discount, and each is invisible on the quote. The buyers who get the best outcomes spend their energy here.
+Each of these is worth more over the term than the discount, and each is invisible on the quote. The buyers who got the best outcomes out of me spent their energy here. A discount is a one-time win; a clause is a win that renews itself.
 
 ## Mistake 3 - not knowing what the distribution layer knows
 
@@ -40,10 +40,10 @@ If your vendor sells through a distributor or reseller - and for most enterprise
 - **The rebate stack** - growth, category, and certification rebates can reach 15-25% of the reseller's cost of goods. That backend compensation is their margin; a large, predictable, growing buyer can negotiate part of it back.
 - **Deal registration** - if a reseller has registered your opportunity, they bid at a protected floor the others can't reach. Your "competitive" RFP can be theatre. Call the vendor's account team directly and ask whether your account is registered. You're entitled to know.
 
-You won't get any of this unless you ask for it specifically, from someone with enough relationship in the channel to surface it. Most buyers never ask, because they don't know the questions exist.
+You won't get any of this unless you ask for it specifically, from someone with enough relationship in the channel to surface it. Almost nobody asked me these questions directly. Most buyers never ask, because they don't know the questions exist.
 
 ## What good actually looks like
 
 The organisations with the best IT procurement outcomes are not the ones with the biggest legal teams. They're the ones who start at T-90 not T-30, who spend their negotiating energy on the clauses instead of the discount, and who treat the distribution channel as an intelligence source rather than an invoice line.
 
-None of it is exotic. It's discipline applied early, against a calendar you control - which is exactly the kind of thing that's easy to know and hard to do consistently across an estate of twenty-plus vendors. That's the gap a structured renewal cadence and a TCO model close, and it's why I packaged the method into the [Procurement & Vendor Management line](/products) - the playbook from inside the channel, and the workbook that runs the numbers.
+None of it is exotic. It's discipline applied early, against a calendar you control - which is exactly the kind of thing that's easy to know and hard to do consistently across an estate of twenty-plus vendors. That's the gap a structured renewal cadence and a TCO model close, and it's why I packaged what I saw from the vendor side into the [Procurement & Vendor Management line](/products): [the playbook from inside the channel](/products/vendor-side-it-procurement-the-playbook), and [the workbook that runs the numbers](/products/it-vendor-and-saas-procurement-tco).
