@@ -426,6 +426,14 @@ export const products: Product[] = [
     lastUpdated: '2026-06-07',
     changelog: 'Playbook expanded to a 15-page operating handbook - a maturity self-check, the 6R disposition with a worked split + reading-the-mix, the landing zone, security/residency, wave sequencing, a worked TCO with the run-cost trap + hidden costs, big-bang/phased/strangler approaches, data-migration validation, two worked examples (wave-1 + the ERP cluster), FinOps, when-cloud-is-wrong, roles, a 90-day plan, and a glossary + templates.',
   },
+  {
+    line: 'transformation', tier: 'bundle',
+    tag: 'Operator pack',
+    name: 'Transformation Operator\'s Pack',
+    sub: 'The whole Transformation line in one purchase - transition delivery, the ERP modernisation business case, process automation, org change, PMO, target operating model and cloud migration. Seven toolkits, $673 bought separately.',
+    price: '$399', team: '$799',
+    url: 'https://vihrenlabs.gumroad.com/l/setial',
+  },
 ];
 
 // Free items — paired on the site for visual clarity. Renders in its own
