@@ -143,7 +143,7 @@ const credentials = [
           {products.length} products live now on Gumroad
         </a>
         <a
-          href="/paths"
+          href="/products"
           class="inline-flex items-center justify-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-mono text-xs uppercase tracking-widest px-8 py-4 rounded-lg transition-colors"
         >
           Start here
@@ -257,18 +257,19 @@ const credentials = [
       </p>
 
       <div class="grid md:grid-cols-3 gap-4">
-        <!-- Rung 1 — Free guided path (repointed to /paths 2026-07-11 — the
-             Operator Standard now lives in the cornerstone banner below, so this
-             rung wires in the guided front door instead of twinning it) -->
-        <a href="/paths"
+        <!-- Rung 1 — Free downloads. Repointed to /free 2026-07-22: /paths was
+             merged into /products, and rung 2 already goes there, so pointing
+             this rung at /products too would give the ladder two identical
+             destinations. /free is the actual $0 tier. -->
+        <a href="/free"
            class="group flex flex-col p-7 rounded-2xl border border-white/5 bg-white/[0.02] card-hover">
           <div class="flex items-center justify-between mb-5">
             <span class="font-mono text-[10px] text-[#E67E22] border border-[#E67E22]/40 bg-[#E67E22]/10 px-2 py-0.5 rounded tracking-wider uppercase">Start free</span>
             <span class="font-black text-2xl text-white/80">$0</span>
           </div>
           <h3 class="font-bold text-xl text-white/85 leading-snug mb-2">Find your starting point</h3>
-          <p class="text-white/45 text-sm leading-relaxed flex-1">A guided path for each line - a free entry point, then the exact tool for the problem on your desk. No email, no purchase.</p>
-          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the learning paths</span>
+          <p class="text-white/45 text-sm leading-relaxed flex-1">Free downloads to see the operator voice before paying for anything - the readiness assessment, the manifesto, the cutover comms templates. No purchase.</p>
+          <span class="inline-block mt-5 font-mono text-[11px] text-[#E67E22] tracking-wider uppercase">See the free downloads</span>
         </a>
 
         <!-- Rung 2 — Own one tool (entry purchase; orange-emphasised) -->
@@ -375,12 +376,10 @@ const credentials = [
         </div>
       </a>
 
-      <!-- ── Light pointers — guided paths + free cheat sheets ── -->
+      <!-- ── Light pointer — free cheat sheets. The "find your path" pointer was
+           dropped 2026-07-22: /paths merged into /products, which the "View full
+           catalogue" button directly above already links to. ── -->
       <div class="flex flex-wrap items-center gap-x-8 gap-y-3 mt-8">
-        <a href="/paths" class="inline-flex items-center gap-2 font-mono text-xs text-white/50 hover:text-[#E67E22] tracking-wider uppercase transition-colors">
-          <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
-          Not sure where to start? Find your path
-        </a>
         <a href="/cheat-sheets" class="inline-flex items-center gap-2 font-mono text-xs text-white/50 hover:text-[#E67E22] tracking-wider uppercase transition-colors">
           <span class="w-1.5 h-1.5 rounded-full bg-[#E67E22] flex-shrink-0"></span>
           Free: the AI-Ready Operations cheat sheets

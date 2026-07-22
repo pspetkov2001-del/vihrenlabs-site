@@ -17,6 +17,11 @@
       "permanent": true
     },
     {
+      "source": "/paths",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
       "source": "/essays/cutover-window-decision",
       "destination": "/essays/ecc-end-of-maintenance-math",
       "permanent": true
