@@ -1,6 +1,15 @@
 ---
 import Base from '../layouts/Base.astro';
-import { products, freeItems } from '../data/products';
+import { products, freeItems, lineGroups } from '../data/products';
+
+// Derived, never hard-coded - see the same note in index.astro. Four places on
+// this page carried the count and drifted after the 2026-07-22 line fold.
+const lineCount = lineGroups.length;
+const NUMBER_WORD: Record<number, string> = {
+  4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine', 10: 'Ten',
+};
+const lineCountWord = NUMBER_WORD[lineCount] ?? String(lineCount);
+const lineCountWordLower = lineCountWord.toLowerCase();
 
 const clusters = [
   {
@@ -33,7 +42,7 @@ const clusters = [
       'Turning manual product & SKU creation into AI-driven, rules-based, governed automation that holds at scale',
       'The catalogue pipeline pattern: ingestion - standardisation - enrichment - attribute rules - dynamic SKU creation - touchless quoting',
       'Operating model end to end - data owners, stewards, decision rights, controls - with agile delivery and engineering partnership',
-      `Shipped the Vihren Labs catalogue alongside the day job - ${products.length} paid products + ${freeItems.length} free, across 6 lines`,
+      `Shipped the Vihren Labs catalogue alongside the day job - ${products.length} paid products + ${freeItems.length} free, across ${lineGroups.length} lines`,
     ],
   },
 ];
@@ -82,7 +91,7 @@ const lines = [
           Fifteen years inside enterprise IT - and on both sides of every deal. Ran SSC/GBS transitions across multiple European countries when shared-services consolidation was hitting its second peak. Ran finance workflows when SOX was teeth-on-the-floor. Sat on the vendor-distribution side of EMEA reporting across the world's largest hardware and software vendors.
         </p>
         <p class="text-white/35 text-sm leading-relaxed max-w-lg mb-10">
-          More recently, leading enterprise master-data transformation - turning manual product and SKU creation into an automated, rules-based, governed pipeline, from vendor-catalogue ingestion through to touchless quoting and ordering. Vihren Labs is the catalogue of what that arc - operator to vendor to distributor - actually taught me: {products.length} paid products plus {freeItems.length} free downloads, across six product lines, written from the third seat of every deal.
+          More recently, leading enterprise master-data transformation - turning manual product and SKU creation into an automated, rules-based, governed pipeline, from vendor-catalogue ingestion through to touchless quoting and ordering. Vihren Labs is the catalogue of what that arc - operator to vendor to distributor - actually taught me: {products.length} paid products plus {freeItems.length} free downloads, across {lineCountWordLower} product lines, written from the third seat of every deal.
         </p>
         <div class="flex flex-wrap gap-3 mb-10">
           <a
@@ -179,7 +188,7 @@ const lines = [
     <div class="max-w-6xl mx-auto">
       <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
       <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-4">
-        Six product lines.<br />
+        {lineCountWord} product lines.<br />
         <span class="text-white/30">Fifteen years, packaged.</span>
       </h2>
       <p class="text-white/40 text-base leading-relaxed max-w-2xl mb-12">
@@ -198,7 +207,7 @@ const lines = [
 
       <div class="mt-12">
         <a href="/products" class="inline-flex items-center gap-2 text-[#E67E22] font-medium text-sm hover:gap-4 transition-all">
-          Browse all seven lines
+          Browse all {lineCountWordLower} lines
         </a>
       </div>
     </div>

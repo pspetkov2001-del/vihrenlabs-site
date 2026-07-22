@@ -54,7 +54,18 @@ const ticker = [
 // Product catalog data imported from the canonical source — see
 // src/data/products.ts. Landing page renders only courses + free items +
 // a CTA to /products. Full catalog (line-grouped) lives on /products.
-import { products, freeItems } from '../data/products';
+import { products, freeItems, lineGroups } from '../data/products';
+
+// Line counts are DERIVED, never hard-coded. Three separate places on this page
+// (hero eyebrow, hero stat, catalogue headline) drifted to "7" after the
+// programme-delivery line was folded in on 2026-07-22 and had to be chased down
+// one at a time. Deriving them means the next line change cannot leave stale
+// copy on the highest-traffic page.
+const lineCount = lineGroups.length;
+const NUMBER_WORD: Record<number, string> = {
+  4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine', 10: 'Ten',
+};
+const lineCountWord = NUMBER_WORD[lineCount] ?? String(lineCount);
 
 // Credential chips for the landing bio block. A tighter subset of the /about
 // list — the language and legal-entity chips stay on /about so this section
@@ -109,7 +120,7 @@ const credentials = [
 
       <!-- Value prop eyebrow — tells cold visitors what this IS before the headline -->
       <p class="fade-up fade-up-delay-2 font-mono text-[#E67E22] text-sm tracking-[0.18em] uppercase mb-4">
-        6 product lines · Procurement · SAP · Master Data · AI Governance · SSC/GBS · Regulatory
+        {lineCount} product lines · Procurement · SAP · Master Data · AI Governance · SSC/GBS · Regulatory
       </p>
 
       <!-- Main headline -->
@@ -153,7 +164,7 @@ const credentials = [
       <div class="mt-20 pt-10 border-t border-white/5 flex flex-wrap gap-16">
         {[
           { n: '15', label: 'Years in enterprise IT' },
-          { n: '7', label: 'Product lines' },
+          { n: String(lineCount), label: 'Product lines' },
         ].map(s => (
           <div>
             <div class="font-black text-3xl text-[#E67E22]">{s.n}</div>
@@ -265,9 +276,9 @@ const credentials = [
   </section>
 
   <!-- ═══ THE CATALOGUE (Product Lines + Available Now merged 2026-07-11) ══
-       Was two sections — a 7-line card grid and an Available-now block with two
-       stacked orange banners. Condensed: the seven lines now live on /products
-       and /paths, so this is one routing block — the "seven clusters" headline,
+       Was two sections — a line card grid and an Available-now block with two
+       stacked orange banners. Condensed: the six lines now live on /products
+       (/paths was merged into it 2026-07-22), so this is one routing block,
        one catalogue banner (Master Data Academy woven in as the live highlight),
        and light /paths + /cheat-sheets pointers. ════════════════════════════ -->
   <section class="py-28 px-6 border-t border-white/5">
@@ -275,7 +286,7 @@ const credentials = [
       <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
         <div>
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
-          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Seven expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
+          <h2 class="font-black text-4xl sm:text-5xl leading-tight">{lineCountWord} expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
           <p class="text-white/40 text-sm max-w-2xl mt-5 leading-relaxed">
             {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads - grouped by product line on a dedicated page.
           </p>
@@ -297,7 +308,7 @@ const credentials = [
               <span class="font-mono text-[10px] text-white/40 tracking-wider">{products.length + freeItems.length} items live</span>
             </div>
             <h3 class="font-bold text-2xl text-white/90 leading-snug mb-3">
-              All courses, toolkits and bundles - across seven lines, in one place.
+              All courses, toolkits and bundles - across six lines, in one place.
             </h3>
             <p class="text-white/50 text-sm leading-relaxed">
               Procurement & Vendor Management · SAP / ERP Operations · Master Data Operations · AI Adoption & Governance · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">The 3-course Master Data Academy - Product · Customer · Vendor - is live now.</strong>
