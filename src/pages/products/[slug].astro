@@ -13,7 +13,14 @@ export function getStaticPaths() {
 
 const { product } = Astro.props;
 const line = lineBySlug[product.line];
-const canonical = `https://www.vihrenlabs.com/products/${productSlug(product.name)}`;
+const slug = productSlug(product.name);
+const canonical = `https://www.vihrenlabs.com/products/${slug}`;
+// Plausible custom-event outbound tracking for the Gumroad buy link (measurement
+// instrumentation - see docs/SURFACES.md). Base.astro loads the plain script.js
+// (no "outbound-links" extension), so the manual plausible() custom-event API is
+// the correct pattern here, not the automatic class-based one. Guarded so a
+// missing/blocked Plausible script never breaks the click-through.
+const gumroadClickHandler = `window.plausible && window.plausible('Outbound Link: Gumroad', { props: { product: '${slug}' } });`;
 
 // The next step up the value ladder — powers the cross-sell / "pay more" CTA.
 const nextStep = ladderNext(product);
@@ -108,6 +115,7 @@ const faqJsonLd = faqSchema(faqs);
       </div>
 
       <a href={product.url} target="_blank" rel="noopener noreferrer"
+         onclick={gumroadClickHandler}
          class="inline-flex items-center justify-center gap-2 bg-[#E67E22] hover:bg-[#CA6F1E] text-white font-mono text-sm font-bold uppercase tracking-widest px-8 py-4 rounded-lg transition-colors glow-btn">
         Get it on Gumroad
       </a>

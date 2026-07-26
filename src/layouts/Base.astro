@@ -55,9 +55,17 @@ const pageTitle = isHome
     <Schema extra={schema} />
 
     <!-- Plausible analytics (privacy-first, per BRAND-ENTERPRISE-IT-OPERATOR.md).
-         Activates once the vihrenlabs.com site is created in Plausible (founder-action).
-         No-op until then; safe to ship. -->
-    <script defer data-domain="vihrenlabs.com" src="https://plausible.io/js/script.js"></script>
+         data-domain MUST match the domain the site is registered under in Plausible.
+         astro.config.mjs declares the canonical site as https://www.vihrenlabs.com
+         (the www host - vercel.json 301s the bare apex to www, so no pageview is ever
+         served from the apex). Previously this was set to the apex "vihrenlabs.com",
+         which would only match a Plausible site registered as the apex - silently
+         dropping every event if the site is (or gets) registered as www.vihrenlabs.com.
+         Fixed 2026-07-26 to track the actual canonical host.
+         Founder action still required (manual, outside this repo): confirm
+         www.vihrenlabs.com exists as a site in the Plausible dashboard - this script
+         is a no-op until that site exists, but is safe to ship either way. -->
+    <script defer data-domain="www.vihrenlabs.com" src="https://plausible.io/js/script.js"></script>
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />

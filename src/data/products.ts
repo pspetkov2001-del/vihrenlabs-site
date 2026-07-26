@@ -57,6 +57,12 @@ export interface LineGroup {
   slug: LineSlug;
   title: string;
   sub: string;
+  // Front-door narrowing (2026-07): the two categories actively marketed as
+  // the front door - Master Data Operations and AI Adoption & Governance
+  // ("AI-Ready Operations"). The other four lines stay fully published and
+  // purchasable, just presented as adjacent/subordinate feeders. Nothing is
+  // hidden, unpublished or removed - this only drives display grouping/order.
+  primary: boolean;
 }
 
 export const products: Product[] = [
@@ -145,6 +151,12 @@ export const products: Product[] = [
     sub: 'IT Vendor TCO + Procurement Playbook + bundle-exclusive Renewal Negotiation Cheat-Sheet. The full IT-procurement operator kit.',
     price: '$69', team: '$129',
     url: 'https://vihrenlabs.gumroad.com/l/lhigyh',
+    // Front-door narrowing (2026-07): top of the Procurement ladder had no
+    // in-line course to climb to, so it dead-ended. Redirect the tail into
+    // the AI Adoption & Governance front door instead - procurement buyers
+    // are already doing vendor TCO/evaluation work, which is exactly what
+    // the AI Vendor Evaluation & TCO Workbook inside that pack extends.
+    next: "AI Adoption & Governance Operator's Pack",
   },
 
   // ─── (was PROGRAMME DELIVERY & ENTERPRISE IT PMO) ───────────────────
@@ -199,6 +211,12 @@ export const products: Product[] = [
     sub: 'The complete SAP S/4HANA migration kit - cutover workbook + playbook ebook + comms templates. The bundle a real cutover needs.',
     price: '$129', team: '$249',
     url: 'https://vihrenlabs.gumroad.com/l/yjebue',
+    // Front-door narrowing (2026-07): top of the SAP ladder had no in-line
+    // course to climb to, so it dead-ended. Redirect the tail into the
+    // Master Data Operations front door instead - a cutover is only as
+    // clean as the master data behind it, so this is the natural next step,
+    // not a bolted-on cross-sell.
+    next: "Master Data Operator's Pack",
   },
 
   // ─── MASTER DATA OPERATIONS ────────────────────────────────────────
@@ -462,38 +480,48 @@ export const freeItems: FreeItem[] = [
   },
 ];
 
-// Line metadata — display order follows hero eyebrow ordering. To add a new
-// line: append here AND tag the relevant products.line above.
+// Line metadata — display order drives rendering order on /products and
+// /lines/[slug] (each row/section iterates lineGroups in this order). Front-
+// door narrowing (2026-07): the two `primary: true` lines lead the order;
+// the other four stay fully published and purchasable as subordinate
+// feeders, not hidden. To add a new line: append here AND tag the relevant
+// products.line above.
 export const lineGroups: LineGroup[] = [
-  {
-    slug: 'procurement',
-    title: 'Procurement & Vendor Management',
-    sub: 'Procurement-side IT operations - vendor TCO, contract leverage, the discount stack. From the distributor side of the table.',
-  },
-  {
-    slug: 'sap',
-    title: 'SAP / ERP Operations',
-    sub: 'S/4HANA migration governance, cutover discipline, the operator stack for the December 2027 ECC end-of-maintenance deadline.',
-  },
   {
     slug: 'master-data',
     title: 'Master Data Operations',
     sub: 'The full Master Data Academy - three operator courses (Product & SKU, Customer, and Vendor master data) plus 3 standalone toolkits and the operator bundle.',
+    primary: true,
   },
   {
     slug: 'ai-governance',
     title: 'AI Adoption & Governance',
     sub: 'The operator layer for putting AI agents into production - data and process readiness, an AI governance register, an agents-in-production tracker, and AI vendor TCO. Govern the agent, don\'t just buy it.',
+    primary: true,
+  },
+  {
+    slug: 'procurement',
+    title: 'Procurement & Vendor Management',
+    sub: 'Procurement-side IT operations - vendor TCO, contract leverage, the discount stack. From the distributor side of the table.',
+    primary: false,
+  },
+  {
+    slug: 'sap',
+    title: 'SAP / ERP Operations',
+    sub: 'S/4HANA migration governance, cutover discipline, the operator stack for the December 2027 ECC end-of-maintenance deadline.',
+    primary: false,
   },
   {
     slug: 'transformation',
     title: 'Transformation & SSC/GBS',
     sub: 'Offshoring, GBS rollouts, and BPO transitions - from kickoff to BAU exit, plus the pre-implementation decisions that come before them. A full operator course and seven standalone toolkits - transition delivery, process automation, org change, PMO, target operating model, cloud migration and the ERP modernisation business case.',
+    primary: false,
   },
   {
     slug: 'regulatory',
     title: 'Regulatory & Compliance',
     sub: 'Operator-first EU regulatory compliance - currently the EU AI Act SME compliance starter, built operator-first, not legal-first.',
+    primary: false,
   },
 ];
 

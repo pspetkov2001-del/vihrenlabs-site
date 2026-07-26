@@ -65,7 +65,20 @@ const WELCOME_HTML = `<!DOCTYPE html>
 </body>
 </html>`;
 
-async function subscribeViaBeehiiv(email, apiKey, publicationId) {
+// Optional line/source dimension so a subscribe can be attributed to the
+// originating product line (e.g. a future signup form on /lines/master-data
+// passing line: 'master-data'). Sanitized to a short lowercase slug so it is
+// safe to forward to Beehiiv as a UTM value regardless of what a caller sends;
+// callers that omit it (all current callers) get the previous, unchanged
+// behaviour via DEFAULT_LINE.
+const DEFAULT_LINE = 'general';
+const LINE_PATTERN = /^[a-z0-9-]{1,40}$/;
+function sanitizeLine(raw) {
+  const val = (raw ?? '').toString().trim().toLowerCase();
+  return LINE_PATTERN.test(val) ? val : DEFAULT_LINE;
+}
+
+async function subscribeViaBeehiiv(email, apiKey, publicationId, line) {
   // Beehiiv Subscriptions API — https://developers.beehiiv.com/api-reference/subscriptions/create
   // Creates OR reactivates; welcome email + welcome sequence W1 (which links the PDF)
   // are configured in the Beehiiv UI per docs/beehiiv-setup-spec.md.
@@ -84,6 +97,9 @@ async function subscribeViaBeehiiv(email, apiKey, publicationId) {
         utm_source: 'vihrenlabs.com',
         utm_medium: 'landing-page',
         utm_campaign: 'operator-standard-leadmagnet',
+        // Line/source dimension - which product line (or 'general') the
+        // subscribe originated from. See sanitizeLine() above.
+        utm_content: line,
       }),
     }
   );
@@ -139,6 +155,10 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Please enter a valid email address.' });
   }
 
+  // Optional: which product line this subscribe came from. Unrecognised/absent
+  // values fall back to 'general' - see sanitizeLine().
+  const line = sanitizeLine(body?.line);
+
   const beehiivKey = process.env.BEEHIIV_API_KEY;
   const beehiivPub = process.env.BEEHIIV_PUBLICATION_ID;
   const resendKey = process.env.RESEND_API_KEY;
@@ -146,7 +166,7 @@ export default async function handler(req, res) {
   try {
     // Provider priority: Beehiiv (canonical) → Resend (legacy) → silent succeed.
     if (beehiivKey && beehiivPub) {
-      await subscribeViaBeehiiv(email, beehiivKey, beehiivPub);
+      await subscribeViaBeehiiv(email, beehiivKey, beehiivPub, line);
       return res.status(200).json({ success: true, provider: 'beehiiv' });
     }
 

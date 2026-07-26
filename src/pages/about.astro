@@ -2,14 +2,11 @@
 import Base from '../layouts/Base.astro';
 import { products, freeItems, lineGroups } from '../data/products';
 
-// Derived, never hard-coded - see the same note in index.astro. Four places on
-// this page carried the count and drifted after the 2026-07-22 line fold.
-const lineCount = lineGroups.length;
-const NUMBER_WORD: Record<number, string> = {
-  4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine', 10: 'Ten',
-};
-const lineCountWord = NUMBER_WORD[lineCount] ?? String(lineCount);
-const lineCountWordLower = lineCountWord.toLowerCase();
+// This page no longer states a product-line COUNT - see the same note in
+// index.astro. Four places here carried the count and drifted after the
+// 2026-07-22 line fold; D-060 (2026-07-26) replaced them with the two
+// front-door category names, so there is no number left to drift. If a count
+// ever returns to this page, derive it from lineGroups - never hard-code it.
 
 const clusters = [
   {
@@ -57,14 +54,21 @@ const credentials = [
   'Vihren Labs Ltd.',
 ];
 
-const lines = [
-  { name: 'Procurement & Vendor Management', sub: 'TCO, renewals, RFPs', color: '#2980B9' },
-  { name: 'SAP / ERP Operations', sub: 'S/4HANA cutover, hypercare, migration', color: '#27AE60' },
-  { name: 'Master Data Operations', sub: 'Quality audits, maturity, governance', color: '#2980B9' },
-  { name: 'AI Adoption & Governance', sub: 'Agent readiness, governance register, vendor TCO', color: '#2980B9' },
-  { name: 'Transformation & SSC/GBS', sub: 'Transition, PMO, change, automation, cloud', color: '#2980B9' },
-  { name: 'Regulatory & Compliance', sub: 'EU AI Act, ICT third-party-risk registers, real article citations', color: '#27AE60' },
-];
+// Line cards below are driven by lineGroups (src/data/products.ts) + its
+// `primary` flag, not hand-written here - a hand-written list drifted after
+// every line-count change (2026-07-22 fold). Color is a pure display concern
+// (not part of the canonical product data), keyed by slug so a reorder of
+// lineGroups can't silently mis-map a color to the wrong line.
+const lineColors: Record<string, string> = {
+  procurement: '#2980B9',
+  sap: '#27AE60',
+  'master-data': '#2980B9',
+  'ai-governance': '#2980B9',
+  transformation: '#2980B9',
+  regulatory: '#27AE60',
+};
+const primaryLines = lineGroups.filter((l) => l.primary);
+const secondaryLines = lineGroups.filter((l) => !l.primary);
 ---
 
 <Base
@@ -91,7 +95,7 @@ const lines = [
           Fifteen years inside enterprise IT - and on both sides of every deal. Ran SSC/GBS transitions across multiple European countries when shared-services consolidation was hitting its second peak. Ran finance workflows when SOX was teeth-on-the-floor. Sat on the vendor-distribution side of EMEA reporting across the world's largest hardware and software vendors.
         </p>
         <p class="text-white/35 text-sm leading-relaxed max-w-lg mb-10">
-          More recently, leading enterprise master-data transformation - turning manual product and SKU creation into an automated, rules-based, governed pipeline, from vendor-catalogue ingestion through to touchless quoting and ordering. Vihren Labs is the catalogue of what that arc - operator to vendor to distributor - actually taught me: {products.length} paid products plus {freeItems.length} free downloads, across {lineCountWordLower} product lines, written from the third seat of every deal.
+          More recently, leading enterprise master-data transformation - turning manual product and SKU creation into an automated, rules-based, governed pipeline, from vendor-catalogue ingestion through to touchless quoting and ordering. Vihren Labs is the catalogue of what that arc - operator to vendor to distributor - actually taught me: {products.length} paid products plus {freeItems.length} free downloads, led by master data operations and AI-ready operations, written from the third seat of every deal.
         </p>
         <div class="flex flex-wrap gap-3 mb-10">
           <a
@@ -183,23 +187,41 @@ const lines = [
     </div>
   </section>
 
-  <!-- ═══ SIX PRODUCT LINES ═════════════════════════════════════════════ -->
+  <!-- ═══ PRODUCT LINES — two categories + adjacent toolkits ═════════════
+       Was a hand-written six-line list (drifted after every line-count
+       change). Now driven by lineGroups + the `primary` flag it carries
+       (src/data/products.ts), so the front-door narrowing (Master Data
+       Operations + AI Adoption & Governance) can never fall out of sync
+       with the data. Nothing here is hidden or removed - every line still
+       renders, fully linked to /lines/[slug]. ═══════════════════ -->
   <section class="py-28 px-6 bg-[#0A1520] border-y border-white/5">
     <div class="max-w-6xl mx-auto">
       <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
       <h2 class="font-black text-4xl sm:text-5xl leading-tight mb-4">
-        {lineCountWord} product lines.<br />
+        Two categories, deep.<br />
         <span class="text-white/30">Fifteen years, packaged.</span>
       </h2>
       <p class="text-white/40 text-base leading-relaxed max-w-2xl mb-12">
         What those years actually taught me, in formats you can open on Monday and ship by Friday - structured Excel workbooks, operator playbooks, regulatory registers, transformation toolkits, and full self-paced courses.
       </p>
 
-      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-        {lines.map(l => (
+      <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-5">Two categories I'm known for</p>
+      <div class="grid sm:grid-cols-2 gap-4 mb-14">
+        {primaryLines.map(l => (
+          <div class="rounded-2xl border border-[#E67E22]/30 bg-[#E67E22]/[0.03] p-7 card-hover">
+            <div class="h-0.5 w-10 mb-5" style={`background: ${lineColors[l.slug] ?? '#E67E22'}`}></div>
+            <h3 class="font-bold text-lg text-white mb-2">{l.title}</h3>
+            <p class="text-white/45 text-sm leading-relaxed">{l.sub}</p>
+          </div>
+        ))}
+      </div>
+
+      <p class="font-mono text-white/40 text-xs tracking-[0.2em] uppercase mb-5">and the adjacent operator toolkits</p>
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {secondaryLines.map(l => (
           <div class="rounded-2xl border border-white/5 bg-white/[0.02] p-7 card-hover">
-            <div class="h-0.5 w-10 mb-5" style={`background: ${l.color}`}></div>
-            <h3 class="font-bold text-lg text-white mb-2">{l.name}</h3>
+            <div class="h-0.5 w-10 mb-5" style={`background: ${lineColors[l.slug] ?? '#2980B9'}`}></div>
+            <h3 class="font-bold text-lg text-white mb-2">{l.title}</h3>
             <p class="text-white/45 text-sm leading-relaxed">{l.sub}</p>
           </div>
         ))}
@@ -207,7 +229,7 @@ const lines = [
 
       <div class="mt-12">
         <a href="/products" class="inline-flex items-center gap-2 text-[#E67E22] font-medium text-sm hover:gap-4 transition-all">
-          Browse all {lineCountWordLower} lines
+          Browse the full catalogue
         </a>
       </div>
     </div>

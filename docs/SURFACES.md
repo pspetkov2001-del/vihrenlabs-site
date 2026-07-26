@@ -14,18 +14,26 @@
 | Route | File |
 |---|---|
 | Home | `src/pages/index.astro` |
-| Products (list) | `src/pages/products.astro` |
+| Products (catalogue) | `src/pages/products.astro` (data: `src/data/products.ts`; `/paths` 301s here) |
 | Product detail | `src/pages/products/[slug].astro` (data: `src/data/products.ts`) |
-| Essays (list) | `src/pages/essays/index.astro` |
-| Essay detail | `src/pages/essays/[...slug].astro` |
+| Product-line pillar | `src/pages/lines/[slug].astro` (one per `lineGroups` entry in `src/data/products.ts`; aggregates that line's products + guides + essays by exact `line` string match) |
+| Writing (guides + essays hub) | `src/pages/writing.astro` (merged 2026-07-22; `/essays` and `/guides` bare paths 301 here — see `vercel.json`) |
+| Guide detail | `src/pages/guides/[...slug].astro` (content: `src/content/guides/*.md`) |
+| Essay detail | `src/pages/essays/[...slug].astro` (content: `src/content/essays/*.md`) |
+| Free resource hub | `src/pages/free.astro` |
+| Cheat sheets | `src/pages/cheat-sheets.astro` |
 | About | `src/pages/about.astro` |
 | Privacy | `src/pages/privacy.astro` |
+| Imprint (legal notice) | `src/pages/imprint.astro` |
+
+> **Removed pages (do not re-add references):** `src/pages/essays/index.astro` and `src/pages/guides/index.astro` were deleted 2026-07-22 when their listings merged into `src/pages/writing.astro`. The bare `/essays` and `/guides` paths still resolve — `vercel.json` 301-redirects both to `/writing` — but there is no dedicated hub page at either URL anymore. Individual article routes (`/essays/<slug>`, `/guides/<slug>`) are unaffected.
 
 > **Product-detail retention fields** (`src/data/products.ts`): `lastUpdated` + `changelog` render the "Last updated · what's new" trust line; the value-ladder cross-sell CTA is derived by `ladderNext()` (toolkit → Operator's Pack → course) with an optional `next` override. On any genuine SKU update, set `lastUpdated`/`changelog` here **and** announce it to existing holders — see `Spreadsheet OS Collection/docs/RETENTION-PLAYBOOK.md`.
 
 ## Components
-- `src/components/ProductCard.astro` — product grid card (check wrap/spacing on mobile).
-- `src/components/NewsletterForm.astro` — Beehiiv/email capture (`/api/subscribe`).
+- `src/components/NewsletterForm.astro` — Beehiiv/email capture (`/api/subscribe`); used on `index.astro`.
+- `src/components/ProductCard.astro` — **dead code.** Not imported by any page (`products.astro` was refactored 2026-07-22 to inline product rows instead — see the comment at the top of that file). Verify with a repo-wide import search before relying on it; do not add new references without first re-wiring it into a page, and consider deleting it in a separate cleanup pass.
+- `src/components/Logo.astro` — wordmark, used inside `Nav.astro` and `Footer.astro` (not rendered standalone).
 
 ## Static / generated
 - `public/robots.txt` (incl. AI crawlers), `public/llms.txt` — keep product/essay lists in sync with the site.

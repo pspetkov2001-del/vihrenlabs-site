@@ -56,16 +56,13 @@ const ticker = [
 // a CTA to /products. Full catalog (line-grouped) lives on /products.
 import { products, freeItems, lineGroups } from '../data/products';
 
-// Line counts are DERIVED, never hard-coded. Three separate places on this page
-// (hero eyebrow, hero stat, catalogue headline) drifted to "7" after the
-// programme-delivery line was folded in on 2026-07-22 and had to be chased down
-// one at a time. Deriving them means the next line change cannot leave stale
-// copy on the highest-traffic page.
-const lineCount = lineGroups.length;
-const NUMBER_WORD: Record<number, string> = {
-  4: 'Four', 5: 'Five', 6: 'Six', 7: 'Seven', 8: 'Eight', 9: 'Nine', 10: 'Ten',
-};
-const lineCountWord = NUMBER_WORD[lineCount] ?? String(lineCount);
+// This page no longer states a product-line COUNT anywhere. The three places
+// that did (hero eyebrow, hero stat, catalogue headline) drifted to "7" after
+// the programme-delivery fold on 2026-07-22 and had to be chased down one at a
+// time; deriving the count from lineGroups.length fixed that. D-060 (2026-07-26)
+// made the derivation unnecessary: the front door now names the two categories
+// it leads with rather than counting lines, so there is no number left to drift.
+// If a line count ever returns to this page, derive it - never hard-code it.
 
 // Credential chips for the landing bio block. A tighter subset of the /about
 // list — the language and legal-entity chips stay on /about so this section
@@ -120,7 +117,7 @@ const credentials = [
 
       <!-- Value prop eyebrow — tells cold visitors what this IS before the headline -->
       <p class="fade-up fade-up-delay-2 font-mono text-[#E67E22] text-sm tracking-[0.18em] uppercase mb-4">
-        {lineCount} product lines · Procurement · SAP · Master Data · AI Governance · SSC/GBS · Regulatory
+        Master Data Operations · AI-Ready Operations
       </p>
 
       <!-- Main headline -->
@@ -164,7 +161,7 @@ const credentials = [
       <div class="mt-20 pt-10 border-t border-white/5 flex flex-wrap gap-16">
         {[
           { n: '15', label: 'Years in enterprise IT' },
-          { n: String(lineCount), label: 'Product lines' },
+          { n: '2', label: 'Core categories' },
         ].map(s => (
           <div>
             <div class="font-black text-3xl text-[#E67E22]">{s.n}</div>
@@ -286,7 +283,7 @@ const credentials = [
       <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
         <div>
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
-          <h2 class="font-black text-4xl sm:text-5xl leading-tight">{lineCountWord} expertise clusters.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
+          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Two categories I'm known for.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
           <p class="text-white/40 text-sm max-w-2xl mt-5 leading-relaxed">
             {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads - grouped by product line on a dedicated page.
           </p>
@@ -308,10 +305,10 @@ const credentials = [
               <span class="font-mono text-[10px] text-white/40 tracking-wider">{products.length + freeItems.length} items live</span>
             </div>
             <h3 class="font-bold text-2xl text-white/90 leading-snug mb-3">
-              All courses, toolkits and bundles - across six lines, in one place.
+              All courses, toolkits and bundles in one place.
             </h3>
             <p class="text-white/50 text-sm leading-relaxed">
-              Procurement & Vendor Management · SAP / ERP Operations · Master Data Operations · AI Adoption & Governance · Transformation & SSC/GBS · Regulatory & Compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">The 3-course Master Data Academy - Product · Customer · Vendor - is live now.</strong>
+              Master Data Operations · AI Adoption & Governance. Plus operator toolkits for SAP / ERP cutovers, procurement and vendor management, transformation and SSC/GBS, and EU regulatory compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">Both front doors are live: the 3-course Master Data Academy - Product · Customer · Vendor - and the AI Adoption & Governance Operator's Pack, five products in one operator system.</strong>
             </p>
           </div>
           <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-mono text-sm font-bold uppercase tracking-widest px-7 py-4 rounded-lg group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
