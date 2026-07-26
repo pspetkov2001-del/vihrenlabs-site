@@ -41,7 +41,7 @@ Each line has an on-site pillar page aggregating its products, free guides, and 
 
 Step-by-step, answer-first operator guides - free to read, each funnels to the matching product. Hub (guides and essays together): https://www.vihrenlabs.com/writing
 
-- **The S/4HANA cutover checklist (the run sheet that survives 3 a.m.)** - the readiness gates, hour-by-hour run sheet, master-data freeze, BP-MASS/MIGO/FBL3N validation, pre-agreed rollback criteria, and hypercare. https://www.vihrenlabs.com/guides/s4hana-cutover-checklist
+- **The S/4HANA cutover checklist (the run sheet that survives 3 a.m.)** - the readiness gates, hour-by-hour run sheet, master-data freeze, MASS/MASSD, MB52 and FBL3N validation, pre-agreed rollback criteria, and hypercare. https://www.vihrenlabs.com/guides/s4hana-cutover-checklist
 - **The master data quality audit - the checks that actually matter** - the six quality dimensions, field-level scoring, the defect log, and remediation by impact. https://www.vihrenlabs.com/guides/master-data-quality-audit-checklist
 - **The SaaS renewal negotiation checklist - terms that beat the discount** - find the notice period and start early, right-size to real usage, build the true 3-year TCO, read the vendor's leverage, and counter the uplift with specifics. https://www.vihrenlabs.com/guides/saas-renewal-negotiation-checklist
 - **The EU AI Act deployer checklist (what an SME must do before August 2026)** - inventory, Annex III risk classification, Article 50 transparency, Article 26 deployer duties, evidence. https://www.vihrenlabs.com/guides/eu-ai-act-deployer-checklist

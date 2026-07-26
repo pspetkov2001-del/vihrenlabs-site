@@ -63,7 +63,7 @@ A checklist that says "retention period documented for each personal-data catego
 
 That is the difference between advice and sentiment. Advice has an owner and a date. Sentiment does not.
 
-Vihren Labs templates name what the operator actually has to do. In SAP migrations: not "improve master data quality" but **BP-MASS** validation runs against Business Partner conversion, **MIGO** stock-on-hand reconciliation, **FBL3N** general-ledger line-item validation against legacy balances - each with a threshold, an owner, and a sign-off date. In compliance: not "comply with EU regulation" but **DORA Article 29** preliminary ICT concentration-risk assessment, **GDPR Article 30** records-of-processing cadence, **EU AI Act Annex III** high-risk inventory. In procurement: not "negotiate the renewal" but the notice-period clause, the auto-renewal trigger date, the vendor's fiscal-quarter close.
+Vihren Labs templates name what the operator actually has to do. In SAP migrations: not "improve master data quality" but **MASS/MASSD** runs against the Business Partner conversion, **MB52** stock-on-hand reconciliation, **FBL3N** general-ledger line-item validation against legacy balances - each with a threshold, an owner, and a sign-off date. In compliance: not "comply with EU regulation" but **DORA Article 29** preliminary ICT concentration-risk assessment, **GDPR Article 30** records-of-processing cadence, **EU AI Act Annex III** high-risk inventory. In procurement: not "negotiate the renewal" but the notice-period clause, the auto-renewal trigger date, the vendor's fiscal-quarter close.
 
 If a piece of advice cannot be turned into a checklist row with an owner and a date, it is sentiment dressed as advice.
 
