@@ -6,7 +6,7 @@ Vihren Labs is the templates-and-playbooks brand of Petko Petkov, a 15-year ente
 
 ## Product lines
 
-Six lines. Two are the front door; four are adjacent operator toolkits for the same buyer.
+Two front-door categories, plus adjacent operator toolkits for the same buyer.
 
 - **Master Data Operations** (front door): Master Data Quality Audit Workbook ($79, 75 named SAP MDM quality checks); Master Data Management Maturity Assessment ($79, 78 anchored questions); MDG Operating Model Playbook ($49); Master Data Operator's Pack ($179); and the Master Data Excellence courses ($499 each / $999 team, 10 modules) - Product & SKU Management, Customer & Business Partner, and Vendor & Supplier Master.
 - **AI Adoption & Governance** (front door, also called AI-Ready Operations): AI-Ready Operations Assessment Pro ($149, the paid tier; a free AI-Ready Operations Assessment with the five-layer maturity model is the lead magnet); AI Agent Use-Case Selection & Feasibility Scorecard ($49, 6 weighted criteria plus a data/risk blocker for a GO / PILOT / PARK verdict); AI Adoption & AI Agents Operating Playbook ($79); AI Vendor Evaluation & TCO Workbook ($39); **The AI Center of Excellence Handbook** ($199, the ~80-page operating model plus 9-tab workbook for standing up and running an AI CoE: mandate, org/RACI, reference architecture, governance, quality standards, and the 10-gate agent lifecycle, with three worked use cases); AI Adoption & Governance Operator's Pack ($349, all five - the complete system). Thesis: selling agents is a trap; selling the operating model that keeps agents from getting cancelled is the wedge.
