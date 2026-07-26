@@ -1,10 +1,22 @@
-# Content fact review - flagged 2026-07-22, NOT yet actioned
+# Content fact review - flagged 2026-07-22, partially actioned
 
 Raised during the 22-article voice pass. Every item below was **left exactly as
 written in the content** - the rewrite was forbidden from changing facts. These
 need a human decision. Ordered by risk.
 
-## 1. Possible DORA article misattribution (HIGH - affects two pages)
+> **Resolutions 2026-07-26:** Item 1 FIXED on both pages, verified against the
+> EUR-Lex text of Regulation (EU) 2022/2554 (CELEX 32022R2554): Art 28(4)(c) =
+> pre-contract identification of concentration risk "as referred to in Article
+> 29"; Art 29 = "Preliminary assessment of ICT concentration risk at entity
+> level"; Art 28(3) = the register of information (entity / sub-consolidated /
+> consolidated levels); Art 28(5) is about information security standards (the
+> original flag's "termination grounds" guess was also wrong - termination is
+> 28(7)). Operator Standard now cites Article 29; register-completeness essay
+> now anchors register=28(3), risk lens=Article 29. The Operator Standard's
+> dollars/euros mismatch (item under "minor") also fixed - currency-neutral
+> phrasing. The EBA 30% threshold flag (item 2 area) remains OPEN.
+
+## 1. Possible DORA article misattribution (HIGH - affects two pages) - RESOLVED 2026-07-26, see note above
 
 - `src/content/essays/dora-ict-register-completeness.md`
   > "Article 28(5) is explicit that competent authorities assess ICT

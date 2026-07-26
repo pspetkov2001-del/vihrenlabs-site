@@ -63,7 +63,7 @@ A checklist that says "retention period documented for each personal-data catego
 
 That is the difference between advice and sentiment. Advice has an owner and a date. Sentiment does not.
 
-Vihren Labs templates name what the operator actually has to do. In SAP migrations: not "improve master data quality" but **BP-MASS** validation runs against Business Partner conversion, **MIGO** stock-on-hand reconciliation, **FBL3N** general-ledger line-item validation against legacy balances - each with a threshold, an owner, and a sign-off date. In compliance: not "comply with EU regulation" but **DORA Article 28(5)** concentration-risk assessment, **GDPR Article 30** records-of-processing cadence, **EU AI Act Annex III** high-risk inventory. In procurement: not "negotiate the renewal" but the notice-period clause, the auto-renewal trigger date, the vendor's fiscal-quarter close.
+Vihren Labs templates name what the operator actually has to do. In SAP migrations: not "improve master data quality" but **BP-MASS** validation runs against Business Partner conversion, **MIGO** stock-on-hand reconciliation, **FBL3N** general-ledger line-item validation against legacy balances - each with a threshold, an owner, and a sign-off date. In compliance: not "comply with EU regulation" but **DORA Article 29** preliminary ICT concentration-risk assessment, **GDPR Article 30** records-of-processing cadence, **EU AI Act Annex III** high-risk inventory. In procurement: not "negotiate the renewal" but the notice-period clause, the auto-renewal trigger date, the vendor's fiscal-quarter close.
 
 If a piece of advice cannot be turned into a checklist row with an owner and a date, it is sentiment dressed as advice.
 
@@ -109,7 +109,7 @@ Consulting hours are perishable. You pay for expertise, the engagement ends, and
 
 Spreadsheets, playbooks, and checklists are not perishable. An operator who codifies their pattern-recognition into a re-usable template - and keeps it current - builds an asset that compounds across every subsequent project, hire, and audit. The cutover runsheet from the first migration becomes the template for the second. The renewal tracker built for one estate becomes the standard across the team. The compliance checklist for one regulation becomes the model for the next.
 
-This is why Vihren Labs exists. Fifteen years of pattern-recognition - what actually fails in SAP migrations, what actually moves vendors in renewals, what actually satisfies an auditor, what actually makes a pre-mortem find something - codified into templates anyone in the operator's seat can use, modify, and keep current. The cost of building it from scratch is measured in weeks; the cost of the template is measured in dollars.
+This is why Vihren Labs exists. Fifteen years of pattern-recognition - what actually fails in SAP migrations, what actually moves vendors in renewals, what actually satisfies an auditor, what actually makes a pre-mortem find something - codified into templates anyone in the operator's seat can use, modify, and keep current. The cost of building it from scratch is measured in weeks; the cost of the template is a line item you stop noticing.
 
 ## How the seven principles compose - one operator's week
 
@@ -129,13 +129,14 @@ A renewal that uses only Principle 4 without Principle 3 produces hand-waving. A
 
 If you read this far, one of the seven principles probably landed harder than the others. That is the place to start.
 
+- **Principles 2 + 3, applied to data** (governance + concrete) - start with [Master Data Operations](/lines/master-data). Bad master data is the failure mode underneath most of the others.
+- **Principle 2, applied to AI** (governance before agents) - the [AI Center of Excellence Handbook](/products/ai-center-of-excellence-handbook) is the operating model; the [AI Adoption & Governance Operator's Pack](/products/ai-adoption-and-governance-operators-pack) bundles it with the tools at each gate.
 - **Principles 1 + 4** (the honest case + vendor economics) - start with [Procurement & Vendor Management](/products).
 - **Principles 3 + 5** (concrete + regulation as operational) - start with the [Regulatory & Compliance](/products) line.
 - **Principles 2 + 6** (governance + pre-mortem) - start with [SAP / ERP Operations](/products).
-- **Principle 2, applied to AI** (governance before agents) - the [AI Center of Excellence Handbook](/products/ai-center-of-excellence-handbook) is the operating model; the [AI Adoption & Governance Operator's Pack](/products/ai-adoption-and-governance-operators-pack) bundles it with the tools at each gate.
 - **Principle 7** (the catalogue compounds) - browse the [full catalogue](/products) and pick whichever line matches the most expensive next project on your desk.
 
-The standard is the same across all of them. The size of the buyer changes; the rigour does not. If you want the step-by-step versions, the [operator guides](/guides) walk the cutover, the master-data audit, and the EU regulatory registers in detail.
+The standard is the same across all of them. The size of the buyer changes; the rigour does not. If you want the step-by-step versions, the [operator guides](/writing) walk the cutover, the master-data audit, and the EU regulatory registers in detail.
 
 ---
 
