@@ -76,6 +76,31 @@ const credentials = [
   'Sofia, Bulgaria',
 ];
 
+// ── Founder intro video (landing bio block) ────────────────────────────
+// The founder photo doubles as the poster for a ~90-second "who I am / why
+// this exists" video. Click-to-play FACADE: nothing from YouTube is loaded
+// until the visitor presses play, so the landing page's tuned load
+// performance is untouched and no third-party script runs for the ~99% who
+// never press it. It opens in a native <dialog>, so the page height does not
+// change at all — the landing was deliberately shortened and a full-width
+// video section would undo that.
+//
+// INERT UNTIL SET. With both fields null the block renders exactly as it did
+// before (a plain photo), so this can ship before the video is shot. To go
+// live, set ONE of:
+//   youtubeId — an UNLISTED upload on the channel. Unlisted keeps the video
+//               off the channel's videos tab and gives it zero algorithm
+//               signal, which protects the channel's deliberate topical
+//               narrowness (D-058) while still being embeddable.
+//   mp4       — a self-hosted file in public/ if you would rather have no
+//               third-party embed at all. Keep it under ~15 MB.
+const INTRO_VIDEO = {
+  youtubeId: null as string | null,
+  mp4: null as string | null,
+  label: '90 seconds: why this exists',
+};
+const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
+
 // REMOVED 2026-05-25: inline products/lineGroups/freeItems arrays — all
 // data now imported from src/data/products.ts. /products page consumes
 // the same data for the full catalog.
@@ -195,19 +220,51 @@ const credentials = [
        posture — no employer or client names. ═══════════════════════════ -->
   <section class="py-24 px-6 border-t border-white/5">
     <div class="max-w-5xl mx-auto grid lg:grid-cols-[auto_1fr] gap-12 lg:gap-16 items-center">
-      <!-- Founder photo — natural headshot, not the brand avatar -->
-      <div class="flex justify-center lg:justify-start">
-        <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden flex-shrink-0"
-             style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);">
-          <img
-            src="/petko-photo.webp"
-            alt="Petko Petkov, founder of Vihren Labs"
-            width="640"
-            height="640"
-            loading="lazy"
-            class="w-full h-full object-cover"
-          />
-        </div>
+      <!-- Founder photo — natural headshot, not the brand avatar.
+           Doubles as the intro-video poster once INTRO_VIDEO is set; until
+           then this renders exactly as it always has. -->
+      <div class="flex flex-col items-center lg:items-start">
+        {hasIntroVideo ? (
+          <button
+            type="button"
+            id="intro-video-open"
+            class="group relative w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden flex-shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-4 focus-visible:ring-offset-[#080E14]"
+            style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);"
+            aria-label="Play the 90-second introduction from Petko Petkov"
+          >
+            <img
+              src="/petko-photo.webp"
+              alt="Petko Petkov, founder of Vihren Labs"
+              width="640"
+              height="640"
+              loading="lazy"
+              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+            />
+            <span class="absolute inset-0 bg-[#080E14]/35 group-hover:bg-[#080E14]/20 transition-colors" aria-hidden="true"></span>
+            <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
+              <span class="w-14 h-14 rounded-full bg-[#E67E22] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
+                <svg class="w-6 h-6 translate-x-[2px]" viewBox="0 0 24 24" fill="#0F2336" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              </span>
+            </span>
+          </button>
+        ) : (
+          <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden flex-shrink-0"
+               style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);">
+            <img
+              src="/petko-photo.webp"
+              alt="Petko Petkov, founder of Vihren Labs"
+              width="640"
+              height="640"
+              loading="lazy"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        )}
+        {hasIntroVideo && (
+          <p class="font-mono text-[11px] text-white/40 mt-4 tracking-wider uppercase text-center lg:text-left">
+            {INTRO_VIDEO.label}
+          </p>
+        )}
       </div>
 
       <div>
@@ -239,6 +296,91 @@ const credentials = [
       </div>
     </div>
   </section>
+
+  <!-- ═══ INTRO VIDEO DIALOG ════════════════════════════════════════════
+       Native <dialog> so we inherit focus trapping, Escape-to-close and the
+       top layer for free. The player src is injected on open and stripped on
+       close, which both keeps the third-party request off the initial page
+       load and guarantees playback actually stops when the dialog closes.
+       Rendered only when INTRO_VIDEO is set. ═══════════════════════════ -->
+  {hasIntroVideo && (
+    <dialog
+      id="intro-video-dialog"
+      class="p-0 bg-transparent backdrop:bg-[#050A0F]/85 w-[min(92vw,960px)] rounded-2xl"
+      aria-label="Introduction from Petko Petkov"
+    >
+      <div class="relative rounded-2xl overflow-hidden border border-white/10 bg-black">
+        <div class="aspect-video w-full" id="intro-video-mount"></div>
+        <button
+          type="button"
+          id="intro-video-close"
+          class="absolute top-3 right-3 w-9 h-9 rounded-full bg-[#080E14]/80 hover:bg-[#080E14] border border-white/15 text-white/80 hover:text-white flex items-center justify-center transition-colors"
+          aria-label="Close the video"
+        >
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+      </div>
+      <p class="text-white/40 text-xs text-center mt-3 px-2">
+        Education and operator practice. Views are my own.
+      </p>
+    </dialog>
+  )}
+
+  {hasIntroVideo && (
+    <script is:inline define:vars={{ INTRO_VIDEO }}>
+      (() => {
+        const dialog = document.getElementById('intro-video-dialog');
+        const mount = document.getElementById('intro-video-mount');
+        const openBtn = document.getElementById('intro-video-open');
+        const closeBtn = document.getElementById('intro-video-close');
+        if (!dialog || !mount || !openBtn) return;
+
+        const build = () => {
+          if (INTRO_VIDEO.youtubeId) {
+            const f = document.createElement('iframe');
+            // nocookie host: no tracking cookie unless the visitor actually plays.
+            f.src = 'https://www.youtube-nocookie.com/embed/' + INTRO_VIDEO.youtubeId +
+                    '?autoplay=1&rel=0&modestbranding=1';
+            f.title = 'Introduction from Petko Petkov';
+            f.allow = 'accelerometer; autoplay; encrypted-media; picture-in-picture';
+            f.allowFullscreen = true;
+            f.className = 'w-full h-full block';
+            f.setAttribute('frameborder', '0');
+            return f;
+          }
+          const v = document.createElement('video');
+          v.src = INTRO_VIDEO.mp4;
+          v.poster = '/petko-photo.webp';
+          v.controls = true;
+          v.autoplay = true;
+          v.playsInline = true;
+          v.className = 'w-full h-full block';
+          return v;
+        };
+
+        const open = () => {
+          mount.replaceChildren(build());
+          if (typeof dialog.showModal === 'function') dialog.showModal();
+          else dialog.setAttribute('open', '');
+        };
+        // Stripping the child is what actually stops playback - closing the
+        // dialog alone would leave a YouTube iframe playing audio.
+        const close = () => {
+          if (dialog.open && typeof dialog.close === 'function') dialog.close();
+          else dialog.removeAttribute('open');
+          mount.replaceChildren();
+        };
+
+        openBtn.addEventListener('click', open);
+        closeBtn?.addEventListener('click', close);
+        dialog.addEventListener('close', () => mount.replaceChildren());
+        // Click on the backdrop (the dialog element itself, outside the panel).
+        dialog.addEventListener('click', (e) => { if (e.target === dialog) close(); });
+      })();
+    </script>
+  )}
 
   <!-- ═══ THE OPERATOR STANDARD — the door (cornerstone) ════════════════
        The single most important page: the manifesto that proves the operator
