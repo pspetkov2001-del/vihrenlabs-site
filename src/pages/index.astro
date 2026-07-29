@@ -236,7 +236,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
             id="intro-video-open"
             class="group relative w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden flex-shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-4 focus-visible:ring-offset-[#080E14]"
             style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);"
-            aria-label="Play the 90-second introduction from Petko Petkov"
+            aria-label={`Play the video introduction from Petko Petkov - ${INTRO_VIDEO.label}`}
           >
             <img
               src="/petko-photo.webp"
@@ -246,10 +246,14 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
               loading="lazy"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
-            <span class="absolute inset-0 bg-[#080E14]/35 group-hover:bg-[#080E14]/20 transition-colors" aria-hidden="true"></span>
+            <span class="absolute inset-0 bg-[#080E14]/50 group-hover:bg-[#080E14]/25 transition-colors" aria-hidden="true"></span>
             <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-              <span class="w-14 h-14 rounded-full bg-[#E67E22] flex items-center justify-center shadow-lg transition-transform duration-300 group-hover:scale-110">
-                <svg class="w-6 h-6 translate-x-[2px]" viewBox="0 0 24 24" fill="#0F2336" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              <!-- Expanding ring. The badge alone read as decoration - motion is what
+                   actually says "playable" at a glance. Disabled under reduced-motion,
+                   where the larger badge and the scrim still carry the affordance. -->
+              <span class="intro-play-pulse absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-[#E67E22]"></span>
+              <span class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#E67E22] flex items-center justify-center shadow-xl ring-4 ring-[#E67E22]/25 transition-transform duration-300 group-hover:scale-110">
+                <svg class="w-9 h-9 sm:w-11 sm:h-11 translate-x-[3px]" viewBox="0 0 24 24" fill="#0F2336" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
               </span>
             </span>
           </button>
@@ -267,7 +271,10 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
           </div>
         )}
         {hasIntroVideo && (
-          <p class="font-mono text-[11px] text-white/40 mt-4 tracking-wider uppercase text-center lg:text-left">
+          <p class="font-mono text-[13px] text-white/75 mt-5 tracking-wider uppercase flex items-center justify-center lg:justify-start gap-2">
+            <span class="w-5 h-5 rounded-full bg-[#E67E22]/20 flex items-center justify-center flex-shrink-0" aria-hidden="true">
+              <svg class="w-2.5 h-2.5 translate-x-[1px]" viewBox="0 0 24 24" fill="#E67E22"><path d="M8 5v14l11-7z" /></svg>
+            </span>
             {INTRO_VIDEO.label}
           </p>
         )}
@@ -563,5 +570,27 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
   }
   details[open] .faq-plus {
     transform: rotate(45deg);
+  }
+
+  /* Intro-video play affordance. The founder scrolled past his own video on the
+     live page, so the badge was enlarged and this ring added: a slow outward
+     pulse is what actually reads as "playable" on a round headshot, which
+     otherwise looks like decoration. Deliberately slow and low-contrast so it
+     stays enterprise-restrained rather than consumer-y. */
+  @keyframes intro-play-pulse {
+    0%   { transform: scale(1);    opacity: 0.6; }
+    70%  { transform: scale(1.5);  opacity: 0; }
+    100% { transform: scale(1.5);  opacity: 0; }
+  }
+  .intro-play-pulse {
+    animation: intro-play-pulse 2.6s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+  /* Respect reduced-motion: the bigger badge, the ring and the stronger scrim
+     already carry the affordance without any movement. */
+  @media (prefers-reduced-motion: reduce) {
+    .intro-play-pulse {
+      animation: none;
+      opacity: 0.45;
+    }
   }
 </style>
