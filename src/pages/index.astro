@@ -234,32 +234,38 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
           <button
             type="button"
             id="intro-video-open"
-            class="group relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden flex-shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-4 focus-visible:ring-offset-[#080E14]"
-            style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);"
+            class="group relative flex-shrink-0 rounded-full cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-4 focus-visible:ring-offset-[#080E14]"
             aria-label={`Play the video introduction from Petko Petkov - ${INTRO_VIDEO.label}`}
           >
-            <img
-              src="/petko-photo.webp"
-              alt="Petko Petkov, founder of Vihren Labs"
-              width="640"
-              height="640"
-              loading="lazy"
-              class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-            />
-            <!-- Light scrim only. The photo is the hero here - the founder wanted the
-                 picture noticed - so this just separates the badge from the headshot
-                 rather than muting the face. -->
-            <span class="absolute inset-0 bg-[#080E14]/30 group-hover:bg-[#080E14]/15 transition-colors" aria-hidden="true"></span>
-            <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-              <!-- Expanding ring. A round headshot reads as decoration however large the
-                   badge is - motion is what actually says "playable" at a glance. The badge
-                   stays at roughly 29% of the photo at every breakpoint so it never covers
-                   the face; the discoverability comes from the photo's size, this ring and
-                   the caption, not from a badge big enough to swallow the portrait.
-                   Disabled under reduced-motion. -->
-              <span class="intro-play-pulse absolute w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full border-2 border-[#E67E22]"></span>
-              <span class="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full bg-[#E67E22] flex items-center justify-center shadow-xl ring-4 ring-[#E67E22]/25 transition-transform duration-300 group-hover:scale-110">
-                <svg class="w-7 h-7 sm:w-9 sm:h-9 lg:w-11 lg:h-11 translate-x-[3px]" viewBox="0 0 24 24" fill="#0F2336" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+            <!-- The clipped circle. overflow-hidden lives HERE rather than on the
+                 button so the play badge below can straddle the rim without being
+                 cut off by it. -->
+            <span
+              class="relative block w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden"
+              style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);"
+            >
+              <img
+                src="/petko-photo.webp"
+                alt="Petko Petkov, founder of Vihren Labs"
+                width="640"
+                height="640"
+                loading="lazy"
+                class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+              />
+              <!-- No resting scrim. The face must be fully visible - that is the point
+                   of putting a real headshot here at all. A faint tint on hover only. -->
+              <span class="absolute inset-0 bg-transparent group-hover:bg-[#080E14]/15 transition-colors" aria-hidden="true"></span>
+            </span>
+
+            <!-- Play badge parked on the lower-right rim, NOT centred. Centred over a
+                 portrait it covers the face at any size, which is exactly what the
+                 founder objected to. Out here it reads as the familiar avatar-with-video
+                 badge, and the face stays completely clear. The dark ring separates it
+                 from whatever tone the photo happens to have behind it. -->
+            <span class="absolute bottom-[7%] right-[7%] flex items-center justify-center" aria-hidden="true">
+              <span class="intro-play-pulse absolute w-14 h-14 sm:w-16 sm:h-16 lg:w-[72px] lg:h-[72px] rounded-full border-2 border-[#E67E22]"></span>
+              <span class="relative w-14 h-14 sm:w-16 sm:h-16 lg:w-[72px] lg:h-[72px] rounded-full bg-[#E67E22] flex items-center justify-center shadow-xl ring-4 ring-[#080E14] transition-transform duration-300 group-hover:scale-110">
+                <svg class="w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 translate-x-[2px]" viewBox="0 0 24 24" fill="#0F2336" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
               </span>
             </span>
           </button>
