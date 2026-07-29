@@ -95,9 +95,15 @@ const credentials = [
 //   mp4       — a self-hosted file in public/ if you would rather have no
 //               third-party embed at all. Keep it under ~15 MB.
 const INTRO_VIDEO = {
-  youtubeId: null as string | null,
+  // Unlisted upload on the channel, recorded 2026-07-29. Unlisted keeps it off
+  // the Videos tab with zero algorithm signal, which protects the channel's
+  // deliberate topical narrowness (D-058), while staying embeddable here.
+  youtubeId: 'T7KMHmzkb5U' as string | null,
   mp4: null as string | null,
-  label: '90 seconds: why this exists',
+  // Must match the real runtime. The take is ~2:20; a button promising 90
+  // seconds and delivering 2:20 is a broken promise on the page whose whole
+  // job is trust.
+  label: '2 minutes: who I am and why this exists',
 };
 const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
 
@@ -375,6 +381,12 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
 
         openBtn.addEventListener('click', open);
         closeBtn?.addEventListener('click', close);
+        // Escape dismisses a modal dialog natively. 'cancel' fires on that path
+        // BEFORE the dialog closes, so tearing down here is deterministic rather
+        // than depending on the queued 'close' task, which can be delayed when
+        // the tab is throttled. 'close' stays as the catch-all for any other
+        // route that ends up closing the dialog.
+        dialog.addEventListener('cancel', () => mount.replaceChildren());
         dialog.addEventListener('close', () => mount.replaceChildren());
         // Click on the backdrop (the dialog element itself, outside the panel).
         dialog.addEventListener('click', (e) => { if (e.target === dialog) close(); });
