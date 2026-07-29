@@ -234,7 +234,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
           <button
             type="button"
             id="intro-video-open"
-            class="group relative w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden flex-shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-4 focus-visible:ring-offset-[#080E14]"
+            class="group relative w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden flex-shrink-0 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-[#E67E22] focus-visible:ring-offset-4 focus-visible:ring-offset-[#080E14]"
             style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);"
             aria-label={`Play the video introduction from Petko Petkov - ${INTRO_VIDEO.label}`}
           >
@@ -246,19 +246,25 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
               loading="lazy"
               class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
             />
-            <span class="absolute inset-0 bg-[#080E14]/50 group-hover:bg-[#080E14]/25 transition-colors" aria-hidden="true"></span>
+            <!-- Light scrim only. The photo is the hero here - the founder wanted the
+                 picture noticed - so this just separates the badge from the headshot
+                 rather than muting the face. -->
+            <span class="absolute inset-0 bg-[#080E14]/30 group-hover:bg-[#080E14]/15 transition-colors" aria-hidden="true"></span>
             <span class="absolute inset-0 flex items-center justify-center" aria-hidden="true">
-              <!-- Expanding ring. The badge alone read as decoration - motion is what
-                   actually says "playable" at a glance. Disabled under reduced-motion,
-                   where the larger badge and the scrim still carry the affordance. -->
-              <span class="intro-play-pulse absolute w-20 h-20 sm:w-24 sm:h-24 rounded-full border-2 border-[#E67E22]"></span>
-              <span class="relative w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-[#E67E22] flex items-center justify-center shadow-xl ring-4 ring-[#E67E22]/25 transition-transform duration-300 group-hover:scale-110">
-                <svg class="w-9 h-9 sm:w-11 sm:h-11 translate-x-[3px]" viewBox="0 0 24 24" fill="#0F2336" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
+              <!-- Expanding ring. A round headshot reads as decoration however large the
+                   badge is - motion is what actually says "playable" at a glance. The badge
+                   stays at roughly 29% of the photo at every breakpoint so it never covers
+                   the face; the discoverability comes from the photo's size, this ring and
+                   the caption, not from a badge big enough to swallow the portrait.
+                   Disabled under reduced-motion. -->
+              <span class="intro-play-pulse absolute w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full border-2 border-[#E67E22]"></span>
+              <span class="relative w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 rounded-full bg-[#E67E22] flex items-center justify-center shadow-xl ring-4 ring-[#E67E22]/25 transition-transform duration-300 group-hover:scale-110">
+                <svg class="w-7 h-7 sm:w-9 sm:h-9 lg:w-11 lg:h-11 translate-x-[3px]" viewBox="0 0 24 24" fill="#0F2336" aria-hidden="true"><path d="M8 5v14l11-7z" /></svg>
               </span>
             </span>
           </button>
         ) : (
-          <div class="w-40 h-40 sm:w-52 sm:h-52 rounded-full overflow-hidden flex-shrink-0"
+          <div class="w-56 h-56 sm:w-72 sm:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden flex-shrink-0"
                style="border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 24px 64px -18px rgba(0,0,0,0.65);">
             <img
               src="/petko-photo.webp"
