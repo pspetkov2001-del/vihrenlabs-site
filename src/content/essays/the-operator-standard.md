@@ -1,6 +1,6 @@
 ---
 title: "The Vihren Labs Operator Standard - seven principles for running the enterprise IT stack"
-description: "The seven principles every Vihren Labs product is held to, written from fifteen years in the operator's seat: run on the obligation not the aspiration, build governance like architecture, concrete beats abstract, vendor economics, regulation is operational not legal, the pre-mortem beats the risk register, and the catalogue compounds. The door to the whole catalogue."
+description: "The seven principles every Vihren Labs product is held to, written from fifteen years in the operator's seat: run on the obligation not the aspiration, build governance like architecture, concrete beats abstract, vendor economics, regulation is operational not legal, the pre-mortem beats the risk register, and the catalogue compounds. The door to the whole catalogue, and the creed of the people who carry it."
 date: "2026-06-05"
 line: "The Operator Standard"
 keywords: ["enterprise IT operations", "operator standard", "SAP S/4HANA cutover", "vendor renewal negotiation", "DORA", "EU AI Act", "IT governance", "pre-mortem", "master data quality", "enterprise IT operator"]
@@ -13,7 +13,7 @@ You are not the consultant who designed it. You are not the vendor who sold it. 
 
 I have spent fifteen years in that seat, inside global IT distribution. Not consulting - operating. I have watched enterprise IT decisions get made from the vendor side, the distribution side, and the buyer side, sometimes inside the same week. I have been in the room when procurement leads won negotiations they should have lost because they had better information, and lost ones they should have won because they didn't. I have watched SAP programmes signed off in a steering committee on a Tuesday and fall apart at 4 AM the following Sunday. I have seen compliance registers that survived every audit, and registers that fell apart the moment an auditor asked for a second document.
 
-The seven principles below are the standard the Vihren Labs catalogue is held to. Each one is the direct inverse of a failure mode I have watched repeat - across organisations, across industries, across the last fifteen years. Read them, and one will land harder than the others. That is your door into the catalogue.
+The seven principles below are the standard the Vihren Labs catalogue is held to - and the standard the operators reading this already hold themselves to, mostly without anyone ever writing it down. Each one is the direct inverse of a failure mode I have watched repeat - across organisations, across industries, across the last fifteen years. Read them, and one will land harder than the others. That is your door into the catalogue.
 
 ## The standard at a glance
 
