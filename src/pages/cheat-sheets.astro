@@ -45,6 +45,13 @@ const sheets = [
     pdf: '/cheat-sheets/controls-cheat-sheet.pdf',
   },
   {
+    eyebrow: 'Layer 5 · Operating Model',
+    title: 'A home, not applause',
+    sub: 'Building an AI system is a project; keeping it valuable is an operational capability. The owner, the funding line and the roadmap that decide whether a successful pilot survives its own applause.',
+    png: '/cheat-sheets/operating-model-cheat-sheet.png',
+    pdf: '/cheat-sheets/operating-model-cheat-sheet.pdf',
+  },
+  {
     eyebrow: 'Season 2 · the 95% study',
     title: '95% of AI pilots fail. The reason isn\'t the AI.',
     sub: 'What the MIT study actually said - the three root causes behind the 95%, and why every one of them is an operations problem rather than a model problem.',
@@ -60,7 +67,7 @@ const layerMap = [
   { n: '02', label: 'Clean Data',             desc: 'one source of truth, or the agent scales the mess', pdf: '/cheat-sheets/clean-data-cheat-sheet.pdf' },
   { n: '03', label: 'Standardized Processes', desc: 'consistent enough to automate at all',              pdf: '/cheat-sheets/standardized-processes-cheat-sheet.pdf' },
   { n: '04', label: 'Controls',               desc: 'catch, audit, and roll back a fast mistake',        pdf: '/cheat-sheets/controls-cheat-sheet.pdf' },
-  { n: '05', label: 'Operating Model',        desc: 'who owns it after the launch demo',                 pdf: null },
+  { n: '05', label: 'Operating Model',        desc: 'who owns it after the launch demo',                 pdf: '/cheat-sheets/operating-model-cheat-sheet.pdf' },
 ];
 
 const collectionSchema = {
@@ -161,7 +168,7 @@ const collectionSchema = {
         ))}
       </div>
       <p class="text-white/30 text-xs font-mono mt-4 tracking-wider">
-        A new layer drops with each episode. <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">Subscribe</a> to catch the rest.
+        All five layers are here - the complete Season 1 set. Season 2 breaks down the studies behind them; <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">subscribe</a> to catch each one.
       </p>
     </div>
   </section>
