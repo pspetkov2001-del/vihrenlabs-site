@@ -6,7 +6,8 @@
  *  - Beehiiv (canonical per D-023) — set BEEHIIV_API_KEY + BEEHIIV_PUBLICATION_ID in Vercel.
  *    Welcome sequence W1 delivers the free Operator Standard PDF.
  *  - Resend (legacy fallback) — set RESEND_API_KEY + RESEND_AUDIENCE_ID + RESEND_FROM_EMAIL.
- *  - Neither configured → form silently no-ops (UX stays clean during setup).
+ *  - Neither configured → /api/subscribe returns 503 and the form shows the
+ *    outage message (fail-loud fix, INCIDENT-pdf-delivery-silent-fail.md).
  *
  * See api/subscribe.js header for full setup steps + Beehiiv migration plan.
  *

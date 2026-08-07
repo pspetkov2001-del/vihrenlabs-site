@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "vercel-dev",
+      "runtimeExecutable": "vercel",
+      "runtimeArgs": ["dev", "--listen", "3000", "--yes", "--cwd", "C:\\dev\\vihrenlabs-site"],
+      "port": 3000
+    }
+  ]
+}
