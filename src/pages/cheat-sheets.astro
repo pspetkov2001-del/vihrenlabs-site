@@ -8,7 +8,10 @@ import Base from '../layouts/Base.astro';
 // public/cheat-sheets/ — keep them in sync from that one source.
 const ASSESSMENT_URL = 'https://vihrenlabs.gumroad.com/l/rmkje';
 
-const sheets = [
+// SEASON 1 - the framework. This is the main set: the cornerstone plus one sheet
+// per layer, and it is COMPLETE. Season 2 sheets live in their own section below
+// so a first-time visitor sees a finished framework, not an open-ended pile.
+const seasonOne = [
   {
     eyebrow: 'Cornerstone · all five layers',
     title: 'Why most AI projects fail before the model does',
@@ -51,20 +54,41 @@ const sheets = [
     png: '/cheat-sheets/operating-model-cheat-sheet.png',
     pdf: '/cheat-sheets/operating-model-cheat-sheet.pdf',
   },
+];
+
+// SEASON 2 - the studies. Same one-page treatment applied to the numbers everyone
+// is arguing about. Ongoing: one lands with each episode, so this list grows.
+const seasonTwo = [
   {
-    eyebrow: 'Season 2 · the 95% study',
+    eyebrow: 'The 95% study',
     title: '95% of AI pilots fail. The reason isn\'t the AI.',
     sub: 'What the MIT study actually said - the three root causes behind the 95%, and why every one of them is an operations problem rather than a model problem.',
     png: '/cheat-sheets/95-percent-fail-cheat-sheet.png',
     pdf: '/cheat-sheets/95-percent-fail-cheat-sheet.pdf',
   },
   {
-    eyebrow: 'Season 2 · the abandonment jump',
+    eyebrow: 'The abandonment jump',
     title: 'Abandonment isn\'t the verdict. It\'s the bill.',
     sub: 'The 42% jump and the more honest 46% underneath it - where scrapped pilots actually die (governance and the operating model), and the three-question graduation test to run before the next green light.',
     png: '/cheat-sheets/abandonment-cheat-sheet.png',
     pdf: '/cheat-sheets/abandonment-cheat-sheet.pdf',
   },
+];
+
+// The Season 2 index. Live rows link the PDF; the rest carry a "Coming" badge and
+// ship the day their episode publishes - the same discipline the five layers used.
+// Every one of these is already written and rendered in the episode's own pack, so
+// nothing here is a promise the factory cannot keep.
+const seasonTwoMap = [
+  { n: '01', label: 'The 95% study',        desc: 'what the MIT report actually found',        pdf: '/cheat-sheets/95-percent-fail-cheat-sheet.pdf' },
+  { n: '02', label: 'The five maturity levels', desc: 'ad hoc to AI-ready, scored honestly',   pdf: null },
+  { n: '03', label: 'The abandonment jump', desc: 'why working pilots get scrapped anyway',    pdf: '/cheat-sheets/abandonment-cheat-sheet.pdf' },
+  { n: '04', label: 'Only 13% are ready',   desc: 'three years of spending moved it nothing',  pdf: null },
+  { n: '05', label: 'Inside an AI CoE',     desc: 'the operating model, end to end',           pdf: null },
+  { n: '06', label: 'AI-ready data',        desc: 'not clean data - ready for a named decision', pdf: null },
+  { n: '07', label: 'The adoption gap',     desc: 'everyone uses AI, few can show the impact', pdf: null },
+  { n: '08', label: 'The use-case gate',    desc: 'GO, PILOT or PARK, worked end to end',      pdf: null },
+  { n: '09', label: 'Agent washing',        desc: 'how few "agentic" vendors are the real thing', pdf: null },
 ];
 
 // Full five-layer set for the overview map. Available = has a pdf; the rest are "coming".
@@ -107,16 +131,24 @@ const collectionSchema = {
         The Five Layers, one page each.
       </h1>
       <p class="text-white/50 text-lg leading-relaxed max-w-2xl">
-        The cheat sheets from <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-[#E67E22] underline underline-offset-4 decoration-white/20 transition-colors">The Five Layers of AI-Ready Operations</a> - each one is a single layer, the tells that reveal you're missing it, and the one Monday-morning move, plus the season-two studies broken down the same way. Free, no email. The version to forward to whoever owns AI where you work.
+        The complete framework from <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-[#E67E22] underline underline-offset-4 decoration-white/20 transition-colors">The Five Layers of AI-Ready Operations</a> - each sheet is a single layer, the tells that reveal you're missing it, and the one Monday-morning move. Free, no email. The version to forward to whoever owns AI where you work. Below the set, the Season 2 studies get the same one-page treatment.
       </p>
     </div>
   </section>
 
-  <!-- ═══ GRID ══════════════════════════════════════════════════════════ -->
+  <!-- ═══ SEASON 1 GRID - the main set ══════════════════════════════════ -->
   <section class="py-16 px-6">
     <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-8 h-px bg-[#E67E22]"></div>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">Season 1 · the framework</span>
+      </div>
+      <h2 class="font-black text-2xl sm:text-3xl leading-tight mb-3">The Five Layers - the complete set</h2>
+      <p class="text-white/45 text-base leading-relaxed max-w-2xl mb-10">
+        Six sheets, nothing held back: the whole map on one page, then one page per layer. Start with the cornerstone if you are new - it tells you which of the five you are missing in about sixty seconds.
+      </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        {sheets.map((s) => (
+        {seasonOne.map((s) => (
           <a href={s.pdf} download
              class="group flex flex-col rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden card-hover">
             <div class="overflow-hidden border-b border-white/8">
@@ -140,12 +172,12 @@ const collectionSchema = {
     </div>
   </section>
 
-  <!-- ═══ THE COMPLETE SET (five-layer map) ═════════════════════════════ -->
+  <!-- ═══ SEASON 1 INDEX (five-layer map) ═══════════════════════════════ -->
   <section class="pb-4 px-6">
     <div class="max-w-3xl mx-auto">
       <div class="flex items-center gap-3 mb-6">
         <div class="w-8 h-px bg-[#E67E22]"></div>
-        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">The complete set</span>
+        <span class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">The set, at a glance</span>
       </div>
       <div class="rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden">
         {layerMap.map((L) => (
@@ -175,7 +207,87 @@ const collectionSchema = {
         ))}
       </div>
       <p class="text-white/30 text-xs font-mono mt-4 tracking-wider">
-        All five layers are here - the complete Season 1 set. Season 2 breaks down the studies behind them; <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">subscribe</a> to catch each one.
+        All five layers plus the cornerstone. Nothing in this set is coming later - it is finished.
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══ SEASON 2 - the studies (separate, ongoing) ═════════════════════
+       Deliberately below the finished Season 1 set and visually quieter: a
+       first-time visitor should meet a complete framework first, not an
+       open-ended pile. Live sheets are cards; the rest are honest "Coming"
+       rows that ship the day their episode publishes. ═══════════════════ -->
+  <section class="pt-20 pb-4 px-6 border-t border-white/5 mt-16">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-8 h-px bg-white/25"></div>
+        <span class="font-mono text-white/45 text-xs tracking-[0.2em] uppercase">Season 2 · the studies</span>
+      </div>
+      <h2 class="font-black text-2xl sm:text-3xl leading-tight mb-3">The numbers everyone is arguing about</h2>
+      <p class="text-white/45 text-base leading-relaxed max-w-2xl mb-10">
+        Same one-page treatment, applied to the studies and headlines rather than the framework: what the number actually measured, where the failure really sat, and the move it argues for. One lands with each episode.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {seasonTwo.map((s) => (
+          <a href={s.pdf} download
+             class="group flex flex-col rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden card-hover">
+            <div class="overflow-hidden border-b border-white/8">
+              <img src={s.png} alt={`Season 2 - ${s.title} cheat sheet`} loading="lazy" width="1080" height="1660"
+                   class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]" />
+            </div>
+            <div class="flex flex-col flex-1 p-5">
+              <span class="font-mono text-[10px] text-[#E67E22] mb-2 tracking-wider uppercase">{s.eyebrow}</span>
+              <h3 class="font-bold text-base text-white/90 leading-snug mb-1.5">{s.title}</h3>
+              <p class="text-white/40 text-sm leading-relaxed flex-1">{s.sub}</p>
+              <span class="inline-flex items-center gap-2 mt-4 font-mono text-xs text-white/40 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                Download PDF
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ SEASON 2 INDEX (what has landed, what is coming) ══════════════ -->
+  <section class="pt-12 pb-4 px-6">
+    <div class="max-w-3xl mx-auto">
+      <div class="flex items-center gap-3 mb-6">
+        <div class="w-8 h-px bg-white/25"></div>
+        <span class="font-mono text-white/45 text-xs tracking-[0.2em] uppercase">The season, at a glance</span>
+      </div>
+      <div class="rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden">
+        {seasonTwoMap.map((L) => (
+          L.pdf ? (
+            <a href={L.pdf} download
+               class="group flex items-center gap-4 px-5 py-3.5 border-b border-white/5 last:border-b-0 transition-colors hover:bg-white/[0.02]">
+              <span class="font-mono text-xs w-7 shrink-0 text-center text-[#E67E22]/80">{L.n}</span>
+              <div class="flex-1 min-w-0">
+                <span class="font-bold text-sm text-white/90">{L.label}</span>
+                <span class="text-white/40 text-sm"> - {L.desc}</span>
+              </div>
+              <span class="font-mono text-[10px] text-white/35 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase whitespace-nowrap shrink-0 inline-flex items-center gap-1.5">
+                <svg class="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" /></svg>
+                PDF
+              </span>
+            </a>
+          ) : (
+            <div class="flex items-center gap-4 px-5 py-3.5 border-b border-white/5 last:border-b-0">
+              <span class="font-mono text-xs w-7 shrink-0 text-center text-white/25">{L.n}</span>
+              <div class="flex-1 min-w-0">
+                <span class="font-bold text-sm text-white/45">{L.label}</span>
+                <span class="text-white/25 text-sm"> - {L.desc}</span>
+              </div>
+              <span class="font-mono text-[10px] text-white/25 border border-white/8 px-2 py-0.5 rounded tracking-wider uppercase whitespace-nowrap shrink-0">Coming</span>
+            </div>
+          )
+        ))}
+      </div>
+      <p class="text-white/30 text-xs font-mono mt-4 tracking-wider">
+        A new one lands with each episode. <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">Subscribe</a> to catch them, or <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/45 hover:text-[#E67E22] transition-colors">watch the season</a>.
       </p>
     </div>
   </section>
