@@ -344,6 +344,14 @@ export const products: Product[] = [
   //   2. Essentials (Lite) — a SINGLE combined high-level workbook (Product +
   //      Customer + Vendor essentials), $199 on-ramp. Build the workbook first;
   //      it is deliberately NOT the full courses (would cannibalize them).
+  //
+  // HELD by decision D-066 (2026-08-11) — do not uncomment, do not delete.
+  // Decision rule at the 2026-11-01 D-060 readout: if the Master Data door is
+  // the one that converted, ACTIVATE (create the Gumroad products, uncomment,
+  // price as staged above); if it did not, DELETE this block (git history
+  // keeps it). Activating earlier would create new marketed SKUs inside the
+  // D-060 falsification window — the same gate D-065 ruling 2 already froze
+  // the Gumroad listing copy to protect.
   // {
   //   line: 'master-data', tier: 'bundle',
   //   tag: 'Bundle · 3 courses',
