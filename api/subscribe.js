@@ -53,10 +53,10 @@ const WELCOME_HTML = `<!DOCTYPE html>
 <body>
 <div class="wrap">
   <div class="logo">V</div>
-  <h1>You're in. Here's your PDF.</h1>
-  <p>The Vihren Labs Operator Standard — 7 principles for running enterprise IT without the consulting-industry fluff.</p>
-  <a class="cta" href="https://vihrenlabs.gumroad.com/l/bwzklq">Download The Operator Standard (free) &rarr;</a>
-  <p style="margin-top:24px">Then: one essay a week from inside enterprise IT — SAP migrations, vendor procurement, EU regulatory compliance, master data. Concrete, vendor-side-honest, no buzzwords.</p>
+  <h1>You're in. Here's the Standard.</h1>
+  <p>The Vihren Labs Operator Standard - 7 principles for running enterprise IT without the consulting-industry fluff. The creed every product here is held to.</p>
+  <a class="cta" href="https://vihrenlabs.gumroad.com/l/bwzklq">Hold the Standard &rarr;</a>
+  <p style="margin-top:24px">Then: one operator essay a week.</p>
   <p>First essay lands soon.</p>
   <hr class="divider" />
   <p class="sig">— Petko<br />Vihren Labs</p>
