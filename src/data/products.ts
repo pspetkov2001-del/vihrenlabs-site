@@ -458,7 +458,7 @@ export const products: Product[] = [
 // sub-grid above the line groups on /products and on the landing.
 export const freeItems: FreeItem[] = [
   {
-    tag: 'Free PDF',
+    tag: 'The creed · PDF',
     name: 'The Vihren Labs Operator Standard',
     sub: 'The 7 operating principles behind every template in the catalogue.',
     price: '$0', team: '',

@@ -19,7 +19,7 @@ Each product also has an on-site page at https://www.vihrenlabs.com/products/<pr
 
 ## Free resources
 
-- The Vihren Labs Operator Standard - free PDF on the 7 operating principles behind every product: https://vihrenlabs.gumroad.com/l/bwzklq
+- The Vihren Labs Operator Standard - the operating creed behind every product: 7 principles, held not downloaded. PDF format: https://vihrenlabs.gumroad.com/l/bwzklq
 - SAP Cutover Comms Kit - pay-what-you-want comms templates (pre-cutover, go-live, hypercare, incident): https://vihrenlabs.gumroad.com/l/dlzxfu
 - Free resource hub (everything free, no email gate - the Standard, guides, essays, downloads): https://www.vihrenlabs.com/free
 
