@@ -4,11 +4,14 @@
  * Adds a subscriber to The Operator Brief newsletter and triggers
  * welcome email (which delivers the free Operator Standard PDF).
  *
- * Provider routing — preferred → fallback → silent no-op:
+ * Provider routing — preferred → fallback → LOUD failure:
  *   1. If BEEHIIV_API_KEY + BEEHIIV_PUBLICATION_ID set → use Beehiiv
  *      (canonical per D-023; Beehiiv welcome sequence W1 delivers the PDF).
  *   2. Else if RESEND_API_KEY set → use Resend (legacy interim).
- *   3. Else → silently succeed (form UX not broken during setup).
+ *   3. Else → 503. A missing/rotated provider config must FAIL LOUDLY —
+ *      the previous silent-succeed branch dropped every subscriber while
+ *      the form showed success (INCIDENT-pdf-delivery-silent-fail.md,
+ *      confirmed live 2026-08-07). Never return 200 on a dropped write.
  *
  * --- BEEHIIV SETUP (canonical, D-023) ---
  * Required env vars in Vercel → Settings → Environment Variables:
@@ -164,7 +167,7 @@ export default async function handler(req, res) {
   const resendKey = process.env.RESEND_API_KEY;
 
   try {
-    // Provider priority: Beehiiv (canonical) → Resend (legacy) → silent succeed.
+    // Provider priority: Beehiiv (canonical) → Resend (legacy) → 503.
     if (beehiivKey && beehiivPub) {
       await subscribeViaBeehiiv(email, beehiivKey, beehiivPub, line);
       return res.status(200).json({ success: true, provider: 'beehiiv' });
@@ -175,10 +178,15 @@ export default async function handler(req, res) {
       return res.status(200).json({ success: true, provider: 'resend' });
     }
 
-    // Neither provider configured — silently succeed so the form UX isn't
-    // broken during initial setup. Subscriber is logged but not recorded.
-    console.warn('No newsletter provider configured (BEEHIIV_API_KEY or RESEND_API_KEY) — subscriber dropped:', email);
-    return res.status(200).json({ success: true, provider: 'none' });
+    // No provider configured — FAIL LOUDLY. The silent-succeed branch that
+    // used to live here dropped every subscriber behind a success message
+    // (INCIDENT-pdf-delivery-silent-fail.md, confirmed live 2026-08-07).
+    // The 503 surfaces the outage to the visitor AND to the founder via
+    // function logs; the form shows this error and re-enables the button.
+    console.error('SUBSCRIBE OUTAGE: no newsletter provider configured (BEEHIIV_API_KEY+BEEHIIV_PUBLICATION_ID or RESEND_API_KEY) — rejecting subscribe for:', email);
+    return res.status(503).json({
+      error: 'Subscriptions are temporarily down. Email hello@vihrenlabs.com and we will send the PDF directly.',
+    });
   } catch (err) {
     console.error('Subscribe error:', err);
     // Surface validation errors; hide internal details

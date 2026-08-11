@@ -3,7 +3,41 @@
 **Date opened:** 2026-05-26
 **Reported by:** Founder (self-test on production site)
 **Severity:** HIGH — silently dropping leads at the trust-stack's primary lead-magnet surface
-**Status:** open
+**Status:** ROOT CAUSE CONFIRMED LIVE + code fix on PR (2026-08-07) — awaiting founder merge + Beehiiv env provisioning
+
+---
+
+## 2026-08-07 verification session (Claude, founder-commissioned)
+
+**Live probe (production):** `POST https://www.vihrenlabs.com/api/subscribe`
+with a fresh test alias returned `200 {"success":true,"provider":"none"}` —
+the silent-drop tier is ACTIVE in production. Every subscriber since launch
+has been dropped behind a success message.
+
+**Environment state (names only, `vercel env ls`):** the project's ONLY env
+var is `PUBLIC_CONVERTKIT_UID` (83 days old, a ConvertKit-era relic).
+`BEEHIIV_API_KEY`, `BEEHIIV_PUBLICATION_ID`, `RESEND_API_KEY` were never
+set. The incident's "most likely state" hypothesis is now confirmed fact.
+
+**Code fix (branch `fix/subscribe-fail-loud`):** the silent-succeed branch
+is replaced with a `503` + user-facing outage message ("Subscriptions are
+temporarily down. Email hello@vihrenlabs.com…") + `console.error`. The
+form's existing error path renders the message and re-enables the button
+(no form logic change needed). Harness-tested: no-provider → 503 with the
+message; invalid email → 400; GET → 405 (unchanged). PASS.
+
+**Remaining (founder, ~15 min — Path A below):**
+1. Beehiiv: create API key + copy publication ID; confirm the W1 welcome
+   email actually carries the PDF link (`beehiiv-setup-spec.md` §Step 4).
+2. Vercel → vihrenlabs-site → env vars: add `BEEHIIV_API_KEY` +
+   `BEEHIIV_PUBLICATION_ID` (Production). Redeploy.
+3. Merge the PR (fail-loud protection for any future key rotation).
+4. E2E check: fresh external email → expect `provider:"beehiiv"` response,
+   W1 in inbox, PDF link works. Only then is the funnel VERIFIED.
+5. Optional cleanup: remove the stale `PUBLIC_CONVERTKIT_UID`.
+
+Until step 2 lands, the form (post-merge) will show the honest outage
+message instead of fake success — that is the intended fail-loud behavior.
 
 ---
 
