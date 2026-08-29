@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ArticleFunnel from '../../components/ArticleFunnel.astro';
 import { getCollection } from 'astro:content';
 import { faqSchema, howToSchema } from '../../data/schema';
 
@@ -131,6 +132,9 @@ if (d.faq.length) schemaNodes.push(faqSchema(d.faq));
             </a>
           </div>
         )}
+        <div class="mt-6">
+          <ArticleFunnel />
+        </div>
         <p class="text-white/40 text-sm leading-relaxed mt-6">
           Written by Petko Petkov - 15 years inside enterprise IT operations. Vihren Labs
           publishes operator-grade templates and playbooks for the enterprise IT stack.
