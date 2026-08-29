@@ -54,7 +54,8 @@ const collectionSchema = {
       <p class="text-white/50 text-lg leading-relaxed">
         Everything I have written down, in one place. The <span class="text-white/70">guides</span> answer
         one question step by step - a checklist you can run. The <span class="text-white/70">essays</span> argue
-        a position from the operator seat. Real T-codes, real article numbers, real failure modes. All free to read.
+        a position from the operator seat. The <a href="/cheat-sheets" class="text-white/70 hover:text-[#E67E22] underline underline-offset-4 decoration-white/20 transition-colors">cheat sheets</a> put
+        the framework on one page each. Real T-codes, real article numbers, real failure modes. All free to read.
       </p>
     </div>
   </section>
@@ -75,6 +76,38 @@ const collectionSchema = {
       </div>
     </section>
   )}
+
+  <!-- ═══ THE FRAMEWORK ═════════════════════════════════════════════════
+       Wayfinding, not a new index: the guides and essays below are sorted by
+       type, which tells a first-time reader nothing about where to start. The
+       five layers are the spine everything else hangs off, and the cheat sheets
+       are that spine one page at a time - previously unlinked from this hub
+       despite the promise above ("everything ... in one place"). ═══════════ -->
+  <section class="pt-14 px-6">
+    <div class="max-w-4xl mx-auto">
+      <div class="rounded-2xl border border-white/10 bg-white/[0.02] p-7 sm:p-8">
+        <div class="flex items-baseline gap-3 flex-wrap mb-3">
+          <div class="w-8 h-px bg-[#E67E22]"></div>
+          <h2 class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase">The framework</h2>
+        </div>
+        <p class="text-white/55 text-base leading-relaxed mb-6 max-w-2xl">
+          Most of what follows sits on one of five operational layers. If you do not know which
+          layer you are missing, start there - each is a single page, free, no email.
+        </p>
+        <div class="flex flex-wrap gap-2 mb-6">
+          {['Governance', 'Clean Data', 'Standardized Processes', 'Controls', 'Operating Model'].map((layer, i) => (
+            <span class="font-mono text-[10px] text-white/45 border border-white/10 bg-white/[0.03] px-2.5 py-1 rounded tracking-wider uppercase">
+              <span class="text-[#E67E22]/70">{String(i + 1).padStart(2, '0')}</span> {layer}
+            </span>
+          ))}
+        </div>
+        <a href="/cheat-sheets"
+           class="inline-flex items-center gap-2 bg-[#E67E22]/15 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-[#E67E22]/25 transition-colors">
+          The cheat sheets
+        </a>
+      </div>
+    </div>
+  </section>
 
   <!-- ═══ GUIDES ════════════════════════════════════════════════════════ -->
   <section class="py-14 px-6">
