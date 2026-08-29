@@ -1,0 +1,55 @@
+---
+/**
+ * ArticleFunnel — the standing funnel block for every essay and guide.
+ *
+ * The back catalog kept selling whatever CTA was current when each piece
+ * shipped; this block is the one place the "current funnel" is defined, so
+ * old pages stop drifting (root-cause fix, decision A1 2026-08-29). Rendered
+ * by essays/[...slug].astro and guides/[...slug].astro after the article body.
+ *
+ * Contents are governed by locked decisions — change them here, not per page:
+ *  - The Operator Brief subscribe (short-form name per D-065; the canonical
+ *    promise line lives inside NewsletterForm, do not repeat it here)
+ *  - Free rungs: the AI-Ready Operations Assessment (l/rmkje) + /cheat-sheets
+ *  - Front door (D-060): Master Data Operator's Pack + AI Adoption &
+ *    Governance Operator's Pack — the two marketed doors, on-site detail pages
+ *
+ * One instance per page only — NewsletterForm's script binds by element id.
+ */
+import NewsletterForm from './NewsletterForm.astro';
+
+const ASSESSMENT_URL = 'https://vihrenlabs.gumroad.com/l/rmkje';
+---
+
+<div class="rounded-2xl border border-white/10 bg-white/[0.02] p-7 sm:p-8">
+  <p class="font-mono text-[#E67E22] text-[10px] tracking-[0.2em] uppercase mb-3">The Operator Brief</p>
+  <h2 class="font-black text-xl text-white leading-snug mb-5">The next essay, in your inbox.</h2>
+  <NewsletterForm />
+
+  <div class="mt-7 pt-6 border-t border-white/8 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-5">
+    <div>
+      <p class="font-mono text-white/35 text-[10px] tracking-[0.2em] uppercase mb-2.5">Free, keep going</p>
+      <ul class="flex flex-col gap-2 text-sm">
+        <li>
+          <a href={ASSESSMENT_URL} target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-[#E67E22] transition-colors">AI-Ready Operations Assessment</a>
+          <span class="text-white/30"> - find your weakest layer</span>
+        </li>
+        <li>
+          <a href="/cheat-sheets" class="text-white/60 hover:text-[#E67E22] transition-colors">Cheat sheets</a>
+          <span class="text-white/30"> - the framework, one page per layer</span>
+        </li>
+      </ul>
+    </div>
+    <div>
+      <p class="font-mono text-white/35 text-[10px] tracking-[0.2em] uppercase mb-2.5">Go deeper</p>
+      <ul class="flex flex-col gap-2 text-sm">
+        <li>
+          <a href="/products/master-data-operators-pack" class="text-white/60 hover:text-[#E67E22] transition-colors">Master Data Operator's Pack</a>
+        </li>
+        <li>
+          <a href="/products/ai-adoption-and-governance-operators-pack" class="text-white/60 hover:text-[#E67E22] transition-colors">AI Adoption &amp; Governance Operator's Pack</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

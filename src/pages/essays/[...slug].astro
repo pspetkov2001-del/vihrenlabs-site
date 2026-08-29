@@ -1,5 +1,6 @@
 ---
 import Base from '../../layouts/Base.astro';
+import ArticleFunnel from '../../components/ArticleFunnel.astro';
 import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -67,12 +68,12 @@ const breadcrumb = {
       </div>
 
       <div class="mt-12 pt-8 border-t border-white/10">
-        <p class="text-white/40 text-sm leading-relaxed">
+        <ArticleFunnel />
+        <p class="text-white/40 text-sm leading-relaxed mt-6">
           Written by Petko Petkov - 15 years inside enterprise IT operations. Vihren Labs
           publishes operator-grade templates and playbooks for the enterprise IT stack.
         </p>
         <div class="flex flex-wrap gap-3 mt-5">
-          <a href="/products" class="inline-flex items-center gap-2 bg-[#E67E22]/15 border border-[#E67E22]/40 text-[#E67E22] font-semibold px-5 py-2.5 rounded-full text-sm hover:bg-[#E67E22]/25 transition-colors">See the templates</a>
           <a href="/writing" class="inline-flex items-center gap-2 border border-white/10 hover:border-white/30 text-white/60 hover:text-white font-medium px-5 py-2.5 rounded-full text-sm transition-colors">More writing</a>
         </div>
       </div>
