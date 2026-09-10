@@ -1,6 +1,8 @@
 ---
 title: "The DORA Article 28 ICT register - what it must actually contain"
 description: "What a DORA Register of Information has to capture under Article 28: every ICT third-party arrangement, which critical or important function each one supports, the criticality and sub-contracting chain, and the concentration-risk picture - not just a procurement list. An operator's view of the register supervisors actually open."
+seoTitle: "The DORA Article 28 ICT register"
+seoDescription: "What a DORA Register of Information has to capture under Article 28: every ICT third-party arrangement."
 date: "2026-06-05"
 line: "Regulatory & Compliance"
 keywords: ["DORA Article 28 register", "DORA Register of Information", "ICT third-party register", "ICT concentration risk", "DORA compliance", "ICT third-party risk", "critical or important function", "DORA template"]

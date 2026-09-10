@@ -6,14 +6,26 @@ import Schema from '../components/Schema.astro';
 interface Props {
   title?: string;
   description?: string;
+  /** SERP-only overrides. When set, these feed <title>/<meta description> while the
+   *  page keeps rendering its own longer editorial title and blurb. seoTitle is used
+   *  VERBATIM with no " · Vihren Labs" suffix - on an informational query the brand
+   *  name earns nothing and costs 15 of the ~60 characters Google shows. */
+  seoTitle?: string;
+  seoDescription?: string;
   schema?: Record<string, any> | Record<string, any>[];
 }
 
 const {
   title = 'Vihren Labs',
   description = 'Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator.',
+  seoTitle,
+  seoDescription,
   schema,
 } = Astro.props;
+
+// What the SERP actually gets. Falls back to the editorial copy, so a page that
+// sets neither behaves exactly as it did before these props existed.
+const metaDescription = seoDescription ?? description;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // The homepage <title> is prime SEO/SERP real estate, so give it a descriptive,
@@ -21,11 +33,13 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 // "<page title> · Vihren Labs". Keyed on the path so pages that omit an explicit
 // title prop (and essays whose own titles contain "Vihren Labs") are unaffected.
 const isHome = Astro.url.pathname === '/';
-const pageTitle = isHome
-  ? 'Vihren Labs - Operator-grade templates for the enterprise IT stack'
-  : title === 'Vihren Labs'
-    ? title
-    : `${title} · Vihren Labs`;
+const pageTitle = seoTitle
+  ? seoTitle
+  : isHome
+    ? 'Vihren Labs - Operator-grade templates for the enterprise IT stack'
+    : title === 'Vihren Labs'
+      ? title
+      : `${title} · Vihren Labs`;
 ---
 
 <!doctype html>
@@ -34,14 +48,14 @@ const pageTitle = isHome
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{pageTitle}</title>
-    <meta name="description" content={description} />
+    <meta name="description" content={metaDescription} />
     <link rel="canonical" href={canonicalURL} />
 
     <!-- Pinterest domain verification (claim vihrenlabs.com) — 2026-05-23 -->
     <meta name="p:domain_verify" content="9376781f57f46bc339fb0ec88999ecb7" />
 
     <meta property="og:title" content={pageTitle} />
-    <meta property="og:description" content={description} />
+    <meta property="og:description" content={metaDescription} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Vihren Labs" />

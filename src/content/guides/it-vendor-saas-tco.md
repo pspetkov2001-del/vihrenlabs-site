@@ -1,6 +1,8 @@
 ---
 title: "IT vendor & SaaS TCO - the true three-year cost, not the invoice price"
 description: "What an IT vendor / SaaS total-cost-of-ownership model must contain: the licence line, the hidden bolt-ons and admin FTE, the three-year cost with the renewal uplift modelled, and the renewal mechanics (notice period, auto-renewal trigger, list-vs-floor price, the vendor's fiscal-quarter close) that decide what you actually pay. From the distributor side of the table."
+seoTitle: "IT vendor & SaaS TCO"
+seoDescription: "What an IT vendor / SaaS total-cost-of-ownership model must contain: the licence line, the hidden bolt-ons and admin FTE."
 date: "2026-06-09"
 line: "Procurement & Vendor Management"
 keywords: ["IT vendor TCO template", "SaaS TCO calculation", "software total cost of ownership", "SaaS renewal uplift", "vendor renewal negotiation", "deal registration", "auto-renewal notice period", "vendor RFP scoring"]

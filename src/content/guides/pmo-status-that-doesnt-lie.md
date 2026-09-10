@@ -1,6 +1,8 @@
 ---
 title: "The PMO status report that doesn't lie - defensible RAG, RAID, and gates"
 description: "Most programme status reports are watermelons: green on the outside until they turn red overnight. A defensible PMO status has written RAG definitions everyone agrees on, a RAID log with owners not just entries, stage gates that are pre-agreed pass criteria instead of date theatre, and numbers that assemble from the trackers rather than being narrated. Written by an operator who has run transformation PMOs - here is how to make a status report nobody can argue with."
+seoTitle: "The PMO status report that doesn't lie"
+seoDescription: "How to make a PMO status report defensible: written RAG definitions, a RAID log with owners, and stage gates with pre-agreed pass criteria."
 date: "2026-06-07"
 line: "Transformation & SSC/GBS"
 keywords: ["PMO status report", "defensible RAG status", "RAG status definitions", "RAID log", "programme management", "what does a PMO do", "stage gate criteria", "transformation PMO", "project status reporting"]

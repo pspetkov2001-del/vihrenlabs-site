@@ -61,7 +61,13 @@ if (d.steps.length) {
 if (d.faq.length) schemaNodes.push(faqSchema(d.faq));
 ---
 
-<Base title={d.title} description={d.description} schema={schemaNodes}>
+<Base
+  title={d.title}
+  description={d.description}
+  seoTitle={d.seoTitle}
+  seoDescription={d.seoDescription}
+  schema={schemaNodes}
+>
   <article class="px-6 py-20 sm:py-24">
     <div class="max-w-2xl mx-auto">
       <nav class="flex items-center gap-2 mb-8 font-mono text-[11px] tracking-wider uppercase text-white/30">

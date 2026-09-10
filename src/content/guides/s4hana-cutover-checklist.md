@@ -1,6 +1,8 @@
 ---
 title: "The S/4HANA cutover checklist - the run sheet that survives 3 a.m."
 description: "What an S/4HANA migration cutover checklist must contain: the readiness gates, the hour-by-hour run sheet, the master-data freeze, the data-validation checks (MASS/MASSD, MB52, FBL3N), the pre-agreed rollback criteria, and the hypercare plan. From an operator who has watched cutovers fail at 4 a.m."
+seoTitle: "The S/4HANA cutover checklist"
+seoDescription: "What an S/4HANA migration cutover checklist must contain: the readiness gates, the hour-by-hour run sheet, the master-data freeze."
 date: "2026-06-05"
 line: "SAP / ERP Operations"
 keywords: ["S/4HANA cutover checklist", "SAP cutover run sheet", "S/4HANA go-live readiness", "cutover rollback criteria", "SAP hypercare plan", "SAP ECC end of maintenance", "master data freeze", "cutover weekend"]

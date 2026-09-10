@@ -1,6 +1,8 @@
 ---
 title: "The SaaS renewal negotiation checklist - terms that beat the discount"
 description: "How to negotiate a SaaS or software renewal from the buyer's seat: find the notice period and start 90–120 days out, pull real usage, build the true 3-year TCO, read the vendor's leverage (quarter-end, deal registration, your renewal date in their CRM), establish a credible alternative, and counter the uplift with specifics. Written by someone who has run renewals from the vendor and distribution side."
+seoTitle: "The SaaS renewal negotiation checklist"
+seoDescription: "How to negotiate a SaaS or software renewal from the buyer's seat: find the notice period and start 90–120 days out, pull real usage."
 date: "2026-06-05"
 line: "Procurement & Vendor Management"
 keywords: ["SaaS renewal negotiation checklist", "software renewal negotiation", "vendor renewal", "auto-renewal notice period", "SaaS contract negotiation", "renewal uplift", "IT vendor management", "true TCO"]

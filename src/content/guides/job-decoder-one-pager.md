@@ -1,6 +1,8 @@
 ---
 title: "The Job Decoder - 6 questions that tell you what a role actually is"
 description: "Most job descriptions are written for the applicant-tracking filter, for HR and legal, and for the internal pay grade - not to tell you what the work is. The Job Decoder is the six-question method to understand any role in about a minute: what they do all day, what they're really measured on, who they work with, the number-one failure mode, the skills that actually matter, and how to break in. Written by an operator who has hired into and worked across enterprise-operations roles on both sides of the table."
+seoTitle: "How to read a job description: 6 questions"
+seoDescription: "Most job descriptions are written for the applicant-tracking filter, for HR and legal, and for the internal pay grade - not to tell you what the work is."
 date: "2026-06-07"
 line: "Transformation & SSC/GBS"
 keywords: ["how to read a job description", "what does the job actually involve", "understand a job role", "job description decoded", "what is a master data manager", "how to break into a role", "enterprise IT careers", "operations roles explained"]

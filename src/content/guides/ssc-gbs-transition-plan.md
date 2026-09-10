@@ -1,6 +1,8 @@
 ---
 title: "The SSC/GBS transition plan - FTE sizing, knowledge transfer, and the exit to BAU"
 description: "What a shared-services, GBS or BPO transition plan must contain: the FTE sizing math (volume / productivity x ramp uplift), the four transition models, the four-stage knowledge transfer that advances on evidence, the governance and self-writing status, the hypercare-to-BAU exit criteria, and the retained organisation. From an operator who has run offshoring transitions, not pitched them."
+seoTitle: "The SSC/GBS transition plan"
+seoDescription: "What a shared-services, GBS or BPO transition plan must contain: the FTE sizing math (volume / productivity x ramp uplift), the four transition models."
 date: "2026-06-09"
 line: "Transformation & SSC/GBS"
 keywords: ["SSC GBS transition plan template", "BPO transition checklist", "knowledge transfer plan template", "offshoring transition", "FTE ramp sizing", "shared services transition", "hypercare to BAU exit", "retained organisation"]

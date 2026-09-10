@@ -1,6 +1,8 @@
 ---
 title: "Why transformations fail - the 7 failure modes and the operating spine that prevents them"
 description: "Transformations almost never fail on the technology. They fail in seven predictable, organisational ways: no honest baseline, maturity scored to flatter, everything-is-Wave-1, strategic builds before quick wins, no operating model for the after, governance by status deck, and value asserted but never proven. The fix is an operating spine - assessment, capability maturity, roadmap, target operating model, governance, value. Written by an operator who has run transformation programmes."
+seoTitle: "Why transformations fail"
+seoDescription: "Transformations almost never fail on the technology. They fail in seven predictable, organisational ways - and an operating spine prevents them."
 date: "2026-06-07"
 line: "Transformation & SSC/GBS"
 keywords: ["why transformations fail", "digital transformation failure", "transformation operating model", "capability maturity", "transformation roadmap", "what does a transformation manager do", "target operating model", "transformation governance"]
