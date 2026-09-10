@@ -40,6 +40,31 @@ write. Same observable-failure-mode rule as the portfolio CLAUDE.md.
 
 ---
 
+## SEO: the editorial title is NOT the SERP title (added 2026-09-10)
+
+Essays and guides carry long, deliberately editorial `title` and `description` frontmatter -
+they are the on-page H1 and the card blurb, and they are *supposed* to read like his writing.
+They are not SERP copy. Google trims a `<title>` past ~60 characters and a meta description
+past ~158, and `Base.astro` appends `" · Vihren Labs"` (+15 chars) to every non-home title,
+so before this pass **every one of the 22 content pages shipped a snippet Google cut mid-word
+or rewrote**: descriptions ran 299-519 chars, rendered titles up to 93.
+
+The fix is a decoupling, not a rewrite:
+
+- `seoTitle` and `seoDescription` are OPTIONAL frontmatter on both collections. They feed
+  ONLY `<title>`, `<meta name="description">` and `og:description`. The page keeps rendering
+  `title`/`description` for the H1 and the listing cards, unchanged.
+- **When `seoTitle` is set it is used verbatim with NO brand suffix** - on an informational
+  query the brand name earns nothing and costs 15 of the ~60 characters shown.
+- Omit either field and the page behaves exactly as it did before they existed.
+- **The guard is the Zod `.max()` in `src/content/config.ts`** (60 / 165). An over-long value
+  fails `npm run build`, not the SERP. Don't relax it; write a shorter line.
+
+**Do not mechanically truncate a title to fit.** A dangling fragment ("...repeat from the",
+"...look for in DORA and") reads worse in a SERP than a long title Google trims itself. If
+there is no clean structural break, leave the field unset and write it by hand. Eight items
+were deliberately left unset on that basis - `grep -L seoTitle src/content/*/*.md` finds them.
+
 ## Companion files
 - `INCIDENT-pdf-delivery-silent-fail.md` — the lead-capture silent-drop incident
 - `api/subscribe.js` — the lead-capture endpoint

@@ -1,6 +1,8 @@
 ---
 title: "The master data quality audit - the checks that actually matter"
 description: "How to run a master data quality audit: the six dimensions worth scoring (completeness, validity, consistency, uniqueness, conformity, timeliness), how to score at field level, how to log and prioritise defects, and how to evidence the improvement over time - for the person accountable for the data, not the consultant reviewing it."
+seoTitle: "The master data quality audit"
+seoDescription: "How to run a master data quality audit: the six dimensions worth scoring (completeness, validity, consistency, uniqueness, conformity, timeliness)."
 date: "2026-06-05"
 line: "Master Data Operations"
 keywords: ["master data quality audit checklist", "data quality metrics", "master data quality dimensions", "MDM data quality", "SAP master data quality", "data defect log", "data quality scoring", "master data remediation"]

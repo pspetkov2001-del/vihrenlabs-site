@@ -8,6 +8,14 @@ const essays = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    // SEO overrides (added 2026-09-10). The on-page H1 and the card blurb keep using
+    // `title`/`description` - these two feed ONLY the <title> and <meta description>.
+    // Decoupled because the editorial title is long by design and a SERP is not:
+    // Google trims titles past ~60 chars and descriptions past ~158, so every page
+    // was shipping a snippet Google either cut mid-word or rewrote. The .max() here
+    // is the regression guard - an over-long value fails the build, not the SERP.
+    seoTitle: z.string().max(60).optional(),
+    seoDescription: z.string().max(165).optional(),
     date: z.string(), // ISO date string
     line: z.string(), // the product line this essay warms (display + relatedness)
     keywords: z.array(z.string()).default([]),
@@ -25,6 +33,8 @@ const guides = defineCollection({
   schema: z.object({
     title: z.string(),
     description: z.string(),
+    seoTitle: z.string().max(60).optional(),      // see essays collection for why
+    seoDescription: z.string().max(165).optional(),
     date: z.string(),
     line: z.string(),
     keywords: z.array(z.string()).default([]),

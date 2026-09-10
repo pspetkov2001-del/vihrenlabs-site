@@ -1,6 +1,8 @@
 ---
 title: "What supervisory authorities actually look for in DORA and EU AI Act compliance"
 description: "Modern EU ICT and AI regulation is no longer a document-based compliance exercise - it's a governance-maturity assessment. What that means in practice for EU AI Act deployment governance (the four controls that make you defensible) and DORA ICT third-party risk (why your register is a procurement inventory, not a concentration-risk picture), and the shift underneath both."
+seoTitle: "What DORA and EU AI Act supervisors actually look for"
+seoDescription: "Modern EU ICT and AI regulation is no longer a document-based compliance exercise - it's a governance-maturity assessment."
 date: "2026-05-29"
 line: "Regulatory & Compliance"
 keywords: ["DORA", "DORA ICT register", "Article 28", "ICT concentration risk", "EU AI Act", "EU AI Act compliance", "AI deployer obligations", "Article 50 transparency", "AI due diligence", "supervisory authority"]

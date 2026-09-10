@@ -1,6 +1,8 @@
 ---
 title: "The S/4HANA deadline math most organizations calculate wrong"
 description: "SAP ECC mainstream maintenance ends December 31, 2027 - but for most mid-market organizations the real cut-off was mid-2025, because transformation capacity is finite. The lead-time math, the capacity crunch, why procurement misreads ERP sourcing, the readiness signals that beat RAG status, the rollback decision nobody pre-commits, and why hypercare is where the program is actually judged."
+seoTitle: "The S/4HANA deadline math most organizations calculate wrong"
+seoDescription: "SAP ECC mainstream maintenance ends December 31, 2027 - but for most mid-market organizations the real cut-off was mid-2025."
 date: "2026-05-27"
 line: "SAP / ERP Operations"
 keywords: ["SAP ECC end of maintenance", "S/4HANA migration", "S/4HANA cutover", "cutover window", "rollback criteria", "go/no-go decision", "hypercare", "SAP migration timeline", "ERP transformation"]

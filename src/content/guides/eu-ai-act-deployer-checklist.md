@@ -1,6 +1,8 @@
 ---
 title: "The EU AI Act deployer checklist - what an SME has to do before August 2026"
 description: "A practical EU AI Act readiness checklist for deployers: build the AI system inventory, classify each system (prohibited, high-risk under Annex III, limited-risk, minimal), meet the Article 50 transparency obligations, cover the Article 26 deployer duties, and assemble the evidence - treated as a documentation exercise, not a legal one."
+seoTitle: "The EU AI Act deployer checklist"
+seoDescription: "A practical EU AI Act readiness checklist for deployers: build the AI system inventory, classify each system (prohibited, high-risk under Annex III."
 date: "2026-06-05"
 line: "Regulatory & Compliance"
 keywords: ["EU AI Act deployer checklist", "EU AI Act compliance", "Article 50 transparency", "Annex III high-risk AI", "AI system inventory", "EU AI Act SME", "AI deployer obligations", "AI Act August 2026"]

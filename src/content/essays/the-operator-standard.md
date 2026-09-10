@@ -1,6 +1,8 @@
 ---
 title: "The Vihren Labs Operator Standard - seven principles for running the enterprise IT stack"
 description: "The seven principles every Vihren Labs product is held to, written from fifteen years in the operator's seat: run on the obligation not the aspiration, build governance like architecture, concrete beats abstract, vendor economics, regulation is operational not legal, the pre-mortem beats the risk register, and the catalogue compounds. The door to the whole catalogue, and the creed of the people who carry it."
+seoTitle: "The Vihren Labs Operator Standard"
+seoDescription: "The seven principles every Vihren Labs product is held to, written from fifteen years in the operator's seat: run on the obligation not the aspiration."
 date: "2026-06-05"
 line: "The Operator Standard"
 keywords: ["enterprise IT operations", "operator standard", "SAP S/4HANA cutover", "vendor renewal negotiation", "DORA", "EU AI Act", "IT governance", "pre-mortem", "master data quality", "enterprise IT operator"]

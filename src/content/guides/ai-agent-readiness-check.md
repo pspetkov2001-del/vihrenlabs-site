@@ -1,6 +1,8 @@
 ---
 title: "Are you ready to deploy an AI agent? The 12-point operator readiness check"
 description: "A free 12-point readiness check for deploying an AI agent on real enterprise data: the identity, completeness, consistency, governance and process questions to answer before go-live - because an agent amplifies whatever your data already is. From an operator who builds master-data and AI-readiness tooling."
+seoTitle: "The 12-point AI agent readiness check"
+seoDescription: "A free 12-point readiness check for deploying an AI agent on real enterprise data: the identity, completeness, consistency."
 date: "2026-06-05"
 line: "AI Adoption & Governance"
 keywords: ["AI agent readiness", "AI agent readiness checklist", "deploy AI agent", "AI data readiness", "is my data ready for AI", "AI governance", "AI agent failure", "AI readiness assessment", "master data for AI", "AI adoption checklist"]

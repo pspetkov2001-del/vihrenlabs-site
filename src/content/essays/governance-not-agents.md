@@ -1,6 +1,8 @@
 ---
 title: "Governance, not agents: the operating model most AI programs skip"
 description: "Most AI agent projects don't fail on the model - they fail on the operating model: no decision rights, no use-case gate, broken data, runaway cost, no owner after launch. Why the first question isn't 'which agent should we buy' but 'who owns this, and how do we decide', and what an AI Center of Excellence actually is - a thin function with a charter, a GO / PILOT / PARK gate, eval standards, a risk register, and run-and-maintain ownership across the agent lifecycle."
+seoTitle: "Governance, not agents"
+seoDescription: "Most AI agent projects don't fail on the model - they fail on the operating model: no decision rights, no use-case gate, broken data, runaway cost."
 date: "2026-06-06"
 line: "AI Adoption & Governance"
 keywords: ["AI center of excellence", "AI governance", "AI operating model", "AI agent governance", "why AI projects fail", "AI use case selection", "AI adoption framework", "agentic AI", "AI risk tiers", "AI program governance", "AI CoE"]

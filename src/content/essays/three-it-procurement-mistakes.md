@@ -1,6 +1,8 @@
 ---
 title: "Three IT procurement mistakes I've watched repeat from the vendor side"
 description: "From 15 years on the vendor-distribution side of enterprise IT deals: the three renewal mistakes that repeat across organisations - starting the conversation at T-30 instead of T-90, negotiating price instead of contract terms, and never asking what the distribution channel already knows - and what the best procurement teams do instead."
+seoTitle: "Three IT procurement mistakes, seen from the vendor side"
+seoDescription: "From 15 years on the vendor-distribution side of enterprise IT deals: the three renewal mistakes that repeat across organisations."
 date: "2026-06-03"
 line: "Procurement & Vendor Management"
 keywords: ["IT procurement", "vendor management", "software renewal", "renewal negotiation", "SaaS procurement", "contract terms", "uplift cap", "deal registration", "MDF", "distributor floor price", "true-up"]

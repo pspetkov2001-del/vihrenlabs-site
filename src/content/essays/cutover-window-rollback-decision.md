@@ -1,6 +1,8 @@
 ---
 title: "The cutover-window decision nobody makes early enough"
 description: "Every S/4HANA migration has a cutover window - and the rollback decision inside it is the hardest call in the whole project, not technically but psychologically. The three questions the best teams answer before T-Day: the written go/no-go criteria, who holds the call, and where the point-of-no-return actually sits."
+seoTitle: "The cutover-window decision nobody makes early enough"
+seoDescription: "Every S/4HANA migration has a cutover window - and the rollback decision inside it is the hardest call in the whole project."
 date: "2026-06-04"
 line: "SAP / ERP Operations"
 keywords: ["SAP S/4HANA migration", "SAP cutover", "go/no-go decision", "cutover rollback", "ECC to S/4HANA", "cutover window", "hypercare", "migration runbook", "steering committee", "cutover planning", "ECC 2027"]
