@@ -1,0 +1,6 @@
+# core.autocrlf=true on the Windows dev box would commit shell scripts with CRLF,
+# which fails on any POSIX shell with "bad interpreter: /usr/bin/env bash^M".
+# Pin LF for scripts and config that a non-Windows shell or CI may execute.
+*.sh text eol=lf
+*.mjs text eol=lf
+*.json text eol=lf
