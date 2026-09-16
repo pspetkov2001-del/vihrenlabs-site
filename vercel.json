@@ -11,13 +11,18 @@
       "permanent": true
     },
     {
-      "source": "/:path*",
+      "source": "/:path(.*)",
       "has": [{ "type": "host", "value": "^vihrenlabs\\.com$" }],
-      "destination": "https://www.vihrenlabs.com/:path*",
+      "destination": "https://www.vihrenlabs.com/:path",
       "permanent": true
     },
     {
       "source": "/paths",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/paths/",
       "destination": "/products",
       "permanent": true
     },
@@ -27,7 +32,17 @@
       "permanent": true
     },
     {
+      "source": "/lines/programme-delivery/",
+      "destination": "/lines/transformation",
+      "permanent": true
+    },
+    {
       "source": "/essays",
+      "destination": "/writing",
+      "permanent": true
+    },
+    {
+      "source": "/essays/",
       "destination": "/writing",
       "permanent": true
     },
@@ -37,12 +52,27 @@
       "permanent": true
     },
     {
+      "source": "/guides/",
+      "destination": "/writing",
+      "permanent": true
+    },
+    {
       "source": "/essays/cutover-window-decision",
       "destination": "/essays/ecc-end-of-maintenance-math",
       "permanent": true
     },
     {
+      "source": "/essays/cutover-window-decision/",
+      "destination": "/essays/ecc-end-of-maintenance-math",
+      "permanent": true
+    },
+    {
       "source": "/essays/eu-ai-act-supervisory-file",
+      "destination": "/essays/dora-ict-register-completeness",
+      "permanent": true
+    },
+    {
+      "source": "/essays/eu-ai-act-supervisory-file/",
       "destination": "/essays/dora-ict-register-completeness",
       "permanent": true
     }

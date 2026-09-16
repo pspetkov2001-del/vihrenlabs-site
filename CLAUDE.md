@@ -40,6 +40,44 @@ write. Same observable-failure-mode rule as the portfolio CLAUDE.md.
 
 ---
 
+## `vercel.json` redirects miss the trailing slash — which IS our canonical form (2026-09-16)
+
+A `vercel.json` redirect `source` is path-to-regexp, and **`/:path*` does not match a
+path with a trailing slash** — `:path*` matches `/`-separated segments, and the trailing
+`/` leaves an unmatched empty segment. A literal `source` is likewise an exact match:
+`"/essays"` never matches `/essays/`.
+
+That collides head-on with this site's canonical convention. `Base.astro` builds
+`canonicalURL` from `Astro.url.pathname` and the Astro sitemap emits `.../about/`, so
+**every canonical URL we publish carries a trailing slash** — precisely the form the
+rules missed. Two live-verified consequences (curl against prod, 2026-09-16):
+
+1. **The apex→www redirect only covered non-slash paths.** `https://vihrenlabs.com/about/`
+   returned `200` and served the page **byte-identical** to www (27,071 bytes on both for
+   `/essays/governance-not-agents/`). 64 of 65 canonical URLs had a live apex duplicate;
+   only the `<link rel="canonical">` pointing at www stopped Google indexing them. The
+   bare apex `/` worked solely because it has its own dedicated `source: "/"` rule.
+   Fixed by `"/:path(.*)"` → `"/:path"`, which captures slashes and the trailing slash.
+2. **Six path redirects 404'd on their slash form.** `/essays`, `/guides`, `/paths`,
+   `/lines/programme-delivery` and both retired essay slugs returned `308` bare and
+   **`404` with the slash**. Fixed by listing both forms explicitly — don't rely on an
+   optional-slash pattern.
+
+Rules:
+
+- **Every new path redirect ships both forms** (`"/essays"` *and* `"/essays/"`), and any
+  catch-all uses `/:path(.*)`, never `/:path*`.
+- An `astro.config.mjs` redirect does NOT have this problem: it emits a physical
+  directory with a meta-refresh `index.html`, so both forms resolve.
+- **A bad `source` pattern fails the Vercel build loudly** — but a pattern that compiles
+  and matches differently is silent. Config review cannot catch that; only curl can.
+- **Verify against prod after every deploy that touches redirects**, both forms:
+  `scripts/verify-redirects.sh` (checks the apex duplicate + all six rules).
+- Do NOT "fix" this with a global `"trailingSlash": false` — that would 308 every
+  sitemap and canonical URL to its non-slash twin and turn all 65 pages into
+  "Page with redirect". If the convention is ever unified it must be
+  `trailingSlash: true` plus a rewrite of every rule, as its own considered change.
+
 ## SEO: the editorial title is NOT the SERP title (added 2026-09-10)
 
 Essays and guides carry long, deliberately editorial `title` and `description` frontmatter -
