@@ -57,7 +57,7 @@ const seasonOne = [
 ];
 
 // SEASON 2 - the studies. Same one-page treatment applied to the numbers everyone
-// is arguing about. Ongoing: one lands with each episode, so this list grows.
+// is arguing about. Complete since 2026-10-02: one sheet for each of the nine episodes.
 const seasonTwo = [
   {
     eyebrow: 'The 95% study',
@@ -94,10 +94,38 @@ const seasonTwo = [
     png: '/cheat-sheets/ai-coe-cheat-sheet.png',
     pdf: '/cheat-sheets/ai-coe-cheat-sheet.pdf',
   },
+  {
+    eyebrow: 'Clean vs AI-ready data',
+    title: 'AI-ready data starts with a named decision',
+    sub: 'Gartner\'s forecast that 60% of AI projects without AI-ready data will be abandoned, the 63% of data leaders who lack AI-ready practices or aren\'t sure they have them, and the three-step naming test to run before you automate a decision.',
+    png: '/cheat-sheets/ai-ready-data-cheat-sheet.png',
+    pdf: '/cheat-sheets/ai-ready-data-cheat-sheet.pdf',
+  },
+  {
+    eyebrow: 'The adoption gap',
+    title: '88% use AI. 6% can show it in profit.',
+    sub: 'McKinsey\'s 2025 survey on one page: 88% use AI, 39% report any EBIT impact, about 6% get 5% or more of EBIT from it, and the two layers that turn usage into impact.',
+    png: '/cheat-sheets/adoption-impact-gap-cheat-sheet.png',
+    pdf: '/cheat-sheets/adoption-impact-gap-cheat-sheet.pdf',
+  },
+  {
+    eyebrow: 'The use-case gate',
+    title: 'Score each AI idea on six questions',
+    sub: 'Six questions scored Clear, Fixable or Blocked, the rule that one Blocked answer parks the whole idea, and three worked cases: one GO, one PILOT and one PARK.',
+    png: '/cheat-sheets/use-case-gate-cheat-sheet.png',
+    pdf: '/cheat-sheets/use-case-gate-cheat-sheet.pdf',
+  },
+  {
+    eyebrow: 'Assistant or agent',
+    title: 'Agent washing. Ask before you buy.',
+    sub: 'Gartner\'s estimate that only about 130 of the thousands of vendors selling agentic AI are genuinely agentic, the question that tells an assistant from an agent, and the two questions to ask before the next demo.',
+    png: '/cheat-sheets/agent-washing-cheat-sheet.png',
+    pdf: '/cheat-sheets/agent-washing-cheat-sheet.pdf',
+  },
 ];
 
-// The Season 2 index. Live rows link the PDF; the rest carry a "Coming" badge and
-// ship the day their episode publishes - the same discipline the five layers used.
+// The Season 2 index. All nine rows link their PDF (complete since 2026-10-02). A row
+// with pdf: null would show a "Coming" badge instead - the same discipline the five layers used.
 // Every one of these is already written and rendered in the episode's own pack, so
 // nothing here is a promise the factory cannot keep.
 const seasonTwoMap = [
@@ -106,10 +134,10 @@ const seasonTwoMap = [
   { n: '03', label: 'The abandonment jump', desc: 'why working pilots get scrapped anyway',    pdf: '/cheat-sheets/abandonment-cheat-sheet.pdf' },
   { n: '04', label: 'Only 13% are ready',   desc: 'three years of spending didn\'t move it',  pdf: '/cheat-sheets/thirteen-percent-cheat-sheet.pdf' },
   { n: '05', label: 'Inside an AI CoE',     desc: 'the operating model, end to end',           pdf: '/cheat-sheets/ai-coe-cheat-sheet.pdf' },
-  { n: '06', label: 'AI-ready data',        desc: 'data that\'s ready for a named decision', pdf: null },
-  { n: '07', label: 'The adoption gap',     desc: 'everyone uses AI, few can show the impact', pdf: null },
-  { n: '08', label: 'The use-case gate',    desc: 'GO, PILOT or PARK, worked end to end',      pdf: null },
-  { n: '09', label: 'Agent washing',        desc: 'how few "agentic" vendors are the real thing', pdf: null },
+  { n: '06', label: 'AI-ready data',        desc: 'data that\'s ready for a named decision', pdf: '/cheat-sheets/ai-ready-data-cheat-sheet.pdf' },
+  { n: '07', label: 'The adoption gap',     desc: 'everyone uses AI, few can show the impact', pdf: '/cheat-sheets/adoption-impact-gap-cheat-sheet.pdf' },
+  { n: '08', label: 'The use-case gate',    desc: 'GO, PILOT or PARK, worked end to end',      pdf: '/cheat-sheets/use-case-gate-cheat-sheet.pdf' },
+  { n: '09', label: 'Agent washing',        desc: 'how few "agentic" vendors are the real thing', pdf: '/cheat-sheets/agent-washing-cheat-sheet.pdf' },
 ];
 
 // Full five-layer set for the overview map. Available = has a pdf; the rest are "coming".
@@ -246,7 +274,7 @@ const collectionSchema = {
       </div>
       <h2 class="font-black text-2xl sm:text-3xl leading-tight mb-3">The numbers everyone is arguing about</h2>
       <p class="text-white/45 text-base leading-relaxed max-w-2xl mb-10">
-        Same one-page treatment, applied to the studies and headlines rather than the framework: what the number actually measured, where the failure really sat, and the move it argues for. One lands with each episode.
+        Same one-page treatment, applied to the studies and headlines rather than the framework: what the number actually measured, where the failure really sat, and the move it argues for. One for each of the season's nine episodes.
       </p>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {seasonTwo.map((s) => (
@@ -308,7 +336,7 @@ const collectionSchema = {
         ))}
       </div>
       <p class="text-white/30 text-xs font-mono mt-4 tracking-wider">
-        A new one lands with each episode. <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">Subscribe</a> to catch them, or <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/45 hover:text-[#E67E22] transition-colors">watch the season</a>.
+        All nine episodes are here, one sheet each. <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">Subscribe</a> to the newsletter, or <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/45 hover:text-[#E67E22] transition-colors">watch the season</a>.
       </p>
     </div>
   </section>
