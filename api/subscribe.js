@@ -1,12 +1,13 @@
 /**
  * POST /api/subscribe
  *
- * Adds a subscriber to The Operator Brief newsletter and triggers
- * welcome email (which delivers the free Operator Standard PDF).
+ * Adds a subscriber to The Operator Brief newsletter. Double opt-in is on in
+ * Beehiiv (decided 2026-10-03): Beehiiv emails a confirmation link, and the
+ * welcome email configured in Beehiiv follows the click.
  *
  * Provider routing — preferred → fallback → LOUD failure:
  *   1. If BEEHIIV_API_KEY + BEEHIIV_PUBLICATION_ID set → use Beehiiv
- *      (canonical per D-023; Beehiiv welcome sequence W1 delivers the PDF).
+ *      (canonical per D-023).
  *   2. Else if RESEND_API_KEY set → use Resend (legacy interim).
  *   3. Else → 503. A missing/rotated provider config must FAIL LOUDLY —
  *      the previous silent-succeed branch dropped every subscriber while
@@ -18,9 +19,9 @@
  *   BEEHIIV_API_KEY           — beehiiv.com → Settings → Integrations → API → create key
  *   BEEHIIV_PUBLICATION_ID    — Settings → Publication → ID at top, format pub_xxxxxxxx
  *
- * The PDF delivery happens via Beehiiv's welcome sequence (configured in the
- * Beehiiv UI per docs/beehiiv-setup-spec.md §Step 4 W1 email). This endpoint
- * just creates the subscription; Beehiiv handles email.
+ * The confirmation and welcome emails are configured in the Beehiiv UI
+ * (Settings, Emails, Preset Emails). This endpoint just creates the
+ * subscription; Beehiiv handles email.
  *
  * --- RESEND SETUP (legacy fallback only) ---
  *   RESEND_API_KEY            — resend.com → API Keys
