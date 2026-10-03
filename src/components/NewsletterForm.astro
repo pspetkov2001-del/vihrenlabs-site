@@ -4,7 +4,8 @@
  *
  * Provider-aware backend:
  *  - Beehiiv (canonical per D-023) — set BEEHIIV_API_KEY + BEEHIIV_PUBLICATION_ID in Vercel.
- *    Welcome sequence W1 delivers the free Operator Standard PDF.
+ *    Double opt-in is on (decided 2026-10-03): Beehiiv emails a confirmation
+ *    link, and the welcome email configured in Beehiiv follows the click.
  *  - Resend (legacy fallback) — set RESEND_API_KEY + RESEND_AUDIENCE_ID + RESEND_FROM_EMAIL.
  *  - Neither configured → /api/subscribe returns 503 and the form shows the
  *    outage message (fail-loud fix, INCIDENT-pdf-delivery-silent-fail.md).
@@ -76,7 +77,7 @@ const helperAlign = align === 'center' ? 'text-center' : 'text-left';
       const data = await res.json().catch(() => ({}));
 
       if (res.ok) {
-        status.textContent = "You're in. First essay coming soon.";
+        status.textContent = "Check your inbox to confirm your email.";
         status.className = 'text-[#E67E22] text-xs mt-4 text-center h-4';
         emailEl.value = '';
         btn.textContent = 'Subscribed ✓';
