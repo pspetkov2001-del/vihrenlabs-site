@@ -140,6 +140,18 @@ const seasonTwoMap = [
   { n: '09', label: 'Agent washing',        desc: 'how few "agentic" vendors are the real thing', pdf: '/cheat-sheets/agent-washing-cheat-sheet.pdf' },
 ];
 
+// SEASON 4 - the new episodes. Each one is built on its own sheet, and its card goes
+// up when the episode publishes (the episode description links /cheat-sheets#season-4).
+const seasonFour = [
+  {
+    eyebrow: 'Shadow AI · the fast lane',
+    title: 'Your team already uses AI you banned. Build them a faster yes.',
+    sub: 'Why a ban stops nobody and only takes away your view of what is in use, the three parts every working approval lane has (a name, a clock and a map), and the Monday move: publish the green page.',
+    png: '/cheat-sheets/faster-yes-cheat-sheet.png',
+    pdf: '/cheat-sheets/faster-yes-cheat-sheet.pdf',
+  },
+];
+
 // Full five-layer set for the overview map. Available = has a pdf; the rest are "coming".
 const layerMap = [
   { n: '◆',  label: 'The Five Layers',        desc: 'the whole framework on one page',                  pdf: '/cheat-sheets/five-layers-cheat-sheet.pdf', cornerstone: true },
@@ -180,7 +192,7 @@ const collectionSchema = {
         The Five Layers, one page each.
       </h1>
       <p class="text-white/50 text-lg leading-relaxed max-w-2xl">
-        The complete framework from <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-[#E67E22] underline underline-offset-4 decoration-white/20 transition-colors">The Five Layers of AI-Ready Operations</a> - each sheet is a single layer, the tells that reveal you're missing it, and the one Monday-morning move. Free, no email. The version to forward to whoever owns AI where you work. Below the set, the Season 2 studies get the same one-page treatment.
+        The complete framework from <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/70 hover:text-[#E67E22] underline underline-offset-4 decoration-white/20 transition-colors">The Five Layers of AI-Ready Operations</a> - each sheet is a single layer, the tells that reveal you're missing it, and the one Monday-morning move. Free, no email. The version to forward to whoever owns AI where you work. Below the set, the Season 2 studies and the new Season 4 episodes get the same one-page treatment.
       </p>
     </div>
   </section>
@@ -338,6 +350,45 @@ const collectionSchema = {
       <p class="text-white/30 text-xs font-mono mt-4 tracking-wider">
         All nine episodes are here, one sheet each. <a href="/#newsletter" class="text-white/45 hover:text-[#E67E22] transition-colors">Subscribe</a> to the newsletter, or <a href="https://www.youtube.com/@vihrenlabs" target="_blank" rel="noopener noreferrer" class="text-white/45 hover:text-[#E67E22] transition-colors">watch the season</a>.
       </p>
+    </div>
+  </section>
+
+  <!-- ═══ SEASON 4 - the new episodes ════════════════════════════════════
+       Same quiet styling as Season 2. The id is the anchor the episode
+       descriptions link to (/cheat-sheets#season-4), so a viewer coming from
+       the video lands on the sheet instead of the top of the page. ═══════ -->
+  <section id="season-4" class="pt-20 pb-4 px-6 border-t border-white/5 mt-16 scroll-mt-16">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-center gap-3 mb-3">
+        <div class="w-8 h-px bg-white/25"></div>
+        <span class="font-mono text-white/45 text-xs tracking-[0.2em] uppercase">Season 4 · the new episodes</span>
+      </div>
+      <h2 class="font-black text-2xl sm:text-3xl leading-tight mb-3">Each new episode, on one page</h2>
+      <p class="text-white/45 text-base leading-relaxed max-w-2xl mb-10">
+        The same one-page treatment for this season: what the episode argues, the evidence behind it, and the one move to make on Monday. Sheets are added here as the episodes publish.
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {seasonFour.map((s) => (
+          <a href={s.pdf} download
+             class="group flex flex-col rounded-2xl border border-white/8 bg-white/[0.02] overflow-hidden card-hover">
+            <div class="overflow-hidden border-b border-white/8">
+              <img src={s.png} alt={`Season 4 - ${s.title} cheat sheet`} loading="lazy" width="1080" height="1660"
+                   class="w-full h-auto block transition-transform duration-500 group-hover:scale-[1.02]" />
+            </div>
+            <div class="flex flex-col flex-1 p-5">
+              <span class="font-mono text-[10px] text-[#E67E22] mb-2 tracking-wider uppercase">{s.eyebrow}</span>
+              <h3 class="font-bold text-base text-white/90 leading-snug mb-1.5">{s.title}</h3>
+              <p class="text-white/40 text-sm leading-relaxed flex-1">{s.sub}</p>
+              <span class="inline-flex items-center gap-2 mt-4 font-mono text-xs text-white/40 group-hover:text-[#E67E22] transition-colors tracking-wider uppercase">
+                <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75V16.5M16.5 12 12 16.5m0 0L7.5 12m4.5 4.5V3" />
+                </svg>
+                Download PDF
+              </span>
+            </div>
+          </a>
+        ))}
+      </div>
     </div>
   </section>
 
