@@ -32,14 +32,19 @@ check() { # check <label> <url> <expected-code>
 
 echo "1. Apex must NOT serve the site — every canonical (trailing-slash) URL redirects"
 for p in / /about/ /writing/ /products/ /free/ /cheat-sheets/ /imprint/ /privacy/ \
-         /lines/sap/ /guides/s4hana-cutover-checklist/ /essays/governance-not-agents/; do
+         /lines/ai-governance/ /guides/s4hana-cutover-checklist/ /essays/governance-not-agents/; do
   check "apex $p" "https://vihrenlabs.com$p" 308
 done
 
 echo
 echo "2. Retired paths redirect in BOTH slash forms (www)"
 for p in /paths /essays /guides /lines/programme-delivery \
-         /essays/cutover-window-decision /essays/eu-ai-act-supervisory-file; do
+         /essays/cutover-window-decision /essays/eu-ai-act-supervisory-file \
+         /lines/sap /lines/procurement /lines/regulatory \
+         /products/eu-ai-act-sme-compliance-starter /products/it-vendor-and-saas-procurement-tco \
+         /products/procurement-operators-pack /products/sap-migration-operators-pack \
+         /products/sap-s-4hana-migration-cutover-excel /products/sap-s-4hana-migration-playbook \
+         /products/vendor-side-it-procurement-the-playbook; do
   check "www $p"  "https://www.vihrenlabs.com$p"  308
   check "www $p/" "https://www.vihrenlabs.com$p/" 308
 done

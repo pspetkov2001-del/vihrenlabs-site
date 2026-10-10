@@ -21,7 +21,6 @@ const priceNum = (s: string): number => {
 const operatorStandard = freeItems.find((f) => f.name.includes('Operator Standard'))!;
 const freeFor = (slug: string) =>
   slug === 'ai-governance' ? freeItems.find((f) => f.url.includes('/l/rmkje'))!
-  : slug === 'sap' ? freeItems.find((f) => f.url.includes('/l/dlzxfu'))!
   : operatorStandard;
 
 const paths = lineGroups.map((g) => {
@@ -50,7 +49,7 @@ const schema = {
 
 <Base
   title="Products"
-  description="Vihren Labs full catalogue - courses, workbooks, playbooks and operator bundles for procurement, programme delivery, SAP, master data, AI adoption & governance, transformation, and EU regulatory compliance. Start free in any line."
+  description="Vihren Labs full catalogue - courses, workbooks, playbooks and operator bundles for AI-ready operations, SSC & GBS transitions, PMO and transformation, plus master data operations. Start free in any line."
   schema={schema}
 >
   <!-- ═══ HERO ══════════════════════════════════════════════════════════ -->

@@ -4,7 +4,7 @@ description: "Most programme status reports are watermelons: green on the outsid
 seoTitle: "The PMO status report that doesn't lie"
 seoDescription: "How to make a PMO status report defensible: written RAG definitions, a RAID log with owners, and stage gates with pre-agreed pass criteria."
 date: "2026-06-07"
-line: "Transformation & SSC/GBS"
+line: "PMO & Transformation"
 keywords: ["PMO status report", "defensible RAG status", "RAG status definitions", "RAID log", "programme management", "what does a PMO do", "stage gate criteria", "transformation PMO", "project status reporting"]
 answer: "A PMO status report loses credibility the moment its RAG colour is an opinion. To make it defensible: write the RAG definitions down so green means the same thing to everyone - green is on track with no unmanaged risk; amber is a risk or issue that is live and being actively managed within the PM's authority; red is a decision or intervention needed above the PM's level (red is a request, not a confession). Give every RAID item an owner and a next action, not just a description. Make stage gates pre-agreed pass criteria set before the gate, not a date you defend on the day. And let the quantitative status assemble from the trackers - initiative counts, budget burn versus progress, RAID counts - rather than being hand-narrated, so the numbers can't drift to flatter. A status nobody can argue with is one where every colour has a written trigger and every red has a named decision attached."
 stepsTitle: "Six moves to a status report nobody can argue with"

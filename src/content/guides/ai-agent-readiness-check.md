@@ -4,7 +4,7 @@ description: "A free 12-point readiness check for deploying an AI agent on real 
 seoTitle: "The 12-point AI agent readiness check"
 seoDescription: "A free 12-point readiness check for deploying an AI agent on real enterprise data: the identity, completeness, consistency."
 date: "2026-06-05"
-line: "AI Adoption & Governance"
+line: "AI-Ready Operations"
 keywords: ["AI agent readiness", "AI agent readiness checklist", "deploy AI agent", "AI data readiness", "is my data ready for AI", "AI governance", "AI agent failure", "AI readiness assessment", "master data for AI", "AI adoption checklist"]
 answer: "Before you deploy an AI agent on anything that matters, score five things - identity, completeness, consistency, governance, and process - because an agent acts on whatever your data says and amplifies it, fluently and at speed. The 12-point check below is the fast operator version: if you can't answer 'yes' to the identity and source-of-truth questions, fix those first; an agent on duplicated or stale records produces confident, wrong decisions. Gate on the weakest dimension, not the average - one broken dimension is enough to sink an otherwise-good deployment."
 stepsTitle: "The 12-point readiness check"

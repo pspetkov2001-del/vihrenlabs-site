@@ -4,7 +4,7 @@ description: "Most transitions are sized with optimism, not arithmetic - and the
 seoTitle: "How to size an offshoring or SSC transition"
 seoDescription: "Most transitions are sized with optimism, not arithmetic - and the new team is understaffed for its first six months, exactly when its reputation is set."
 date: "2026-06-07"
-line: "Transformation & SSC/GBS"
+line: "SSC & GBS"
 keywords: ["how to calculate FTE for offshoring", "SSC transition planning", "offshoring transition", "FTE ramp uplift", "knowledge transfer plan", "BAU exit criteria", "shared services transition", "GBS transition", "lift and shift"]
 answer: "Size a transition with arithmetic, not optimism. Target FTE = annual volume ÷ productivity (units per FTE per year, from the source team's actuals). Then apply a ramp-inefficiency uplift - a new team is not as fast as a mature one - and fund the higher, year-one number, not the steady state, or the team is structurally understaffed for its first six months. Choose the transition model deliberately (lift-and-shift to stabilise, then transform - not both at once). Run knowledge transfer in four steps (discovery, shadowing, reverse-shadowing, independent), advancing a process on evidence, not a calendar date. Budget the dual-running window where both teams run, with explicit decommission criteria. And declare the transition done only when each process meets its BAU exit criteria - SLA, error rate, backlog, escalation - not on the go-live date. Most failed transitions are declared finished at cutover and unravel six weeks later."
 stepsTitle: "Sizing and planning a transition - six moves"

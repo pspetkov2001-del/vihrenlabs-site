@@ -12,12 +12,10 @@
 
 export type Tier = 'course' | 'toolkit' | 'bundle';
 export type LineSlug =
-  | 'procurement'
-  | 'sap'
-  | 'master-data'
   | 'ai-governance'
+  | 'ssc-gbs'
   | 'transformation'
-  | 'regulatory';
+  | 'master-data';
 
 export interface Product {
   line: LineSlug;
@@ -57,11 +55,10 @@ export interface LineGroup {
   slug: LineSlug;
   title: string;
   sub: string;
-  // Front-door narrowing (2026-07): the two categories actively marketed as
-  // the front door - Master Data Operations and AI Adoption & Governance
-  // ("AI-Ready Operations"). The other four lines stay fully published and
-  // purchasable, just presented as adjacent/subordinate feeders. Nothing is
-  // hidden, unpublished or removed - this only drives display grouping/order.
+  // Focus narrowing 2026-10: three primary lines (AI-Ready Operations, SSC & GBS,
+  // PMO & Transformation); Master Data stays published as a supporting
+  // (non-primary) line. Procurement, SAP and regulatory lines were removed from
+  // the site 2026-10 (Gumroad listings left live, old URLs 301 to /products).
   primary: boolean;
 }
 
@@ -113,7 +110,7 @@ export const products: Product[] = [
     ],
   },
   {
-    line: 'transformation', tier: 'course',
+    line: 'ssc-gbs', tier: 'course',
     tag: 'Course · 10 modules',
     name: "The Transition Operator's Course - SSC, GBS & BPO Transitions",
     sub: '10 modules for running an enterprise transition from kickoff to BAU exit - engagement, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live, hypercare. 18-tab transition management workbook + delivery-execution playbook + 6 visual one-pagers.',
@@ -125,38 +122,6 @@ export const products: Product[] = [
         a: '10 modules for running a shared-services, GBS or BPO transition end to end - engagement and scoping, FTE sizing, RACI, knowledge transfer, governance, UAT, go-live and hypercare to BAU exit - plus an 18-tab transition management workbook, a delivery-execution playbook and 6 visual one-pagers.',
       },
     ],
-  },
-
-  // ─── PROCUREMENT & VENDOR MANAGEMENT ────────────────────────────────
-  {
-    line: 'procurement', tier: 'toolkit',
-    tag: 'Excel workbook',
-    name: 'IT Vendor & SaaS Procurement TCO',
-    sub: 'Vendor registry, 3-year TCO model, 12-month renewal pipeline, RFP scoring - from the distributor side of the table.',
-    price: '$49', team: '$99',
-    url: 'https://vihrenlabs.gumroad.com/l/eujpqc',
-  },
-  {
-    line: 'procurement', tier: 'toolkit',
-    tag: 'Ebook',
-    name: 'Vendor-Side IT Procurement - The Playbook',
-    sub: '8 chapters on how IT distributors and vendors actually price, discount and renew - and how to negotiate against it.',
-    price: '$29', team: '$79',
-    url: 'https://vihrenlabs.gumroad.com/l/ovyxjl',
-  },
-  {
-    line: 'procurement', tier: 'bundle',
-    tag: 'Operator pack',
-    name: "Procurement Operator's Pack",
-    sub: 'IT Vendor TCO + Procurement Playbook + bundle-exclusive Renewal Negotiation Cheat-Sheet. The full IT-procurement operator kit.',
-    price: '$69', team: '$129',
-    url: 'https://vihrenlabs.gumroad.com/l/lhigyh',
-    // Front-door narrowing (2026-07): top of the Procurement ladder had no
-    // in-line course to climb to, so it dead-ended. Redirect the tail into
-    // the AI Adoption & Governance front door instead - procurement buyers
-    // are already doing vendor TCO/evaluation work, which is exactly what
-    // the AI Vendor Evaluation & TCO Workbook inside that pack extends.
-    next: "AI Adoption & Governance Operator's Pack",
   },
 
   // ─── (was PROGRAMME DELIVERY & ENTERPRISE IT PMO) ───────────────────
@@ -175,48 +140,6 @@ export const products: Product[] = [
     url: 'https://vihrenlabs.gumroad.com/l/cryqw',
     lastUpdated: '2026-06-07',
     changelog: 'Playbook expanded to a 15-page operating handbook - a readiness self-check, the "past the point of deferral?" estate diagnostic, the five options each with its trap, the brownfield/greenfield/selective asset-vs-liability test, the business case both sides with the cost-of-not-acting frame + a worked 5-year TCO + the data-remediation line, the weighted scorecard with a worked result, the RISE/commercial deep-dive, the one-page board decision, data-first phasing + the dual-running trap, choosing the SI, the seven failure modes as a symptom-to-fix catalogue, the people side, the first 90 days, objections, and a worked example throughout (Meridian, a €400M manufacturer on ECC) - plus templates + a glossary.',
-  },
-
-  // ─── SAP / ERP OPERATIONS ──────────────────────────────────────────
-  {
-    line: 'sap', tier: 'toolkit',
-    tag: 'Excel workbook',
-    name: 'SAP S/4HANA Migration Cutover Excel',
-    sub: '52-check readiness matrix, 46-step cutover run sheet, hypercare runbook. What breaks at 3 AM.',
-    price: '$99', team: '$249',
-    url: 'https://vihrenlabs.gumroad.com/l/fsslk',
-    faq: [
-      {
-        q: 'What does the SAP S/4HANA cutover checklist include?',
-        a: 'A 52-check go-live readiness matrix, a 46-step cutover run sheet sequenced for cutover weekend, and a hypercare runbook for the days after go-live - the operator controls that decide whether a cutover holds at 3 AM, in a workbook you can adapt to your own programme.',
-      },
-      {
-        q: 'When does SAP ECC maintenance end, and how long does an S/4HANA migration take?',
-        a: 'SAP ECC mainstream maintenance ends 31 December 2027. Because transformation capacity is finite, the practical planning cut-off for most mid-market organizations is well before then - the workbook is built to compress readiness and cutover planning rather than the multi-month implementation itself.',
-      },
-    ],
-  },
-  {
-    line: 'sap', tier: 'toolkit',
-    tag: 'Playbook ebook',
-    name: "SAP S/4HANA Migration Playbook",
-    sub: "The operator's guide beneath the workbook - phase gates, failure modes, the cutover-week methodology.",
-    price: '$39', team: '$99',
-    url: 'https://vihrenlabs.gumroad.com/l/bsxhb',
-  },
-  {
-    line: 'sap', tier: 'bundle',
-    tag: 'Operator pack',
-    name: 'SAP Migration Operator\'s Pack',
-    sub: 'The complete SAP S/4HANA migration kit - cutover workbook + playbook ebook + comms templates. The bundle a real cutover needs.',
-    price: '$129', team: '$249',
-    url: 'https://vihrenlabs.gumroad.com/l/yjebue',
-    // Front-door narrowing (2026-07): top of the SAP ladder had no in-line
-    // course to climb to, so it dead-ended. Redirect the tail into the
-    // Master Data Operations front door instead - a cutover is only as
-    // clean as the master data behind it, so this is the natural next step,
-    // not a bolted-on cross-sell.
-    next: "Master Data Operator's Pack",
   },
 
   // ─── MASTER DATA OPERATIONS ────────────────────────────────────────
@@ -370,9 +293,9 @@ export const products: Product[] = [
   //   url: 'TODO-gumroad-md-essentials-lite',
   // },
 
-  // ─── TRANSFORMATION & SSC/GBS ──────────────────────────────────────
+  // ─── SSC & GBS (transition workbook) ──────────────────────────────────────
   {
-    line: 'transformation', tier: 'toolkit',
+    line: 'ssc-gbs', tier: 'toolkit',
     tag: 'Excel workbook',
     name: 'Transition Management Operator\'s Workbook',
     sub: 'Run an offshoring, SSC or BPO transition end to end - 18-tab Excel workbook + a 15-page, 12-phase delivery handbook + SOP + engagement templates. The standalone toolkit beneath Course 01.',
@@ -380,26 +303,6 @@ export const products: Product[] = [
     url: 'https://vihrenlabs.gumroad.com/l/ehmnt',
     lastUpdated: '2026-06-07',
     changelog: 'Delivery & Execution Playbook expanded to a 15-page operating handbook - the 12-phase / 3-stage method (exit gate per phase) preserved, surrounded with the four transition models, the FTE math worked (fund the ramp, not the steady state), choosing Wave 1 + sequencing, a knowledge-transfer deep-dive (advance on evidence), the retained organisation, governance + self-writing status, leading-vs-lagging metrics, a transition risk catalogue, the recovery move, the first 30 days, objections, and a worked example throughout (a finance SSC moving AP/AR/GL) - plus templates + a glossary. Workbook + Word templates unchanged.',
-  },
-
-  // ─── REGULATORY & COMPLIANCE ───────────────────────────────────────
-  {
-    line: 'regulatory', tier: 'toolkit',
-    tag: 'Starter pack',
-    name: 'EU AI Act SME Compliance Starter',
-    sub: 'Article 50 transparency tracker, high-risk register, deployer readiness assessment. Enforcement: 2 Aug 2026.',
-    price: '€149', team: '€249',
-    url: 'https://vihrenlabs.gumroad.com/l/rqems',
-    faq: [
-      {
-        q: 'Is the EU AI Act SME Compliance Starter legal advice?',
-        a: 'No. It is an operator-grade organizational and evidence toolkit - an Article 50 transparency tracker, a high-risk register and a deployer readiness assessment - built to help you structure and document compliance work. It is not legal advice; confirm your specific obligations with qualified counsel.',
-      },
-      {
-        q: 'When does the EU AI Act apply?',
-        a: 'Key deployer transparency obligations under Article 50 apply from 2 August 2026. The Starter is built so an SME can structure its readiness and evidence ahead of that date rather than starting from a blank page.',
-      },
-    ],
   },
 
   // ===== Digital Transformation line — LIVE (5 toolkits, published 2026-06) =====
@@ -459,6 +362,7 @@ export const products: Product[] = [
     sub: 'The whole Transformation line in one purchase - transition delivery, the ERP modernisation business case, process automation, org change, PMO, target operating model and cloud migration. Seven toolkits, $673 bought separately.',
     price: '$399', team: '$799',
     url: 'https://vihrenlabs.gumroad.com/l/setial',
+    next: "The Transition Operator's Course - SSC, GBS & BPO Transitions",
   },
 ];
 
@@ -479,56 +383,38 @@ export const freeItems: FreeItem[] = [
     price: '$0', team: '',
     url: 'https://vihrenlabs.gumroad.com/l/rmkje',
   },
-  {
-    tag: 'Free · PWYW',
-    name: 'SAP Cutover Comms Kit',
-    sub: 'Pre-cutover, go-live, hypercare and incident announcement templates - the comms templates a real cutover sends. Pay what you want.',
-    price: 'Free+', team: '',
-    url: 'https://vihrenlabs.gumroad.com/l/dlzxfu',
-  },
 ];
 
-// Line metadata — display order drives rendering order on /products and
-// /lines/[slug] (each row/section iterates lineGroups in this order). Front-
-// door narrowing (2026-07): the two `primary: true` lines lead the order;
-// the other four stay fully published and purchasable as subordinate
-// feeders, not hidden. To add a new line: append here AND tag the relevant
-// products.line above.
+// Line metadata - display order drives rendering order on /products and
+// /lines/[slug] (each row/section iterates lineGroups in this order). Focus
+// narrowing 2026-10: three primary lines (AI-Ready Operations, SSC & GBS,
+// PMO & Transformation); Master Data stays published as a supporting line;
+// procurement, SAP and regulatory lines were removed from the site 2026-10
+// (Gumroad listings left live, old URLs 301 to /products). To add a new line:
+// append here AND tag the relevant products.line above.
 export const lineGroups: LineGroup[] = [
+  {
+    slug: 'ai-governance',
+    title: 'AI-Ready Operations',
+    sub: 'The operator layer for putting AI agents into production - readiness, use-case selection, an AI governance register, an agents-in-production tracker, an AI CoE handbook and AI vendor TCO. Govern the agent, don\'t just buy it.',
+    primary: true,
+  },
+  {
+    slug: 'ssc-gbs',
+    title: 'SSC & GBS',
+    sub: 'Shared-services, GBS and BPO transitions from kickoff to BAU exit - a full 10-module operator course and the 18-tab transition workbook.',
+    primary: true,
+  },
+  {
+    slug: 'transformation',
+    title: 'PMO & Transformation',
+    sub: 'Run the programme, not the slide deck - the delivery PMO, target operating model and roadmap, organisational change, process automation, cloud migration and the ERP modernisation business case. Six toolkits and the operator pack.',
+    primary: true,
+  },
   {
     slug: 'master-data',
     title: 'Master Data Operations',
     sub: 'The full Master Data Academy - three operator courses (Product & SKU, Customer, and Vendor master data) plus 3 standalone toolkits and the operator bundle.',
-    primary: true,
-  },
-  {
-    slug: 'ai-governance',
-    title: 'AI Adoption & Governance',
-    sub: 'The operator layer for putting AI agents into production - data and process readiness, an AI governance register, an agents-in-production tracker, and AI vendor TCO. Govern the agent, don\'t just buy it.',
-    primary: true,
-  },
-  {
-    slug: 'procurement',
-    title: 'Procurement & Vendor Management',
-    sub: 'Procurement-side IT operations - vendor TCO, contract leverage, the discount stack. From the distributor side of the table.',
-    primary: false,
-  },
-  {
-    slug: 'sap',
-    title: 'SAP / ERP Operations',
-    sub: 'S/4HANA migration governance, cutover discipline, the operator stack for the December 2027 ECC end-of-maintenance deadline.',
-    primary: false,
-  },
-  {
-    slug: 'transformation',
-    title: 'Transformation & SSC/GBS',
-    sub: 'Offshoring, GBS rollouts, and BPO transitions - from kickoff to BAU exit, plus the pre-implementation decisions that come before them. A full operator course and seven standalone toolkits - transition delivery, process automation, org change, PMO, target operating model, cloud migration and the ERP modernisation business case.',
-    primary: false,
-  },
-  {
-    slug: 'regulatory',
-    title: 'Regulatory & Compliance',
-    sub: 'Operator-first EU regulatory compliance - currently the EU AI Act SME compliance starter, built operator-first, not legal-first.',
     primary: false,
   },
 ];
@@ -607,7 +493,7 @@ export function buildProductFaq(
   // 5. Shared brand-credibility answer (the question AI assistants ask).
   faqs.push({
     q: 'Who builds Vihren Labs products?',
-    a: 'Petko Petkov - a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table: SAP S/4HANA migrations, master data management and governance, IT vendor procurement from the distribution side, EU regulatory rollouts, and large shared-services / GBS transitions across Europe. Every product is built from real scenarios - real SAP T-codes, real regulation article numbers, real cutover-night failure modes - not consultant theory.',
+    a: 'Petko Petkov - a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table: large shared-services / GBS transitions across Europe, programme delivery and transformation (PRINCE2 Practitioner, Six Sigma), master data management and governance, and getting operations ready for AI. Every product is built from real operating scenarios - not consultant theory.',
   });
 
   return faqs;

@@ -36,9 +36,9 @@ faq:
     a: "Negotiate the terms, not just the number: a cap on the annual uplift, an extended notice period, a price hold across the term, and no-cost extensions (sandbox, seats). Time the conversation to the vendor's fiscal-quarter close, and bring a costed competitive alternative. A capped uplift compounds in your favour every cycle; a one-time discount does not."
   - q: "Is this legal or procurement advice?"
     a: "No. It is an operator-grade modelling and negotiation tool. Confirm contract terms, notice periods and any regulatory procurement rules against your own contracts and, where needed, qualified advisors."
-ctaLabel: "Get the Procurement Operator's Pack - $69"
-ctaUrl: "/products/procurement-operators-pack"
-ctaSub: "The done-for-you version: the IT Vendor & SaaS TCO workbook (vendor registry, 3-year TCO model, 12-month renewal pipeline, RFP scoring), the Vendor-Side Procurement Playbook on how distributors and vendors actually price and discount, and a bundle-exclusive renewal-negotiation cheat-sheet - the full procurement operator kit, built from the distributor side of the table."
+ctaLabel: "Get the Operator Standard - free"
+ctaUrl: "https://vihrenlabs.gumroad.com/l/bwzklq"
+ctaSub: "The seven operating principles behind every Vihren Labs template, as a free PDF."
 ---
 
 ## Why the invoice price is the wrong number

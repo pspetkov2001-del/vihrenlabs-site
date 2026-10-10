@@ -32,9 +32,9 @@ faq:
     a: "The notice period is the number of days before renewal by which you must formally tell the vendor you intend to change or cancel. Miss it and most contracts auto-renew on the existing (often uplifted) terms, removing your ability to negotiate at all. It is the single most important date in the contract - diarise it the day you sign."
   - q: "Do I actually have to switch vendors to get a better renewal?"
     a: "No. You need a credible alternative you are willing to reference, not necessarily one you will execute. A competitor quote, a partial-migration plan, or a documented downgrade path is usually enough to change the vendor's incentive. The cost of switching is real, which is exactly why having assessed it gives you a stronger position."
-ctaLabel: "Get the Procurement Operator's Pack - $69"
-ctaUrl: "/products/procurement-operators-pack"
-ctaSub: "The done-for-you version: the IT Vendor & SaaS Procurement TCO workbook (true 3-year cost + a 12-month renewal pipeline so no notice date is ever missed), the vendor-side Procurement Playbook on how distributors and vendors actually price and discount, and a bundle-exclusive Renewal Negotiation Cheat-Sheet."
+ctaLabel: "Get the Operator Standard - free"
+ctaUrl: "https://vihrenlabs.gumroad.com/l/bwzklq"
+ctaSub: "The seven operating principles behind every Vihren Labs template, as a free PDF."
 ---
 
 ## A renewal is an information-asymmetry contest

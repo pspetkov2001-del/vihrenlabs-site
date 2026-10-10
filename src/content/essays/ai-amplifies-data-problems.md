@@ -4,7 +4,7 @@ description: "An AI agent is an amplifier - point it at fragmented, duplicated, 
 seoTitle: "Your AI agent will amplify your data problems, not fix them"
 seoDescription: "An AI agent is an amplifier - point it at fragmented, duplicated, or stale data and it scales the confusion, fluently."
 date: "2026-06-02"
-line: "AI Adoption & Governance"
+line: "AI-Ready Operations"
 keywords: ["AI agent readiness", "AI data quality", "AI agent failure", "master data for AI", "lead scoring AI", "data governance AI", "AI revenue agent", "AI adoption enterprise", "source of truth", "deduplication"]
 featured: true
 ---
