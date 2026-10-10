@@ -4,7 +4,7 @@ description: "How to build an ERP / S/4HANA modernisation business case that sur
 seoTitle: "The ERP modernisation business case"
 seoDescription: "How to build an ERP/S4HANA modernisation business case that survives the steering committee: the honest case, build-vs-buy, and a five-year TCO."
 date: "2026-06-09"
-line: "Transformation & SSC/GBS"
+line: "PMO & Transformation"
 keywords: ["ERP modernisation business case template", "S/4HANA business case", "ERP build vs buy", "SAP ECC end of maintenance 2027", "brownfield greenfield S/4HANA", "RISE with SAP", "ERP decision scorecard", "cost of not acting"]
 answer: "An ERP modernisation business case has two halves the steering committee usually conflates: the inspirational case (competitive advantage, agility) that gets the budget, and the honest case (the obligation, the deadline, the consequence) that the programme is actually run on. Build both. The honest case for most SAP estates is 'ECC mainstream maintenance ends 31 December 2027, our capacity is finite, and the cost of not acting is rising' - then the model decides the path: which of the five options (brownfield, greenfield, selective/bluefield, stay-and-extend, replace), a five-year TCO that includes the data-remediation line most cases omit, and a weighted scorecard so the decision is defensible rather than vendor-led. The obligation-driven programme survives the reorganisation that kills the inspiration-driven one."
 stepsTitle: "The business case - the seven moves that make it defensible"

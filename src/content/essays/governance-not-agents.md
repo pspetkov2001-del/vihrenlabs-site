@@ -4,7 +4,7 @@ description: "Most AI agent projects don't fail on the model - they fail on the 
 seoTitle: "Governance, not agents"
 seoDescription: "Most AI agent projects don't fail on the model - they fail on the operating model: no decision rights, no use-case gate, broken data, runaway cost."
 date: "2026-06-06"
-line: "AI Adoption & Governance"
+line: "AI-Ready Operations"
 keywords: ["AI center of excellence", "AI governance", "AI operating model", "AI agent governance", "why AI projects fail", "AI use case selection", "AI adoption framework", "agentic AI", "AI risk tiers", "AI program governance", "AI CoE"]
 featured: true
 ---

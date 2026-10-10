@@ -75,6 +75,106 @@
       "source": "/essays/eu-ai-act-supervisory-file/",
       "destination": "/essays/dora-ict-register-completeness",
       "permanent": true
+    },
+    {
+      "source": "/lines/sap",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/lines/sap/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/lines/procurement",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/lines/procurement/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/lines/regulatory",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/lines/regulatory/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/eu-ai-act-sme-compliance-starter",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/eu-ai-act-sme-compliance-starter/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/it-vendor-and-saas-procurement-tco",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/it-vendor-and-saas-procurement-tco/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/procurement-operators-pack",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/procurement-operators-pack/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/sap-migration-operators-pack",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/sap-migration-operators-pack/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/sap-s-4hana-migration-cutover-excel",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/sap-s-4hana-migration-cutover-excel/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/sap-s-4hana-migration-playbook",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/sap-s-4hana-migration-playbook/",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/vendor-side-it-procurement-the-playbook",
+      "destination": "/products",
+      "permanent": true
+    },
+    {
+      "source": "/products/vendor-side-it-procurement-the-playbook/",
+      "destination": "/products",
+      "permanent": true
     }
   ]
 }

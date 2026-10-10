@@ -9,15 +9,15 @@ import { faqSchema } from '../data/schema';
 const brandFaqs = [
   {
     q: 'What is Vihren Labs?',
-    a: 'Vihren Labs publishes operator-grade templates, workbooks, courses and playbooks for the enterprise IT stack - SAP S/4HANA migration, master data management, IT procurement, programme delivery, SSC/GBS transformation, and EU regulatory compliance (DORA, EU AI Act). Every product is built from real scenarios: real SAP T-codes, real regulation article numbers, real cutover-night failure modes.',
+    a: 'Vihren Labs publishes operator-grade templates, workbooks, courses and playbooks for three areas of enterprise operations: AI-ready operations (governing AI agents in production), SSC and GBS transitions, and PMO and transformation delivery - with master data operations as the supporting layer underneath. Every product is built from real operating scenarios, not consultant theory.',
   },
   {
     q: 'Who makes Vihren Labs products?',
-    a: 'Petko Petkov - a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table. His work spans master data management and governance - the operating model, and automating product and SKU creation end to end, from ingestion, standardisation, enrichment and categorisation rules through to dynamic SKU generation and touchless quoting - alongside SAP S/4HANA migrations, IT vendor procurement from the distribution side, EU regulatory rollouts, and large shared-services / GBS transitions across Europe. PRINCE2 Practitioner, Six Sigma. Every product is written from lived practitioner experience, not consultant theory.',
+    a: 'Petko Petkov - a 15-year enterprise IT operator who has worked both the vendor-distribution and buyer-operator sides of the table. His work spans master data management and governance - the operating model, and automating product and SKU creation end to end, from ingestion, standardisation, enrichment and categorisation rules through to dynamic SKU generation and touchless quoting - alongside large shared-services / GBS transitions across Europe and programme delivery. PRINCE2 Practitioner, Six Sigma. Every product is written from lived practitioner experience, not consultant theory.',
   },
   {
     q: 'Are Vihren Labs products consulting, or legal or tax advice?',
-    a: 'No. They are downloadable, operator-built templates and playbooks you run yourself - not consulting. The regulatory compliance products are organizational and evidence tools, not legal opinions; confirm your specific obligations with qualified counsel.',
+    a: 'No. They are downloadable, operator-built templates and playbooks you run yourself - not consulting, and not legal or tax advice.',
   },
   {
     q: 'What courses does Vihren Labs offer?',
@@ -29,7 +29,7 @@ const brandFaqs = [
   },
   {
     q: 'Who are Vihren Labs products for?',
-    a: 'The IT operator who has to make the system work on Monday morning - not the executive who reads the slide deck. Typical buyers are SAP migration leads, master-data and MDG owners, IT procurement and vendor managers, programme and PMO leads, SSC/GBS transition managers, and compliance owners working on DORA or the EU AI Act.',
+    a: 'The operator who has to make it work on Monday morning - not the executive who reads the slide deck. Typical buyers are SSC/GBS transition managers, programme and PMO leads, transformation leads, operations leaders getting ready to run AI agents, and master-data and MDG owners.',
   },
   {
     q: 'Where can I buy Vihren Labs products?',
@@ -40,8 +40,8 @@ const brandFaqSchema = faqSchema(brandFaqs);
 
 const ticker = [
   '15 years in enterprise IT',
-  'SAP ECC & S/4HANA',
-  'EU AI Act & DORA',
+  'AI-ready operations',
+  'PMO & programme delivery',
   'PRINCE2 Practitioner',
   'Six Sigma',
   'Multi-country SSC build-outs',
@@ -60,7 +60,7 @@ import { products, freeItems, lineGroups } from '../data/products';
 // that did (hero eyebrow, hero stat, catalogue headline) drifted to "7" after
 // the programme-delivery fold on 2026-07-22 and had to be chased down one at a
 // time; deriving the count from lineGroups.length fixed that. D-060 (2026-07-26)
-// made the derivation unnecessary: the front door now names the two categories
+// made the derivation unnecessary: the front door now names the three focus areas
 // it leads with rather than counting lines, so there is no number left to drift.
 // If a line count ever returns to this page, derive it - never hard-code it.
 
@@ -114,7 +114,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
 
 <Base
   title="Vihren Labs"
-  description="Operator-grade templates and playbooks for the enterprise IT stack. Built by a 15-year enterprise IT operator - SAP, Master Data Management, AI governance, regulatory compliance, shared services."
+  description="Operator-grade templates and playbooks for AI-ready operations, SSC & GBS transitions, and PMO and transformation delivery - with master data operations underneath. Built by a 15-year enterprise IT operator."
   schema={brandFaqSchema}
 >
   <!-- Noise overlay -->
@@ -160,7 +160,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
 
       <!-- Sub -->
       <p class="fade-up fade-up-delay-3 text-white/50 text-lg sm:text-xl leading-relaxed max-w-2xl mb-12">
-        Operator-grade templates and playbooks for the enterprise IT stack - the cutover, the renewal, the migration, the AI agent. Built from real scenarios, not consultant theory, by someone who's sat on both sides of the desk.
+        Operator-grade templates and playbooks for AI-ready operations, SSC & GBS transitions, and PMO and transformation delivery. Built from real scenarios, not consultant theory, by someone who's sat on both sides of the desk.
       </p>
 
       <!-- CTAs -->
@@ -192,7 +192,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
       <div class="mt-20 pt-10 border-t border-white/5 flex flex-wrap gap-16">
         {[
           { n: '15', label: 'Years in enterprise IT' },
-          { n: '2', label: 'Core categories' },
+          { n: '3', label: 'Focus areas' },
         ].map(s => (
           <div>
             <div class="font-black text-3xl text-[#E67E22]">{s.n}</div>
@@ -316,7 +316,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
         </div>
 
         <p class="text-white/40 text-sm leading-relaxed mt-8 max-w-2xl">
-          I write for the people whose name is on the decision when it goes wrong - SAP and cutover leads, master-data owners, programme and PMO leads, procurement and vendor managers, and DORA / EU AI Act compliance owners. <a href="/about" class="text-[#E67E22] hover:underline font-medium">More about me</a>
+          I write for the people whose name is on the decision when it goes wrong - transition managers, PMO and programme leads, transformation leads, and master-data owners. <a href="/about" class="text-[#E67E22] hover:underline font-medium">More about me</a>
         </p>
       </div>
     </div>
@@ -448,7 +448,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
 
   <!-- ═══ THE CATALOGUE (Product Lines + Available Now merged 2026-07-11) ══
        Was two sections — a line card grid and an Available-now block with two
-       stacked orange banners. Condensed: the six lines now live on /products
+       stacked orange banners. Condensed: the product lines now live on /products
        (/paths was merged into it 2026-07-22), so this is one routing block,
        one catalogue banner (Master Data Academy woven in as the live highlight),
        and light /paths + /cheat-sheets pointers. ════════════════════════════ -->
@@ -457,7 +457,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
       <div class="flex items-end justify-between mb-12 flex-wrap gap-4">
         <div>
           <p class="font-mono text-[#E67E22] text-xs tracking-[0.2em] uppercase mb-4">The catalogue</p>
-          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Two categories I'm known for.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
+          <h2 class="font-black text-4xl sm:text-5xl leading-tight">Three areas I focus on.<br /><span class="text-white/30">One operator's 15 years.</span></h2>
           <p class="text-white/40 text-sm max-w-2xl mt-5 leading-relaxed">
             {products.filter(p => p.tier === 'course').length} courses · {products.filter(p => p.tier !== 'course').length} workbooks, playbooks and operator bundles · {freeItems.length} free downloads - grouped by product line on a dedicated page.
           </p>
@@ -482,7 +482,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
               All courses, toolkits and bundles in one place.
             </h3>
             <p class="text-white/50 text-sm leading-relaxed">
-              Master Data Operations · AI Adoption & Governance. Plus operator toolkits for SAP / ERP cutovers, procurement and vendor management, transformation and SSC/GBS, and EU regulatory compliance. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">Both front doors are live: the 3-course Master Data Academy - Product · Customer · Vendor - and the AI Adoption & Governance Operator's Pack, five products in one operator system.</strong>
+              AI-Ready Operations · SSC & GBS · PMO & Transformation, with Master Data Operations underneath. {products.filter(p => p.tier === 'course').length} flagship courses + {products.filter(p => p.tier !== 'course').length} standalone workbooks, playbooks and operator-pack bundles + {freeItems.length} free downloads. <strong class="text-white/80">Start with the AI Adoption & Governance Operator's Pack, The Transition Operator's Course, or the Transformation Operator's Pack.</strong>
             </p>
           </div>
           <div class="inline-flex items-center justify-center gap-2 bg-[#E67E22]/25 border border-[#E67E22]/60 text-[#E67E22] font-mono text-sm font-bold uppercase tracking-widest px-7 py-4 rounded-lg group-hover:bg-[#E67E22]/35 transition-colors whitespace-nowrap">
@@ -553,7 +553,7 @@ const hasIntroVideo = Boolean(INTRO_VIDEO.youtubeId || INTRO_VIDEO.mp4);
               The Vihren Labs Operator Brief
             </h2>
             <p class="text-white/55 text-lg leading-relaxed mb-4">
-              The weekly briefing for the people enterprise IT actually lands on - what happened this week and what it changes for us. SAP migrations, vendor procurement, EU regulatory, master data. Vendor-side-honest, no buzzwords.
+              The weekly briefing for the people enterprise IT actually lands on - what happened this week and what it changes for us. AI-ready operations, SSC and GBS transitions, PMO and transformation, master data. Vendor-side-honest, no buzzwords.
             </p>
             <p class="text-white/40 text-base leading-relaxed">
               New here? Start with the free <a href="/essays/the-operator-standard" class="text-[#E67E22] hover:underline font-medium">Operator Standard</a> - the seven principles we hold ourselves to. Read it on-site, no email required; subscribe when you want the weekly brief.

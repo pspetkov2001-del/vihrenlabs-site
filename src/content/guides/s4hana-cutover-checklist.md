@@ -36,9 +36,9 @@ faq:
     a: "Rollback criteria must be specific and pre-agreed: a named decision-maker with the authority to call it, an objective threshold (e.g. data-validation error rate above an agreed limit, or critical defects unresolved past a checkpoint), and a hard time limit by which the call must be made. The point is that the decision is made before the weekend, not negotiated during it."
   - q: "What master-data checks matter most in an S/4HANA migration?"
     a: "Business Partner conversion (MASS/MASSD), stock-on-hand reconciliation (MB52), and general-ledger line-item validation (FBL3N) are the three that most often decide whether the business trusts the system on Monday. Each needs a pre-agreed threshold, an owner, and a sign-off."
-ctaLabel: "Get the SAP Migration Operator's Pack - $129"
-ctaUrl: "/products/sap-migration-operators-pack"
-ctaSub: "The done-for-you version: a 52-check readiness matrix, a 46-step cutover run sheet, the data-validation gates, and the hypercare runbook - the kit a real cutover needs, instead of a Word doc someone is editing at 11 p.m. the night before go-live."
+ctaLabel: "Get the Operator Standard - free"
+ctaUrl: "https://vihrenlabs.gumroad.com/l/bwzklq"
+ctaSub: "The seven operating principles behind every Vihren Labs template, as a free PDF."
 ---
 
 ## Why cutovers fail on governance, not technology

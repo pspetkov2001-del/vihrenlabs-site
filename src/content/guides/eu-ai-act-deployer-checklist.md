@@ -30,9 +30,9 @@ faq:
     a: "Annex III lists the high-risk use cases - including certain uses in employment and worker management (such as CV screening), access to essential services and credit, certain biometric systems, critical infrastructure, education, law enforcement, and migration. If a system falls in one of these areas, the high-risk obligations apply. Confirm a borderline case against the text with counsel."
   - q: "Is this legal advice?"
     a: "No. This guide - and the Vihren Labs compliance products - are operator-grade organizational and evidence tools. They help you structure and document readiness. They are not legal advice; confirm your specific obligations with qualified counsel, especially for borderline Annex III classifications."
-ctaLabel: "Get the EU AI Act SME Compliance Starter - €149"
-ctaUrl: "/products/eu-ai-act-sme-compliance-starter"
-ctaSub: "The done-for-you version: an AI system inventory, a risk-classification workbook, a compliance checklist, and Article 50 disclosure templates - so an SME can structure and evidence readiness ahead of 2 August 2026 instead of starting from a blank page."
+ctaLabel: "Get the free AI-Ready Operations Assessment"
+ctaUrl: "https://vihrenlabs.gumroad.com/l/rmkje"
+ctaSub: "The five-layer maturity model and a 12-point readiness check - find your weakest layer before you deploy an AI agent."
 ---
 
 ## Why readiness is a documentation problem, not a legal one

@@ -4,7 +4,7 @@ description: "Most job descriptions are written for the applicant-tracking filte
 seoTitle: "How to read a job description: 6 questions"
 seoDescription: "Most job descriptions are written for the applicant-tracking filter, for HR and legal, and for the internal pay grade - not to tell you what the work is."
 date: "2026-06-07"
-line: "Transformation & SSC/GBS"
+line: "PMO & Transformation"
 keywords: ["how to read a job description", "what does the job actually involve", "understand a job role", "job description decoded", "what is a master data manager", "how to break into a role", "enterprise IT careers", "operations roles explained"]
 answer: "A job description is not a description of the work - it is a document written by committee for three audiences that are not you: the applicant-tracking software (keyword filter), HR and legal (risk language), and the internal pay-grade system (the words that justify the salary band). The actual work is the one thing it is not optimised to convey. To understand any role, ignore the prose and answer six questions: (1) what does this person do all day; (2) what are they really measured on - the one or two numbers that decide if they are good; (3) who do they work with; (4) what is the number-one failure mode that quietly kills the role; (5) what skills actually get the work done, not the certifications listed; (6) how do you break in. Answer those six and you understand the job - the posting answered almost none of them."
 stepsTitle: "The Job Decoder - six questions"
